@@ -64,6 +64,12 @@ figcaption {
   font-weight: bold;
 }
 
+pre {
+  background-color: lightpink;
+  border-radius: 1rem;
+  overflow: scroll;
+}
+
 a {
   color: #333;
   text-decoration: none;
