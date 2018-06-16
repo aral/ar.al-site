@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Uses Hugo to create a new post based on the current date and the provided title
+# e.g., new my-awesome-blog-post will create content/YYYY/MM/DD/my-awesome-blog-post/_index.md
+
+# Require one argument
+if [ $# -eq 0 ]
+  then
+    echo "Usage: new <title-of-post>"
+    exit
+fi
+
+datePrefix=$(date +'%Y/%m/%d/')
+postTitle=$1
+pathSuffix="/_index.md"
+
+postPath="$datePrefix$postTitle$pathSuffix"
+
+hugo new $postPath
