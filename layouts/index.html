@@ -3,6 +3,10 @@
   <head>
     {{ partial "head.html" . }}
     <style>
+      /* Offset subsequent years with a larger top margin */
+      h2:not(:first-of-type) { margin-top: 3rem; }
+
+      /* Style the blog post entries */
       time { font-family: 'Script12PitchBT-Roman'; }
       time > .date { font-size: 1.25rem; font-weight: bold; padding-left: 4px; padding-right: 4px; padding-top: 3px; padding-bottom: 3px; color: white; background-color:crimson; border-radius: 2rem;}
       li { list-style-type: none; margin-bottom: 1rem;}
