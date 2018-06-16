@@ -31,7 +31,7 @@
                   <span class='date'>{{ .Date.Format "02" }}</span>
                   <span class='day'>{{ .Date.Format "Mon 15:04" }}</span>
                 </time>
-                <a href="{{ .Permalink }}">{{ .Title }}</a>
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
               </li>
           {{ end }}
         </ul>
