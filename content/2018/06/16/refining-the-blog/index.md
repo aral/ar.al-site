@@ -3,7 +3,7 @@ title: "Refining the blog"
 date: 2018-06-16T17:04:54+01:00
 ---
 
-![The Markdown text for this blog post shown in my VSCode window](2018-06-16-20-23-44.png)
+{{< figure src="2018-06-16-20-23-44.png" alt="The Markdown text for this blog post shown in my VSCode window" caption="Yes, I blog in VSCode. What was the question again?" >}}
 
 Yesterday, in a one-hour session [that I live-tooted](https://mastodon.ar.al/@aral/100207852262520843), I set up and deployed [this blog](https://source.ind.ie/ar.al/site) by hacking together plain HTML/CSS, [Rsync Watch](https://github.com/Splurov/rsync-watch), and [DAT](https://datproject.org).
 
