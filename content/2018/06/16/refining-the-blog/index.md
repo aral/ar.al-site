@@ -29,7 +29,7 @@ Hugo checks all the boxes above, does a million other things that I will probabl
 
 So I spent a few hours today setting up the blog to use Hugo. As I want the site to be as minimal as possible, I didn’t use an existing template. I’m hand-rolling the layouts and styles by hand.
 
-Right now, I have indices being generated, and partials for the head, header, footer.
+Right now, I have indices being generated, and partials for the head, header, and footer.
 
 I also set up a convention where content is stored chronologically (e.g., 2018/06/16/refining-the-blog) and I wrote [a small script](https://source.ind.ie/ar.al/site/blob/master/new) to make it easy for me to create new posts fitting that path structure:
 
