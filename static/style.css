@@ -52,6 +52,16 @@ img {
 figure {
   margin-top: 2rem;
   margin-bottom: 2rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+figcaption {
+  font-size: 1rem;
+  font-style: oblique;
+  line-height: 1.5;
+  text-align: center;
+  font-weight: bold;
 }
 
 a {
@@ -63,4 +73,6 @@ a {
 footer {
   border-top: 1px solid darkgray;
   text-align: center;
+  font-size: 0.9rem;
+  margin-top: 2rem;
 }
