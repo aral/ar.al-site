@@ -1,0 +1,42 @@
+{{/* Used to render the list of posts on the index page. */}}
+<html>
+  <head>
+    {{ partial "head.html" . }}
+    <style>
+      time { font-family: 'Script12PitchBT-Roman'; }
+      time > .date { font-size: 1.25rem; font-weight: bold; padding-left: 4px; padding-right: 4px; padding-top: 3px; padding-bottom: 3px; color: white; background-color:crimson; border-radius: 2rem;}
+      li { list-style-type: none; margin-bottom: 1rem;}
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>{{ .Site.Title }}</h1>
+    </header>
+
+    {{ .Content }}
+
+    <!-- Group by year. -->
+    {{ range .Data.Pages.GroupByDate "2006" }}
+    <h2>{{ .Key }}</h2>
+
+      <!-- Group by month. -->
+      {{ range .Pages.GroupByDate "January" }}
+      <h3>{{ .Key }}</h3>
+
+        <ul>
+          <!-- orders content according to the "publishdate" field in front matter -->
+          {{ range .Pages }}
+              <li>
+                <time>
+                  <span class='date'>{{ .Date.Format "02" }}</span>
+                  <span class='day'>{{ .Date.Format "Mon 15:04" }}</span>
+                </time>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+              </li>
+          {{ end }}
+        </ul>
+    
+    {{ end }}
+  {{ end }}
+  </body>
+</html>

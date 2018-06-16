@@ -1,0 +1,4 @@
+baseURL = "https://live.ar.al/"
+languageCode = "en-us"
+title = "Aral Balkan"
+publishDir = "../live"

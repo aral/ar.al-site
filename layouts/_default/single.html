@@ -1,0 +1,13 @@
+{{/* Used to render all content pages other than the index. */}}
+<html>
+  <head>
+    {{ partial "head.html" . }}
+    <title>{{ .Page.Title }} </title>
+  </head>
+  <body>
+    {{ partial "header.html" . }}
+    <h1>{{ .Page.Title }}</h1>
+    {{ .Content }}
+    {{ partial "footer.html" . }}
+  </body>
+</html>
