@@ -19,19 +19,21 @@
       {{ range .Pages.GroupByDate "January" }}
       <h3>{{ .Key }}</h3>
 
-        <ul>
-          <!-- orders content according to the "publishdate" field in front matter -->
-          {{ range .Pages }}
-              <li>
-                <time>
-                  <span class='date'>{{ .Date.Format "02" }}</span>
-                  <span class='day'>{{ .Date.Format "Mon 15:04" }}</span>
-                </time>
-                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-              </li>
+        <!-- orders content according to the "publishdate" field in front matter -->
+        {{ range .Pages.GroupByDate "02" }}
+        <h4 class='date'>{{ .Key }}</h4>
+        <ul> 
+          {{ range $index, $element := .Pages }}
+            <li>
+              <time>
+                <span class='day item-{{ $index }}'>{{ $element.Date.Format "Mon" }}</span>
+                <span>{{ $element.Date.Format "15:04" }}</span>
+              </time>
+              <a href="{{ .RelPermalink }}">{{ $element.Title }}</a>
+            </li>
           {{ end }}
         </ul>
-    
+      {{ end }}
     {{ end }}
   {{ end }}
 
