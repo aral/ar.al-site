@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Runs just Hugo server for local authoring
+# (changes will not be deployed or live streamed over the
+# peer-to-peer web. For that, use the ./live script.)
+
+# Start Hugo server
+hugo server -D --renderToDisk

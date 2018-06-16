@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Runs command in requested directory in the background
+# and restores the working directory at the end.
+# Usage: runInBackground <directory> "<command>"
+runInBackground(){
+	pushd $1 >/dev/null
+	eval $2 &
+	popd >/dev/null
+}
+
+# With thanks to Job Vranish for his awesome tutorial
+# on starting/stopping background processes in Bash:
+# https://spin.atomicobject.com/2017/08/24/start-stop-bash-background-process/
+trap "exit" INT TERM ERR
+trap "kill 0" EXIT
+
+# Start the rsync deployment watcher
+runInBackground ../sync "npm run sync"
+
+# Start Hugo server
+hugo server -D --renderToDisk &
+
+# Don’t exit. Shutting off this process should also kill
+# the two other background processes we started
+wait
