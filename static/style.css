@@ -36,7 +36,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   line-height: 2rem;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   color: #333;
 }
 
@@ -70,8 +70,23 @@ a {
   border-bottom: 1px solid lightcoral;
 }
 
+ol, ul {
+  padding-left: 0;
+}
+
+li::marker {
+  font-size: 1.5rem;
+  color: darkgray;
+}
+
+.footnotes { font-size: 1rem; margin-top: 2rem; }
+.footnotes > hr { border: 0.5px solid; color: darkcyan; }
+.footnotes li::marker { font-size: 1rem; color: #333; }
+
+.footnotes::before { content: "Footnotes"; font-size: 1.5rem; }
+
 footer {
-  border-top: 1px solid darkgray;
+  border-top: 1px solid darkcyan;
   text-align: center;
   font-size: 0.9rem;
   margin-top: 2rem;
