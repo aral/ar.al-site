@@ -8,7 +8,7 @@ date: 2018-06-17T09:14:55+01:00
 The [index](/) of this blog has a list of the posts in chronological order and uses a [`<time>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time) tag. I wanted to include the machine-readable `datetime` attribute but the standard serialisation of Hugo’s [`.Date`](https://gohugo.io/variables/page/#page-variables) property doesn’t return an ISO 8601 timestamp. This led me to look up [the esoteric syntax of Hugo’s dateFormat function](https://gohugohq.com/howto/hugo-dateformat/) and use the following format string to create an ISO 8601 string:
 
 {{< highlight go >}}
-{{ $post.Date.Format "2006-01-02T15:04:05Z0700" }}
+  {{ $post.Date.Format "2006-01-02T15:04:05Z0700" }}
 {{< /highlight >}}
 
 And here it is in use in the block that renders the posts for a given day ([full source](https://source.ind.ie/ar.al/site/blob/master/layouts/index.html)):
