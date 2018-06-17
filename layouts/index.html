@@ -23,13 +23,13 @@
         {{ range .Pages.GroupByDate "02" }}
         <h4 class='postdate date'>{{ .Key }}</h4>
         <ul> 
-          {{ range $index, $element := .Pages }}
+          {{ range $index, $post := .Pages }}
             <li>
-              <time datetime="{{ $element.Date.Format "2006-01-02T15:04:05Z0700" }}">
-                <span class='postdate day item-{{ $index }}'>{{ $element.Date.Format "Mon" }}</span>
+              <time datetime="{{ $post.Date.Format "2006-01-02T15:04:05Z0700" }}">
+                <span class='postdate day item-{{ $index }}'>{{ $post.Date.Format "Mon" }}</span>
               </time>
-              <span class='postdate'>{{ $element.Date.Format "15:04" }}</span>
-              <a href="{{ .RelPermalink }}">{{ $element.Title }}</a>
+              <span class='postdate'>{{ $post.Date.Format "15:04" }}</span>
+              <a href="{{ .RelPermalink }}">{{ $post.Title }}</a>
             </li>
           {{ end }}
         </ul>
