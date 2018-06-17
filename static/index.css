@@ -2,10 +2,19 @@
 h2:not(:first-of-type) { margin-top: 3rem; }
 
 /* Style the blog post entries */
-li { list-style-type: none; margin-bottom: 1rem; margin-left: 2.75rem; }
+li {
+  list-style-type: none;
+
+  display: grid;
+  grid-template-columns: 1.75rem 3rem 1fr;
+  grid-gap: 0.75rem;
+
+  margin-bottom: 1rem;
+  margin-left: 2.75rem;
+}
 
 /* Display time and date in a monospace script so that post titles line up */
-time, .date { font-family: 'Script12PitchBT-Roman'; }
+.postdate { font-family: 'Script12PitchBT-Roman'; }
 
 /* Don’t display the day name multiple times for days that have multiple entries */
 .day:not(.item-0) { color: white; }

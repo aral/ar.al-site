@@ -21,14 +21,14 @@
 
         <!-- Orders content according to the "date" field in front matter. -->
         {{ range .Pages.GroupByDate "02" }}
-        <h4 class='date'>{{ .Key }}</h4>
+        <h4 class='postdate date'>{{ .Key }}</h4>
         <ul> 
           {{ range $index, $element := .Pages }}
             <li>
               <time datetime="{{ $element.Date.Format "2006-01-02T15:04:05Z0700" }}">
-                <span class='day item-{{ $index }}'>{{ $element.Date.Format "Mon" }}</span>
-                <span>{{ $element.Date.Format "15:04" }}</span>
+                <span class='postdate day item-{{ $index }}'>{{ $element.Date.Format "Mon" }}</span>
               </time>
+              <span class='postdate'>{{ $element.Date.Format "15:04" }}</span>
               <a href="{{ .RelPermalink }}">{{ $element.Title }}</a>
             </li>
           {{ end }}
