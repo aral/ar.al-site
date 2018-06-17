@@ -1,5 +1,5 @@
 ---
-title: "Formatting a Valid time Tag datetime Attribute With the Hugo Date Formatter"
+title: "Formatting an ISO 8601 date stamp in Hugo"
 date: 2018-06-17T09:14:55+01:00
 ---
 
