@@ -22,6 +22,14 @@
   text-rendering: optimizeLegibility;
 }
 
+@font-face {
+  font-family: 'Script12PitchBT-Roman';
+  src: url('fonts/script-12-pitch-bt-roman.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
 html {
   font-family: 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
