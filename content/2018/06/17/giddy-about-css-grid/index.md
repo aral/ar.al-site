@@ -7,7 +7,7 @@ The list of posts in [the index](/) of this blog are grouped by year, month, and
 
 The initial index page during [the one-hour hack on Friday that resulted in this site](/2018/06/15/hello-peer-to-peer-web/) simply listed the post titles ([do the Simplest Thing That Could Possibly Work (STTCPW)](http://c2.com/xp/DoTheSimplestThingThatCouldPossiblyWork.html)).
 
-{{< figure src="2018-06-17-10-41-24.png" alt="The site as it was on Friday at the end of its first hour of life" caption="Version 1: two day’s ago." >}}
+{{< figure src="2018-06-17-10-41-24.png" alt="The site as it was on Friday at the end of its first hour of life" caption="Version 1: two days ago." >}}
 
 Yesterday, [I refined the site](/2018/06/16/refining-the-blog/) and implemented the chronological grouping. However, again going with STTCPW, I used a monospace script font to fake three-column layout of the list items:
 
@@ -59,7 +59,7 @@ I quickly [spiked](https://en.wikipedia.org/wiki/Spike_(software_development)) i
   </ul>
 {{< /highlight >}}
 
-Pop that into a file, run [HTTP server](https://www.npmjs.com/package/http-server) (`http-server -c-1`) and you’ll see:
+Pop that into an _index.html_ file, run [http-server](https://www.npmjs.com/package/http-server) (`http-server -c-1`) and you’ll see:
 
 {{< figure src="2018-06-17-10-58-57.png" alt="CSS Grid spike showing a three-column, two-row layout with fixed width columns for the first two columsn and a flexible width for the third that takes up the rest of the space. The background colours of the columns are light blue, light coral, and khaki." caption="A quick and dirty grid" >}}
 
