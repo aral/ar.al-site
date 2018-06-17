@@ -1,5 +1,5 @@
 ---
-title: "Hello Peer to Peer Web"
+title: "Hello Peer-to-Peer Web"
 date: 2018-06-15T15:00:00+01:00
 ---
 
