@@ -12,7 +12,7 @@ fi
 
 datePrefix=$(date +'%Y/%m/%d/')
 postTitle=$1
-pathSuffix="/_index.md"
+pathSuffix="/index.md"
 
 postPath="$datePrefix$postTitle$pathSuffix"
 
