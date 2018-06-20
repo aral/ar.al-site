@@ -79,6 +79,13 @@ pre {
   overflow: scroll;
 }
 
+.chroma {
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 a {
   color: #333;
   text-decoration: none;
