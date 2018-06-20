@@ -6,8 +6,3 @@ pygmentsUseClasses = true
 
 [author]
   name = "Aral Balkan"
-
-[output]
-  [Format]
-    [RSS]
-      baseName = "https://live.ar.al/index.xml"
