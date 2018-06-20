@@ -38,13 +38,13 @@ So my workflow right now for updating this blog is:
 1. Start up the system (Hugo server and rsync watcher):
 
     {{< highlight bash >}}
-  ./connect
+./connect
 {{< /highlight >}}
 
 2. Create a post:
 
     {{< highlight bash >}}
-  ./new my-latest-amazing-post
+./new my-latest-amazing-post
 {{< /highlight >}}
 
 3. Edit the post using VSCode.

@@ -16,7 +16,7 @@ Yesterday, [I refined the site](/2018/06/16/refining-the-blog/) and implemented 
 As you can see, the date and day name are being repeated for every entry in a day. Less than ideal. Removing the redundancy in the red date stamp was easy. I simply tweaked the template code to improve the grouping so it was only displayed once and then floated it left. Hiding the redundant day names was a bit more convoluted: I added class names using a counter to the day name spans and used the following CSS rule to hide all but the first:
 
 {{< highlight css >}}
-  .day:not(.item-0) { color: white; }
+.day:not(.item-0) { color: white; }
 {{< /highlight >}}
 
 The remaining problem was that since I was faking columns, if the title of a post was too wide (or if you were viewing the site on a narrow viewport), the title would wrap to the start of the list instead of staying within its “column”.
@@ -32,31 +32,31 @@ A quick glance at the [Defining a Grid](https://gridbyexample.com/examples/examp
 I quickly [spiked](https://en.wikipedia.org/wiki/Spike_(software_development)) it with a simple three column, two row grid using an unordered list, saw that it worked as intended, and implemented it on the actual site. Here’s the source of the spike:
 
 {{< highlight html >}}
-  <style>
-  ul { list-style-type: none; }
-  li {
-    display: grid;
-    grid-template-columns: 100px 100px 1fr;
-    grid-gap: 10px;
-    margin-top: 10px;
-  }
-  .first { background-color: lightblue; }
-  .second { background-color: lightcoral; }
-  .third { background-color: khaki; }
-  </style>
+<style>
+ul { list-style-type: none; }
+li {
+  display: grid;
+  grid-template-columns: 100px 100px 1fr;
+  grid-gap: 10px;
+  margin-top: 10px;
+}
+.first { background-color: lightblue; }
+.second { background-color: lightcoral; }
+.third { background-color: khaki; }
+</style>
 
-  <ul>
-    <li>
-      <span class='first'>Hello</span>
-      <span class='second'>there</span>
-      <span class='third'>how are you doing?</span>
-    </li>
-    <li>
-      <span class='first'>And</span>
-      <span class='second'>another</span>
-      <span class='third'>row.</span>
-    </li>
-  </ul>
+<ul>
+  <li>
+    <span class='first'>Hello</span>
+    <span class='second'>there</span>
+    <span class='third'>how are you doing?</span>
+  </li>
+  <li>
+    <span class='first'>And</span>
+    <span class='second'>another</span>
+    <span class='third'>row.</span>
+  </li>
+</ul>
 {{< /highlight >}}
 
 Pop that into an _index.html_ file, run [http-server](https://www.npmjs.com/package/http-server) (`http-server -c-1`) and you’ll see:
