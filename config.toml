@@ -3,3 +3,11 @@ languageCode = "en-us"
 title = "Aral Balkan"
 publishDir = "../live"
 pygmentsUseClasses = true
+
+[author]
+  name = "Aral Balkan"
+
+[output]
+  [Format]
+    [RSS]
+      baseName = "https://live.ar.al/index.xml"

@@ -18,8 +18,14 @@ trap "kill 0" EXIT
 # Start the rsync deployment watcher
 runInBackground ../sync "npm run sync"
 
-# Start Hugo server
-hugo server -D --renderToDisk &
+# Start Hugo server.
+#
+# The baseURL and appendPort flags are set to overwrite the default behaviour
+# of Hugo when run with the server option which is to write absolute URLs
+# as localhost:<port> regardless of the setting of baseURL in the config.toml
+# file. Since we do not have a separate build/deploy phase to the live server,
+# we want the site as it would exist on the server to exist on the client.
+hugo server -D --renderToDisk --baseURL=https://live.ar.al --appendPort=false
 
 # Don’t exit. Shutting off this process should also kill
 # the two other background processes we started
