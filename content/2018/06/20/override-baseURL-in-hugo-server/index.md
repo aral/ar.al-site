@@ -1,5 +1,5 @@
 ---
-title: "Override BaseURL With Hugo Server"
+title: "Override BaseURL in Hugo Server"
 date: 2018-06-20T15:33:28+02:00
 ---
 
