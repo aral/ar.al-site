@@ -1,3 +1,6 @@
+/* General style sheet */
+
+/* Fonts */
 @font-face {
   font-family: 'Lato';
   src: url('fonts/Lato-Bold.eot'); /* IE9 Compat Modes */
@@ -30,6 +33,8 @@
   text-rendering: optimizeLegibility;
 }
 
+/* General */
+
 html {
   font-family: 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
@@ -48,11 +53,15 @@ body {
   color: #333;
 }
 
+/* Headings */
+
 h1, h2, h3 { line-height: 1 }
-header > h1 { font-size: 4rem; }
+header > h1 { font-size: 4rem; margin-top: 0; margin-bottom: 0;}
 h1, h2 { font-size: 2rem; }
 :not(header) > h1 { line-height:1.25; }
 h3 { font-size: 1.5rem; }
+
+/* Figures and images */
 
 img {
   max-width: 100%;
@@ -73,6 +82,8 @@ figcaption {
   font-weight: bold;
 }
 
+/* Code */
+
 pre {
   background-color: lightpink;
   border-radius: 1rem;
@@ -86,11 +97,19 @@ pre {
   padding-right: 1rem;
 }
 
+/* Links */
+
 a {
   color: #333;
   text-decoration: none;
   border-bottom: 1px solid lightcoral;
 }
+
+header > a {
+  border: none;
+}
+
+/* Lists */
 
 ol, ul {
   padding-left: 0;
@@ -101,15 +120,39 @@ li::marker {
   color: darkgray;
 }
 
+/* Icons */
+
+header {
+  display: grid;
+  grid-template-columns: 1fr 2.25rem 2.25rem;
+  margin-bottom: 2.7rem;
+}
+
+.rss, .p2p {
+  width: 26px;
+  margin-top: 2rem;
+}
+
+/* Footnotes */
 .footnotes { font-size: 1rem; margin-top: 2rem; }
 .footnotes > hr { border: 0.5px solid; color: darkcyan; }
 .footnotes li::marker { font-size: 1rem; color: #333; }
 
 .footnotes::before { content: "Footnotes"; font-size: 1.5rem; }
 
+/* Footer */
+
 footer {
   border-top: 1px solid darkcyan;
   text-align: center;
   font-size: 0.9rem;
   margin-top: 2rem;
+}
+
+/* Break point: title goes to two lines:
+    * Move icons down. */
+@media (max-width: 492px) {
+  .rss, .p2p {
+    margin-top: 6rem;
+  }
 }
