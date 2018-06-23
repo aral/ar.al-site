@@ -6,27 +6,37 @@ li {
   list-style-type: none;
 
   display: grid;
-  grid-template-columns: 1.75rem 3rem 1fr;
+  grid-template-columns: 2.5rem 3.5rem 1fr;
   grid-gap: 0.75rem;
+  align-items: baseline;
 
   margin-bottom: 1rem;
   margin-left: 2.75rem;
 }
 
+time { 
+  justify-self: center;
+}
+
 /* Display time and date in a monospace script so that post titles line up */
 .postdate {
   color: gray;
-  font-family: 'Script12PitchBT-Roman';
+  /* font-family: 'Script12PitchBT-Roman'; */
+  font-family: 'Lato', cursive;
+  font-weight: 300;
+  /* text-align: right; */
 }
 
 /* Don’t display the day name multiple times for days that have multiple entries */
 .day:not(.item-0) { color: white; }
 
 .date { 
-  font-size: 1.20rem;
-  font-weight: bold;
-  padding-left: 5px;
-  padding-right: 5px;
+  font-family: 'Lato';
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 2rem;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
   color: white;
   background-color:crimson;
   border-radius: 2rem;

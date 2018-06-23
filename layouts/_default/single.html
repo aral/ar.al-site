@@ -6,7 +6,7 @@
   <body>
     {{ partial "header.html" . }}
     <nav><a href='/'>Home</a></nav>
-    <h1>{{ .Page.Title }}<time datetime="{{ .Page.Date.Format "2006-01-02T15:04:05Z0700" }}">{{ .Page.Date.Format "January" }} {{ humanize (.Page.Date.Format "02") }}, {{ .Page.Date.Format "2006" }} @ {{ .Page.Date.Format "3PM" }} </time></h1>
+    <h1><span>{{ .Page.Title }}</span><time datetime="{{ .Page.Date.Format "2006-01-02T15:04:05Z0700" }}">{{ .Page.Date.Format "January" }} {{ humanize (.Page.Date.Format "02") }}, {{ .Page.Date.Format "2006" }} @ {{ .Page.Date.Format "15:04" }} </time></h1>
     {{ .Content }}
     {{ partial "footer.html" . }}
   </body>

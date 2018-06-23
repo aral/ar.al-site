@@ -25,14 +25,6 @@
   text-rendering: optimizeLegibility;
 }
 
-@font-face {
-  font-family: 'Script12PitchBT-Roman';
-  src: url('fonts/script-12-pitch-bt-roman.ttf') format('truetype');
-  font-style: normal;
-  font-weight: normal;
-  text-rendering: optimizeLegibility;
-}
-
 /* General */
 
 html {
@@ -61,10 +53,19 @@ h1, h2 { font-size: 2rem; }
 :not(header) > h1 { line-height:1.25; }
 h3 { font-size: 1.5rem; }
 
-h1 > time {
+:not(header) > h1 {
+  display: grid;
+  grid-template-columns: 1fr 11rem;
+  /* grid-gap: 0.25rem; */
+}
+
+:not(header) > h1 > time {
+  font-size: 1.5rem;
+  line-height: 1;
   font-weight: 300;
   color: lightgray;
-  display: block;
+  text-align: right;
+  margin-top: 0.25rem;
 }
 
 /* Figures and images */
