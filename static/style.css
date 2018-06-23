@@ -124,12 +124,13 @@ li::marker {
 
 header {
   display: grid;
-  grid-template-columns: 1fr 2.25rem 2.25rem;
+  grid-template-columns: 1fr 2.25rem 2.4rem 2.25rem 2.25rem;
+  grid-gap: 0.25rem;
   margin-bottom: 2.7rem;
 }
 
-.rss, .p2p {
-  width: 26px;
+.email, .mastodon, .rss, .p2p {
+  height: 26px;
   margin-top: 2rem;
 }
 
@@ -149,10 +150,18 @@ footer {
   margin-top: 2rem;
 }
 
-/* Break point: title goes to two lines:
-    * Move icons down. */
-@media (max-width: 492px) {
-  .rss, .p2p {
+/* Break point: not enough room for title and icons side-by-side */
+/* @media (max-width: 480px) {
+  header {
+  
+  }
+} */
+
+/* Break point: title goes to two lines. */
+
+/* Move icons down. */
+@media (max-width: 580px) {
+  .email, .mastodon, .rss, .p2p {
     margin-top: 6rem;
   }
 }
