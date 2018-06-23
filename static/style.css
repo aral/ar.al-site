@@ -61,6 +61,12 @@ h1, h2 { font-size: 2rem; }
 :not(header) > h1 { line-height:1.25; }
 h3 { font-size: 1.5rem; }
 
+h1 > time {
+  font-weight: 300;
+  color: lightgray;
+  display: block;
+}
+
 /* Figures and images */
 
 img {
@@ -149,13 +155,6 @@ footer {
   font-size: 0.9rem;
   margin-top: 2rem;
 }
-
-/* Break point: not enough room for title and icons side-by-side */
-/* @media (max-width: 480px) {
-  header {
-  
-  }
-} */
 
 /* Break point: title goes to two lines. */
 

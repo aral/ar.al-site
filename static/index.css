@@ -14,7 +14,10 @@ li {
 }
 
 /* Display time and date in a monospace script so that post titles line up */
-.postdate { font-family: 'Script12PitchBT-Roman'; }
+.postdate {
+  color: gray;
+  font-family: 'Script12PitchBT-Roman';
+}
 
 /* Don’t display the day name multiple times for days that have multiple entries */
 .day:not(.item-0) { color: white; }
