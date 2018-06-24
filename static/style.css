@@ -55,8 +55,7 @@ h3 { font-size: 1.5rem; }
 
 :not(header) > h1 {
   display: grid;
-  grid-template-columns: 1fr 11rem;
-  /* grid-gap: 0.25rem; */
+  grid-template-columns: 1fr 8.5rem;
 }
 
 :not(header) > h1 > time {
@@ -65,7 +64,7 @@ h3 { font-size: 1.5rem; }
   font-weight: 300;
   color: lightgray;
   text-align: right;
-  margin-top: 0.25rem;
+  margin-top: 0.75rem;
 }
 
 /* Figures and images */
@@ -175,5 +174,19 @@ footer {
 
   html, body {
     padding: 0.5rem;
+  }
+
+  :not(header) > h1 {
+    display: block;
+  }  
+
+  :not(header) > h1 > time {
+    display: block;
+    font-size: 1rem;
+    line-height: 1;
+    font-weight: normal;
+    color: gray;
+    text-align: left;
+    margin-top: 1rem;
   }
 }

@@ -6,7 +6,7 @@ li {
   list-style-type: none;
 
   display: grid;
-  grid-template-columns: 2.5rem 3.5rem 1fr;
+  grid-template-columns: 2rem 3.25rem 1fr;
   grid-gap: 0.75rem;
   align-items: baseline;
 
@@ -21,17 +21,13 @@ time {
 /* Display time and date in a monospace script so that post titles line up */
 .postdate {
   color: gray;
-  /* font-family: 'Script12PitchBT-Roman'; */
-  font-family: 'Lato', cursive;
   font-weight: 300;
-  /* text-align: right; */
 }
 
 /* Don’t display the day name multiple times for days that have multiple entries */
 .day:not(.item-0) { color: white; }
 
 .date { 
-  font-family: 'Lato';
   font-size: 1rem;
   font-weight: normal;
   line-height: 2rem;
