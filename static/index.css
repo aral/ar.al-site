@@ -8,7 +8,7 @@ li {
   display: grid;
   grid-template-columns: 2rem 2.75rem 1fr;
   grid-gap: 0.5rem;
-  align-items: end;
+  align-items: start;
 
   margin-bottom: 1rem;
   margin-left: 2.75rem;
