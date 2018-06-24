@@ -67,8 +67,6 @@ Richard suggests that Munich changed its mind about free software because Micros
 
 __Richard:__ “It’s illegal to bribe an individual politician but it is not a crime to bribe an entire government.”
 
-(It’s called )
-
 __Richard:__ “The worship of the invisible hand is an absurd religion. You see all the suffering that religion has caused in the world. Neoliberalism … ‘trade treaties’ … they give foreign companies more rights than their own citizens.”
 
 __Richard:__ “There is a powerful force that says ‘business is important, freedom is not’. Most of the governments that talk about software stay away from any talk of ethics.”
