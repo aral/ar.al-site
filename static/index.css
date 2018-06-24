@@ -6,9 +6,9 @@ li {
   list-style-type: none;
 
   display: grid;
-  grid-template-columns: 2rem 3.25rem 1fr;
-  grid-gap: 0.75rem;
-  align-items: baseline;
+  grid-template-columns: 2rem 2.75rem 1fr;
+  grid-gap: 0.5rem;
+  align-items: end;
 
   margin-bottom: 1rem;
   margin-left: 2.75rem;
@@ -21,14 +21,13 @@ time {
 /* Display time and date in a monospace script so that post titles line up */
 .postdate {
   color: gray;
-  font-weight: 300;
+  font-size: 1rem;
 }
 
 /* Don’t display the day name multiple times for days that have multiple entries */
 .day:not(.item-0) { color: white; }
 
 .date { 
-  font-size: 1rem;
   font-weight: normal;
   line-height: 2rem;
   padding-left: 0.4rem;
@@ -36,7 +35,6 @@ time {
   color: white;
   background-color:crimson;
   border-radius: 2rem;
-  display: inline-block;
   margin: 0;
   float: left;
 }
