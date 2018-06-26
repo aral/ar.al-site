@@ -14,5 +14,5 @@ I use relative URLs in all of my posts and templates but I got bitten by this wi
 To work around this issue, start Hugo using the `--baseURL` and `--appendPort` flags to override the default settings. e.g. I start a live session on this blog with:
 
 {{< highlight bash >}}
-hugo server -D --renderToDisk --baseURL=https://live.ar.al --appendPort=false
+hugo server -D --renderToDisk --baseURL=https://ar.al --appendPort=false
 {{< /highlight >}}

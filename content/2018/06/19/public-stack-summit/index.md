@@ -17,7 +17,7 @@ I’m going to take a little break now so I can participate more directly. Will 
 
 ### 11:25:23
 
-This is how I’m [live blogging](https://live.ar.al/2018/06/15/hello-peer-to-peer-web/) with Hugo, rsync, and [DAT](https://datproject.org), by the way.
+This is how I’m [live blogging](https://ar.al/2018/06/15/hello-peer-to-peer-web/) with Hugo, rsync, and [DAT](https://datproject.org), by the way.
 
 ![My live blogging setup](2018-06-19-11-24-00.jpeg)
 
