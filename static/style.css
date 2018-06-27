@@ -84,6 +84,11 @@ figcaption {
   font-weight: bold;
 }
 
+/* Video */
+
+video, video[poster] { width: 100%; }
+figure > video { margin-bottom: 1rem; }
+
 /* Block quotes */
 
 blockquote {
