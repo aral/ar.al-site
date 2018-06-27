@@ -69,6 +69,15 @@ img {
   max-width: 100%;
 }
 
+/*
+  Set images to full width by default. This also stops
+  images from “jumping” during layout (which happens if only
+  max-width is set.
+*/
+main img {
+  width: 100%;
+}
+
 figure {
   margin-top: 2rem;
   margin-bottom: 2rem;

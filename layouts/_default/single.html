@@ -6,9 +6,11 @@
   <body>
     {{ partial "header.html" . }}
     <nav><a href='/'>Home</a></nav>
-    <h1>{{ .Page.Title }}</h1>
-    <time class='single' datetime="{{ .Page.Date.Format "2006-01-02T15:04:05Z0700" }}">{{ .Page.Date.Format "02 Jan 2006" }}</time>
-    {{ .Content }}
-    {{ partial "footer.html" . }}
+    <main>
+      <h1>{{ .Page.Title }}</h1>
+      <time class='single' datetime="{{ .Page.Date.Format "2006-01-02T15:04:05Z0700" }}">{{ .Page.Date.Format "02 Jan 2006" }}</time>
+      {{ .Content }}
+      {{ partial "footer.html" . }}
+    </main>
   </body>
 </html>
