@@ -84,6 +84,20 @@ figcaption {
   font-weight: bold;
 }
 
+/* Block quotes */
+
+blockquote {
+  margin-left: -1.3rem;
+  border-left: 0.3rem solid lightgray;
+  padding-left: 1rem;
+  font-style: italic;
+  color: slategray;
+}
+
+blockquote a {
+  color: slategray;
+}
+
 /* Code */
 
 pre {
