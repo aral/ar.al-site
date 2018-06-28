@@ -21,6 +21,12 @@ That’s it!
 
 (You might still be logging IP addresses in the error log so it’s a good idea to clear those out also on a regular basis.)
 
+Remember that clearing out existing logs in nginx is as easy as:
+
+{{< highlight bash >}}
+rm /var/log/nginx/*
+{{< /highlight >}}
+
 If you want to keep logs (e.g., to calculate unique views, etc.), you can still do that in a privacy-respecting manner by storing a hash of the IP address in your logs instead of the IP address itself. There’s an nginx module called [ipscrub](https://github.com/masonicboom/ipscrub) you can use for that purpose.
 
 I do wish that servers like nginx came with privacy-respecting (and secure) settings by default.
