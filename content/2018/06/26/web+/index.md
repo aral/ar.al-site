@@ -56,9 +56,8 @@ While #2 might be the coolest feature for everyday use, #1 has the most potentia
 
 While you can access this site via a friendly DAT URL (using [DAT DNS](https://www.datprotocol.com/deps/0005-dns/)), the actual long-form DAT address that it maps to is a cryptographic public key that is unique to the [mutable torrent-like archive](https://garbados.github.io/my-blog/distributed-datastructures.html)[^2] of this site:
 
-```
-  dat://bfb2eeb077826ecee6c1105d419755d5d8e0893d653d3ce39e50aee2c00b7701/
-```
+{{< highlight bash >}}dat://bfb2eeb077826ecee6c1105d419755d5d8e0893d653d3ce39e50aee2c00b7701/
+{{< /highlight >}}
 
 So, let’s say I’m in a country with an autocratic government and that I post something that the government wants to block. They can easily block my domain. But what if three or four people have already accessed my site over DAT? Well, now the site exists in three or four other places. And they can serve it to maybe another thirty or forty. And as long as they share the long-form DAT address, the government will have to block everyone that has a copy to block the content.
 
