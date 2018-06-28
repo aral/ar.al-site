@@ -3,7 +3,7 @@ title: "Hello Peer-to-Peer Web"
 date: 2018-06-15T15:00:00+01:00
 ---
 
-{{< figure src="beaker-ception.png" alt="Beaker Browser showing a version of this page." caption="Beaker-ception: a screenshot of version of this page in Beaker browser with live reload on." >}}
+{{< figure src="beaker-ception.png" alt="Beaker Browser showing a version of this page." caption="Beaker-ception: a screenshot of version of this page in Beaker browser with live reload on." class="window-with-shadow" >}}
 
 While documenting my [deep dive into multiwriter hyperdb](https://forum.ind.ie/t/deep-dive-into-multiwriter-hyperdb/2184), I realised I was doing so on our forums, running Discourse, when I’d just demonstrated the day before [how you can live blog on the peer-to-peer Web](https://forum.ind.ie/t/deep-dive-into-multiwriter-hyperdb/2184/1).
 

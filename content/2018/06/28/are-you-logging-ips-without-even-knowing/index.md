@@ -3,7 +3,7 @@ title: "Are You Logging IPs Without Even Knowing?"
 date: 2018-06-28T18:04:39+01:00
 ---
 
-{{< figure src="no-logs.jpg" alt="A screenshot of a terminal session to my server for this blog in the /var/log/nginx folder showing an ls command with no output." caption="Log off." >}}
+{{< figure src="no-logs.jpg" alt="A screenshot of a terminal session to my server for this blog in the /var/log/nginx folder showing an ls command with no output." caption="Log off." class="window-with-shadow" >}}
 
 My blog is served both over the centralised web via HTTPS by [nginx](https://nginx.org) and over the peer web via [DAT](https://datproject.org).
 

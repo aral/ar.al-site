@@ -7,11 +7,11 @@ The list of posts in [the index](/) of this blog are grouped by year, month, and
 
 The initial index page during [the one-hour hack on Friday that resulted in this site](/2018/06/15/hello-peer-to-peer-web/) simply listed the post titles ([do the Simplest Thing That Could Possibly Work (STTCPW)](http://c2.com/xp/DoTheSimplestThingThatCouldPossiblyWork.html)).
 
-{{< figure src="2018-06-17-10-41-24.png" alt="The site as it was on Friday at the end of its first hour of life" caption="Version 1: two days ago." >}}
+{{< figure src="2018-06-17-10-41-24.png" alt="The site as it was on Friday at the end of its first hour of life" caption="Version 1: two days ago." class="window-with-shadow" >}}
 
 Yesterday, [I refined the site](/2018/06/16/refining-the-blog/) and implemented the chronological grouping. However, again going with STTCPW, I used a monospace script font to fake three-column layout of the list items:
 
-{{< figure src="2018-06-17-10-31-28.png" alt="Yesterday’s implementation of the index faked columns in the list." caption="Yesterday’s site: fake it till you make it!">}}
+{{< figure src="2018-06-17-10-31-28.png" alt="Yesterday’s implementation of the index faked columns in the list." caption="Yesterday’s site: fake it till you make it!" class="window-with-shadow" >}}
 
 As you can see, the date and day name are being repeated for every entry in a day. Less than ideal. Removing the redundancy in the red date stamp was easy. I simply tweaked the template code to improve the grouping so it was only displayed once and then floated it left. Hiding the redundant day names was a bit more convoluted: I added class names using a counter to the day name spans and used the following CSS rule to hide all but the first:
 
@@ -61,7 +61,7 @@ li {
 
 Pop that into an _index.html_ file, run [http-server](https://www.npmjs.com/package/http-server) (`http-server -c-1`) and you’ll see:
 
-{{< figure src="2018-06-17-10-58-57.png" alt="CSS Grid spike showing a three-column, two-row layout with fixed width columns for the first two columsn and a flexible width for the third that takes up the rest of the space. The background colours of the columns are light blue, light coral, and khaki." caption="A quick and dirty grid" >}}
+{{< figure src="2018-06-17-10-58-57.png" alt="CSS Grid spike showing a three-column, two-row layout with fixed width columns for the first two columsn and a flexible width for the third that takes up the rest of the space. The background colours of the columns are light blue, light coral, and khaki." caption="A quick and dirty grid" class="window-with-shadow" >}}
 
 (Notice the HTML isn’t even valid. That’s OK. It’s a spike. Think of it as a back-of-the-napkin sketch. It’s meant to be pragmatic.)
 

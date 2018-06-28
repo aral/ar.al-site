@@ -93,6 +93,25 @@ figcaption {
   font-weight: bold;
 }
 
+/*
+  Screenshots of windows with drop shadows don’t appear to take up 100%
+  of the width. Adjust them optically.
+*/
+.window-with-shadow > img {
+  max-width: 110%;
+  width: 110%;
+  margin-left: -5%;
+  margin-right: -5%;
+}
+
+/*
+  And also pull the figure captions up so that the margin doesn’t take the drop
+  shadow into consideration.
+*/
+.window-with-shadow > figcaption, .window-with-shadow > figcaption > p:first-of-type {
+  margin-top: -1rem;
+}
+
 /* Video */
 
 video, video[poster] { width: 100%; }
