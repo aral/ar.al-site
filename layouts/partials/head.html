@@ -2,6 +2,15 @@
 <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 
+<title>{{ .Page.Title }}{{ if ne .IsHome true }} – {{ .Site.Title }}{{ end }}</title>
+
+<!-- Style sheets -->
+<link rel='stylesheet' href='/style.css'>
+<link rel='stylesheet' href='/syntax.css'>
+
+<!-- RSS feed -->
+<link rel="alternate" type="application/rss+xml" href="https://ar.al/index.xml" />
+
 <!-- Favicons: courtesy http://www.favicomatic.com -->
 <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png" />
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png" />
@@ -23,9 +32,3 @@
 <meta name="msapplication-square150x150logo" content="/favicons/mstile-150x150.png" />
 <meta name="msapplication-wide310x150logo" content="/favicons/mstile-310x150.png" />
 <meta name="msapplication-square310x310logo" content="/favicons/mstile-310x310.png" />
-
-<!-- Style sheets -->
-<link rel='stylesheet' href='/style.css'>
-<link rel='stylesheet' href='/syntax.css'>
-
-<title>{{ .Page.Title }}{{ if ne .IsHome true }} – {{ .Site.Title }}{{ end }}</title>
