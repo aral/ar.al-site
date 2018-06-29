@@ -112,6 +112,20 @@ figcaption {
   margin-top: -1rem;
 }
 
+/*
+  Don’t add additional space between an H3 and a figure that immediately follows
+  it to improve grouping.
+*/
+h3 + figure {
+  margin-top: 0;
+}
+
+/* For windows with shadow, tighten up the spacing even further. */
+h3 + figure.window-with-shadow {
+  margin-top: -0.5rem;
+}
+
+
 /* Video */
 
 video, video[poster] { width: 100%; }
