@@ -22,8 +22,8 @@ A Web+ site doesn’t have to use DAT to be a Web+ site. There are other federat
   * [ActivityPub](https://en.wikipedia.org/wiki/ActivityPub) (see [Mastodon](https://joinmastodon.org))
   * [Secure ScuttleButt](https://www.scuttlebutt.nz)
   * [Matrix](http://matrix.org)
-  * [OpenNIC](http://opennic.org) [^1]
-  * [RSS](https://en.wikipedia.org/wiki/RSS) [^2]
+  * [OpenNIC](http://opennic.org)[^1]
+  * [RSS](https://en.wikipedia.org/wiki/RSS)[^2]
   
 If I’ve forgotten any (that aren’t blockchain-based – _spit!_ – or venture-capital-funded – _spit!_), please [let me know](https://mastodon.ar.al).
 

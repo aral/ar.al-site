@@ -46,7 +46,7 @@ Other generators might put it at _/rss_, _/feed_, _/feed.xml_, etc.
 
 {{< figure src="rss-icons.jpg" alt="A selection of RSS icons from The Noun Project displayed in a grid." caption="The Noun Project has a great selection of RSS icons you can use." class="window-with-shadow" >}}
 
-Time was, you couldn’t browse the web without seeing RSS icons of all persuasions gracing the façades of Web 1.0’s finest. This was before they were mercilessly devoured by the <strike>tracking devices</strike> … ahem … social sharing buttons of people farmers like Google and Facebook.
+Time was, you couldn’t browse the web without seeing RSS icons of all persuasions gracing the façades of Web 1.0’s finest. This was before they were mercilessly devoured by the <strike>tracking devices</strike> … ahem … “social sharing buttons” of people farmers like Google and Facebook.
 
 There was also once a push for browsers to auto-detect and expose RSS feeds. Currently, none of the major browsers appears to do so.
 
@@ -54,10 +54,26 @@ It’s time to push back against this and demand first-class support for RSS as 
 
 But you don’t have to wait for browser vendors (some of which – like Google – are surveillance capitalists themselves, and others, like Mozilla, get all their money from surveillance capitalists). You can start making RSS more visible again today by finding the URL for your own RSS feed and exposing it visibly on your site.
 
-It’s not complicated: just a link and an image and Bob’s your decentralised Uncle. Here’s what I have on the header of this site:
+It’s not complicated: just a link in the head of your page[^1] and a link in the body with an RSS icon and Bob’s your decentralised Uncle. 
+
+Here’s the link in the head:
 
 {{< highlight html >}}
-<a href='/index.xml'>
+<link 
+  rel="alternate"
+  type="application/rss+xml"
+  href="https://ar.al/index.xml"
+/>
+{{< /highlight >}}
+
+And here’s the header in the body that links to the RSS feed visually using an icon.
+
+{{< highlight html >}}
+<a 
+  rel='alternate'
+  type='application/rss+xml'
+  href='/index.xml'
+>
   <img 
     class='rss' 
     src='/icons/rss.svg'
@@ -92,3 +108,5 @@ Everything old is new again.
 RSS was an essential part of Web 1.0 before surveillance capitalism (Web 2.0) took over.
 
 It will be a cherished part of [Web+](/2018/06/26/web+/) and beyond.
+
+[^1]: Thanks to [Ed Summers](https://inkdroid.org) for [pointing out via Mastodon](https://social.coop/@edsu/100288354478817313) that I’d forgotten to add the RSS feed URL to the heads of my pages. I also noticed while looking into it [on MDN](https://developer.mozilla.org/en-US/docs/Web/RSS/Getting_Started/Syndicating) that there are additional semantics you can add to the links you use in the body.
