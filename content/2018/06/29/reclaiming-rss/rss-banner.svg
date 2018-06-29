@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1280px" height="426px" viewBox="0 0 1280 426" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>rss-banner</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="rss-banner" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill="#FF9800" x="0" y="0" width="1280" height="426"></rect>
+        <path d="M574,319.5 C574,298.6 556.4,281 535.5,281 C514.6,281 497,298.6 497,319.5 C497,340.4 514.6,358 535.5,358 C556.4,358 574,340.4 574,319.5 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+        <path d="M675,357 L630.5,357 L630.5,345.875 C630.5,275.7875 578.2125,223.5 508.125,223.5 L497,223.5 L497,179 L508.125,179 C603.8,179 675,250.2 675,345.875 L675,357 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+        <path d="M786,359 L741.538462,359 L741.538462,347.884615 C741.538462,218.946154 637.053846,114.461538 508.115385,114.461538 L497,114.461538 L497,70 L508.115385,70 C661.507692,70 786,194.492308 786,347.884615 L786,359 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+    </g>
+</svg>

@@ -23,7 +23,8 @@ A Web+ site doesn’t have to use DAT to be a Web+ site. There are other federat
   * [Secure ScuttleButt](https://www.scuttlebutt.nz)
   * [Matrix](http://matrix.org)
   * [OpenNIC](http://opennic.org) [^1]
-
+  * [RSS](https://en.wikipedia.org/wiki/RSS) [^2]
+  
 If I’ve forgotten any (that aren’t blockchain-based – _spit!_ – or venture-capital-funded – _spit!_), please [let me know](https://mastodon.ar.al).
 
 ### How do I Web+?
@@ -54,7 +55,7 @@ While #2 might be the coolest feature for everyday use, #1 has the most potentia
 
 ### Censorship-circumvention
 
-While you can access this site via a friendly DAT URL (using [DAT DNS](https://www.datprotocol.com/deps/0005-dns/)), the actual long-form DAT address that it maps to is a cryptographic public key that is unique to the [mutable torrent-like archive](https://garbados.github.io/my-blog/distributed-datastructures.html)[^2] of this site:
+While you can access this site via a friendly DAT URL (using [DAT DNS](https://www.datprotocol.com/deps/0005-dns/)), the actual long-form DAT address that it maps to is a cryptographic public key that is unique to the [mutable torrent-like archive](https://garbados.github.io/my-blog/distributed-datastructures.html)[^3] of this site:
 
 {{< highlight bash >}}dat://bfb2eeb077826ecee6c1105d419755d5d8e0893d653d3ce39e50aee2c00b7701/
 {{< /highlight >}}
@@ -85,6 +86,8 @@ And since we’re progressively enhancing the centralised Web, we are not leavin
 
     The centralised and capitalist nature of the domain name system is a huge design problem for those of us working to build bridges between the centralised Web and the Peer Webs as the current system makes it very difficult to match the onboarding experience of centralised platforms. (You can sign up to a centralised social network in 30 seconds… can you register your own domain name, have your server and app set up, and be up and running with your decentralised one in that time? [You could.](https://indienet.info/hallo.gent/) But not with our current system.) Web+ must also move beyond the greed-led shortsightedness of ICAAN to embrace a world of zero time-to-live domain propagations and a domain name commons.)
 
-[^2]: My original description said that the address was “unique to the _content_” which was ambiguous as it could easily be interpreted to mean to an immutable hash of the content.
+[^2]: Yes, [good old RSS](2018/06/29/rediscovering-rss/).
+
+[^3]: My original description said that the address was “unique to the _content_” which was ambiguous as it could easily be interpreted to mean to an immutable hash of the content.
 
     An advantage of DAT is that while the hash of the public key is used to discover content on the swarm, the content itself is mutable and can be updated by the owner of the private key. Multi-writer DAT – which [is being developed as we speak](https://blog.datproject.org/2018/05/14/dat-shopping-list/) and is what I’m most excited about – extends this to allow multiple authorised writers. I’m grateful to [Diana](https://garbados.github.io/my-blog/) for [pointing this out](https://toot.cat/@garbados/100273034019785882) via Mastodon.
