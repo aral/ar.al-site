@@ -4,5 +4,9 @@ title = "Aral Balkan"
 publishDir = "../live"
 pygmentsUseClasses = true
 
+copyright = "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License"
+"rssLimit" = 20
+
 [author]
   name = "Aral Balkan"
+  email = "mail@ar.al"
