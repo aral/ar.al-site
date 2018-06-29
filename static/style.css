@@ -234,4 +234,21 @@ footer {
   html, body {
     padding: 0.5rem;
   }
+
+  /*
+  Remove the border radius so the background color of code blocks appears in
+  full bleed.
+  */
+  .chroma {
+    border-radius: 0;
+  }
+
+  /* Let the figure captions breath, even on images with shadows */
+  .window-with-shadow > figcaption, .window-with-shadow > figcaption > p:first-of-type {
+    margin-top: 0;
+  }
+
+  /* Sadly, there’s not enough room to make list text flush left. */
+  li { list-style-position: inside; }
+
 }
