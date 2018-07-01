@@ -13,7 +13,7 @@ How utterly unacceptable!
 
 Given I’m writing this at almost 2AM on a Saturday night, you can probably deduce that there was a level of – ahem – _trial and error_ involved in getting things to work.
 
-Initially, I thought the icon for my site wasn’t showing up because I hadn’t added an `<image>` tag to my RSS feed. So I added that to my RSS template in Hugo:
+Initially, I thought the icon for my site wasn’t showing up because I hadn’t added an `<image>` tag to my RSS feed. So I added that to my RSS template in [Hugo](https://gohugo.io):
 
 {{< highlight xml >}}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
