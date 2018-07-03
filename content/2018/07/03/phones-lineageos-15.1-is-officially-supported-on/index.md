@@ -17,7 +17,7 @@ If you already have an older handset that no longer receives operating system up
 
 The list should be considered current as of the time of this post but I will not be maintaining it. ([Pull requests](https://github.com/aral/ar.al-site) are welcome.)
 
-Discounting the Google devices (because even though the bar on ethics is set pretty darn low in the industry, I’ll be damned if I give _that_ particular [surveillance capitalist](https://2018.ar.al/notes/the-nature-of-the-self-in-the-digital-age/) any more money), the newest/best-equipped models appear to be the [Samsung Galaxy S9 and S9 plus](https://en.wikipedia.org/wiki/Samsung_Galaxy_S9), the [OnePlus 5T](https://en.wikipedia.org/wiki/OnePlus_5T), and the [LeEco LePro3](https://techcrunch.com/2016/11/24/leeco-lepro3-review/).
+Discounting the Google devices (because even though the bar on ethics is set pretty darn low in the industry, I’ll be damned if I give _that_ particular [surveillance capitalist](https://2018.ar.al/notes/the-nature-of-the-self-in-the-digital-age/) any more money), the newest/best-equipped models appear to be the [Samsung Galaxy S9 and S9 plus](https://en.wikipedia.org/wiki/Samsung_Galaxy_S9), the [OnePlus 5T](https://en.wikipedia.org/wiki/OnePlus_5T), and the [LeEco LePro 3](https://techcrunch.com/2016/11/24/leeco-lepro3-review/).
 
 Manufacturer  | Supported Models
 --------------|-----------------
