@@ -125,6 +125,13 @@ h3 + figure.window-with-shadow {
   margin-top: -0.5rem;
 }
 
+/* Specialisations */
+
+figure.half-width-flush-right {
+  width: 47.5%;
+  margin-left: 2.5%;
+  float: right; 
+}
 
 /* Video */
 
@@ -181,6 +188,40 @@ ol, ul {
 li::marker {
   font-size: 1.5rem;
   color: darkgray;
+}
+
+/* Tables */
+
+/* Make tables display with striped row borders overflowing the flush left alignment of the text just like we do with lists and code blocks for consistency. */
+table {
+  border-spacing: 0;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+th:first-of-type, td:first-of-type {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+th {
+  padding-bottom: 1rem;
+  border-bottom: 3px solid gray;
+}
+
+/* Hack to add space between thead and tbody (https://stackoverflow.com/a/10762599) */
+tbody::before
+{
+  content: '';
+  display: block;
+  height: 0.5rem;
+}
+
+/* Stripes. */
+tr:nth-child(2n) {
+  background-color: #eee;
 }
 
 /* Icons */
@@ -251,4 +292,9 @@ footer {
   /* Sadly, there’s not enough room to make list text flush left. */
   li { list-style-position: inside; }
 
+  /* Half-width images leave the text too narrow to read comfortably so revert to full-width. */
+  figure.half-width-flush-right {
+    width: 100%;
+    margin-left: inherit;
+  }
 }
