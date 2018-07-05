@@ -219,7 +219,7 @@ tbody::before
   height: 0.5rem;
 }
 
-/* Stripes. */
+/* Stripes */
 tr:nth-child(2n) {
   background-color: #eee;
 }
@@ -236,6 +236,19 @@ header {
 .email, .mastodon, .rss, .p2p {
   height: 26px;
   margin-top: 2rem;
+}
+
+/* Keyboard styles */
+kbd {
+  display: inline-block;
+  border-radius: 0.25rem;
+  background-color: #eee;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+  border: 1px solid lightgray;
+  line-height: 1.25rem;
 }
 
 /* Footnotes */
