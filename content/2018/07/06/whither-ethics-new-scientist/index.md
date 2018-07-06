@@ -3,7 +3,7 @@ title: "Whither ethics, New Scientist?"
 date: 2018-07-06T06:49:36Z
 ---
 
-{{< figure src="new-scientist-live.jpg" alt="Detail of the New Scientist Live logo from an ad in the magazine" caption="New Scientist Live: sans ethics?" >}}
+{{< figure src="magazine.jpg" alt="New Scientist mmagazine on the tray table of my seat" caption="New Scientist: science sans ethics?" >}}
 
 I'm on a flight from Cork to London to speak at Nesta's Futurefest this weekend and I'm reading New Scientist. A full-spread ad for their conference in September, New Scientist List catches my eye. Hmm, might be interesting. And then I see the list of sponsors. Wow.
 
