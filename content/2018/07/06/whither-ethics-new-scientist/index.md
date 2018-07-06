@@ -1,9 +1,9 @@
 ---
 title: "Whither ethics, New Scientist?"
-date: 2018-07-06T06:49:36Z
+date: 2018-07-06T06:49:36+01:00
 ---
 
-{{< figure src="magazine.jpg" alt="New Scientist mmagazine on the tray table of my seat" caption="New Scientist: science sans ethics?" >}}
+{{< figure src="magazine.jpg" alt="New Scientist mmagazine on the tray table of my seat" caption="New Scientist: what's science sans ethics?" >}}
 
 I'm on a flight from Cork to London to speak at Nesta's Futurefest this weekend and I'm reading New Scientist. A full-spread ad for their conference in September, New Scientist List catches my eye. Hmm, might be interesting. And then I see the list of sponsors. Wow.
 
@@ -19,4 +19,4 @@ And it doesn't stop there.
 
 Their "technology zone sponsor" is BAE systems. You know, the company that makes technology that kills people.
 
-Seriously, New Scientist, it's time you took a long, hard look at the ethics of your actions.
+Seriously, New Scientist, it's time you took a long, hard look at the ethics of your choices.
