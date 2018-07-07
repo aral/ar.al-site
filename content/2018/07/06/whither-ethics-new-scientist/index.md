@@ -5,9 +5,9 @@ date: 2018-07-06T06:49:36+01:00
 
 {{< figure src="magazine.jpg" alt="New Scientist mmagazine on the tray table of my seat" caption="New Scientist: what's science sans ethics?" >}}
 
-I'm on a flight from Cork to London to speak at Nesta's Futurefest this weekend and I'm reading New Scientist. A full-spread ad for their conference in September, New Scientist List catches my eye. Hmm, might be interesting. And then I see the list of sponsors. Wow.
+I'm on a flight from Cork to London to speak at Nesta's FutureFest this weekend and I'm reading New Scientist. A full-spread ad for their conference in September, New Scientist Live catches my eye. Hmm, might be interesting. And then I see the list of sponsors. Wow.
 
-When attempting to explain why a privacy or human rights conference having Google (Alphabet, Inc.) or Facebook, Inc. as sponsors is problematic, I often use the analogy that no one would trust a healthcare conference spnsored by Philip Morris or a conference on the environment sponsored by Exxon Mobil. Well, guess what?
+When attempting to explain why a privacy or human rights conference having Google (Alphabet, Inc.) or Facebook, Inc., as sponsors is problematic, I often use the analogy that no one would trust a healthcare conference spnsored by Philip Morris or a conference on the environment sponsored by Exxon Mobil. Well, guess what?
 
 New Scientist's "Earth Zone Sponsor" for their conference is (drumroll) Shell.
 
