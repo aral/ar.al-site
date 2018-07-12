@@ -25,7 +25,11 @@ runInBackground ../sync "npm run sync"
 # as localhost:<port> regardless of the setting of baseURL in the config.toml
 # file. Since we do not have a separate build/deploy phase to the live server,
 # we want the site as it would exist on the server to exist on the client.
-hugo server --buildDrafts --renderToDisk --baseURL=https://ar.al --appendPort=false
+#
+# Note: if you do not want a post live-synced, mark it as draft: true in the
+# ===== front matter.
+#
+hugo server --renderToDisk --baseURL=https://ar.al --appendPort=false
 
 # Don’t exit. Shutting off this process should also kill
 # the two other background processes we started

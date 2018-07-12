@@ -1,6 +1,7 @@
 ---
 title: "DOS to Windows to Mac to Linux: the story of half a lifetime in computing platforms"
 date: 2018-07-10T09:14:38Z
+draft: true
 ---
 
 I was gifted my first computer by my dad when I was seven years old. The year was 1983 and the machine was an IBM XT Compatible running DOS. It had 640KB of RAM and a 4-colour CGA screen. It also came with a BASIC manual. That computer and that manual sparked my lifelong fascination with technology.
