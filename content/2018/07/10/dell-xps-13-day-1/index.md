@@ -24,7 +24,7 @@ In August of 2006, [I got my first Mac](https://2018.ar.al/681/).
 
 ### Apple: respect for human effort and human experience
 
- was about the time that I has started becoming aware of the responsibility we had as makers to respect the time, effort, and experiences of the people who use the things we make. It would take more years before I could [articulate that with confidence](http://www.breakingthin.gs/this-is-all-there-is.html).
+It's no coincidence that my switch to a Mac came about at around the time that I had started becoming aware of the responsibility we had as makers to respect the time, effort, and experiences of the people who use the things we make. It would take more years before I could [articulate that with confidence](http://www.breakingthin.gs/this-is-all-there-is.html).
 
 <figure>
   <video poster='https://2017.ind.ie/ux-talk/images/poster-ux-talk.jpg'>
@@ -36,7 +36,7 @@ In August of 2006, [I got my first Mac](https://2018.ar.al/681/).
   <figcaption>My switch to Mac coincided with my growing realisation of the importance of design in shaping the quality of people's lives.</figcaption>
 </figure>
 
-My switch to a Mac did not involve any sacrifices. It was seamless, thanks to Parallels (which let me keep using my existing software while looking for native alternatives), the web and IMAP email, and free and open source cross-platform apps. I cannot underscore the crucial role that these tools played in allowing me to escape the lock-in of Microsoft's ecosystem. As I [wrote](ttps://2018.ar.al/681/) back then: "I still can't believe that I've basically switched to a different platform in less than a day. And by switched, I mean that I am up and running and being nearly as productive as I was on my PC."
+It's also important to note that my switch to a Mac did not involve any sacrifices. It was seamless thanks to Parallels (which let me keep using my existing software while looking for native alternatives), the web and IMAP email, and free and open source cross-platform apps. I cannot underscore the crucial role that these tools played in allowing me to escape the lock-in of Microsoft's ecosystem. As I [wrote](ttps://2018.ar.al/681/) back then: "I still can't believe that I've basically switched to a different platform in less than a day. And by switched, I mean that I am up and running and being nearly as productive as I was on my PC."
 
 In other words, there were convenient bridges for me to walk over; I didn't have to brave the rough seas to get to the other side.
 
