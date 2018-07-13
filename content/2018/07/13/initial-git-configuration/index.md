@@ -1,7 +1,7 @@
 ---
 title: "Initial Git Configuration"
 date: 2018-07-13T20:00:22+01:00
-draft: true
+draft: false
 ---
 
 I'm setting up my new XPS 13 running [Pop!_OS](https://system76.com/pop) and one of the things I always have to do on any new machine is to configure [git](https://git-scm.com/).
