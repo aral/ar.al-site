@@ -1,5 +1,5 @@
 ---
-title: "Flashing stock firmware onto a Samsung Galaxy S9+ ( SM-G965F) on Ubuntu 18.04 using Heimdall"
+title: "Flashing stock firmware onto a Samsung Galaxy S9+ (SM-G965F) on Ubuntu 18.04 using Heimdall"
 date: 2018-07-15T20:06:45+01:00
 draft: false
 ---
