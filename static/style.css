@@ -302,6 +302,14 @@ footer {
   margin-top: 2rem;
 }
 
+/* Break point: warning dialog touches the edges */
+
+@media (max-width: 752px) {
+  .important-warning {
+    border-radius: 0;
+  }
+}
+
 /* Break point: title goes to two lines. */
 
 /* Move icons down. */
@@ -342,5 +350,14 @@ footer {
   figure.half-width-flush-right {
     width: 100%;
     margin-left: inherit;
+  }
+
+  .important-warning {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .warning-icon {
+    height: 10rem;
   }
 }
