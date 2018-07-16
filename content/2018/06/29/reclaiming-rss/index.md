@@ -5,6 +5,8 @@ date: 2018-06-29T11:33:13+01:00
 
 {{< figure src="rss-banner.svg" alt="RSS symbol" caption="RSS like it’s 1999." >}}
 
+<center><strong>English</strong> | <a href='https://framablog.org/2018/07/16/les-flux-rss-maintenant/'>French</a></center>
+
 Before Twitter, before [algorithmic timelines](https://motherboard.vice.com/en_us/article/bmvbaw/why-2016-was-the-year-of-the-algorithmic-timeline) filtered our reality for us, before [surveillance capitalism](https://2018.ar.al/notes/the-nature-of-the-self-in-the-digital-age/), there was [RSS](https://en.wikipedia.org/wiki/RSS): Really Simple Syndication.
 
 ### RS-what now?
