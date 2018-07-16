@@ -264,11 +264,11 @@ header {
   grid-template-columns: 1fr 2.25rem 2.4rem 2.25rem 2.25rem;
   grid-gap: 0.25rem;
   margin-bottom: 2.7rem;
+  align-items: end;
 }
 
 .email, .mastodon, .rss, .p2p {
   height: 26px;
-  margin-top: 2rem;
 }
 
 /* Keyboard styles */
@@ -310,14 +310,9 @@ footer {
   }
 }
 
-/* Break point: title goes to two lines. */
+/* Break point: title goes to two lines: 580px. */
 
-/* Move icons down. */
-@media (max-width: 580px) {
-  .email, .mastodon, .rss, .p2p {
-    margin-top: 6rem;
-  }
-}
+/* Nothing yet. */
 
 /* Break point: narrow portrait viewports */
 
