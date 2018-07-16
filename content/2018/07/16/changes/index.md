@@ -36,7 +36,7 @@ This brings us to the answer to the "why now?" question. Because I felt I could 
 
 And it's all thanks to the work that went into [Gnome Shell](https://www.gnome.org/gnome-3/), [Ubuntu 18.04](https://arstechnica.com/information-technology/2018/05/ubuntu-18-04-the-return-of-a-familiar-interface-marks-the-best-ubuntu-in-years/), [elementary OS](https://elementary.io/) and the curation of all three of these by [System76](https://system76.com) that resulted in the state of the art of GNU Linux distribution that is [Pop!_OS 18.04](https://system76.com/pop).
 
-Take a note: this is the first operating system I've used that is simpler, more elegant, and does certain things better than macOS.[^2]
+Take note: this is the first operating system I've used that is simpler, more elegant, and does certain things better than macOS.[^2]
 
 I never thought I'd ever write those words about GNU Linux and it gives me a lot of hope for the future.
 
