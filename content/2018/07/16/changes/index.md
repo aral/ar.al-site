@@ -18,7 +18,9 @@ There are two reasons I have been using and developing on Apple's platforms for 
 
 2. Apple has [an absolute competitive advantage in privacy](https://2018.ar.al/notes/apple-vs-google-on-privacy-a-tale-of-absolute-competitive-advantage/) over surveillance capitalists like Google, Facebook, etc. This is because they inherited their business model of selling products (not people) from the personal computer era.
 
-So, all in all, Apple does exceedingly well on the top two layers of the [ethical design manifesto](https://ind.ie/ethical-design) (respect for human effort and respect for human experience) and is the least of all evils when it comes to proprietary, closed, multibillion-dollar multinational technology corporations with regard to the core layer (respect for human rights).
+So, all in all, Apple does exceedingly well on the top two layers of the [ethical design manifesto](https://ind.ie/ethical-design) (respect for human effort and respect for human experience) and is the least of possible evils when it comes to multibillion-dollar multinational corporations that make proprietary mainstream technology in relation to the core layer (respect for human rights).
+
+{{< figure src="ethical-design-hierarchy.png" alt="Ethical design hierarchy: respect for human rights, effort, and experience" caption="Ethical design respects human rights, human effort, and human experience." >}}
 
 That said, I am severely disappointed with how Apple employs one set of ethics when it comes to "the West" and another set when it comes to countries like China[^1].
 
