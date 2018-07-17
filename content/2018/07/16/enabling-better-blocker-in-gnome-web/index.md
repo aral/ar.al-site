@@ -46,7 +46,7 @@ This is good but I feel we can make it… uhum… Better! 🤓
 
 So we built Better as a [free and open](https://source.ind.ie/better) tracker blocker that is also available for sale on the [iOS](https://itunes.apple.com/us/app/better-by-ind.ie/id1080964978?ls=1&mt=8) and [macOS](https://itunes.apple.com/us/app/better/id1121192229?ls=1&mt=12) app stores.
 
-Better is entirely independent of the adtech industry and surveillance capitalism and uses our [ethical design manifesto](https://ind.ie/ethical-design) as its guiding principle in deciding what to block and what not to block. Sales of better don't pay our bills entirely but they do contribute towards our ability to do so when combined with [our professional speaking](https://ind.ie/videos/) fees and the proceeds from [our patrons](https://ind.ie/fund/).
+Better is entirely independent of the adtech industry and surveillance capitalism and uses our [ethical design manifesto](https://ind.ie/ethical-design) as its guiding principle in deciding what to block and what not to block. Sales of Better don't pay our bills entirely but they do contribute towards our ability to do so when combined with [our professional speaking](https://ind.ie/videos/) fees and the proceeds from [our patrons](https://ind.ie/fund/).
 
 ### How Better works
 
@@ -56,7 +56,7 @@ With Better, we have a straightforward and transparent process for deciding whic
 2. We organise the trackers by popularity.
 3. We manually go through these top trackers, document what they do, and block them.
 
-This works very well because the Archilles' heel of centralisation can be summed up by old adage "the bigger they are, the harder they fall." Centralised topologies are, by their very nature, both very powerful and extremely fragile.[^1]
+This works very well because the Achilles' heel of centralisation can be summed up by old adage "the bigger they are, the harder they fall." Centralised topologies are, by their very nature, both very powerful and extremely fragile.[^1]
 
 ### Cleaning up the Web
 
