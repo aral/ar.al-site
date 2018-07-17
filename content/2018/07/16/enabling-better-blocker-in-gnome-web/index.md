@@ -1,7 +1,7 @@
 ---
 title: "Enabling Better Blocker in Gnome Web"
-date: 2018-07-17T13:14:12+01:00
-draft: true
+date: 2018-07-17T17:40:50+01:00
+draft: false
 ---
 
 {{< figure src="my-site-in-gnome-web.png" alt="Screenshot of the index of my site in Gnome Web" caption="Gnome Web: what ethical design looks like." >}}
