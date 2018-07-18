@@ -28,6 +28,6 @@ And now you can open directories in [Files](https://en.wikipedia.org/wiki/GNOME_
 open .
 {{< /highlight >}}
 
-And you can open images in [Image Viewer](https://wiki.gnome.org/Apps/EyeOfGnome/) and any other type of file in its default app using using `open <name of file>`.
+And you can open images in [Image Viewer](https://wiki.gnome.org/Apps/EyeOfGnome/) and any other type of file in its default app using `open <name of file>`.
 
 Enjoy!

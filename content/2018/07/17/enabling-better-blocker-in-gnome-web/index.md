@@ -14,7 +14,7 @@ Unlike products like Chrome and Firefox from surveillance capitalists like Googl
 
 How refreshing. How just as it should be.
 
-{{< figure src="gnome-web-defaults.png" alt="Screenshot of the Gnome Web Preferences panel, showing that the 'try to block advertisements' and 'try to block web trackers' settings are on by default." caption="Gnome Web is private by default. That's the only definition of privacy that matters. Constrast that to 'tracked and profiled by default but with the choice of turning the surveillance off' in Mozilla Firefox." >}}
+{{< figure src="gnome-web-defaults.png" alt="Screenshot of the Gnome Web Preferences panel, showing that the 'try to block advertisements' and 'try to block web trackers' settings are on by default." caption="Gnome Web is private by default. That's the only definition of privacy that matters. Contrast that to 'tracked and profiled by default but with the choice of turning the surveillance off' in Mozilla Firefox." >}}
 
 ### Tracker and adtech blocking
 
@@ -56,7 +56,7 @@ With Better, we have a straightforward and transparent process for deciding whic
 2. We organise the trackers by popularity.
 3. We manually go through these top trackers, document what they do, and block them.
 
-This works very well because the Achilles' heel of centralisation can be summed up by old adage "the bigger they are, the harder they fall." Centralised topologies are, by their very nature, both very powerful and extremely fragile.[^1]
+This works very well because the Achilles' heel of centralisation can be summed up by the old adage "the bigger they are, the harder they fall." Centralised topologies are, by their very nature, both very powerful and extremely fragile.[^1]
 
 ### Cleaning up the Web
 
@@ -64,9 +64,9 @@ You do not need to block every tracker ever made to choke the income stream of s
 
 Google, for example, has eyes on 70-80%[^2] of the web. While that's horrible, it also means that once we block their trackers, we've cleared a huge swath of surveillance from the Web in one go. Rinse and repeat for the top-however-many-thousand trackers and you've done a pretty good job of rinsing the web of surveillance devices.
 
-A happy side-effect of blocking trackers and adtech is that you also greatly improve the experience of the Web. Adtech and tracking scripts amount for a huge portion of the phyiscal size and visual complexity of web sites. So much so that a few years ago, the worst site we could find was costing people in the US [over $4 million every month in mobile bandwidth costs](http://observer.com/2016/10/aral-balkan-dokutech/) just to load their trackers.
+A happy side-effect of blocking trackers and adtech is that you also greatly improve the experience of the Web. Adtech and tracking scripts amount for a huge portion of the physical size and visual complexity of web sites. So much so that a few years ago, the worst site we could find was costing people in the US [over $4 million every month in mobile bandwidth costs](http://observer.com/2016/10/aral-balkan-dokutech/) just to load their trackers.
 
-So blocking adtech and trackers makes sites load faster, stops them from interrupting your experience with interstatial modals, reduces visual complexity and cognitive load, and generally gets the Web looking more like it would if it hadn't been poisoned by the surveillance-based business model of Silicon Valley. 
+So blocking adtech and trackers makes sites load faster, stops them from interrupting your experience with interstitial modals, reduces visual complexity and cognitive load, and generally gets the Web looking more like it would if it hadn't been poisoned by the surveillance-based business model of Silicon Valley. 
 
 The hand-curated nature of what we do also means that we can try and respond to those cases where things break as we control over and a good understanding of what the totality of the block rules actually do.
 
