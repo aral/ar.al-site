@@ -1,7 +1,7 @@
 ---
 title: "Typographical typing habits for Linux"
 date: 2018-07-18T20:02:37+01:00
-draft: true
+draft: false
 ---
 
 {{< figure src="antique-typewriter.jpg" alt="Photo of antique typewriter" caption="Many of our bad habits date back to the limitations of typewriters." >}}
