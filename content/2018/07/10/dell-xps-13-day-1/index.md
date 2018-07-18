@@ -14,7 +14,7 @@ I was gifted my first computer by my dad when I was seven years old. The year wa
 
 This was the 80s and I was a cute little straight blonde kid that passed as white, growing up in Malaysia. I was privileged. I was spoiled. I was a brat.
 
-Computers were fascninating devices that gave me immense pleasure. I loved to tinker and explore. I made games for myself. It was purely hedonistic. 
+Computers were fascinating devices that gave me immense pleasure. I loved to tinker and explore. I made games for myself. It was purely hedonistic. 
 
 I am also rather stubborn.[^1] This meant that I spent the next 23 years on Microsoft's platforms: first DOS, then Windows. I remember thinking how much potential there was in general purpose computing and in the promise of a platform that wasn't locked in to a single supplier. And yet, of course, regardless of the plethora of hardware manufacturers, the platform was locked into Microsoft. And Microsoft was Microsoft. By 2006, it had been blatantly clear for years that Microsoft had failed to make the transition from the age of features to the age of experiences. Microsoft was only interested in one thing: exploiting its monopoly position to further enrich itself. What it did not do was respect either the effort or the experiences of the people who used its products.
 
@@ -40,12 +40,10 @@ It's also important to note that my switch to a Mac did not involve any sacrific
 
 In other words, there were convenient bridges for me to walk over; I didn't have to brave the rough seas to get to the other side.
 
-Switching would have been much harder to do so if I hadn't already made a concscious decision to wean myself away from Microsoft's lock-in by moving to free and open and cross-platform tools earlier. Folks working in freedom technology and decentralisation would be remiss to ignore the importance of such bridges. Both the centralised world and the decentralised worlds exist today as separate islands. Bridges are exactly what we need to be building today to get people from the former to the latter.
+Switching would have been much harder to do so if I hadn't already made a conscious decision to wean myself away from Microsoft's lock-in by moving to free and open and cross-platform tools earlier. Folks working in freedom technology and decentralisation would be remiss to ignore the importance of such bridges. Both the centralised world and the decentralised worlds exist today as separate islands. Bridges are exactly what we need to be building today to get people from the former to the latter.
 
 
-
-
-[^1]: I don't know whether this is a good thing or not. Iguess, like any other characteristic, it depends on what use it's put to. I like to think I've been learning to put it to better use over time, as I evolve and grow as a human being.
+[^1]: I don't know whether this is a good thing or not. I guess, like any other characteristic, it depends on what use it's put to. I like to think I've been learning to put it to better use over time, as I evolve and grow as a human being.
 
 When it comes to the topic of computer platforms, being stubborn means that I spent way too much in Microsoft's walled garden and
 
