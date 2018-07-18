@@ -113,5 +113,9 @@ I hope you find this useful and that it helps you express yourself better while 
   * [Old typewriter](https://skitterphoto.com/photos/2332/old-typewriter) by [Peter Heeling](https://skitterphoto.com/photographers/7/peter-heeling).
 
 <style>
-  table { width: 100% }
+  /* Set the table to fill (and slightly overflow, for visual effect) the width. */
+  table { width: 105%; }
+
+  /* Left-align headings. */
+  th { text-align: left; }
 </style>
