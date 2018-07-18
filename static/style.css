@@ -142,8 +142,10 @@ h3 + figure.window-with-shadow {
 
 figure.half-width-flush-right {
   width: 47.5%;
-  margin-left: 2.5%;
+  margin-left: 5%;
   float: right; 
+  margin-top: 0.5rem; /* get the top to line up with text */
+  margin-bottom: 0;
 }
 
 /* Video */
