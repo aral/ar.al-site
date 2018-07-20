@@ -1,7 +1,7 @@
 ---
 title: "iOTA 360"
 date: 2018-07-19T22:49:33+01:00
-draft: true
+draft: false
 ---
 
 {{< figure src="iota-shell.jpg" alt="A red iOTA 360 notebook resting on a wooden table" caption="Do you give an iota about a £99 computer?" >}}
