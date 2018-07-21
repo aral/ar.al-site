@@ -1,7 +1,7 @@
 ---
 title: "Upgrade Little Snitch Before Upgrading to Mojave Beta"
 date: 2018-07-21T08:40:56+01:00
-draft: true
+draft: false
 ---
 
 {{< figure src="little-snitch-nightly.jpg" alt="Header from the Little Snitch Nightly download web page showing the Little Snitch propeller hat logo, the following text: 'Nightly BuildLittle Snitch 4.1.3 (5180). Runs on macOS 10.11+. Nightly builds are pre-release versions of Little Snitch that include the latest bug fixes and feature enhancements.', and a green Download button." caption="Little Snitch: use the nightly build on the macOS Mojave beta." >}}
