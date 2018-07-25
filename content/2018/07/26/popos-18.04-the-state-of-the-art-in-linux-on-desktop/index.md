@@ -1,7 +1,7 @@
 ---
 title: "Pop!_OS 18.04: the state of the art in GNU/Linux on Desktop"
 date: 2018-07-26T09:01:42+01:00
-draft: true
+draft: false
 ---
 
 {{< figure src="lock-screen.jpg" alt="The Pop!_OS lock screen showing a beautifully illustrated space scene with planets and the current time (3:33PM on Saturday, 21 July)" caption="Pop!_OS is beautiful, thanks in no small part to Kate Hazen’s beautiful space-themed illustrations." >}}
