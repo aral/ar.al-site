@@ -1,7 +1,7 @@
 ---
 title: "Camera fix for Samsung S9 (LineageOS 15.1)"
 date: 2018-07-22T13:30:37+01:00
-draft: true
+draft: false
 ---
 
 {{< figure src="s9+-first-photo.jpg" alt="A photo of my XPS 13 on our dining room table. On screen is the Gnome Web browser showing the LineageOS bug thread for the S9 camera issue, focussed on the comment by Jesse Chan with the link to the vendor.img file that works to fix it." caption="The first photo from my Samsung S9+ is of the solution that got the camera working." >}}
