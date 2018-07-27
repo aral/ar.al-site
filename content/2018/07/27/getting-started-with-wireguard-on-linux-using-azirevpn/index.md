@@ -1,7 +1,7 @@
 ---
 title: "Getting started with WireGuard on Linux using AzireVPN"
 date: 2018-07-27T11:05:32+01:00
-draft: true
+draft: false
 ---
 
 A [Virtual Private Network](https://en.wikipedia.org/wiki/Virtual_private_network) (VPN) can be a practical tool that reinforces your security and privacy when using an Internet-connected device. It is not a panacea, however. You should be aware of both your own [threat model](https://en.wikipedia.org/wiki/Threat_model) and the security and privacy traits of VPNs so you can use one responsibly and ensure that you don’t succumb to a false sense of security or privacy.
