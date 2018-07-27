@@ -16,7 +16,9 @@ In a nutshell, if you live in a somewhat free society and have an everyday threa
 
 ### On trust
 
-> Never trust anything that can think for itself if you can't see where it keeps its brain. – J.K. Rowling
+> Never trust anything that can think for itself if you can't see where it keeps its brain.
+>
+> – J.K. Rowling, Harry Potter and the Chamber of Secrets
 
 Given that you have to trust your VPN provider, the choice of VPN provider is what determines the level of security and privacy you get by using a VPN.
 
@@ -40,7 +42,7 @@ On iOS and macOS, I use [Encrypt.me](https://www.encrypt.me/) (née Cloak). Why?
 
 When [I recently switched my main phone from an iPhone to one running LineageOS](/2018/07/16/changes/) and [asked them](https://twitter.com/aral/status/1014430133837582338) for an [Android application package](https://en.wikipedia.org/wiki/Android_application_package) (APK) – as I didn’t want to use the Google Play store – they responded immediately[^2] and sent it to me.[^3] In addition to iOS, macOS, and Android, Encrypt.me is also available on Windows.
 
-{{< figure src="Encrypt.me.jpg" alt="The interface for Encrypt.me, with a blue background, a WiFi symbol and text that reads: “Connecte to bean&amp;leaf, an untrusted Wi-Fi network, and secured with Encrypt.me. There is also switch control that reads Encrypted and three icons at the bottom of the screen for choosing server locations (a pin icon), network settings (a lock icon), and account settings (a gear icon)." caption="Encrypt.me: a beautiful VPN experience." >}}
+{{< figure class="half-width-flush-right" src="encryptme.jpg" alt="The interface for Encrypt.me, with a blue background, a WiFi symbol and text that reads: “Connecte to bean&amp;leaf, an untrusted Wi-Fi network, and secured with Encrypt.me. There is also switch control that reads Encrypted and three icons at the bottom of the screen for choosing server locations (a pin icon), network settings (a lock icon), and account settings (a gear icon)." caption="Encrypt.me: a beautiful VPN experience." >}}
 
 ### On usability
 
@@ -52,11 +54,13 @@ Since [I switched my main machine to GNU/Linux](/2018/07/16/changes/) and Encryp
 
 Unlike Encrypt.me, however, you cannot mark certain networks as trusted and so it’s currently an all or nothing setting. Also, on my machine at least, it’s possible to lose the ability to access the app’s interface while it remains running in the background. And the kindest thing you can say about the interface itself is that it’s what happened when _what-the-fuck_ had a lovechild with _oh-hell-no!_[^4]
 
-So those are the ones I currently use. If you were to ask me which third-party VPN I would unconditionally trust, however, it would be [iPredator](https://www.ipredator.se/).
+So those are the VPNs I currently use. If you were to ask me which VPN I’d unconditionally trust, however, I would say [iPredator](https://www.ipredator.se/).
 
 Why?
 
-Because it’s run by my friend [Peter](https://en.wikipedia.org/wiki/Peter_Sunde) and I trust Peter unconditionally. The reason I don’t use it myself is because Encrypt.me and AirVPN are easier to setup and use. So convenience wins yet again. (I almost feel like there’s a lesson to learned here for those of us that make everyday things for everyday people but I just can’t seem to put my finger on it… 🤔)
+Because it’s run by my friend [Peter](https://en.wikipedia.org/wiki/Peter_Sunde) and I trust Peter unconditionally. Also, I’ve been in the cool little bunker in Sweden where everything’s hosted and I know that Peter runs it on his own machines that only he and his crew have access to.
+
+The reason I don’t use iPredator myself is because Encrypt.me and AirVPN have apps that make them easier to setup and use. So convenience wins yet again. (I almost feel like there’s a lesson to learned here for those of us that make the new everyday things for everyday people but I just can’t seem to put my finger on it… 🤔)
 
 And that also brings us, finally, to the subject of this post: WireGuard and how to set it up on Linux.
 
@@ -70,7 +74,7 @@ In programming, like in most things, less is usually better. As long as it doesn
 
 That WireGuard is new, however, is both a blessing and a curse. It is currently labelled as a “work in progress” by its authors.
 
-> WireGuard is not yet complete. You should not rely on this code. It has not undergone proper degrees of security auditing and the protocol is still subject to change. We're working toward a stable 1.0 release, but that time has not yet come. - [WireGuard](https://www.wireguard.com/)
+> WireGuard is not yet complete. You should not rely on this code. It has not undergone proper degrees of security auditing and the protocol is still subject to change. We're working toward a stable 1.0 release, but that time has not yet come. – [WireGuard](https://www.wireguard.com/)
 
 If you can live with that and want to try out the future of VPNs today, read on as there are already VPN hosts beta testing the service. One of those is [AzireVPN](https://www.azirevpn.com), by a Swedish company called Netbouncer AB based in Stockholm. According to their [about page](https://www.azirevpn.com/about), they’ve been running [a WireGuard beta programme](https://www.azirevpn.com/wireguard) since September 2017.
 
@@ -81,6 +85,8 @@ AzireVPN makes its money selling VPN services but, for the duration of the WireG
 You can set things up on Android using [the WireGuard app](https://f-droid.org/en/packages/com.wireguard.android/) (which is available on the [F-Droid catalogue](https://f-droid.org/)) but installation on Linux currently requires use of the command line. You will need to install some packages that the installation script doesn’t automatically install, including [WireGuard itself](https://www.wireguard.com/install/).
 
 ### Installing
+
+{{< figure src="installation.jpg" alt="Screenshot of terminal showing the output of the installer script" caption="The AzireVPN WireGuard installation is carried out through the terminal." >}}
 
 1. [Install WireGuard](https://www.wireguard.com/install/). On Debian/Ubuntu-based distributions (like Pop!_OS):
 
@@ -117,6 +123,10 @@ At the time I installed it, the servers available to me were:
 | Malaga, Spain     | `azirevpn-es1`  |
 | Miami, US         | `azirevpn-us1`  |
 | Toronto, Canada   | `azirevpn-ca1`  |
+
+Once you’ve activated your VPN connection, you can check that it is working by visiting [AzireVPN’s security check page](https://www.azirevpn.com/check).
+
+{{< figure src="security-check.jpg" alt="A screenshot of the AzireVPN Security Check page. Copy: Security Check: Make sure that all tests below are green before you proceed. We’re here to keep your privacy. Service status: all services operational. VPN: you are connected. DNS leak: You are not leaking DNS. WebRTC leak: You are not leaking WebRTC." caption="The AzireVPN Security Check page." >}}
 
 [^1]: These are the bastards that [want to destroy how the Internet works](https://edri.org/the-eu-gets-another-opportunity-to-improve-copyright-rules/).
 
