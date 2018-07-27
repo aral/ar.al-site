@@ -10,7 +10,7 @@ A [Virtual Private Network](https://en.wikipedia.org/wiki/Virtual_private_networ
 
 A VPN is basically an encrypted (private) connection to some other network through which all your traffic – web browsing, email, chats, etc. – is routed. Since the connection is encrypted, the network you're currently connected to cannot eavesdrop on you. All your Internet Service Provider (ISP) or the open WiFi network you just connected to at your local cafe can see is that you’ve made an encrypted connection to your VPN provider but they cannot see any of the traffic that flows through that connection.
 
-Similarly, far as any sites you connect to are concerned, your traffic originates from the servers of your VPN provider and not your own machine. This is why VPNs are commonly used to thwart region-locking schemes by the likes of Netflix and their cohorts in the copyright lobby[^1].
+Similarly, as far as any sites you connect to are concerned, your traffic originates from the servers of your VPN provider and not your own machine. This is why VPNs are commonly used to thwart region-locking schemes by the likes of Netflix and their cohorts in the copyright lobby[^1].
 
 In a nutshell, if you live in a somewhat free society and have an everyday threat model, a VPN limits the number of parties that can trivially eavesdrop on your Internet activity to just your VPN provider.
 
