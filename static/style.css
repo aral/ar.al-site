@@ -154,6 +154,17 @@ figure.half-width-flush-right {
 video, video[poster] { width: 100%; }
 figure > video { margin-bottom: 1rem; }
 
+/* Mastodon toot embeds */
+
+.mastodon-embed {
+  width: 400px;
+  max-width: 100%;
+  border: 0;
+  float:right;
+  margin-left: 1rem;
+  border: 1px solid gray;
+}
+
 /* Block quotes */
 
 blockquote {
@@ -323,6 +334,17 @@ footer {
 @media (max-width: 752px) {
   .important-warning {
     border-radius: 0;
+  }
+}
+
+/* Break point: width is smaller than original layout width */
+
+@media (max-width: 740px) {
+  .mastodon-embed {
+    width: 100%;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
