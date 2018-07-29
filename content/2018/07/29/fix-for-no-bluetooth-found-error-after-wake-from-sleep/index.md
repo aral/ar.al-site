@@ -1,12 +1,12 @@
 ---
 title: "Fix for: “No Bluetooth Found” error after wake from sleep"
 date: 2018-07-29T16:05:55+01:00
-draft: true
+draft: false
 ---
 
 {{< figure src="no-bluetooth-found.png" alt="Bluetooth settings panel in Pop!_OS showing the Bluetooth logo and the message: “No Bluetooth Found. Plug in a dongle to use Bluetooth.” The switch normally used to turn Bluetooth on looks broken in the window’s top bar, with only the thumb showing." caption="Bluetooth: still asleep, apparently." >}}
 
-After waking from sleep, my computer would stop detecting the built-in bluetooth interface. The exact error I was getting in the Settings panel was:
+After waking from sleep, my computer[^1] would stop detecting the built-in bluetooth interface. The exact error I was getting in the Settings panel was:
 
 > No Bluetooth Found. Plug in a dongle to use Bluetooth.
 
@@ -24,3 +24,5 @@ To check the version of your bluetooth driver, you can [query the BlueZ daemon](
 {{< highlight bash >}}
 bluetoothd -v
 {{< /highlight >}}
+
+[^1]: I’m running Pop!_OS 18.04 but this issue may affect you if you’re on Ubuntu 18.04 or some other distribution also as it appears to be related to a bug in an earlier version of the official Linux bluetooth stack.
