@@ -286,6 +286,12 @@ tr:nth-child(2n) {
   fill: white;
 }
 
+/* Images */
+
+.hairline-border > img {
+  border: 1px solid gray;
+}
+
 /* Icons */
 
 header {
