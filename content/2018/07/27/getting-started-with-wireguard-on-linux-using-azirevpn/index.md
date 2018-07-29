@@ -60,7 +60,7 @@ Why?
 
 Because it’s run by my friend [Peter](https://en.wikipedia.org/wiki/Peter_Sunde) and I trust Peter unconditionally. Also, I’ve been in the cool little bunker in Sweden where everything’s hosted and I know that Peter runs it on his own machines that only he and his crew have access to.
 
-The reason I don’t use iPredator myself is because Encrypt.me and AirVPN have apps that make them easier to setup and use. So convenience wins yet again. (I almost feel like there’s a lesson to learned here for those of us that make the new everyday things for everyday people but I just can’t seem to put my finger on it… 🤔)
+The reason I don’t use iPredator myself is because Encrypt.me and AirVPN have apps that make them easier to setup and use. So convenience wins yet again. (I almost feel like there’s a lesson to be learned here for those of us that make the new everyday things for everyday people but I just can’t seem to put my finger on it… 🤔)
 
 And that also brings us, finally, to the subject of this post: WireGuard and how to set it up on Linux.
 
