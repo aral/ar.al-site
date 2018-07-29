@@ -1,5 +1,5 @@
 ---
-title: "Fix for: “No Bluetooth Found” error after wake from sleep"
+title: "Fix for “No Bluetooth Found” error after wake from sleep"
 date: 2018-07-29T16:05:55+01:00
 draft: false
 ---
