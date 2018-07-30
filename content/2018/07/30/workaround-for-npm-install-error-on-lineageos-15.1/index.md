@@ -6,7 +6,7 @@ draft: false
 
 {{< figure src="the-fix.png" alt="Screenshot of Emacs showing the fix outlined in this post being applied." caption="The fix." >}}
 
-`npm install` fails on LineageOS 15.1[^1] with the following error:
+`npm install` fails in Termux on LineageOS 15.1[^1] with the following error:
 
 {{< highlight bash >}}NPM ERR! Cannot read property 'length' of undefined{{< /highlight >}}
 
@@ -14,7 +14,10 @@ draft: false
 
 To implement the workaround:
 
-1. Open _$PREFIX/lib/node_modules/npm/node_modules/worker-farm/lib/farm.js_ in your editor.
+1. Open the file you need to patch in your editor[^2]:
+
+    {{< highlight bash >}}$EDITOR $PREFIX/lib/node_modules/npm/node_modules/worker-farm/lib/farm.js{{< /highlight >}}
+
 2. Update line 5:
 
     __From:__
@@ -25,10 +28,10 @@ To implement the workaround:
 
     {{< highlight javascript >}}, maxConcurrentWorkers : (require('os').cpus() || { length: 1 }).length{{< /highlight >}}
 
-    Replace the `1` in the code snippet above with the number of cores that your phone has. For my Samsung S9+, I used 8 as it has an octa-core processor.
-
-3. Save the file.
+3. Replace the `1` in the code snippet above with the number of cores that your phone has and save the file. (For my Samsung S9+, I used 8 as it has an octa-core processor.)
 
 That should fix the problem and you should be able to use npm again.
 
-[^1]: I did not encounter this error on my Nexus 5 with LineageOS 14.1.
+[^1]: I did not encounter this error on my Nexus 5 with LineageOS 14.1. The phone exhibiting the error is running LineageOS 15.1, Termux version 0.64, Node.js version 8.11.3 and npm version 5.6.0.
+
+[^2]: If you get a _command not found_ error at this step, it's most likely because you haven't specified a default editor to use in your shell configuration. To fix that and use a simple editor called nano as your default, execute the following command: `echo "export EDITOR='nano'" >> ~/.bashrc && source ~/.bashrc`. Replace `.bashrc` with `.zshrc` if you're using zsh instead of bash as your shell.
