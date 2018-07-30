@@ -1,7 +1,7 @@
 ---
 title: "Web development on a phone with Hugo and Termux"
-date: 2018-07-30T18:39:12+01:00
-draft: true
+date: 2018-07-30T20:44:12+01:00
+draft: false
 ---
 
 {{< figure src="s9.jpg" alt="My S9+ phone on a wooden table with part of my Microsoft foldable bluetooth keyboard showing at the bottom of the photo. The S9+ is running Emacs with this blog post on the left side of the screen and the DuckDuckGo browser with the rendered version of the page on the right." caption="Web development in 2018: all you need is a phone." >}}
