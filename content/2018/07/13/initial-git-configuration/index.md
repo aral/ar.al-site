@@ -1,5 +1,5 @@
 ---
-title: "Initial Git Configuration"
+title: "Initial git configuration"
 date: 2018-07-13T20:00:22+01:00
 draft: false
 ---
@@ -23,8 +23,8 @@ I [sign my work](https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work) and
 
 2. Configure git to sign all your work:
 
-  {{< highlight bash >}}
-  git config --global commit.gpgsign true{{< /highlight >}}
+    {{< highlight bash >}}
+git config --global commit.gpgsign true{{< /highlight >}}
 
 You can check that it's working by making a commit and then viewing at it in the log with the `--show-signature` flag:
 
@@ -48,19 +48,19 @@ In order to clone and push to git remotes using ssh, you have to create an ssh k
 
 1. Generate your ssh keys (substitute your email address for mine):
 
-  {{< highlight bash>}}
-  ssh-keygen -t rsa -C "aral@ind.ie" -b 4096{{< /highlight >}}
+    {{< highlight bash>}}
+ssh-keygen -t rsa -C "aral@ind.ie" -b 4096{{< /highlight >}}
 
 2. Copy it onto the system clipboard.
 
-  {{< highlight bash>}}
-  cat ~/.ssh/id_rsa.pub | pbcopy{{< /highlight >}}
+    {{< highlight bash>}}
+cat ~/.ssh/id_rsa.pub | pbcopy{{< /highlight >}}
 
   Note: On Linux, you can simulate the hugely useful pbcopy and pbpaste commands on macOS by adding the following to your _.zshrc_ or _.bashrc_ files:
 
   {{< highlight bash >}}
-  alias pbcopy='xsel --clipboard --input'
-  alias pbpaste='xsel --clipboard --output'{{< /highlight >}}
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'{{< /highlight >}}
 
 ### Disable paging
 
