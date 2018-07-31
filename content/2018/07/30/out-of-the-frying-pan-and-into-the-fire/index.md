@@ -6,6 +6,8 @@ draft: false
 
 {{< figure src="lets-not.jpg" alt="Illustration from Mariana’s article showing a person’s head being opened up with a hand. My version has it crossed out in red." caption="You cannot base a public good on a normalised systemic violation of human rights." >}}
 
+<nav style="text-align:center"><strong>English</strong> | <a href="https://www.alexhinojo.cat/2018/07/30/fugir-del-foc-i-caure-a-les-brases/">Català</a> | <a href="https://www.alexhinojo.cat/2018/07/30/huir-del-fuego-para-caer-en-las-brasas/">Español</a></nav>
+
 Mariana Mazzucato[^1] has an article in MIT Technology Review titled [Let’s make private data into a public good](https://www.technologyreview.com/s/611489/lets-make-private-data-into-a-public-good/).
 
 Let’s not.
