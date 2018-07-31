@@ -1,22 +1,20 @@
 ---
-title: "How to Install DAT on mobile under Termux"
+title: "How to install DAT on mobile under Termux"
 date: 2018-07-31T17:21:29+01:00
-draft: true
+draft: false
 ---
 
 The instructions below document how to install DAT[^1] under [Termux](https://termux.com/) and have been tested on [LineageOS](https://lineageos.org) 15.1 running on an S9+[^2]:
 
-### A. Install the dependencies[^3]:
+1. __Install dependencies__[^3]
 
-{{< highlight bash >}}pkg install libtool autoconf automake python2 nodejs{{< /highlight >}}
+    {{< highlight bash >}}pkg install libtool autoconf automake python2 nodejs{{< /highlight >}}
 
-### B. Patch node-gyp to fix a bug that prevents libraries from compiling properly
+2. __Patch node-gyp__
 
-There is [a bug in node-gyp](https://github.com/termux/termux-packages/issues/307#issuecomment-244601906) that prevents the installation of node projects that use native libraries.
+    There is [a bug in node-gyp](https://github.com/termux/termux-packages/issues/307#issuecomment-244601906) that prevents the installation of node projects that use native libraries. To fix it, you need to apply the changes shown in the following patch to the [common.gypi file](https://github.com/nodejs/node/blob/master/common.gypi) in your Node installation:
 
-You need to apply the following patch (that I generated on Node 8.11.3) to the [common.gypi file](https://github.com/nodejs/node/blob/master/common.gypi) in your Node installation:
-
-{{< highlight patch >}}
+    {{< highlight patch >}}
 --- a/common.gypi
 +++ b/common.gypi
 @@ -90,8 +90,8 @@
@@ -40,18 +38,17 @@ You need to apply the following patch (that I generated on Node 8.11.3) to the [
 +            'ldflags': [ '-fPIC' ]
            }],
            ['node_shared=="true"', {
-             'msvs_settings': {
-{{< /highlight >}}
+             'msvs_settings': {{{< /highlight >}}
 
-You can either do this manually by editing the file by hand, or, if you’re on the same version as me (Node 8.11.3), you can use the following command to automatically apply [the patch](android.patch) I generated:[^4]
+    You can either do this manually by editing the file by hand, or, if you’re on the same version as me (Node 8.11.3), you can use the following command to automatically apply [the patch](android.patch) I generated:[^4]
 
-{{< highlight bash >}}curl ar.al/site/content/2018/07/31/how-to-install-dat-on-mobile-under-termux/android.patch -o android.patch && patch ~/.node-gyp/8.11.3/include/node/common.gypi android.patch{{< /highlight >}}
+    {{< highlight bash >}}curl https://ar.al/2018/07/31/how-to-install-dat-on-mobile-under-termux/android.patch -o android.patch && patch ~/.node-gyp/8.11.3/include/node/common.gypi android.patch{{< /highlight >}}
 
-### C. Install DAT
+3. __Install DAT__
 
-Now that your environment is ready, you should be able to install DAT in the regular way:
+  Now that your environment is ready, you should be able to install DAT in the regular way:
 
-{{< highlight bash >}}npm install -g dat{{< /highlight >}}
+  {{< highlight bash >}}npm install -g dat{{< /highlight >}}
 
 ### References
 
