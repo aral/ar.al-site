@@ -60,7 +60,7 @@ Here is a simple rule of thumb:
 
 __Data about individuals must belong to the individuals themselves. Data about the commons must belong to the commons.__
 
-I implore anyone working in this area – especially professors writing books and looking to shape public policy – to understand and learn this crucial distinction.
+I implore anyone working in this area – especially professors writing books and looking to shape public policy – to understand and learn this core distinction.
 
 ### There is an alternative
 
