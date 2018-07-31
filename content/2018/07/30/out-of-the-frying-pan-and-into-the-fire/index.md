@@ -60,7 +60,7 @@ Here is a simple rule of thumb:
 
 __Data about individuals must belong to the individuals themselves. Data about the commons must belong to the commons.__
 
-I implore anyone working in this area – especially professors writing books and looking to shape public policy – to understand and learn this.
+I implore anyone working in this area – especially professors writing books and looking to shape public policy – to understand and learn this crucial distinction.
 
 ### There is an alternative
 
@@ -124,4 +124,4 @@ There are two things we must do to create [an ethical alternative to surveillanc
 
 [^3]: Centralised architectures based on surveillance.
 
-[^4]: Break them up, by all means. But don’t do anything silly like nationalising them (for all the reasons I mention in this post). Nationalising a surveillance-based corporation would simple shift the surveillance to the state. We must embrace the third alternative: funding and building technology that isn’t based on surveillance to begin with. In other words, free and open, decentralised, interoperable technology.
+[^4]: Break them up, by all means. But don’t do anything silly like nationalising them (for all the reasons I mention in this post). Nationalising a surveillance-based corporation would simply shift the surveillance to the state. We must embrace the third alternative: funding and building technology that isn’t based on surveillance to begin with. In other words, free and open, decentralised, interoperable technology.
