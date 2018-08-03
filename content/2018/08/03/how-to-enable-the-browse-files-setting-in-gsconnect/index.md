@@ -28,9 +28,9 @@ As I mentioned in my [bug report](https://github.com/andyholmes/gnome-shell-exte
 
 {{<figure src="browse-files.jpg" alt="Thumbnails of the photos on my phone being displayed in Gnome Files on my desktop. The location bar reads (a hash code)/storage/emulated/0/DCIM/Camera." caption="Photos from my phone on my desktop, courtesy of GSConnect.">}}
 
-While developers may understand that many apps in Linux make use of specialised commandline packages behind the scenes, that’s an implementation detail as far as the people using these tools are concerned.
+While developers may understand that many apps in Linux make use of specialised commandline packages behind the scenes[^4], that’s an implementation detail as far as the people using these tools are concerned.
 
-If a feature in an app doesn’t work, it’s because the app is broken, not because I haven’t installed a dependency. Installing an app should install everything that the app needs to work. No ifs, no buts.
+If a feature in an app doesn’t work, it’s because the app is broken, not because I haven’t installed a dependency. Installing an app should install everything that the app needs to work. No ifs, no buts[^5].
 
 This is not the first time I’ve encountered apps that are broken by default [since switching my main development machine](https://ar.al/2018/07/16/changes/) [to GNU/Linux](https://ar.al/2018/07/26/popos-18.04-the-state-of-the-art-in-linux-on-desktop/). A principle such as the following should be included in the [design principles](https://developer.gnome.org/hig/stable/design-principles.html.en) section of the [Gnome Human Interface Guidelines](https://developer.gnome.org/hig/stable/) to avoid this antipattern:
 
@@ -43,3 +43,7 @@ This is not the first time I’ve encountered apps that are broken by default [s
 [^2]: _Mobile Devices_ → (My device name) → _Mobile Settings_ → _About_ → _Debug Mode_
 
 [^3]: Or a link to instructions.
+
+[^4]: [Unix philosophy](https://en.wikipedia.org/wiki/Unix_philosophy)
+
+[^5]: And if it cannot for reasons beyond its control (e.g., for legal reasons), it should be very humble and ashamed about this and do whatever it can to make the person aware of this limitation, apologise for it (even if it’s not its fault) and help the person to fix the problem that it created for them (even if it was for reasons outside of its control).
