@@ -1,7 +1,7 @@
 ---
 title: "Multiwriter Dat Could Power the Next Web"
-date: 2018-08-04T22:09:16+01:00
-draft: true
+date: 2018-08-04T23:18:16+01:00
+draft: false
 ---
 
 <figure>
