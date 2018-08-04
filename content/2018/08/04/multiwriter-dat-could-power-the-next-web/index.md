@@ -25,7 +25,7 @@ Multi-writer Dat is hugely exciting. It opens up a plethora of potential use cas
 
 I cannot stress enough how groundbreaking Dat is or how important it is to creating a free and open, decentralised, and interoperable world. It’s rare to encounter a technology that you feel could have this potential and rarer still when the people behind it are doing it for entirely the right reasons. I say rare, but what I really mean is unprecedented.
 
-You can find out more about Jim’s Dat Shopping list by reading [his blog post](https://blog.datproject.org/2018/05/14/dat-shopping-list/) and learn more about Dat (and try it out) on the [Dat homepage](https://datprojec.org).
+You can find out more about Jim’s Dat Shopping list by reading [his blog post](https://blog.datproject.org/2018/05/14/dat-shopping-list/) and learn more about Dat (and try it out) on the [Dat homepage](https://datproject.org).
 
 [^1]: [The protocol](https://www.datprotocol.com/) is based on Directed Acyclic Graphs/Merkle trees, public-key cryptography, and a mechanism for sparse replication. You can read up about it in depth in the [DAT whitepaper](https://github.com/datproject/docs/blob/master/papers/dat-paper.md).
 
