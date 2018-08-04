@@ -1,5 +1,5 @@
 ---
-title: "Multiwriter Dat Could Power the Next Web"
+title: "Multiwriter Dat could power the next Web"
 date: 2018-08-04T23:18:16+01:00
 draft: false
 ---
