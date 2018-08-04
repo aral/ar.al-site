@@ -8,7 +8,7 @@ draft: false
 
 [GSConnect](/2018/08/02/crafting-a-continuous-client-desktop-mobile-experience-on-linux-with-gsconnect/) is a beautiful shell extension for [Gnome Shell](https://wiki.gnome.org/Projects/GnomeShell) that integrates mobile devices that can run [KDE Connect](https://community.kde.org/KDEConnect) (like phones and tablets that run [LineageOS](https://lineageos.org)) with desktop computers that run Gnome on GNU/Linux (like my notebook running [Pop!_OS](https://ar.al/2018/07/26/popos-18.04-the-state-of-the-art-in-linux-on-desktop/)).
 
-One of the features that you might have trouble with is the Browse Files feature as [it is broken by default](https://github.com/andyholmes/gnome-shell-extension-gsconnect/issues/162). It fails when unless you have a separate app installed.
+One of the features that you might have trouble with is Browse Files as [it is broken by default](https://github.com/andyholmes/gnome-shell-extension-gsconnect/issues/162). It fails unless you have a separate app installed.
 
 When you flip the relevant switch in the Mobile Settings for your device to turn it on, you are greeted with an exclamation mark icon and the setting stays off. So you have a good idea that something went wrong but you don’t know what, exactly[^1]. By turning on the debugging option[^2], I was able to see the actual error messages in one of the developer consoles and realised that it had to do with a missing dependency; a package called [SSHFS](https://github.com/libfuse/sshfs) that mounts a remote filesystem locally using SFTP.
 
