@@ -4,7 +4,7 @@ date: 2018-08-05T19:25:22+01:00
 draft: false
 ---
 
-{{<figure src="gnome-calendar.png" alt="" caption="">}}
+{{<figure src="gnome-calendar.png" alt="Screenshot of Gnome Calendar showing my calendar entries from my iCloud calendars. I’m travelling to Denmark on Tuesday morning at 6:25AM with Ryanair and staying there until Thursday to speak at a festival called Smukfest. Laura is in Menorca Wednesday to Saturday. Meanwhile, Barry is housesitting and looking after Osky." caption="My week, courtesy of iCloud.">}}
 
 [iCloud](https://en.wikipedia.org/wiki/ICloud) isn’t just for your Apple toys.
 
@@ -42,11 +42,11 @@ We will be using Evolution to set up the iCloud accounts but you will most likel
 
 1. Open the drop-down menu next to the _New_ button and select _Calendar_[^3].
     
-    {{<figure src="new-calendar-button.jpg" alt="" caption="">}}
+    {{<figure src="new-calendar-button.jpg" alt="Screenshot of the drop-down menu next to the New button. The dropdown is marked up with a red circle." caption="">}}
 
 2. In the resulting _New Calendar_ window, select _CalDAV_ from the _Type_ drop-down.
 
-    {{<figure class="half-width-flush-right" src="new-calendar.jpg" alt="" caption="">}}
+    {{<figure class="half-width-flush-right" src="new-calendar.jpg" alt="Screenshot of the New Calendar window. All of the settings shown are described in the instructions here." caption="">}}
 
 3. In the _URL_ field, enter _https://caldav.icloud.com_
 
@@ -54,7 +54,7 @@ We will be using Evolution to set up the iCloud accounts but you will most likel
 
 5. Press the _Find Calendars_ button.
 
-    {{<figure class="half-width-flush-right" src="choose-a-calendar.jpg" alt="" caption="">}}
+    {{<figure class="half-width-flush-right" src="choose-a-calendar.jpg" alt="Screenshot of the Choose a Calendar window showing my various calendars. They are presented in a two-column table with headings that read Name and Supports. The names of the calendars shown are Jo and Aral (partial), Old events, Calendar, Home, Aral Work, Laura and Aral, Ind.ie Team, Laura’s Events, Laura’s Work, Holidays, CalChat, Laura Gym. All the entries in the Supports column read Events. Underneath the table is a field titled User mail. The value is one of my email addresses (aral@aralbalkan.com). At the bottom of the dialog are two buttons: Cancel and OK." caption="">}}
 
 6. In the resulting password entry pop-up, paste the app-specific password you copied onto the clipboard in the last section.
 
