@@ -1,10 +1,10 @@
 ---
 title: "Getting your iCloud contacts on GNU/Linux"
-date: 2018-08-05T21:43:21+01:00
-draft: true
+date: 2018-08-05T22:43:21+01:00
+draft: false
 ---
 
-{{<figure src="contacts.jpg" alt="Screenshot of the Gnome Contacts app, showing a portion of my own contact card" caption="I’m my own best contact.">}}
+{{<figure src="contacts.jpg" alt="Screenshot of the Gnome Contacts app, showing a portion of my own contact card." caption="I’m my own best contact.">}}
 
 Just like you can [use iCloud calendars on GNU/Linux](../using-icloud-calendars-on-gnu-linux), you can also synchronise your contacts as iCloud uses an open standard called [CardDAV](https://en.wikipedia.org/wiki/CardDAV). 
 
