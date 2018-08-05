@@ -80,6 +80,12 @@ Any entries you make in Gnome Calendar will sync to iCloud and, from there, to a
 
 Ideally, this should be a seamless process that’s built into Gnome Calendar[^7].
 
+### References
+
+  * [How to integrate iCloud contact, calendar, or email accounts on the BlackBerry 10 smartphone](http://support.blackberry.com/kb/articleDetail?ArticleNumber=000033812)
+
+  * [CalDAV: how to sync iCloud calendar? (2018 answer)](https://askubuntu.com/a/1008701)
+
 [^1]: That said, the process is not well-documented at Apple or elsewhere. There is a clear need for better documentation as well as a seamless process for using CalDAV-based calendars in GNU/Linux. This post aims to contribute to the former.
 
 [^2]: The examples here are tested to work on [Pop!_OS](/2018/07/26/popos-18.04-the-state-of-the-art-in-linux-on-desktop/) 18.04 running Gnome 3.28.2.
