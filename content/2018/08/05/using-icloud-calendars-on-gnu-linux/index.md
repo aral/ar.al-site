@@ -32,7 +32,7 @@ We will be using Evolution to set up the iCloud accounts but you will most likel
 
 2. Scroll down to the _App-Specific Passwords_ area in the _Security_ section and select the _Generate Password…_ link.
 
-    {{<figure src="apple-2.jpg" alt="Screenshot of the Generate Password… pop-over under the Security → App-specific passwords section with “CalDAV on notebook” entered in the textbox followed by Cancel and Create buttons." caption="">}}
+    {{<figure class="hairline-border" src="apple-2.jpg" alt="Screenshot of the Generate Password… pop-over under the Security → App-specific passwords section with “CalDAV on notebook” entered in the textbox followed by Cancel and Create buttons." caption="">}}
 
 3. In the resulting pop-over, enter a descriptive name for this password.
 
