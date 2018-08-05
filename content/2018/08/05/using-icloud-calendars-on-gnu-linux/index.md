@@ -1,7 +1,7 @@
 ---
 title: "Using iCloud calendars on GNU/Linux"
-date: 2018-08-05T17:08:22+01:00
-draft: true
+date: 2018-08-05T19:25:22+01:00
+draft: false
 ---
 
 {{<figure src="gnome-calendar.png" alt="" caption="">}}
@@ -35,6 +35,7 @@ We will be using Evolution to set up the iCloud accounts but you will most likel
     {{<figure src="apple-2.jpg" alt="Screenshot of the Generate Password… pop-over under the Security → App-specific passwords section with “CalDAV on notebook” entered in the textbox followed by Cancel and Create buttons." caption="">}}
 
 3. In the resulting pop-over, enter a descriptive name for this password.
+
 4. Copy the password onto the clipboard.
 
 ### C. Set up your calendar(s) in Evolution.
@@ -55,17 +56,23 @@ We will be using Evolution to set up the iCloud accounts but you will most likel
 
     {{<figure class="half-width-flush-right" src="choose-a-calendar.jpg" alt="" caption="">}}
 
-6. In the resulting _Choose a Calendar_ window, select the calendar you want to set up[^4]. 
+6. In the resulting password entry pop-up, paste the app-specific password you copied onto the clipboard in the last section.
 
-7. Back in the _New Calendar_ window, choose a colour to match the one you use on iCloud.
+7. In the resulting _Choose a Calendar_ window, select the calendar you want to set up[^4]. 
 
-8. Set your options: I select _Copy calendar contents locally for offline operation_, as I want to be able to access the calendar even if I don’t have an Internet connection, and _Server handles meeting invitations_.[^5]
+8. Back in the _New Calendar_ window, choose a colour to match the one you use on iCloud.
 
-9. If you want this to be your default calendar, also check _Mark as default calendar_.
+9. Set your options: I select _Copy calendar contents locally for offline operation_, as I want to be able to access the calendar even if I don’t have an Internet connection, and _Server handles meeting invitations_.[^5]
 
-10. Set the _Refresh every_ setting[^6] and press the _OK_ button to create the calendar when you’re happy with your choices.
+10. If you want this to be your default calendar, also check _Mark as default calendar_.
 
-That’s it. If all goes well, you should see your calendar entries begin to pop up in Evolution. If you want to set up additional calendars, rinse and repeat the instructions in this section.
+11. Set the _Refresh every_ setting[^6] to decide how frequently your calendars should synchronise.
+
+12. Press the _OK_ button to create the calendar when you’re happy with your choices.
+
+### This _should_ be easier…
+
+That’s it! If all goes well, you should see your calendar entries begin to pop up in Evolution. If you want to set up additional calendars, rinse and repeat the instructions in this section.
 
 Once you’ve set up your accounts, fire up Gnome Calendar and enjoy your synchronised calendars in a beautifully minimal interface.
 
