@@ -40,35 +40,37 @@ We will be using Evolution to set up the iCloud accounts but you will most likel
 
 ### C. Set up your calendar(s) in Evolution.
 
-1. Open the drop-down menu next to the _New_ button and select _Calendar_[^3].
+1. {{<figure class="half-width-flush-right" src="calendar.png" alt="Screenshot of the main navigation with the calender icon with the word Calendar next to it." caption="">}} Select the _Calendar_ section in the main navigation.
+
+2. Open the drop-down menu next to the _New_ button and select _Calendar_[^3].
     
     {{<figure src="new-calendar-button.jpg" alt="Screenshot of the drop-down menu next to the New button. The dropdown is marked up with a red circle." caption="">}}
 
-2. In the resulting _New Calendar_ window, select _CalDAV_ from the _Type_ drop-down.
+3. In the resulting _New Calendar_ window, select _CalDAV_ from the _Type_ drop-down.
 
     {{<figure class="half-width-flush-right" src="new-calendar.jpg" alt="Screenshot of the New Calendar window. All of the settings shown are described in the instructions here." caption="">}}
 
-3. In the _URL_ field, enter _https://caldav.icloud.com_
+4. In the _URL_ field, enter _https://caldav.icloud.com_
 
-4. In the _User_ field, enter your Apple email address
+5. In the _User_ field, enter your Apple email address
 
-5. Press the _Find Calendars_ button.
+6. Press the _Find Calendars_ button.
 
     {{<figure class="half-width-flush-right" src="choose-a-calendar.jpg" alt="Screenshot of the Choose a Calendar window showing my various calendars. They are presented in a two-column table with headings that read Name and Supports. The names of the calendars shown are Jo and Aral (partial), Old events, Calendar, Home, Aral Work, Laura and Aral, Ind.ie Team, Laura’s Events, Laura’s Work, Holidays, CalChat, Laura Gym. All the entries in the Supports column read Events. Underneath the table is a field titled User mail. The value is one of my email addresses (aral@aralbalkan.com). At the bottom of the dialog are two buttons: Cancel and OK." caption="">}}
 
-6. In the resulting password entry pop-up, paste the app-specific password you copied onto the clipboard in the last section.
+7. In the resulting password entry pop-up, paste the app-specific password you copied onto the clipboard in the last section.
 
-7. In the resulting _Choose a Calendar_ window, select the calendar you want to set up[^4]. 
+8. In the resulting _Choose a Calendar_ window, select the calendar you want to set up[^4]. 
 
-8. Back in the _New Calendar_ window, choose a colour to match the one you use on iCloud.
+9. Back in the _New Calendar_ window, choose a colour to match the one you use on iCloud.
 
-9. Set your options: I select _Copy calendar contents locally for offline operation_, as I want to be able to access the calendar even if I don’t have an Internet connection, and _Server handles meeting invitations_.[^5]
+10. Set your options: I select _Copy calendar contents locally for offline operation_, as I want to be able to access the calendar even if I don’t have an Internet connection, and _Server handles meeting invitations_.[^5]
 
-10. If you want this to be your default calendar, also check _Mark as default calendar_.
+11. If you want this to be your default calendar, also check _Mark as default calendar_.
 
-11. Set the _Refresh every_ setting[^6] to decide how frequently your calendars should synchronise.
+12. Set the _Refresh every_ setting[^6] to decide how frequently your calendars should synchronise.
 
-12. Press the _OK_ button to create the calendar when you’re happy with your choices.
+13. Press the _OK_ button to create the calendar when you’re happy with your choices.
 
 ### This _should_ be easier…
 
