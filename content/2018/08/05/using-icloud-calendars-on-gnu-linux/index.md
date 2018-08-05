@@ -22,6 +22,8 @@ Install the following apps if you don’t already have them:
 
 2. Install [Gnome Calendar](https://wiki.gnome.org/Apps/Calendar):
 
+    {{<highlight bash>}}sudo apt install gnome-contacts{{</highlight>}}
+
 We will be using Evolution to set up the iCloud accounts but you will most likely want to use Gnome Calendar as your daily calendar as it offers a minimal, beautiful experience.
 
 ### B. Set up an app-specific password on iCloud.
@@ -52,7 +54,7 @@ We will be using Evolution to set up the iCloud accounts but you will most likel
 
 4. In the _URL_ field, enter _https://caldav.icloud.com_
 
-5. In the _User_ field, enter your Apple email address
+5. In the _User_ field, enter your Apple ID
 
 6. Press the _Find Calendars_ button.
 
