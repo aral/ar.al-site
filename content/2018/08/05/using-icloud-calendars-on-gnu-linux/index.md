@@ -84,6 +84,16 @@ Any entries you make in Gnome Calendar will sync to iCloud and, from there, to a
 
 Ideally, this should be a seamless process that’s built into Gnome Calendar[^7].
 
+### Issues
+
+As I discover issues, I will document them here.
+
+#### You cannot move an event between calendars
+
+{{<figure src="error-move-event-to-different-calendar.png" alt="Error dialogue: Calendar authentication request. Failed to put data: HTTP error code 403 (Forbidden): Found component … with same UID in a different collection." caption="">}}
+
+[Issue #304](https://gitlab.gnome.org/GNOME/gnome-calendar/issues/304): Moving an event from one iCloud CalDAV calendar to another, results in a 403 (Forbidden) error. The exact error is “Failed to put data: HTTP error code 403 (Forbidden): Found component … with same UID in a different collection.”
+
 ### References
 
   * [How to integrate iCloud contact, calendar, or email accounts on the BlackBerry 10 smartphone](http://support.blackberry.com/kb/articleDetail?ArticleNumber=000033812)
