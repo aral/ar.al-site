@@ -84,6 +84,8 @@ _(If you’ve already set-up an app-specific password for your [calendars](../us
 
 9. Back in the _New Address Book_ window, check the options you want to set for your address book and press the _OK_ button. I checked all of the options except for _Avoid IfMatch_ – mostly because I don’t know what an IfMatch is and nor would I recognise one if were to stumble upon it in a dark alley.
 
+### This _should_ be easier…
+
 Once you’ve set up your address book, launch Gnome Contacts and you should see your contacts show up, sans any photos you may have had for them.
 
 Any entries you make in Gnome Contacts will sync to iCloud and, from there, to all of your Apple toys, and vice-versa. Just remember not to include photos in your contacts or things will get borked.
