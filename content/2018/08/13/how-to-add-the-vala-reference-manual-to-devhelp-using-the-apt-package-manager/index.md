@@ -1,7 +1,7 @@
 ---
 title: "How to install the Vala Reference Manual into Devhelp using the apt package manager"
 date: 2018-08-13T10:59:49+01:00
-draft: true
+draft: false
 ---
 
 {{< figure src="devhelp.jpg" alt="Screenshot of the Devhelp documentation app showing the Vala Reference Manual’s Getting Started section. The description begins: “Vala is a programming language that aims to bring modern language features to GNOME developers without imposing any additional runtime requirements and without using a different ABI than applications and libraries written in C.”" caption="The Vala Refence Manual in Devhelp.">}}
