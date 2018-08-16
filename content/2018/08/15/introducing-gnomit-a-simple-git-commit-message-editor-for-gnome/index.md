@@ -12,8 +12,10 @@ I started working on Gnomit this weekend and I’m currently happily using it as
 
 I do need to properly package it up and complete the Vala version. If you [try it out](https://source.ind.ie/gnome/gnomit/gjs), please do [let me know](https://mastodon.ar.al) if you have any trouble with the [Gspell](https://wiki.gnome.org/Projects/gspell) spell checker dependency. I had all sorts of issues with the import and I have a suspicion that you might also.[^2]
 
-I hope to have a proper package (via [Flatpak](https://www.flatpak.org/), perhaps) ready soon but, if you want to play with it in the meanwhile and don’t mind getting your hands dirty with a possible Gspell dependency, the GJS version is entirely usable and [available on source.ind.ie](https://source.ind.ie/gnome/gnomit).
+I hope to have a proper package (via [Flatpak](https://www.flatpak.org/), perhaps) ready soon[^3] but, if you want to play with it in the meanwhile and don’t mind getting your hands dirty with a possible Gspell dependency, the GJS version is entirely usable and [available on source.ind.ie](https://source.ind.ie/gnome/gnomit).
 
 [^1]: Before [I switched](/2018/07/16/changes/) to [Pop!_OS](/2018/07/26/popos-18.04-the-state-of-the-art-in-linux-on-desktop/).
 
 [^2]: I have a lot to learn on this new platform, especially concerning dependency management and packaging-related matters.
+
+[^3]: 16 Aug 2018: I now have [a working Flatpak version](https://source.ind.ie/gnome/gnomit/gjs/tree/builder) built using Gnome Builder. It launches considerably slower than the plain script, however, so I’m going to hold off merging it into master.
