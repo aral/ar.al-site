@@ -1,5 +1,5 @@
 ---
-title: "Gnomit Flatpak"
+title: "Gnomit Flatpak bundle"
 date: 2018-08-20T16:06:10+01:00
 draft: false
 ---
