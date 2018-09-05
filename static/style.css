@@ -337,6 +337,33 @@ footer {
   margin-top: 2rem;
 }
 
+#about-the-author {
+  /* background-color: #eee; */
+  padding-top: 2rem;
+  text-align: left;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-gap: 1.5rem;
+  margin-bottom: 2rem;
+  /* align-items: end; */
+}
+
+#about-the-author img {
+  width: 100px;
+  float: left;
+  margin-right: 24px;
+}
+
+#about-the-author h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.summary {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.5;
+}
 /* Break point: warning dialog touches the edges */
 
 @media (max-width: 752px) {
