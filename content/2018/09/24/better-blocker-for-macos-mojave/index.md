@@ -32,7 +32,7 @@ The only part of the app that has a window is now the Exceptions section, where 
 
 As part of the redesign, we also wanted to support the new Dark Mode in Mojave. Which, as you can see in the screenshot above, we did. [I’m not a huge fan of Mojave’s Dark Mode](https://mastodon.ar.al/@aral/100692526698981604) (I find it too dark) but I have to admit that Better does look pretty cool in Dark Mode.
 
-{{<figure src="menu-dark.jpg" alt="The status bar menu of Better Blocker in Dark Mode on macOS Mojave" caption="Better does look pretty cool in Dark Mode on macOS Mojave.">}}
+{{<figure src="menu-dark.jpg" alt="The status bar menu of Better Blocker in Dark Mode on macOS Mojave." caption="Better does look pretty cool in Dark Mode on macOS Mojave.">}}
 
 ## No rest for the wicked
 
