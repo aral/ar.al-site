@@ -16,6 +16,8 @@ See [Better, simpler, and more affordable](/2018/09/14/better-simpler-and-more-a
 
 I hope you enjoy the new iOS app![^2]
 
+You can purchase [Better Blocker for iOS](https://itunes.apple.com/us/app/better-blocker/id1080964978) as well as [Better Blocker for macOS](https://itunes.apple.com/us/app/better-blocker/id1121192229) (now with macOS Mojave support) on the App Store.
+
 [^1]: Our blocking rules are based on the principles of the [Ethical Design Manifesto](https://ind.ie/ethical-design).
 
 [^2]: As this is not a separate app but an update, if you previously bought Better on iOS, all you need to do is to update the app from the App Store. Please also tell your friends about Better and help support our work at [Ind.ie](https://ind.ie).
