@@ -2,6 +2,8 @@
 title: "Setting up Hiawatha web server on Ubuntu 16.04"
 date: 2018-10-04T17:09:00+02:00
 draft: false
+tags:
+  - development
 ---
 
 The unfortunately-named [Hiawatha web server](https://www.hiawatha-webserver.org) with its problematic logo[^1] is an independent, non-commercial, free and open web server built by Dutchman Hugo Leisink as a hobby project for the last 15 years or so. It’s primarily focused on security and the author appears to have [a no-nonsense approach to its development](https://www.hiawatha-webserver.org/weblog/123).
