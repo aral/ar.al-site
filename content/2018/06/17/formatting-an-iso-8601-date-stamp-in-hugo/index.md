@@ -1,6 +1,8 @@
 ---
 title: "Formatting an ISO 8601 date stamp in Hugo"
 date: 2018-06-17T09:14:55+01:00
+tags:
+  - development
 ---
 
 [Hugo](https://gohugo.io) has a plethora of functions that you can use in your [templates](https://gohugo.io/templates/introduction/), including one for formatting dates called [dateFormat](https://gohugo.io/functions/dateformat/).
