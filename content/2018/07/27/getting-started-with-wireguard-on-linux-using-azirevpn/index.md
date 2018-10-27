@@ -70,7 +70,7 @@ And that also brings us, finally, to the subject of this post: WireGuard and how
 
 Part of the reason VPNs can be hassle to host, install, and use is because they are – relatively speaking – based on ancient, bloated technology. The two main protocols in use today, [IPsec](https://en.wikipedia.org/wiki/IPsec) and [OpenVPN](https://en.wikipedia.org/wiki/OpenVPN) date from the Nineties and the Noughties and are behemoths weighing in at roughly 400,000 and 100,000 lines of code, respectively. In comparison, WireGuard is a recent protocol that uses modern cryptographic algorithms and weighs in at ~4,000 lines of code.
 
-In programming, like in most things, less is usually better. As long as it doesn't come at the expense of obfuscating intent, fewer lines of code means fewer places things can go wrong and less to audit. 
+In programming, like in most things, less is usually better. As long as it doesn't come at the expense of obfuscating intent, fewer lines of code means fewer places things can go wrong and less to audit.
 
 That WireGuard is new, however, is both a blessing and a curse. It is currently labelled as a “work in progress” by its authors.
 
@@ -80,7 +80,7 @@ If you can live with that and want to try out the future of VPNs today, read on 
 
 ### WireGuard on AzireVPN
 
-AzireVPN makes its money selling VPN services but, for the duration of the WireGuard beta, you can use WireGuard for “free” (in other words, in exchange for helping them test it. Remember, nothing is ever truly free as in cost unless it is also free as in freedom.)
+AzireVPN makes its money selling VPN services. <strike>but, for the duration of the WireGuard beta, you can use WireGuard for “free” (in other words, in exchange for helping them test it. Remember, nothing is ever truly free as in cost unless it is also free as in freedom.)</strike>[^5]
 
 You can set things up on Android using [the WireGuard app](https://f-droid.org/en/packages/com.wireguard.android/) (which is available on the [F-Droid catalogue](https://f-droid.org/)) but installation on Linux currently requires use of the command line. You will need to install some packages that the installation script doesn’t automatically install, including [WireGuard itself](https://www.wireguard.com/install/).
 
@@ -98,7 +98,7 @@ sudo apt install wireguard{{< /highlight >}}
     {{< highlight bash >}}sudo apt install curl
 sudo apt install jq{{< /highlight >}}
 
-3. Run the installer script[^5]:
+3. Run the installer script[^6]:
 
     {{< highlight bash >}}curl -LO https://www.azirevpn.com/dl/azirevpn-wg.sh && chmod +x ./azirevpn-wg.sh && ./azirevpn-wg.sh{{< /highlight >}}
 
@@ -136,4 +136,6 @@ Once you’ve activated your VPN connection, you can check that it is working by
 
 [^4]: That said, the app is free and open source so anyone (hint, hint, maybe me?), can help make it better. And that’s just one reason why free and open source rocks.
 
-[^5]: Before you download and run any script, you should really [download the script](https://www.azirevpn.com/dl/azirevpn-wg.sh) and check out what it does first. That script also downloads [a list of locations](https://api.azirevpn.com/v1/locations), so you might want to make sure that what’s in that file is kosher too before running it.
+[^5]: It looks like the free beta period is over. I noticed that my connection wasn’t working and, when I logged in, I got a prompt to refill my account with credit (which I did). AzireVPN’s prices are entirely reasonable and their service is solid. I’m connected via Wireguard over Sweden as I write this in an airport lounge in Paris.
+
+[^6]: Before you download and run any script, you should really [download the script](https://www.azirevpn.com/dl/azirevpn-wg.sh) and check out what it does first. That script also downloads [a list of locations](https://api.azirevpn.com/v1/locations), so you might want to make sure that what’s in that file is kosher too before running it.
