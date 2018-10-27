@@ -34,6 +34,16 @@ And this isn’t even the first time something like this has happened to me. The
 
 Here’s hoping that this is yet another small reminder for those of us that build the new everyday things that when those things don’t work as they should [it has consequences for people’s lives](http://www.breakingthin.gs/this-is-all-there-is.html).
 
+## Update (a few hours later)
+
+So, after writing this, I went searching to isolate the bug that led to the situation. I realised that the issue was due to a bug where if Location Services is off under the Privacy section of Settings, it disables the ability to automatically set the time and time zone. However, the interface does not reflect this in any way and allows you to enable the automatic time and time zone settings, thereby giving you a false impression that your time and timezone will be updated automatically.
+
+[Thanks to Mathieu](https://mstdn.fr/@mathieu/100963293983797012), we now know that this was a known issue in Gnome __for over a year__ because the Gnome developers themselves were effected by it when travelling for their developer conference. Although [the issue was reported in October, 2017](https://bugzilla.gnome.org/show_bug.cgi?id=788714), it [took about a year for it to be addressed](https://gitlab.gnome.org/GNOME/gnome-control-center/merge_requests/165). And, even then, it was decided to delay its release for 3.30 (which I’m running) and instead wait for 3.32 due to a string freeze.
+
+It’s clear that something seriously went wrong here where a core feature that affects the reality presented to the person using the computer took over a year to be fixed and then wasn’t seen as important enough to include in a major release even though it was ready.
+
+I’d love to have a post-mortem about this with the Gnome folks at some point to see what we can do to improve the triage process so that such core issues can be identified as such and handled with priority. This bug cost me €394.47 and a day away from home. I’m sure I’m not the only who was effected in the last year. How can we improve the bug triage procedure at Gnome to make sure that we can catch such issues earlier and give them the priority they deserve in the future?
+
 [^1]: This trick will actually work in any country as long as you fly in from a different time zone.
 
 [^2]: Mine’s running Pop!_OS 18.10 so your milage may vary but given that Pop!_OS is based on Ubuntu, there’s a chance that this trick will work for you if you have a recent Ubuntu derivative.
