@@ -50,9 +50,9 @@ The absolute nature of intrinsic privacy in physical/biological space has histor
 
 ### Extrinsic privacy in physical/biological space 
 
-In tangible space[^2], every place we inhabit with our physical being is owned and controlled by some entity. This might be an individual, a corporation (or some other organisation), the state, or the commons[^3]. Of the above, it is only in those places owned and controlled by individuals that those individuals have privacy. That is to say, unless the integrity of those spaces has been compromised by third-party surveillance and as long as said integrity isn’t compromised in the future due to insufficient security.
+In tangible space[^2], every place we inhabit with our physical being is owned and controlled by some entity. This might be an individual, a corporation (or some other organisation), the state, or the commons[^3]. Of the above, it is only in those places owned and controlled by individuals that those individuals have privacy. Unless, of course, the integrity of those spaces hasn’t already been compromised by third-party surveillance and as long as that integrity isn’t compromised in the future due to security lapses.
 
-The nucleus of the 
+The nucleus of the ...
 
 In such a space, the parents – who own and control the home – generally enjoy full privacy (and if one of the parents compromises the privacy of the other, it is seen as abusive behaviour). Their children, on the other hand, inhabit a space that they do not own or control. It follows that they have as little or as much privacy as their parents allow. Sadly, this usually ranges from no privacy whatsoever, to levels of privacy that would be seen as abusive if provided by one adult to another in an everyday relationship.
 
@@ -61,7 +61,7 @@ We can see this parent/child relationship mirrored between a corporation and ind
 
 ### Analog privacy vs digital privacy
 
-In the analog world[^2], 
+In the analog world[^2], ...
 
 
 If the default state of your existence in that place is public (in other words, you are under surveillance), then, by definition, you have no privacy.
