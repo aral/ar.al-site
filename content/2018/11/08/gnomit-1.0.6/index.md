@@ -4,7 +4,7 @@ date: 2018-11-08T16:23:54+01:00
 draft: false
 ---
 
-The pushed the 1.0.6 release of Gnomit, my little git commit message editor for Linux, to the Flathub GitHub repo about two weeks ago but I’m only writing about it now as [there was a delay with the update appearing on Flathub](https://github.com/flathub/flathub/issues/694).
+I pushed the 1.0.6 release of Gnomit, my little git commit message editor for Linux, to the Flathub GitHub repo about two weeks ago but I’m only writing about it now as [there was a delay with the update appearing on Flathub](https://github.com/flathub/flathub/issues/694).
 
 ## What’s new?
 
