@@ -20,7 +20,7 @@ Given all these givens, it’s no surprise that I often find myself frustrated. 
 
 So here’s what I’m doing and what we’re doing at [Ind.ie](https://ind.ie) currently and into 2019. Our approach can be summarised by the phrase “regulate and replace”.
 
-1. We cannot get the political will to regulate effectively or fund the alternatives as long as sureveillance capitalists like Google and Facebook are deemed good actors; as long as they and their business model are socially acceptable. So we will continue to raise awareness and fight whitewashing attempts by so-called “privacy professionals” and organisations like Mozilla (who get nearly all their money – hundreds of millions of dollars – from Google). We will continue to call out the doctors in the cigarette ads in technology.
+1. We cannot get the political will to regulate effectively or fund the alternatives as long as surveillance capitalists like Google and Facebook are deemed good actors; as long as they and their business model are socially acceptable. So we will continue to raise awareness and fight whitewashing attempts by so-called “privacy professionals” and organisations like Mozilla (who get nearly all their money – hundreds of millions of dollars – from Google). We will continue to call out the doctors in the cigarette ads in technology.
 
 2. We will continue to technologically regulate surveillance capitalists and the adtech industry by maintaining [our own block list](https://better.fyi/trackers) and continuing to develop [Better Blocker](https://better.fyi).
 
