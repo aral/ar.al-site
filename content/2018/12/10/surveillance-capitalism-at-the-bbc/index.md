@@ -44,7 +44,7 @@ It’s the Web.
 
 It’s the BBC exposing you to third-party tracking by two companies – Chartbeat and AT Internet – when you watch a video about surveillance capitalism on their site. It’s people becoming unwitting accomplices to perpetuating the reach of surveillance capitalism on the Web by sharing a video on their own sites to raise awareness about the dangers of surveillance capitalism.
 
-Here’s hoping that when the folks at the BBC see this, they will do some soul searching and revise their policies so that – at the very least – they do not include a third-party tracker in video embeds so that innocent people who just want to share videos are not made complicit in web tracking and profiling.
+Here’s hoping that when the folks at the BBC see this, they will do some soul searching and revise their policies. At the very least, please do not include a third-party tracker in video embeds. Innocent people who just want to share videos should not find themselves unknowingly complicit in web tracking and profiling.
 
 As for all of you looking for ethical alternatives to surveillance-based video services for your own content, check out [Peertube](https://joinpeertube.org/en/).
 
