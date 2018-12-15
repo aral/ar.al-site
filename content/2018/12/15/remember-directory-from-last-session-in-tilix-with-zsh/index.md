@@ -12,22 +12,22 @@ To fix it, you apparently have to source file called vte.sh in your shell config
 
 On my machine, I did the following to find the file:
 
-```bash
+{{<highlight bash>}}
 find / -type f -name "vte.sh"
-```
+{{</highlight>}}
 
 That located several copies – the most promising of which seemed to be:
 
-```
+{{<highlight bash>}}
 /var/lib/flatpak/runtime/org.gnome.Platform/x86_64/3.28/6d1d0ebbd72404c61d109307eb2240542b7ad82608bc6428bba6f3eebcfc8bf3/files/etc/profile.d/vte.sh
-```
+{{</highlight>}}
 
 So, in my _.zshrc_ file, I added the following line to source it:
 
-```bash
+{{<highlight bash>}}
 # Make Tilix remember the path from previous sessions.
 source /var/lib/flatpak/runtime/org.gnome.Platform/x86_64/3.28/6d1d0ebbd72404c61d109307eb2240542b7ad82608bc6428bba6f3eebcfc8bf3/files/etc/profile.d/vte.sh
-```
+{{</highlight>}}
 
 I opened a new window, changed into a directory off of home, split the window, and boom, it remembered my path.
 
