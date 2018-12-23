@@ -6,7 +6,7 @@ tags:
 draft: false
 ---
 
-{{<figure src="snap-on-air-lora-communicator.jpg" alt="The SnapOnAir Lora communicator circuit board with buttons and a screen." caption="The SnapOnAir Lora CommunityCator lets you message without a SIM card.">}}
+{{<figure src="snap-on-air-lora-communicator.jpg" alt="The SnapOnAir Lora communicator circuit board, purple, with buttons and a screen. Unit is off." caption="The SnapOnAir Lora CommunityCator lets you message without a SIM card.">}}
 
 [Hypha](/tags/hypha/index.xml) is not about building a single product. It’s about exploring the possibilities and problem domain of private communication and what it means to have technology that enables privacy (and therefore personhood). At the same time, it isn’t about designing from the inside out. It’s not about building the protocols and waiting for the tools to happen. It’s about experimenting with both. And, in the process, hopefully sparking one or more everyday things that enable people to communicate with privacy.
 
