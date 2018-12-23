@@ -1,6 +1,8 @@
 ---
 title: "What does a private communicator look like?"
 date: 2018-12-23T19:22:13Z
+tags:
+  - hypha
 draft: false
 ---
 
