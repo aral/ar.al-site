@@ -35,11 +35,13 @@ Will they be physical and self-contained? Possibly with control over the whole s
   <figcaption>arturo182’s communicator prototype in action</figcaption>
 </figure>
 
-Will we snap them together ourselves from readily available and/or free and open components, like the little touch-screen device below that I was snapped together this weekend that’s running a P2P replicated chat app in Node.js that uses kappa-core?[^2]
+Will we snap them together ourselves from readily available and/or free and open components, like the little touch-screen device below that I was snapped together this weekend that’s running [a basic P2P replicated chat app](http://source.ind.ie/aral/kappa-chat) in Node.js that uses [kappa-core](https://github.com/kappa-db/kappa-core)?
+
+{{<figure src="pi-touchscreen-kappa-chat.jpeg" alt="A Raspberry Pi 3B+ with a HyperPixel touch screen running a chat app in the terminal." caption="A home-made communicator.">}}
 
 Will they be combinations of the above?
 
-With Hypha, it’s clear what shape our core protocols will have[^3]. What I’m looking forward to exploring in the coming year is the shapes the tools will take as we explore the problem space to solve specific use cases.
+With Hypha, it’s clear what shape our core protocols will have[^2]. What I’m looking forward to exploring in the coming year is the shapes the tools will take as we explore the problem space to solve specific use cases.
 
 The protocols, without the convenient everyday things that enable everyday people to utilise them, are simply the theoretical ejaculate of masturbatory academics.
 
@@ -63,4 +65,5 @@ We must think _small_.
 I look forward to exploring the small things in 2019.
 
 [^1]: And/or we must try to educate policymakers and nurture the political will fund the independent organisations that make these platforms from the commons for the common good and ensure that their products remain in the commons and cannot be enclosed. But I’m not holding my breath on this one. Not least because lobbying, revolving doors, public-private partnerships, and multistakeholderism – collectively, instutional corruption – makes it very difficult to get politicians and policymakers to embrace what is right instead of what is good for their wallets or what they’re exposed to day in, day out from corporate public relations departments.
+
 [^2]: [Kappa architecture](/2018/12/15/kappa-architecture-workshop/) (append-only logs with streaming views) with end-to-end encrypted content for private messages, replicated via the [DAT](https://datproject.org) [protocol](https://datprotocol.github.io/book/). Depending on the use case, [a CRDT](https://indienet.info/other/spikes/crdt/) like [LSEQ](https://hal.archives-ouvertes.fr/hal-00921633/document) can be used at the content layer.
