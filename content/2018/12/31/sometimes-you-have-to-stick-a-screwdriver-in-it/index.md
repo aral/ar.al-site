@@ -8,9 +8,9 @@ draft: false
 
 Over the holidays, I found a Chromebook that Samsung had given me to evaluate about six years ago and which had been gathering dust ever since. Coincidentally, Laura’s sister Annie had just told me that she needed a laptop. Hmm… Well, there was no way I was going to give her a Google spy device, so I decided to liberate the Chromebook from Google’s surveillance-based operating system (ChromeOS) and gift it to her.
 
-Now, you would think, given how people harp on about how _open_ Google is, that this would be easy to do. Just install a lightweight Linux distribution and be done with it, right?
+Now, you would think given how people just love to harp on about how damn _open_ Google is, that this would be easy to do. Just install a lightweight Linux distribution and be done with it, right?
 
-Oh, you poor, naive, dear. No, not even close.
+Oh, you poor, naïve, dear. No, not even close.
 
 Instead, what you have to do[^2] is to physically open up the computer, short a pair of jumpers to disable the write protection and flash the firmware with something that isn’t designed to stop you from protecting yourself from Google’s surveillance machine.
 
@@ -18,13 +18,13 @@ Instead, what you have to do[^2] is to physically open up the computer, short a 
 
 Google is anything but open[^1] and Chromebooks are not computers; they are corporate surveillance devices. A Chromebook is an inexpensive data milking device and you are the cow.
 
-It’s no coincidence, for example, that they have tiny hard drives. Why do you need local storage when you can just put all your data on Google’s machines and to use Google’s services for everything? And what if you decide to foil Google’s cunning plan and install a larger hard drive? Computer says no! You can’t. Why? Because “security”, of course. _Wink, wink!_
+It’s no coincidence, for example, that they have tiny hard drives. Why do you need local storage when you can just put all your data on Google’s machines and use Google’s services for everything? And what if you decide to foil Google’s cunning plan and install a larger hard drive? Computer says, “no!” You can’t. Why? Because “security”, of course. _Wink, wink!_
 
 Similarly, you cannot install a different operating system. And if you have the gall to try and dual boot, you are greeted with a nag screen on every boot. Why? Because “security”, of course. _Nudge, nudge!_
 
 Giving the owner of a computer control over who can and cannot update the hardware or operating system is a valid security concern. Giving _the manufacturer_ such control and making it as difficult as possible for the owner isn’t.
 
-If Google really cared about people’s security, they’d have designed Chromebooks to ship with hardware keys which, when inserted, would enable the hardware or software to be updated. Boom! Problem solved. And they wouldn’t have designed a malicious firmware feature that tries to get you to revert to factory defaults on every boot once you’ve modifed your own system. This is one of the most owner-hostile features I’ve seen yet in a piece of consumer technology. But then again, you never really own a Google Chromebook… it owns you.
+If Google really cared about people’s security, they’d have designed Chromebooks to ship with hardware keys which, when inserted, would enable the hardware or software to be updated. Boom! Problem solved. And they wouldn’t have designed a malicious firmware that tries to get you to revert to factory defaults on every boot once you’ve modifed your own system. This is one of the most owner-hostile features I’ve seen yet in a piece of consumer technology[^3]. But then again, you never really own a Google Chromebook… it owns you.
 
 ## How to liberate a Chromebook
 
@@ -66,7 +66,7 @@ Your computer should boot into the GalliumOS installer. Follow the instructions 
 
 Enjoy having the freedom to do what you want with your own machine without being tracked and profiled by Google.
 
-On the machine I prepared for Annie, I ended up covering up the corporate branding with some colourful unicorn and cloud stickers I found at the local stationary store[^3].
+On the machine I prepared for Annie, I ended up covering up the corporate branding with some colourful unicorn and cloud stickers I found at the local stationary store[^4].
 
 {{<figure src="lid.jpeg" alt="Unicorns, clouds, and shooting starts on the lid of Annie’s new UnchromedBook" caption="Because fuck you, Silicon Valley, you don’t get to own unicorns and clouds.">}}
 
@@ -90,4 +90,6 @@ On the machine I prepared for Annie, I ended up covering up the corporate brandi
 
 [^2]: This is true for the Samsung Chromebook 550 model, at least. On other models, apparently you can open up the machine and remove a screw from the motherboard, etc. On all models, you have to flash the firmware to stop Google from nagging you on every boot.
 
-[^3]: I was originally going to write something like “unchromedbook” or “liberated” on the case using some scrabble letters but ended ruining the tiles when the superglue exploded out of the tube, ruining the tiles and almost sticking my fingers together. That was fun (wasn’t fun).
+[^3]: [Apple is engaged in similar shenanigans](https://uk.pcmag.com/news-analysis/117795/apples-t2-chip-makes-third-party-mac-repairs-impossible) with its latest T2 chip. But then again no one ever accused Apple of being open. Still, at least they make their money by selling products to people instead of selling people to corporations like Google does.
+
+[^4]: I was originally going to write something like “unchromedbook” or “liberated” on the case using some scrabble letters but ended ruining the tiles when the superglue exploded out of the tube, ruining the tiles and almost sticking my fingers together. That was fun (wasn’t fun).
