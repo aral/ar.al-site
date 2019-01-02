@@ -6,6 +6,10 @@ draft: false
 
 {{< figure src="tilingnome.jpeg" alt="My desktop with three windows tiled using Tilingnome. One takes up half the screen on the left and the other two share the other half, tiled vertically. The apps are, clockwise, GNOME Web, Visual Studio Code, and Tilix. The terminal prompt reads ~/ar.al/site/(master) ./new tilingnome" caption="Tilingnome in action" >}}
 
+__Update 2019/01/02:__ I’ve discovered [Slinger](https://github.com/timbertson/slinger) and started using that instead. Tilingnome gets in the way too much.
+
+---
+
 I like the idea of a tiling window manager like [i3](https://i3wm.org/) (or [i3-gaps](https://github.com/Airblader/i3), or [sway](https://swaywm.org/)) not necessarily because of their lightweight nature when compared to a fully-fledged desktop environment like GNOME but because of their potential organisational and navigational value[^1].
 
 ### Tiling up is hard to do
