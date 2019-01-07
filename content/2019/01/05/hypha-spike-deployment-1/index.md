@@ -104,6 +104,24 @@ Thankfully, Canonical has a tool called [multipass](https://github.com/Canonical
 
   * cloud-init format supports Gzip compression as [user-data is limited to ~16,384 bytes](https://cloudinit.readthedocs.io/en/latest/topics/format.html#gzip-compressed-content).
 
+#### Add an account so you can ssh into the instance
+
+{{<highlight yaml>}}
+#cloud-config
+users:
+  - name: <INSERT ACCOUNT NAME HERE>
+    groups: sudo
+    shell: /bin/bash
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    ssh-authorized-keys:
+      <INSERT SSH PUBLIC KEY HERE>
+
+{{</highlight>}}
+
+Replace `<INSERT ACCOUNT NAME HERE>` with the account name you want (e.g., this is the `<account name>@<your instance ip>` that you will use to SSH into the instance).
+
+Replace `<INSERT SSH PUBLIC KEY HERE>` with your public SSH key, which you can most likely find in `~/.ssh/id_rsa.pub`.
+
 ## Thoughts/to-dos/questions
 
   * Since TLS setup with Let’s Encrypt depends on domain name propagation, it is the last thing we must do (and is thus outside the scope of this spike).
