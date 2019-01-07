@@ -98,6 +98,8 @@ In this spike, I’m going to explore using cloud-init to set up a server so tha
 
 Thankfully, Canonical has a tool called [multipass](https://github.com/CanonicalLtd/multipass) that lets you easily spin up Ubuntu instances locally [and pass them a cloud-init file](https://blog.ubuntu.com/2018/04/02/using-cloud-init-with-multipass). I’ll be using that to iterate on the cloud-init script.
 
+  * [cloud-init documentation](https://cloudinit.readthedocs.io/en/latest/).
+
 ## Thoughts/to-dos/questions
 
   * Since TLS setup with Let’s Encrypt depends on domain name propagation, it is the last thing we must do (and is thus outside the scope of this spike).
