@@ -124,6 +124,20 @@ Replace `<INSERT ACCOUNT NAME HERE>` with the account name you want (e.g., this 
 
 Replace `<INSERT SSH PUBLIC KEY HERE>` with your public SSH key, which you can most likely find in `~/.ssh/id_rsa.pub`.
 
+For example, if your account name is _indie_, you want the instance to be called _hypha_, and you save the above file as _cloud-init.yaml_, you can start up a new instance and connect to it over SSH:
+
+  1. Create an launch the hypha instance:
+
+    {{<highlight bash>}}multipass launch --name hypha --cloud-init cloud-init.yaml{{</highlight>}}
+
+  2. List the available instances to find the IP address of the new hypha instance (e.g., 10.83.214.166):
+
+    {{<highlight bash>}}multipass list{{</highlight>}}
+
+  3. Connect via SSH:
+
+    {{<highlight bash>}}ssh indie@10.83.214.166{{</highlight>}}
+
 ## Thoughts/to-dos/questions
 
   * Since TLS setup with Let’s Encrypt depends on domain name propagation, it is the last thing we must do (and is thus outside the scope of this spike).
