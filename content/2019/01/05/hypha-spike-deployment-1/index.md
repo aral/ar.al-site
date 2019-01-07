@@ -88,7 +88,7 @@ For the purposes of this spike, I want to concentrate only on Step 2: automating
 
 ## Cloud-init
 
-VPS accounts are available for a couple of euros per month these days and many support [the cloud-init standard](https://cloud-init.io/) by Canonical as part of the new instance provisioning process via a ‘user data’ field on their online forms or via their APIs. [Supported operating systems](https://cloudinit.readthedocs.io/en/latest/topics/availability.html) include Ubuntu, Fedora, Debian, RHEL, CentOS, and others.
+VPS accounts are available for a couple of euros per month these days and many support [cloud-config syntax](https://www.stratoscale.com/blog/cloud/cloud-init/) ([examples](https://cloudinit.readthedocs.io/en/latest/topics/examples.html#yaml-examples)) via [the cloud-init standard](https://cloud-init.io/) by Canonical as part of the new instance provisioning process via a ‘user data’ field on their online forms or via their APIs. [Supported operating systems](https://cloudinit.readthedocs.io/en/latest/topics/availability.html) include Ubuntu, Fedora, Debian, RHEL, CentOS, and others.
 
 In this spike, I’m going to explore using cloud-init to set up a server so that we can automatically:
 
@@ -98,7 +98,11 @@ In this spike, I’m going to explore using cloud-init to set up a server so tha
 
 Thankfully, Canonical has a tool called [multipass](https://github.com/CanonicalLtd/multipass) that lets you easily spin up Ubuntu instances locally [and pass them a cloud-init file](https://blog.ubuntu.com/2018/04/02/using-cloud-init-with-multipass). I’ll be using that to iterate on the cloud-init script.
 
-  * [cloud-init documentation](https://cloudinit.readthedocs.io/en/latest/).
+### Notes
+
+  * [cloud-init documentation](https://cloudinit.readthedocs.io/en/latest/)
+
+  * cloud-init format supports Gzip compression as [user-data is limited to ~16,384 bytes](https://cloudinit.readthedocs.io/en/latest/topics/format.html#gzip-compressed-content).
 
 ## Thoughts/to-dos/questions
 
