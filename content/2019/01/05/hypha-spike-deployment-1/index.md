@@ -96,7 +96,7 @@ In this spike, I’m going to explore using cloud-init to set up a server so tha
 
   * Clone and run an empty (‘hello world’) version of Hypha.
 
-Thankfully, Canonical has a tool called [multipass](https://github.com/CanonicalLtd/multipass) that lets you easily spin up Ubuntu instances locally and pass them a cloud-init file. I’ll be using that to iterate on the cloud-init script.
+Thankfully, Canonical has a tool called [multipass](https://github.com/CanonicalLtd/multipass) that lets you easily spin up Ubuntu instances locally [and pass them a cloud-init file](https://blog.ubuntu.com/2018/04/02/using-cloud-init-with-multipass). I’ll be using that to iterate on the cloud-init script.
 
 ## Thoughts/to-dos/questions
 
