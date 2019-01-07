@@ -138,6 +138,8 @@ For example, if your account name is _indie_, you want the instance to be called
 
     {{<highlight bash>}}ssh indie@10.83.214.166{{</highlight>}}
 
+Here is a good article on [users and groups](https://serversforhackers.com/c/permissions-and-user-management).
+
 ## Thoughts/to-dos/questions
 
   * Since TLS setup with Let’s Encrypt depends on domain name propagation, it is the last thing we must do (and is thus outside the scope of this spike).
