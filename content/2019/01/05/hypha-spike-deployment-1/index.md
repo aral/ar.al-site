@@ -100,6 +100,8 @@ Thankfully, Canonical has a tool called [multipass](https://github.com/Canonical
 
 ### Notes
 
+  * [Spike source code repository](https://source.ind.ie/hypha/spikes/deployment-1)
+
   * [cloud-init documentation](https://cloudinit.readthedocs.io/en/latest/)
 
   * cloud-init format supports Gzip compression as [user-data is limited to ~16,384 bytes](https://cloudinit.readthedocs.io/en/latest/topics/format.html#gzip-compressed-content).
@@ -128,7 +130,7 @@ Replace `<INSERT SSH PUBLIC KEY HERE>` with your public SSH key, which you can m
 
   * Node.js is perfectly capable as its own server and does not need to be proxied (e.g., by nginx) for single-tenant use.
 
-  * Add link to spike source code repository ⌷
+  * ✓ ~~Add link to spike source code repository~~
 
   * How long does server setup take?
 
