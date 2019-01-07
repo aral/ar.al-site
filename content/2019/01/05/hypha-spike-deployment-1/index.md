@@ -142,7 +142,7 @@ Here is a good article on [users and groups](https://serversforhackers.com/c/per
 
 ## Thoughts/to-dos/questions
 
-  * Since TLS setup with Let’s Encrypt depends on domain name propagation, it is the last thing we must do (and is thus outside the scope of this spike). See [dns-01 verification](https://www.aaflalo.me/2017/02/lets-encrypt-with-dehydrated-dns-01/) ([examples](https://github.com/lukas2511/dehydrated/wiki/Examples-for-DNS-01-hooks)). Can be used along with [Lexicon](https://github.com/AnalogJ/lexicon) for manipulating DNS records in a standardised way across providers. e.g., See [this Dehydrated hook for Namecheap + Let’s Encrypt](https://github.com/aral/dehydrated_namecheap_dns_api_hook?organization=aral&organization=aral).
+  * Since TLS setup with Let’s Encrypt depends on domain name propagation, it is the last thing we must do (and is thus outside the scope of this spike). See [dns-01 verification](https://www.aaflalo.me/2017/02/lets-encrypt-with-dehydrated-dns-01/) ([examples](https://github.com/lukas2511/dehydrated/wiki/Examples-for-DNS-01-hooks)). Can be used along with [Lexicon](https://github.com/AnalogJ/lexicon) for manipulating DNS records in a standardised way across providers. e.g., See [this Dehydrated hook for Namecheap + Let’s Encrypt](https://github.com/aral/dehydrated_namecheap_dns_api_hook?organization=aral&organization=aral). Also interesting, IWantMyName has [a Dynamic DNS interface](https://iwantmyname.com/developer/domain-dns-api) which [could possibly be used for this](https://github.com/hughdavenport/letsencrypt-iwantmyname-hook/issues/1).
 
   * Node.js is perfectly capable as its own server and does not need to be proxied (e.g., by nginx) for single-tenant use.
 
