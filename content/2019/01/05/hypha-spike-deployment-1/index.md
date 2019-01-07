@@ -88,7 +88,7 @@ For the purposes of this spike, I want to concentrate only on Step 2: automating
 
 ## Cloud-init
 
-VPS accounts are available for a couple of euros per month these days and many support [the cloud-init standard](https://cloud-init.io/) by Canonical as part of the new instance provisioning process via a ‘user data’ field on their online forms or via their APIs.
+VPS accounts are available for a couple of euros per month these days and many support [the cloud-init standard](https://cloud-init.io/) by Canonical as part of the new instance provisioning process via a ‘user data’ field on their online forms or via their APIs. [Supported operating systems](https://cloudinit.readthedocs.io/en/latest/topics/availability.html) include Ubuntu, Fedora, Debian, RHEL, CentOS, and others.
 
 In this spike, I’m going to explore using cloud-init to set up a server so that we can automatically:
 
