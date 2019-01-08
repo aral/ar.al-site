@@ -1,17 +1,12 @@
 ---
-title: "WIP: Hypha Spike: Deployment 1"
+title: "Hypha Spike: Deployment 1"
 date: 2019-01-05T23:40:29Z
 tags:
   - hypha
 draft: false
 ---
 
----
-__2019/01/05: This is a Work In Progress (WIP).__ I will be live-updating this post as I work on the spike. If you want to get streaming updates without having to refresh your browser, [open the DAT version](dat://ar.al/2019/01/05/hypha-spike-deployment-1/) in [Beaker Browser](https://beakerbrowser.com/) and toggle the _live reloading_ feature. Please feel free to [talk to me about this](https://mastodon.ar.al/@aral) on the fediverse as I work on it, perhaps via [Mastodon](https://joinmastodon.org).
-
-{{< lastmodified >}}
-
----
+[Source code](https://source.ind.ie/hypha/spikes/deployment-1)
 
 Wait, what, we’re deploying [Hypha](https://ar.al/2018/12/07/baby-steps/) ([subscribe via RSS](/tags/hypha/index.xml)) – but we haven’t even built it yet?!
 
@@ -140,6 +135,8 @@ For example, if your account name is _indie_, you want the instance to be called
 
 Here is a good article on [users and groups](https://serversforhackers.com/c/permissions-and-user-management).
 
+For the final cloud init file, with many more tasks, see [cloud-init.yaml](https://source.ind.ie/hypha/spikes/deployment-1/blob/master/cloud-init.yaml) and read the comments.
+
 ## Thoughts/to-dos/questions
 
   * Since TLS setup with Let’s Encrypt depends on domain name propagation, it is the last thing we must do (and is thus outside the scope of this spike). See [dns-01 verification](https://www.aaflalo.me/2017/02/lets-encrypt-with-dehydrated-dns-01/) ([examples](https://github.com/lukas2511/dehydrated/wiki/Examples-for-DNS-01-hooks)). Can be used along with [Lexicon](https://github.com/AnalogJ/lexicon) for manipulating DNS records in a standardised way across providers. e.g., See [this Dehydrated hook for Namecheap + Let’s Encrypt](https://github.com/aral/dehydrated_namecheap_dns_api_hook?organization=aral&organization=aral). Also interesting, IWantMyName has [a Dynamic DNS interface](https://iwantmyname.com/developer/domain-dns-api) which [could possibly be used for this](https://github.com/hughdavenport/letsencrypt-iwantmyname-hook/issues/1).
@@ -149,6 +146,8 @@ Here is a good article on [users and groups](https://serversforhackers.com/c/per
   * ✓ ~~Add link to spike source code repository~~
 
   * How long does server setup take?
+
+    About ~2 minutes 30 seconds. 2 minutes of that is our custom initialisation and 30 seconds the generic server setup. That incudes apt update/upgrade, Node.js install, PM2 install, etc.
 
   * Test the cloud-init script with a number of different hosts.
 
@@ -160,6 +159,29 @@ Here is a good article on [users and groups](https://serversforhackers.com/c/per
 
   * As above but with the integration of a payment step for the domain registration and hosting.
 
+## Postmortem
+
+We can get a server up and running with a Node.js app in ~ 2 minutes 30 seconds without any optimisations. This could be hugely optimised for everyday use later by having prebuilt server images but it is entirely acceptable as-is for use by developer to deploy their own copy of Hypha. Even when TLS is supported, the longest part of a developer getting up and running with their own node of Hypha will be the DNS propagation.
+
+## References
+
+### TLS
+
+  * [mkcert](https://github.com/FiloSottile/mkcert): a simple zero-config tool to make locally trusted development certificates with any names you'd like
+
+### Server setup
+
+  * [multipass](https://github.com/CanonicalLtd/multipass): orchestrate virtual Ubuntu instances (supports cloud-init)
+  * [cloud-init](https://cloud-init.io/): the standard for customising cloud instances
+  * [NodeSource Node.js binary distributions](https://github.com/nodesource/distributions): [for Ubuntu](https://github.com/nodesource/distributions#deb), etc.
+  * [PM2](https://github.com/Unitech/pm2): Node.js Production Process Manager with a built-in Load Balancer.
+
+### Promising discoveries
+
+(Unused in current spike but might be useful in the future.)
+
+  * [greenlock-express](https://github.com/Daplie/greenlock-express): Free SSL and managed or automatic HTTPS for node.js with Express…
+  * [nodenv](https://github.com/nodenv/nodenv): for managing node versions in production
 
 [^1]: I love Mastodon. [Here’s mine.](https://mastodon.ar.al/@ind.ie) [Here’s Ind.ie’s.](https://mastodon.ind.ie/@indie) But it’s not personal technology. It is not single tenant. It has the complexity of a system that can host hundreds of thousands of people on a single instance. We are not building that. We are building for instances of one.
 
