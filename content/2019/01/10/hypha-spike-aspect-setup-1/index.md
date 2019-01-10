@@ -17,11 +17,11 @@ __2019/01/10: This is a Work In Progress (WIP).__ I will be live-updating this p
 
 Your identity – your _self_ – is a _sharded_ aggregate of information[^1]. For an organism to have integrity it must have ownership and control over the aggregate of these various elemental shards that, combined, constitute its being.
 
-In Hypha [subscribe via RSS](/tags/hypha/index.xml), I will call these shards _aspects_[^2].
+In Hypha ([subscribe via RSS](/tags/hypha/index.xml)), I will call these shards _aspects_[^2].
 
 For the purposes of Hypha, an aspect is defined by a secret known only to the person who owns it.
 
-From this secret, we derive two secret keys[^3]:
+From this secret, we derive two keys[^3]:
 
   1. A key to obtain and read this aspect (“read key”)
   2. A key to write to this aspect (“write key”)
