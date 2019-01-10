@@ -22,6 +22,12 @@ The major success criteria for the _Peer Computing_ (PC 2.0[^1]) era, as I see t
 
 4. Have this system be as accessible, usable, and pleasurable as possible in totality. That includes criteria such as affordability[^5], ease of getting started (‘onboarding’), usefulness (functionality and usability), etc.
 
+## See also
+
+  * [The post-Web is single tenant](/2019/01/09/the-post-web-is-single-tenant/)
+  * [Deployment-first development](/2019/01/09/deployment-first-development/)
+  * [Hypha deployment 1 spike](/2019/01/05/hypha-spike-deployment-1/)
+
 [^1]: The four eras of digital computing: ① Mainframe (centralised) → ② Personal Computing (PC 1.0; decentralised) → ③ Web/Cloud (Mainframe 2.0; centralised) → ④ Peer Computing (PC 2.0; decentralised)
 
 [^2]: In colloqual usage, we could call it an “own node” or a _peer_ and/or _person cloud_ (both of which also fit the PC 2.0 acronym). I was originally thinking that we could call it AoN (pronounced, “own”) but thanks to [Lily](https://lily.network/@millenomi) for reminding me that we don’t need [yet another weird acronym](https://lily.network/@millenomi/101383290368446261), I’ve reconsidered that.

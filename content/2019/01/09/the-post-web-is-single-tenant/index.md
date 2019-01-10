@@ -1,7 +1,11 @@
 ---
 title: "The post-Web is single tenant"
 date: 2019-01-09T12:38:52Z
-draft: true
+tags:
+  - hypha
+  - philosophy
+  - peerocracy
+draft: false
 ---
 
 Hypha ([subcribe to updates via RSS](/tags/hypha/index.xml)) is an exploration of what personal technology means in the digital/networked age. The goal is to create a bridge from the Mainframe 2.0 era to the Peer Computing (PC 2.0) era[^1]. When we talk about scale in peer computing, our focus is on creating systems that are human-scale.
