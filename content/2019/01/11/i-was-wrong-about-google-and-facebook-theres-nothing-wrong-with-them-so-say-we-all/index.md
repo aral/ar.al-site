@@ -82,7 +82,7 @@ And it’s not just Nordic Privacy Arena. RightsCon by AccessNow [has no problem
 
 > RightsCon is the world’s leading conference on human rights in the digital age, brought to you by Access Now … RightsCon offers organizations and businesses the perfect opportunity to generate exposure, goodwill, and growth. So when you consider whether to invest in RightsCon, remember sponsorship can positively impact your organization and business by demonstrating leadership, building your brand, engaging your community, and more.
 
-Neither does [Amsterdam Privacy Week](https://motherboard.vice.com/en_us/article/aekw4b/people-are-mad-that-facebook-and-google-sponsored-a-privacy-event). Nor [CPDP](https://2018.ar.al/notes/why-im-not-speaking-at-cpdp).
+Neither does [Amsterdam Privacy Week](https://motherboard.vice.com/en_us/article/aekw4b/people-are-mad-that-facebook-and-google-sponsored-a-privacy-event). Nor [CPDP](https://2018.ar.al/notes/why-im-not-speaking-at-cpdp). Nor [FOSDEM](https://fosdem.org/2019/about/sponsors/).
 
 No, it’s clear. It must be me. I must just be deluded. This is the only conclusion that makes sense given the avalanche of evidence.
 
