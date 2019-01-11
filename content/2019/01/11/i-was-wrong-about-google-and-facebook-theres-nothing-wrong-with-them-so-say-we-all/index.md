@@ -82,7 +82,7 @@ And it’s not just Nordic Privacy Arena. RightsCon by AccessNow [has no problem
 
 > RightsCon is the world’s leading conference on human rights in the digital age, brought to you by Access Now … RightsCon offers organizations and businesses the perfect opportunity to generate exposure, goodwill, and growth. So when you consider whether to invest in RightsCon, remember sponsorship can positively impact your organization and business by demonstrating leadership, building your brand, engaging your community, and more.
 
-Neither does [Amsterdam Privacy Week](https://motherboard.vice.com/en_us/article/aekw4b/people-are-mad-that-facebook-and-google-sponsored-a-privacy-event). Or [CPDP](https://2018.ar.al/notes/why-im-not-speaking-at-cpdp).
+Neither does [Amsterdam Privacy Week](https://motherboard.vice.com/en_us/article/aekw4b/people-are-mad-that-facebook-and-google-sponsored-a-privacy-event). Nor [CPDP](https://2018.ar.al/notes/why-im-not-speaking-at-cpdp).
 
 No, it’s clear. It must be me. I must just be deluded. This is the only conclusion that makes sense given the avalanche of evidence.
 
@@ -92,7 +92,7 @@ So, in light of the overwhelming support for surveillance capitalism by generall
 
 If Google, Facebook, etc., were even half as bad [as I make them out to be](https://2018.ar.al/notes/we-didnt-lose-control-it-was-stolen/), these organisations would not be partnering with or endorsing them.
 
-I just want to apologise for being such a “[Negative Nancy](https://2018.ar.al/notes/a-nancy-writes-back-or-how-i-learned-to-stop-worrying-and-love-digital-imperialism/)” and take this opportunity to thank the FSF, The Free Software Conservancy, Mozilla, Apple, The Nordic Privacy Arena, AccessNow and RightsCon, Amsterdam Privacy Week, CPDP, and GNOME for showing me the error of my ways. I now know, thanks to their moral leadership on this issue, that it’s perfectly fine for people working to protect human rights and democracy to take millions and billions from companies like Google and Facebook and to partner with them.
+I just want to apologise for being such a “[Negative Nancy](https://2018.ar.al/notes/a-nancy-writes-back-or-how-i-learned-to-stop-worrying-and-love-digital-imperialism/)” and take this opportunity to thank the FSF, The Free Software Conservancy, Mozilla, Apple, The Nordic Privacy Arena, AccessNow, RightsCon, Amsterdam Privacy Week, CPDP, and GNOME for showing me the error of my ways. I now know, thanks to their moral leadership on this issue, that it’s perfectly fine for people working to protect human rights and democracy to take millions and billions from companies like Google and Facebook and to partner with them.
 
 I must admit, I feel a little silly. The last five years would have been so much easier if only I’d understood this earlier.
 
