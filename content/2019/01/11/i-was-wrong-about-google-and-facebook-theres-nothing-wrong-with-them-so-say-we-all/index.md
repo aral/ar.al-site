@@ -22,7 +22,7 @@ How can I blame any policymaker who points to that and says “Aral, you’re be
 
 ## Mozilla
 
-{{<figure src="firefox-default-search-engine.jpeg" alt="Screenshot of Firefox showing the default search engine (Google)" caption="Firefox defends your privacy. That’s why it’s default search engine is Google.">}}
+{{<figure src="firefox-default-search-engine.jpeg" alt="Screenshot of Firefox showing the default search engine (Google)" caption="Firefox defends your privacy. That’s why its default search engine is Google.">}}
 
 [Mozilla](https://mozilla.org) is [a not-for-profit for-profit](https://www.mozilla.org/en-US/foundation/moco/) organisation working to ensure “an Internet that truly puts people first, where individuals can shape their own experience and are empowered, safe and independent.” Mozilla makes Firefox, a browser that is [Fast. Private. Fearless.](https://blog.mozilla.org/internetcitizen/2018/08/13/firefox-privacy-philosophy/) And its default search engine is Google[^1].
 
@@ -46,7 +46,7 @@ If Tim Cook is happy having Google on the iPhone then surely there must be somet
 
 ## GNOME
 
-{{<figure src="geary-gmail-vs-other-email-providers.jpeg" alt="Screenshot showing the setup of Gmail (very simple) vs other email providers apart from Yahoo and Outlook.com (twice the height, multiple times the complexity)" caption="GNOME makes it easy to use Gmail (by advisory-board member Google). If you use FastMail, however, you have to do some work.">}}
+{{<figure src="geary-gmail-vs-other-email-providers.jpeg" alt="Screenshot showing the setup of Gmail (very simple) vs other email providers apart from Yahoo and Outlook.com (twice the height, multiple times the complexity)" caption="GNOME makes it easy to use Gmail (by advisory board member Google). If you use FastMail, however, you have to do some work.">}}
 
 If Apple is too commercial an example for you, then there’s [GNOME](https://www.gnome.org/about/), led by the non-profit GNOME foundation. They make a popular and usable display environment for UNIX-like systems. It’s what I use on [my daily driver](https://ar.al/2018/07/26/popos-18.04-the-state-of-the-art-in-linux-on-desktop/).
 
