@@ -24,7 +24,7 @@ How can I blame any policymaker who points to that and says “Aral, you’re be
 
 {{<figure src="firefox-default-search-engine.jpeg" alt="Screenshot of Firefox showing the default search engine (Google)" caption="Firefox defends your privacy. That’s why its default search engine is Google.">}}
 
-[Mozilla](https://mozilla.org) is [a not-for-profit for-profit](https://www.mozilla.org/en-US/foundation/moco/) organisation working to ensure “an Internet that truly puts people first, where individuals can shape their own experience and are empowered, safe and independent.” Mozilla makes Firefox, a browser that is [Fast. Private. Fearless.](https://blog.mozilla.org/internetcitizen/2018/08/13/firefox-privacy-philosophy/) And its default search engine is Google[^1].
+[Mozilla](https://mozilla.org) is [a not-for-profit for-profit](https://www.mozilla.org/en-US/foundation/moco/) organisation working to ensure “an Internet that truly puts people first, where individuals can shape their own experience and are empowered, safe and independent.” Mozilla makes Firefox, a browser that is [Fast. Private. Fearless.](https://blog.mozilla.org/internetcitizen/2018/08/13/firefox-privacy-philosophy/) That’s why its default search engine is Google[^1].
 
 Mozilla [doesn’t have a problem with Google](https://mastodon.ar.al/@aral/101069104134924159), frequently partners with them, and [even uses Google Analytics](https://github.com/mozilla/addons-frontend/issues/1107#issuecomment-314754318).
 
