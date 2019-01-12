@@ -8,11 +8,11 @@ It’s always difficult admitting you’re wrong. But sometimes, it’s exactly 
 
 You see, it simply cannot be true given how they are endorsed by some of the most well-respected groups and organisations in the world. All the evidence points to Google and Facebook being good actors who are not a threats to our privacy.
 
-## FSF and The Software Conservancy
+## FSF and The Software Freedom Conservancy
 
 {{<figure src="google-microsoft-and-fsf-sponsor-copyleftconf.jpeg" alt="The sponsors page of CopyLeftConf: Google, Microsoft, and FSF are among the sponsors" caption="CopyLeftConf 2019 is brought to you by Google, Microsoft, and the FSF">}}
 
-[The FSF](https://www.fsf.org/) is the world’s foremost defender of software freedom. [The Software Freedom Conservancy](https://sfconservancy.org/) “is a not-for-profit charity that helps promote, improve, develop, and defend Free, Libre, and Open Source Software (FLOSS) projects.” This month, The Software Conversancy is organising [CopyLeft Conference](https://2019.copyleftconf.org/) sponsored by Google, Microsoft, and the FSF.
+[The FSF](https://www.fsf.org/) is the world’s foremost defender of software freedom. [The Software Freedom Conservancy](https://sfconservancy.org/) “is a not-for-profit charity that helps promote, improve, develop, and defend Free, Libre, and Open Source Software (FLOSS) projects.” This month, The Software Freedom Conversancy is organising [CopyLeft Conference](https://2019.copyleftconf.org/) sponsored by Google, Microsoft, and the FSF.
 
 In fact, Google is such a force for good in the world that they are allowed to sponsor a CopyLeft conference [even though they ban CopyLeft licenses at their company](https://opensource.google.com/docs/using/agpl-policy/).
 
@@ -40,7 +40,7 @@ As they state [on their privacy page](https://apple.com/privacy):
 
 > At Apple, we believe privacy is a fundamental human right … Every Apple product is designed from the ground up to protect that information. And to empower you to choose what you share and with whom.
 
-Apple’s CEO, Tim Cook, [has personally endorsed this commitment to privacy](https://www.recode.net/2018/4/6/17197754/watch-apple-ceo-tim-cook-msnbc) and this is why Apple has Google as the default search engine for their browser and why [they welcome the $12 billion dollars](https://www.investopedia.com/news/google-spend-12-billion-remain-apple-safaris-2019-default-search-engine-gs/) of revenue that this deal brings in. Because Google is just like Apple and designs their services from the ground up to protect your privacy. Why else would Apple allow them on their phones and jeopardise your privacy?
+Apple’s CEO, Tim Cook, [has personally endorsed this commitment to privacy](https://www.recode.net/2018/4/6/17197754/watch-apple-ceo-tim-cook-msnbc) and this is why Apple has Google as the default search engine for their browser and why [they welcome the 12 billion dollars](https://www.investopedia.com/news/google-spend-12-billion-remain-apple-safaris-2019-default-search-engine-gs/) of revenue that this deal brings in. Because Google is just like Apple and designs their services from the ground up to protect your privacy. Why else would Apple allow them on their phones and jeopardise your privacy?
 
 If Tim Cook is happy having Google on the iPhone then surely there must be something wrong with me.
 
