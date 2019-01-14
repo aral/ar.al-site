@@ -6,13 +6,6 @@ tags:
 draft: false
 ---
 
----
-__2019/01/10: This is a Work In Progress (WIP).__ I will be live-updating this post as I work on the spike. If you want to get streaming updates without having to refresh your browser, [open the DAT version](dat://ar.al/2019/01/05/hypha-spike-aspect-setup-1/) in [Beaker Browser](https://beakerbrowser.com/) and toggle the _live reloading_ feature. Please feel free to [talk to me about this](https://mastodon.ar.al/@aral) on the fediverse as I work on it, perhaps via [Mastodon](https://joinmastodon.org).
-
-{{< lastmodified >}}
-
----
-
 ## Philosophy
 
 Your identity – your _self_ – is a _sharded_ aggregate of information[^1]. For an organism to have integrity it must have ownership and control over the aggregate of these various elemental shards that, combined, constitute its being.
@@ -64,7 +57,8 @@ This spike is related to [the Indienet publickey auth spike from last year](http
 
 ## Post-mortem
 
-  * Spike is ongoing.
+  * I’m going to use the approach in Iteration 2.
+  * In the next spike, I will look at generating a DAT using the generated key material and replicating it to the always-on node via web socket.
 
 ## Also see
 
