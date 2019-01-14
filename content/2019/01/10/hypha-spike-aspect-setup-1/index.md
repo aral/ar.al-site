@@ -34,8 +34,10 @@ This spike will focus on the basics of aspect setup:
 1. Enter strong password on web interface
 2. Generate ED25519 signing keys (read key and write key[^6]) from password (via Argon2)
 3. Generate Curve25519 encryption keys from signing keys
-4. Generate root aspect DAT archive using the keys generated in Step 2.
-5. Replicate the aspect from a separate node to test that it works as intended (e.g., command-line DAT running on a native client)
+4. ~~Generate root aspect DAT archive using the keys generated in Step 2.~~
+5. ~~Replicate the aspect from a separate node to test that it works as intended (e.g., command-line DAT running on a native client)~~
+
+Steps 4 & 5 moved to the next spike (see [postmortem](#postmortem)).
 
 All key generation happens on the client. The untrusted server (unprivileged always-on node) must never have the secret key.[^7]
 
@@ -55,9 +57,9 @@ This spike is related to [the Indienet publickey auth spike from last year](http
 
   * Use [session25519](https://github.com/jo/session25519) to generate the DAT keypair from a strong passphrase and the domain name as salt. Since domain names are _globally unique_, this is a strong salt, regardless of the fact that it is not random and could be short (e.g., ar.al).
 
-## Post-mortem
+## Postmortem
 
-  * I’m going to use the approach in Iteration 2.
+  * I’m going with the approach in Iteration 2.
   * In the next spike, I will look at generating a DAT using the generated key material and replicating it to the always-on node via web socket.
 
 ## Also see
