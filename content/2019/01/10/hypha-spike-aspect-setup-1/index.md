@@ -57,6 +57,8 @@ This spike is related to [the Indienet publickey auth spike from last year](http
 
 ## Iteration 2
 
+  {{<figure src="hypha-aspect-setup-spike-iteration-2.jpeg" alt="Screenshot of Iteration 2: A domain (ar.al) and a strong password have generated public/private signing and encryption keys." caption="Screenshot of Iteration 2">}}
+
   (Master branch.)
 
   * Use [session25519](https://github.com/jo/session25519) to generate the DAT keypair from a strong passphrase and the domain name as salt. Since domain names are _globally unique_, this is a strong salt, regardless of the fact that it is not random and could be short (e.g., ar.al).
