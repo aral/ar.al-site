@@ -50,7 +50,11 @@ This spike is related to [the Indienet publickey auth spike from last year](http
 
 ## Spike notes
 
-  * None yet
+### Iteration 1
+
+  [Branch](https://source.ind.ie/hypha/spikes/aspect-setup-1/tree/iteration-1)
+
+  * Review [what we had with the Indienet project](https://source.ind.ie/indienet/spikes/security/publickey-auth-feathers-nuxt-sockets).
 
 ## Post-mortem
 
