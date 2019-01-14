@@ -6,6 +6,10 @@ tags:
 draft: false
 ---
 
+## Design
+
+{{<figure src="hypha-aspect-setup.jpeg" alt="My Boogie Board notes on the general design on Hypha" caption="My Boogie Board notes on the general design on Hypha">}}
+
 ## Philosophy
 
 Your identity – your _self_ – is a _sharded_ aggregate of information[^1]. For an organism to have integrity it must have ownership and control over the aggregate of these various elemental shards that, combined, constitute its being.
