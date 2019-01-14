@@ -56,6 +56,12 @@ This spike is related to [the Indienet publickey auth spike from last year](http
 
   * Review [what we had with the Indienet project](https://source.ind.ie/indienet/spikes/security/publickey-auth-feathers-nuxt-sockets).
 
+## Iteration 2
+
+  (Master branch.)
+
+  * Use [session25519](https://github.com/jo/session25519) to generate the DAT keypair from a strong passphrase and the domain name.
+
 ## Post-mortem
 
   * Spike is ongoing.
