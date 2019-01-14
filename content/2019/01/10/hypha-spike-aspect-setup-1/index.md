@@ -60,7 +60,7 @@ This spike is related to [the Indienet publickey auth spike from last year](http
 
   (Master branch.)
 
-  * Use [session25519](https://github.com/jo/session25519) to generate the DAT keypair from a strong passphrase and the domain name.
+  * Use [session25519](https://github.com/jo/session25519) to generate the DAT keypair from a strong passphrase and the domain name as salt. Since domain names are _globally unique_, this is a strong salt, regardless of the fact that it is not random and could be short (e.g., ar.al).
 
 ## Post-mortem
 
@@ -75,6 +75,10 @@ This spike is related to [the Indienet publickey auth spike from last year](http
   * [Indienet configuration information docs](https://indienet.info/site/configuration/)
 
   * [Hypha Spike: Deployment 1](/2019/01/05/hypha-spike-deployment-1/)
+
+## References
+
+  * [Salted password hashing: doing it right](https://crackstation.net/hashing-security.htm)
 
 [^1]: I include biological aspects in the definition of information because our biology is also, at its fundaments, information like all else.
 
