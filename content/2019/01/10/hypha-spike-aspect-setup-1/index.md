@@ -80,6 +80,7 @@ This spike is related to [the Indienet publickey auth spike from last year](http
 
   * [How to ED25519 keys work?](https://blog.mozilla.org/warner/2011/11/29/ed25519-keys/)
   * [Salted password hashing: doing it right](https://crackstation.net/hashing-security.htm)
+  * Key generation in [minilock](https://github.com/kaepora/miniLock)
 
 [^1]: I include biological aspects in the definition of information because our biology is also, at its fundaments, information like all else.
 
