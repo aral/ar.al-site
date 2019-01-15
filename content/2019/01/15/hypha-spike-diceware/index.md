@@ -20,7 +20,7 @@ Pulled out from [Hypha Spike: DAT 1](../../14/hypha-spike-dat-1).
 
 Pulled this out into its own Spike so that it doesn’t clutter the DAT 1 spike.
 
-Starting with the Aspect Setup 1 spike, in this spike I:
+Starting with the [Aspect Setup 1 spike](../../10/hypha-spike-aspect-setup-1), in this spike I:
 
   * Refactored to use budo so I can use requires, etc.
 
