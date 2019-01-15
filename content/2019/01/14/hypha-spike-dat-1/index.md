@@ -28,6 +28,8 @@ Following on from [Hypha Spike Aspect Setup 1](../../10/hypha-spike-aspect-setup
 
     Ended up upgrading dependencies for budo ([pull request](https://github.com/mattdesl/budo/pull/240)) and also squashing this error as the error is in error ([pull request](https://github.com/mattdesl/budo/pull/241)). We will, of course, not be using budo in production but it’s fine for the purposes of this spike.
 
+  * Now generating passphrases using [Diceware](https://www.rempe.us/diceware/) and [EFF’s New Wordlists for Random Passphrases](https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases)
+
 ## Postmortem
 
   * Spike in progress
@@ -35,3 +37,7 @@ Following on from [Hypha Spike Aspect Setup 1](../../10/hypha-spike-aspect-setup
 ## Reference
 
   * [Jim Pick’s DAT Shopping List demo](https://github.com/jimpick/dat-shopping-list-tokyo) (Tokyo version)
+  * [Passphrases that you can memorize — but that even the NSA can’t guess](https://theintercept.com/2015/03/26/passphrases-can-memorize-attackers-cant-guess/)
+  * [Diceware](https://www.rempe.us/diceware/)
+  * [EFF’s New Wordlists for Random Passphrases](https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases)
+  * [eff-diceware-passphrase](https://github.com/emilbayes/eff-diceware-passphrase)
