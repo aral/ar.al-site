@@ -1,5 +1,5 @@
 ---
-title: "Hypha Spike: DAT 1"
+title: "(WIP) Hypha Spike: DAT 1"
 date: 2019-01-14T22:42:02Z
 draft: false
 ---
