@@ -1,5 +1,5 @@
 ---
-title: "Hypha Spike: Dat 1"
+title: "Hypha Spike: DAT 1"
 date: 2019-01-14T22:42:02Z
 draft: false
 ---
@@ -22,13 +22,7 @@ Following on from [Hypha Spike Aspect Setup 1](../../10/hypha-spike-aspect-setup
 
 ## Notes
 
-  * Refactored to use budo so I can use requires, etc., Was getting an error due to Chokidar on Linux:
-
-    {{<highlight bash>}}Error: Cannot find module 'fsevents' from '…/node_modules/chokidar/lib'{{</highlight>}}
-
-    Ended up upgrading dependencies for budo ([pull request](https://github.com/mattdesl/budo/pull/240)) and also squashing this error as the error is in error ([pull request](https://github.com/mattdesl/budo/pull/241)). We will, of course, not be using budo in production but it’s fine for the purposes of this spike.
-
-  * Now generating passphrases using [Diceware](https://www.rempe.us/diceware/) and [EFF’s New Wordlists for Random Passphrases](https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases)
+  * None yet
 
 ## Postmortem
 
@@ -37,9 +31,3 @@ Following on from [Hypha Spike Aspect Setup 1](../../10/hypha-spike-aspect-setup
 ## Reference
 
   * [Jim Pick’s DAT Shopping List demo](https://github.com/jimpick/dat-shopping-list-tokyo) (Tokyo version)
-  * [xkcd: Password Strength](https://xkcd.com/936/)
-  * [Excellent explanation of above xkcd](https://security.stackexchange.com/questions/6095/xkcd-936-short-complex-password-or-long-dictionary-passphrase/6116#6116). Quote: “Security at the expense of usability comes at the expense of security.” – [AviD](https://security.stackexchange.com/users/33/avid)
-  * [Passphrases that you can memorize — but that even the NSA can’t guess](https://theintercept.com/2015/03/26/passphrases-can-memorize-attackers-cant-guess/)
-  * [Diceware](https://www.rempe.us/diceware/) ([Source code](https://github.com/grempe/diceware))
-  * [EFF’s New Wordlists for Random Passphrases](https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases)
-  * [eff-diceware-passphrase](https://github.com/emilbayes/eff-diceware-passphrase)
