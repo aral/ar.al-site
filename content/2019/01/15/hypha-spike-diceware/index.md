@@ -1,5 +1,5 @@
 ---
-title: "Hypha Spike Diceware"
+title: "Hypha Spike: Diceware"
 date: 2019-01-15T21:34:17Z
 draft: false
 ---
