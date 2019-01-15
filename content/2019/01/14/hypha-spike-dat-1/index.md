@@ -22,7 +22,7 @@ Following on from [Hypha Spike Aspect Setup 1](../../10/hypha-spike-aspect-setup
 
 ## Notes
 
-  * Refactored to use budo so I can use requires, etc., however getting an error due to Chokidar (`Error: Cannot find module 'fsevents' from '/home/aral/ind.ie/hypha/spikes/dat-1/node_modules/chokidar/lib'`) on Linux.
+  * Refactored to use budo so I can use requires, etc., Was getting an error due to Chokidar (`Error: Cannot find module 'fsevents' from '/home/aral/ind.ie/hypha/spikes/dat-1/node_modules/chokidar/lib'`) on Linux. Ended up upgrading dependencies for budo ([pull request](https://github.com/mattdesl/budo/pull/240)) and also squashing this error as the error is in error ([pull request](https://github.com/mattdesl/budo/pull/241)). We will, of course, not be using budo in production but it’s fine for the purposes of this spike.
 
 ## Postmortem
 
