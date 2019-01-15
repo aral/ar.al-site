@@ -37,7 +37,9 @@ Following on from [Hypha Spike Aspect Setup 1](../../10/hypha-spike-aspect-setup
 ## Reference
 
   * [Jim Pick’s DAT Shopping List demo](https://github.com/jimpick/dat-shopping-list-tokyo) (Tokyo version)
+  * [xkcd: Password Strength](https://xkcd.com/936/)
+  * [Excellent explanation of above xkcd](https://security.stackexchange.com/questions/6095/xkcd-936-short-complex-password-or-long-dictionary-passphrase/6116#6116). Quote: “Security at the expense of usability comes at the expense of security.” – [AviD](https://security.stackexchange.com/users/33/avid)
   * [Passphrases that you can memorize — but that even the NSA can’t guess](https://theintercept.com/2015/03/26/passphrases-can-memorize-attackers-cant-guess/)
-  * [Diceware](https://www.rempe.us/diceware/)
+  * [Diceware](https://www.rempe.us/diceware/) ([Source code](https://github.com/grempe/diceware))
   * [EFF’s New Wordlists for Random Passphrases](https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases)
   * [eff-diceware-passphrase](https://github.com/emilbayes/eff-diceware-passphrase)
