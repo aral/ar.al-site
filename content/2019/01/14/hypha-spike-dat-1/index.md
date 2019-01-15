@@ -15,7 +15,7 @@ __2019/01/14: This is a Work In Progress (WIP).__ I will be live-updating this p
 
 ## Design
 
-Following on from [Hypha Spike Aspect Setup 1](../../10/hypha-spike-aspect-setup-1), this spike aims to explore:
+Following on from [Hypha Spike: Diceware](../../15/hypha-spike-diceware), this spike aims to explore:
 
   * Creating an in-browser DAT data store using the keys generated in the previous spike
   * Replicating that datastore over a web socket connection with the always-on node and making it available over UTP
