@@ -43,6 +43,10 @@ const hypercorePublicKeyBuffer = Buffer.from(myPublicKeyAsUint8Array.buffer)
 const hypercore = hypercore(storage, hypercorePublicKeyBuffer)
 {{</highlight>}}
 
+## Callback in onwrite hook gotcha
+
+If you implement the `onwrite` hook in the options passed to the hypercore constructor, you must explicitly call the passed callback at the end of your handler (`cb()`) or your appends will not work. ([Pull request to update docs.](https://github.com/mafintosh/hypercore/pull/190))
+
 ## Postmortem
 
   * Spike in progress
