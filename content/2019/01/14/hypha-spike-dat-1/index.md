@@ -28,6 +28,21 @@ Following on from [Hypha Spike: Diceware](../../15/hypha-spike-diceware), this s
   2. Replicate hypercore to server using websocket connection
   3. Replicate hypercore from server via native client
 
+### In-browser hypercore
+
+Gotcha: When creating a hypercore in browser by manually specifying the read and write keys, you must convert the keys to Node.js’s Buffer type, you cannot use ArrayBuffer. Just submitted the folowing pull request to the hypercore readme to make this explicit as this caught me out initially:
+
+> The `[key]` and `secretKey` are _Node.js_ buffer instances, not browser-based ArrayBuffer instances. When creating hypercores in browser, if you pass an ArrayBuffer instance, you will get an error similar to `key must be at least 16, was given undefined`. Instead, create a Node.js Buffer instance using [Feross‘s](https://github.com/feross) [buffer](https://github.com/feross/buffer) module (`npm install buffer`). e.g.,
+> {{<highlight javascript>}}
+const storage = someRandomAccessStorage
+const myPublicKey = someUint8Array
+
+const Buffer = require('buffer').Buffer
+const hypercorePublicKeyBuffer = Buffer.from(myPublicKeyAsUint8Array.buffer)
+
+const hypercore = hypercore(storage, hypercorePublicKeyBuffer)
+{{</highlight>}}
+
 ## Postmortem
 
   * Spike in progress

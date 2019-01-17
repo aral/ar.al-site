@@ -194,6 +194,10 @@ pre {
   padding-right: 1rem;
 }
 
+blockquote pre.chroma {
+  margin-left: 0;
+}
+
 /* Links */
 
 a {
