@@ -22,7 +22,11 @@ Following on from [Hypha Spike: Diceware](../../15/hypha-spike-diceware), this s
 
 ## Notes
 
-  * None yet
+### Iteration plan
+
+  1. Create hypercore in browser using the generated public and
+  2. Replicate hypercore to server using websocket connection
+  3. Replicate hypercore from server via native client
 
 ## Postmortem
 
