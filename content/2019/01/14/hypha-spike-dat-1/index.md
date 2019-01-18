@@ -24,10 +24,11 @@ Following on from [Hypha Spike: Diceware](../../15/hypha-spike-diceware), this s
 
 ### Iteration plan
 
-  1. ✔ [Create hypercore in browser using the generated public and private signing keys](https://source.ind.ie/hypha/spikes/dat-1/tags/create-hypercore)
-  2. ✔ [Expose hypercore state and events on the page itself](https://source.ind.ie/hypha/spikes/dat-1/tags/expose-hypercore-state-on-page)
-  3. Replicate hypercore to server using websocket connection
-  4. Replicate hypercore from server via native client
+  1. ✔ [Create hypercore in browser using the generated public and private signing keys.](https://source.ind.ie/hypha/spikes/dat-1/tags/create-hypercore)
+  2. ✔ [Expose hypercore state and events on the page itself.](https://source.ind.ie/hypha/spikes/dat-1/tags/expose-hypercore-state-on-page)
+  3. ✔ [Replicate hypercore to server using websocket connection.](https://source.ind.ie/hypha/spikes/dat-1/tags/replicating)
+  4. Join hyperswarm.
+  5. Replicate hypercore from server via native client.
 
 ### In-browser hypercore gotcha
 
@@ -73,3 +74,4 @@ The issue is that budo’s web socket server and mine are clashing. It looks lik
 ## Reference
 
   * [Jim Pick’s DAT Shopping List demo](https://github.com/jimpick/dat-shopping-list-tokyo) (Tokyo version)
+  * [hyperswarm](https://github.com/hyperswarm)
