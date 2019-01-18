@@ -48,6 +48,24 @@ const hypercore = hypercore(storage, hypercorePublicKeyBuffer)
 
 If you implement the `onwrite` hook in the options passed to the hypercore constructor, you must explicitly call the passed callback at the end of your handler (`cb()`) or your appends will not work. ([Pull request to update docs.](https://github.com/mafintosh/hypercore/pull/190))
 
+## WebSocket/replication gotcha with budo and livereload
+
+Initially, I was getting the following errors while trying to replicate over the web socket connection:
+
+### Firefox:
+{{<highlight bash>}}
+The connection to wss://localhost/livereload was interrupted while the page was loading.
+The connection to wss://localhost/hypha/f86a223b93b19929eee4e402480ac4d69ad4d8342b2f39b03f3dfd7d0fafbe93 was interrupted while the page was loading.
+{{</highlight>}}
+
+### GNOME web:
+{{<highlight bash>}}
+[Error] WebSocket connection to 'wss://localhost/livereload' failed: Compressed bit must be 0 if no negotiated deflate-frame extension
+[Error] WebSocket connection to 'wss://localhost/hypha/78575ce623d7e7ef8e55c7d888e36f64c4fcea9404b1073ca517f94cc32b08b4' failed: Compressed bit must be 0 if no negotiated deflate-frame extension
+{{</highlight>}}
+
+The issue, as far as I can see at the moment, is that budo’s web socket server and mine are clashing. It seems to work for Jim’s Shopping List Example, though, so I’ll keep looking to see how I can get them to work. For the time being, the workaround is to turn livereload off when setting up the budo server.
+
 ## Postmortem
 
   * Spike in progress
