@@ -1,19 +1,14 @@
 ---
-title: "(WIP) Hypha Spike: DAT 1"
+title: "Hypha Spike: DAT 1"
 date: 2019-01-14T22:42:02Z
 draft: false
 ---
 
----
-__2019/01/14: This is a Work In Progress (WIP).__ I will be live-updating this post as I work on the spike. If you want to get streaming updates without having to refresh your browser, [open the DAT version](dat://ar.al/2019/01/15/hypha-spike-dat-1/) in [Beaker Browser](https://beakerbrowser.com/) and toggle the _live reloading_ feature. Please feel free to [talk to me about this](https://mastodon.ar.al/@aral) on the fediverse as I work on it, perhaps via [Mastodon](https://joinmastodon.org).
-
-{{< lastmodified >}}
-
----
-
-[Source code](https://source.ind.ie/hypha/spikes/dat-1)
+[Source code](https://source.ind.ie/hypha/spikes/dat-1) (See [iteration plan](iteration-plan) for links to specific tags.)
 
 ## Design
+
+{{<figure src="replication.jpeg" alt="See caption (browser is on the right, the always-on node and native client are node apps running under Tilix)" caption="Screenshot of data replicated between the browser and the always-on node, and between the always-on node and a native client.">}}
 
 Following on from [Hypha Spike: Diceware](../../15/hypha-spike-diceware), this spike aims to explore:
 
@@ -27,8 +22,8 @@ Following on from [Hypha Spike: Diceware](../../15/hypha-spike-diceware), this s
   1. ✔ [Create hypercore in browser using the generated public and private signing keys.](https://source.ind.ie/hypha/spikes/dat-1/tags/create-hypercore)
   2. ✔ [Expose hypercore state and events on the page itself.](https://source.ind.ie/hypha/spikes/dat-1/tags/expose-hypercore-state-on-page)
   3. ✔ [Replicate hypercore to server using websocket connection.](https://source.ind.ie/hypha/spikes/dat-1/tags/replicating)
-  4. Join hyperswarm.
-  5. Replicate hypercore from server via native client.
+  4. ✔ [Join hyperswarm and replicate hypercore from server from a native client.](https://source.ind.ie/hypha/spikes/dat-1/tags/hyperswarm-native-replication)
+
 
 ### In-browser hypercore gotcha
 
@@ -54,12 +49,14 @@ If you implement the `onwrite` hook in the options passed to the hypercore const
 Initially, I was getting the following errors while trying to replicate over the web socket connection:
 
 ### Firefox:
+
 {{<highlight bash>}}
 The connection to wss://localhost/livereload was interrupted while the page was loading.
 The connection to wss://localhost/hypha/f86a223b93b19929eee4e402480ac4d69ad4d8342b2f39b03f3dfd7d0fafbe93 was interrupted while the page was loading.
 {{</highlight>}}
 
 ### GNOME web:
+
 {{<highlight bash>}}
 [Error] WebSocket connection to 'wss://localhost/livereload' failed: Compressed bit must be 0 if no negotiated deflate-frame extension
 [Error] WebSocket connection to 'wss://localhost/hypha/78575ce623d7e7ef8e55c7d888e36f64c4fcea9404b1073ca517f94cc32b08b4' failed: Compressed bit must be 0 if no negotiated deflate-frame extension
@@ -69,11 +66,27 @@ The issue is that budo’s web socket server and mine are clashing. It looks lik
 
 ## Postmortem
 
-  * Spike in progress
+1. A strong passphrase is [generated via EFF’s Diceware Word List](https://github.com/emilbayes/eff-diceware-passphrase).
+2. From the passphrase, Ed25519 (signing) and Curve25519 (encryption) key material is derived via [session25519](https://github.com/jo/session25519).
+3. The signing keys are used to create a [hypercore](https://github.com/mafintosh/hypercore) in the browser.
+4. The hypercore is replicated via web socket to the unprivileged always-on node (server)
+5. The always-on node joins the [hyperswarm](https://github.com/hyperswarm) and announces the hypercore via its discovery key.
+6. A native client is run with the _read key_ of the hypercore. It calculates the _discovery key_ from the _read key_ and uses hyperswarm to find and replicate the hypercore from the always-on node that originated in the browser.
+
+## Limitations
+
+This spike proves only _a subset the absolute basics_ of the Hyphanet design. See [areas for future study](#areas-for-future-study).
+
+## Future improvements
+
+  * Specify read key as a command-line argument on the native node
+
+## Areas for future study
+
+  * Browser-to-browser discovery and replication via WebRTC.
+  * Multi-write/multi-feed
+  * CRDT
 
 ## Reference
 
   * [Jim Pick’s DAT Shopping List demo](https://github.com/jimpick/dat-shopping-list-tokyo) (Tokyo version)
-  * [hyperswarm](https://github.com/hyperswarm)
-  * [Paul’s hyperswarm announcement post](https://pfrazee.hashbase.io/blog/hyperswarm)
-  
