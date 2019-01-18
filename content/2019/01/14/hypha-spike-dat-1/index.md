@@ -4,11 +4,11 @@ date: 2019-01-14T22:42:02Z
 draft: false
 ---
 
+{{<figure src="replication.jpeg" alt="See caption (browser is on the right, the always-on node and native client are node apps running under Tilix)" caption="Screenshot of data replicated between the browser and the always-on node, and between the always-on node and a native client.">}}
+
 [Source code](https://source.ind.ie/hypha/spikes/dat-1) (See [iteration plan](iteration-plan) for links to specific tags.)
 
 ## Design
-
-{{<figure src="replication.jpeg" alt="See caption (browser is on the right, the always-on node and native client are node apps running under Tilix)" caption="Screenshot of data replicated between the browser and the always-on node, and between the always-on node and a native client.">}}
 
 Following on from [Hypha Spike: Diceware](../../15/hypha-spike-diceware), this spike aims to explore:
 
