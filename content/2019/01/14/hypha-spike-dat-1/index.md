@@ -64,7 +64,7 @@ The connection to wss://localhost/hypha/f86a223b93b19929eee4e402480ac4d69ad4d834
 [Error] WebSocket connection to 'wss://localhost/hypha/78575ce623d7e7ef8e55c7d888e36f64c4fcea9404b1073ca517f94cc32b08b4' failed: Compressed bit must be 0 if no negotiated deflate-frame extension
 {{</highlight>}}
 
-The issue, as far as I can see at the moment, is that budo’s web socket server and mine are clashing. It seems to work for Jim’s Shopping List Example, though, so I’ll keep looking to see how I can get them to work. For the time being, the workaround is to turn livereload off when setting up the budo server.
+The issue is that budo’s web socket server and mine are clashing. It looks like Jim’s had it turned off also in his Shopping List Example (it defaults to off).
 
 ## Postmortem
 
