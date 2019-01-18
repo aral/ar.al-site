@@ -75,3 +75,5 @@ The issue is that budo’s web socket server and mine are clashing. It looks lik
 
   * [Jim Pick’s DAT Shopping List demo](https://github.com/jimpick/dat-shopping-list-tokyo) (Tokyo version)
   * [hyperswarm](https://github.com/hyperswarm)
+  * [Paul’s hyperswarm announcement post](https://pfrazee.hashbase.io/blog/hyperswarm)
+  
