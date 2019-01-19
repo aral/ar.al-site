@@ -79,7 +79,7 @@ This spike proves only _a subset the absolute basics_ of the Hyphanet design. Se
 
 ## Future improvements
 
-  * Specify read key as a command-line argument on the native node
+  * ✔ [Specify read key as a command-line argument on the native node](https://source.ind.ie/hypha/spikes/dat-1/tags/read-key-as-commandline-argument)
 
 ## Areas for future study
 
