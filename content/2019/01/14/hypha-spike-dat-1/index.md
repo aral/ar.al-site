@@ -84,7 +84,7 @@ This spike proves only _a subset the absolute basics_ of the Hyphanet design. Se
 
 ## Areas for future study
 
-  * ✔ [Browser-to-browser discovery and replication via WebRTC](). See [Hypha Spike WebRTC 1](../../20/hypha-spike-webrtc-1)
+  * ✔ [Browser-to-browser discovery and replication via WebRTC](https://source.ind.ie/hypha/spikes/dat-1/tags/webrtc). See [Hypha Spike WebRTC 1](../../20/hypha-spike-webrtc-1)
   * Multi-write/multi-feed
   * CRDT
 
