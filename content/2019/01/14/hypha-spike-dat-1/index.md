@@ -24,6 +24,7 @@ Following on from [Hypha Spike: Diceware](../../15/hypha-spike-diceware), this s
   3. ✔ [Replicate hypercore to server using websocket connection.](https://source.ind.ie/hypha/spikes/dat-1/tags/replicating)
   4. ✔ [Join hyperswarm and replicate hypercore from server from a native client.](https://source.ind.ie/hypha/spikes/dat-1/tags/hyperswarm-native-replication)
 
+__Note:__ since the original spike, a further iteration has also added [WebRTC support](../../20/hypha-spike-webrtc-1).
 
 ### In-browser hypercore gotcha
 
@@ -83,10 +84,12 @@ This spike proves only _a subset the absolute basics_ of the Hyphanet design. Se
 
 ## Areas for future study
 
-  * Browser-to-browser discovery and replication via WebRTC.
+  * ✔ [Browser-to-browser discovery and replication via WebRTC](). See [Hypha Spike WebRTC 1](../../20/hypha-spike-webrtc-1)
   * Multi-write/multi-feed
   * CRDT
 
 ## Reference
 
   * [Jim Pick’s DAT Shopping List demo](https://github.com/jimpick/dat-shopping-list-tokyo) (Tokyo version)
+
+  * [How DAT works](https://datprotocol.github.io/how-dat-works)
