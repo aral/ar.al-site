@@ -32,6 +32,7 @@ __General:__ document what’s necessary to implement proper multiwriter (i.e., 
 
 ## Reference
 
+  * [Hyperdb architecture](https://github.com/mafintosh/hyperdb/blob/master/ARCHITECTURE.md)
   * [Hyperdb authorisation guide](https://github.com/lachenmayer/hyperdb-authorization-guide)
   * [The definitive replication and authorization guide (github issue)](https://github.com/mafintosh/hyperdb/issues/153)
   * [How DAT works](https://datprotocol.github.io/how-dat-works)
