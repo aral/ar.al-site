@@ -15,7 +15,7 @@ __2019/01/22: This is a Work In Progress (WIP).__ I will be live-updating this p
 
 Following on from [Hypha Spike: WebRTC 1](../../15/hypha-spike-webrtc-1) and [Hypha Spike: DAT 1](/../../14/hypha-spike-dat-1/), this spike aims to explore:
 
-  * The current state of multiwriter in the DAT world.
+  * Explore the current state of multiwriter in the DAT world.
 
 ## Notes
 
