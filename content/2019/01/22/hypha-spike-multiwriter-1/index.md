@@ -48,3 +48,11 @@ If a device is lost/stolen, lack of the passphrase will disallow further writing
   * [Hyperdb authorisation guide](https://github.com/lachenmayer/hyperdb-authorization-guide)
   * [The definitive replication and authorization guide (github issue)](https://github.com/mafintosh/hyperdb/issues/153)
   * [How DAT works](https://datprotocol.github.io/how-dat-works)
+
+## Interesting links
+
+  * [DatFS](https://github.com/fsteff/DatFS)
+  * [Hyperidentity](https://github.com/poga/hyperidentity)
+  * [hypercore-encrypted](https://github.com/aral/hypercore-encrypted)
+  * [hyperdb-encrypted](https://github.com/fsteff/hyperdb-encrypted)
+  
