@@ -49,10 +49,16 @@ If a device is lost/stolen, lack of the passphrase will disallow further writing
   * [The definitive replication and authorization guide (github issue)](https://github.com/mafintosh/hyperdb/issues/153)
   * [How DAT works](https://datprotocol.github.io/how-dat-works)
 
+## Historic links (Heartbeat – 2014)
+
+  * [Heartbeat pre-alpha release](https://forum.ind.ie/t/heartbeat-pre-alpha-release/740)
+  * [Heartbeat conceptual design](https://forum.ind.ie/t/pre-alpha-conceptual-design/25)
+  * [Heartbeat technical design](https://forum.ind.ie/t/pre-alpha-technical-design/42)
+  * [Heartbeat sequence diagrams](https://forum.ind.ie/t/pre-alpha-core-sequence-diagrams/34)
+
 ## Interesting links
 
   * [DatFS](https://github.com/fsteff/DatFS)
   * [Hyperidentity](https://github.com/poga/hyperidentity)
   * [hypercore-encrypted](https://github.com/aral/hypercore-encrypted)
   * [hyperdb-encrypted](https://github.com/fsteff/hyperdb-encrypted)
-  
