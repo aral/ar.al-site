@@ -30,9 +30,13 @@ __General:__ document what’s necessary to implement proper multiwriter (i.e., 
 
 {{<figure src="multiwriter-key-derivation-whiteboard.jpeg" alt="Whiteboard sketch showing two regular nodes and the always-on node. The keys for the regular nodes are derived from the master key." caption="Whiteboard sketch: thoughts on device keys and authentication in Hypha">}}
 
-As initially posted in the [Datproject discussion room](https://gitter.im/datproject/discussions?at=5c484da98318994524359c04).
+As initially posted in the [Datproject discussion room](https://gitter.im/datproject/discussions?at=5c484da98318994524359c04):
 
-Been giving device authorisation in multiwriter some more thought and, contrary to my initial knee-jerk reaction, I think it can be done within the limitations of the current system. It should be possible to handle lost/stolen devices as long as the write key (secret key/private key) is never stored on any device. Since I’m using key derivation from a Diceware passphrase salted with the unique domain in Hypha, this should be easy to support in a usable manner (the passphrase has to be stored in a password manager – or a brain better than mine ­– anyway). So I’m thinking that the master passphrase will not be tied to any hypercore and every device’s writeable hypercore will derive its keys from the master key with the name of the device used as the salt. This means that on any node where the person enters the passphrase and the name of the device to be authorised is known, its public (and private) key can be calculated and the device authorised in the local hypercore. If a device is lost/stolen, lack of the passphrase will disallow further writing. Of course, this requires that the device is properly secured at other layers in the stack (i.e., auto lock, password on lock, full-disk encryption).
+Been giving device authorisation in multiwriter some more thought and, contrary to my initial knee-jerk reaction, I think it can be done within the limitations of the current system. It should be possible to handle lost/stolen devices as long as the write key (secret key/private key) is never stored on any device. Since I’m using key derivation from a Diceware passphrase salted with the unique domain in Hypha, this should be easy to support in a usable manner (the passphrase has to be stored in a password manager – or a brain better than mine ­– anyway).
+
+So I’m thinking that the master passphrase will not be tied to any hypercore and every device’s writeable hypercore will derive its keys from the master key with the name of the device used as the salt. This means that on any node where the person enters the passphrase and the name of the device to be authorised is known, its public (and private) key can be calculated and the device authorised in the local hypercore.
+
+If a device is lost/stolen, lack of the passphrase will disallow further writing. Of course, this requires that the device is properly secured at other layers in the stack (i.e., auto lock, password on lock, full-disk encryption).
 
 ## Postmortem
 
