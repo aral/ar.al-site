@@ -26,6 +26,14 @@ Following on from [Hypha Spike: WebRTC 1](../../15/hypha-spike-webrtc-1) and [Hy
 
 __General:__ document what’s necessary to implement proper multiwriter (i.e., with ability to both authorise and _de-authorise_ writer nodes). We need to get the ball rolling on this if it isn’t already.
 
+## Limitations
+
+  * It’s currently not possible to specify your own key material for the root hypercore in hyperdb. This means we cannot use hyperdb out of the box with the keys generated from our diceware passphrase. (TODO: Link to issue)
+
+## Bugs
+
+  * Only the last item added before and any items added after replication begins are replicated via WebRTC (the latter requires `{live: true}` in the `options`.) This does not manifest in replication over WebSocket.
+
 ## Further thoughts on device authorisation
 
 {{<figure src="multiwriter-key-derivation-whiteboard.jpeg" alt="Whiteboard sketch showing two regular nodes and the always-on node. The keys for the regular nodes are derived from the master key." caption="Whiteboard sketch: thoughts on device keys and authentication in Hypha">}}

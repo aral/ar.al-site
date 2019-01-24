@@ -27,6 +27,10 @@ This is a documentation of my study of the [hypercore-protocol](https://github.c
 
 For certain use cases (e.g., ability to share public keys in multi-writer replication/presence), it would be useful to have a generic and ephemeral (non-persisted) messaging channel. There is currently a DEP by Paul Frazee for using the extension message feature in the protocol to implement this ([DEP-0006: Session Data](https://www.datprotocol.com/deps/0006-session-data-extension/))
 
+Also see: [DEP: Ephemeral message extension pull request](https://github.com/datprotocol/DEPs/pull/28). This PR was closed but I’m not sure why exactly as – unless I’m missing something – the privacy concerns can be addressed by signing the messages with the Feed key as part of the extension protocol itself ([comment](https://github.com/datprotocol/DEPs/pull/28#issuecomment-457111761)).
+
+[The discussion on the DEP’s pull request](https://github.com/datprotocol/DEPs/pull/27) is very valuable and concerns the use cases that we have for Hypha also.
+
 __Note:__ there are ephemeral messages within the protocol (e.g., [keepalive](https://datprotocol.github.io/how-dat-works/#keepalive)) but no general means to send arbitrary ephemeral messages.
 
 ## References
