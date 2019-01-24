@@ -19,6 +19,8 @@ This is a documentation of my study of the [hypercore-protocol](https://github.c
 
   * The hypercore protocol is defined using [protocol buffers](https://developers.google.com/protocol-buffers/) in [schema.proto](https://github.com/mafintosh/hypercore-protocol/blob/master/schema.proto). From this, [message.js](https://github.com/mafintosh/hypercore-protocol/blob/master/messages.js) is generated [via](https://github.com/mafintosh/hypercore-protocol/blob/7c79430ac108c758b50586fdda42bf8bfe533406/package.json#L24) `npm run protobuf`.
 
+  * Initial message sent when establishing a connection is a [Feed message](https://github.com/mafintosh/hypercore-protocol/blob/7c79430ac108c758b50586fdda42bf8bfe533406/schema.proto#L5) that includes the discovery key and a nonce[^1]. If both parties have the read key (public signing key of the hypercore), then they can replicate from the second message onwards [via an encrypted connection that uses XSalsa20](https://datprotocol.github.io/how-dat-works/#Encryption) to encrypt the messages with the read key and the nonce.
+
 ## Limitations
 
 ### Lack of general ephemeral messaging channel
@@ -32,3 +34,5 @@ __Note:__ there are ephemeral messages within the protocol (e.g., [keepalive](ht
   * [How Dat works](https://datprotocol.github.io/how-dat-works/) ([blog post](https://blog.datproject.org/2019/01/21/how-dat-works/)): documentation for the Dat protocol
   * [DAT protocol spec](https://www.datprotocol.com/)
   * [Protocol buffers](https://developers.google.com/protocol-buffers/)
+
+[^1]: Number only used once.
