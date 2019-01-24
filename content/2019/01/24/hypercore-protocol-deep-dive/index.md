@@ -17,9 +17,15 @@ This is a documentation of my study of the [hypercore-protocol](https://github.c
 
 ## Overview
 
+  * The hypercore protocol is defined using [protocol buffers](https://developers.google.com/protocol-buffers/) in [schema.proto](https://github.com/mafintosh/hypercore-protocol/blob/master/schema.proto). From this, [message.js](https://github.com/mafintosh/hypercore-protocol/blob/master/messages.js) is generated [via](https://github.com/mafintosh/hypercore-protocol/blob/7c79430ac108c758b50586fdda42bf8bfe533406/package.json#L24) `npm run protobuf`.
+
 ## Limitations
 
-  * Lack of an ephemeral messaging channel. For certain use cases (e.g., ability to share public keys in multi-writer replication/presence), it would be useful to have a generic and ephemeral (non-persisted) messaging channel. There is currently a DEP by Paul Frazee for using the extension message feature in the protocol to implement this ([DEP-0006: Session Data](https://www.datprotocol.com/deps/0006-session-data-extension/))
+### Lack of general ephemeral messaging channel
+
+For certain use cases (e.g., ability to share public keys in multi-writer replication/presence), it would be useful to have a generic and ephemeral (non-persisted) messaging channel. There is currently a DEP by Paul Frazee for using the extension message feature in the protocol to implement this ([DEP-0006: Session Data](https://www.datprotocol.com/deps/0006-session-data-extension/))
+
+__Note:__ there are ephemeral messages within the protocol (e.g., [keepalive](https://datprotocol.github.io/how-dat-works/#keepalive)) but no general means to send arbitrary ephemeral messages.
 
 ## References
 
