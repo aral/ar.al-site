@@ -28,9 +28,12 @@ Following on from [Hypha Spike: WebRTC 1](../../15/hypha-spike-webrtc-1) and [Hy
 ### Iteration plan
 
 1. ✔ ([tag](https://source.ind.ie/hypha/spikes/multiwriter-1/tags/initial)) Implement multi-writer via [hyperdb](https://github.com/mafintosh/hyperdb)
-2. ✔ ([tag](https://source.ind.ie/hypha/spikes/multiwriter-1/tags/signalhub)) Integrate Signal Hub
-3. Integrate WebRTC client
+2. ✔ ([tag](https://source.ind.ie/hypha/spikes/multiwriter-1/tags/signalhub)) Integrate Signal Hub*
+3. Integrate WebRTC client*
+4. Mirror the spike to GitHub*
 4. Solve the replication issue over TCP and WebRTC
+
+\* These are all to make it simple for others to clone and run the spike with minimal effort.
 
 __Pushed to later iteration:__
 
