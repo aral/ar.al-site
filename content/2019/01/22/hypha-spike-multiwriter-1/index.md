@@ -30,7 +30,11 @@ Following on from [Hypha Spike: WebRTC 1](../../15/hypha-spike-webrtc-1) and [Hy
 1. ✔ ([tag](https://source.ind.ie/hypha/spikes/multiwriter-1/tags/initial)) Implement multi-writer via [hyperdb](https://github.com/mafintosh/hyperdb)
 2. ✔ ([tag](https://source.ind.ie/hypha/spikes/multiwriter-1/tags/signalhub)) Integrate Signal Hub
 3. Integrate WebRTC client
-2. Implement multi-writer via [multifeed](https://github.com/noffle/multifeed)
+4. Solve the replication issue over TCP and WebRTC
+
+__Pushed to later iteration:__
+
+* Implement multi-writer via [multifeed](https://github.com/noffle/multifeed)
 
 __General:__ document what’s necessary to implement proper multiwriter (i.e., with ability to both authorise and _de-authorise_ writer nodes). We need to get the ball rolling on this if it isn’t already.
 
