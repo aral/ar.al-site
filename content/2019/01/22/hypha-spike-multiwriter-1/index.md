@@ -19,6 +19,12 @@ Following on from [Hypha Spike: WebRTC 1](../../15/hypha-spike-webrtc-1) and [Hy
 
 ## Notes
 
+  * Signalhub is now integrated into the server. You do not have to run it separately for WebRTC.
+
+### Issues
+
+  * Only the last added item is being replicated over TCP and WebRTC. All items are being replicated correcly over WebSocket. Why?
+
 ### Iteration plan
 
 1. Implement multi-writer via [hyperdb](https://github.com/mafintosh/hyperdb)
