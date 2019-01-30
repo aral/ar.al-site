@@ -30,25 +30,30 @@ Following on from [Hypha Spike: WebRTC 1](../../15/hypha-spike-webrtc-1) and [Hy
 1. ✔ ([tag](https://source.ind.ie/hypha/spikes/multiwriter-1/tags/initial)) Implement multi-writer via [hyperdb](https://github.com/mafintosh/hyperdb)
 2. ✔ ([tag](https://source.ind.ie/hypha/spikes/multiwriter-1/tags/signalhub)) Integrate Signal Hub*
 
-3. For ‘sign-in’ feature, generate a hypercore based on the reproducible node id
-4. Get multiwriter working with manual local key copy/paste between web clients
+3. Get multiwriter working with hyperdb automatically generating the local key material and with manual local key copy/paste between web clients
 
-5. Integrate WebRTC client*
-6. Mirror the spike to GitHub*
+This is about as far as we can come with the current state of hyperdb.
 
+Once this is working, I have to extend hyperdb so that you can specify your own keys for the local writer so that we can have reproducible keys for writers.
 
-\* These are to make it simple for others to clone and run the spike with minimal effort.
+Once that’s done, I’ll spike:
+
+  * cross-node authorisation via ephemeral messaging over hyperswarm and public-key authorisation (this can be released as a stand-alone module that can be used across projects – e.g., hyperauth)
 
 __Pushed to later iteration:__
 
+* For ‘sign-in’ feature, generate a hypercore based on the reproducible node id
+* Integrate WebRTC client*
+* Mirror the spike to GitHub*
 * Implement multi-writer via [multifeed](https://github.com/noffle/multifeed)
+
+\* These are to make it simple for others to clone and run the spike with minimal effort.
 
 __General:__ document what’s necessary to implement proper multiwriter (i.e., with ability to both authorise and _de-authorise_ writer nodes). We need to get the ball rolling on this if it isn’t already.
 
 ## Upcoming spikes
 
   * hyperdrive
-  * cross-node authorisation via ephemeral messaging over hyperswarm and public-key authorisation
 
 ## Limitations
 
