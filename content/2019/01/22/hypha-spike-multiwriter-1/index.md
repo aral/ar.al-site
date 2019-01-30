@@ -30,10 +30,11 @@ Following on from [Hypha Spike: WebRTC 1](../../15/hypha-spike-webrtc-1) and [Hy
 1. ✔ ([tag](https://source.ind.ie/hypha/spikes/multiwriter-1/tags/initial)) Implement multi-writer via [hyperdb](https://github.com/mafintosh/hyperdb)
 2. ✔ ([tag](https://source.ind.ie/hypha/spikes/multiwriter-1/tags/signalhub)) Integrate Signal Hub*
 
-3. Get multiwriter working with manual local key copy/paste between web clients
+3. For ‘sign-in’ feature, generate a hypercore based on the reproducible node id
+4. Get multiwriter working with manual local key copy/paste between web clients
 
-3. Integrate WebRTC client*
-4. Mirror the spike to GitHub*
+5. Integrate WebRTC client*
+6. Mirror the spike to GitHub*
 
 
 \* These are to make it simple for others to clone and run the spike with minimal effort.
