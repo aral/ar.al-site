@@ -20,6 +20,7 @@ Following on from [Hypha Spike: WebRTC 1](../../15/hypha-spike-webrtc-1) and [Hy
 ## Notes
 
   * Signalhub is now integrated into the server. You do not have to run it separately for WebRTC.
+  * Although we are not creating a persistent database in this iteration (we’re using random-access-ram instead of, say, random-access-i(ndexed)db), we must validate as if we were. The actual app will persist the database so it would never present the option to authorise a node from the same platform/app combination (e.g., Browser X on Platform Y). What this means practically is that you must test with two different browsers when testing on the same machine.
 
 ### Issues
 
