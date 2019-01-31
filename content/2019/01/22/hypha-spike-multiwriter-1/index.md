@@ -4,34 +4,72 @@ date: 2019-01-22T13:00:03Z
 draft: false
 ---
 
----
-__2019/01/22: This is a Work In Progress (WIP).__ I will be live-updating this post as I work on the spike. If you want to get streaming updates without having to refresh your browser, [open the DAT version](dat://ar.al/2019/01/22/hypha-spike-multiwriter-1/) in [Beaker Browser](https://beakerbrowser.com/) and toggle the _live reloading_ feature. Please feel free to [talk to me about this](https://mastodon.ar.al/@aral) on the fediverse as I work on it, perhaps via [Mastodon](https://joinmastodon.org).
-
-{{< lastmodified >}}
-
----
-
 ## Design
 
 Following on from [Hypha Spike: WebRTC 1](../../15/hypha-spike-webrtc-1) and [Hypha Spike: DAT 1](/../../14/hypha-spike-dat-1/), this spike aims to explore:
 
-  * Explore the current state of multiwriter in the DAT world.
+  * Get multiwriter working with hyperdb.
+
+## Flow
+
+Note: the flow is currently limited by not being able to pass a custom read and write for the local writer to hyperdb. I will be adding this functionality to hyperdb in the next spike. Once that’s in there, I should be able to reduce this flow to two steps: request permission + grant permission (via an interaction familiar to anyone who has ever authorised one device from another). I did not tackle that first as I wanted to get hyperdb and multiwriter working as-is myself before anything else. Taking it a step at a time.
+
+{{<figure src="multiwriter-1.jpeg" alt="Screenshot of the spike running on Firefox (left) and Chromium (right). Details are described in the body of the text." caption="Step 1">}}
+
+Load app in two different browsers. Press the “Sign up” button in left browser.
+
+{{<figure src="multiwriter-2.jpeg" alt="Screenshot of the spike running on Firefox (left) and Chromium (right). Details are described in the body of the text." caption="Step 2">}}
+
+Left browser initialises origin hyperbd and writes to it. Copy its hyphalink to the second browser and press the “Sign In” button.
+
+{{<figure src="multiwriter-3.jpeg" alt="Screenshot of the spike running on Firefox (left) and Chromium (right). Details are described in the body of the text." caption="Step 3">}}
+
+This creates a hyperdb for the same hyphalink in the right browser. It replicates the latest entry from the left browser (see [issues](#issues), below) and writes to its local hypercore but those writes do not replicate as it has not been authorised to write to the main hyperdb by the origin node (left browser).
+
+{{<figure src="multiwriter-4.jpeg" alt="Screenshot of the spike running on Firefox (left) and Chromium (right). Details are described in the body of the text." caption="Step 4">}}
+
+We write a few more entries using the Write button in the origin (left) browser and note that they replicate as expected to the right browser.
+
+{{<figure src="multiwriter-5.jpeg" alt="Screenshot of the spike running on Firefox (left) and Chromium (right). Details are described in the body of the text." caption="Step 5">}}
+
+We write a couple of new entries into the right browser and note that, as expected, they do not replicate to the origin browser because the node in the right browser has not been authorised yet.
+
+{{<figure src="multiwriter-6.jpeg" alt="Screenshot of the spike running on Firefox (left) and Chromium (right). Details are described in the body of the text." caption="Step 6">}}
+
+We copy the _local read key_ from the right browser and paste it into the _Other node read key_ field in the left browser and press the _Authorise_ button.
+
+{{<figure src="multiwriter-7.jpeg" alt="Screenshot of the spike running on Firefox (left) and Chromium (right). Details are described in the body of the text." caption="Step 7">}}
+
+We note that the right browser is now authorised as its last item replicates to the origin node (left browser). Again, see [issues](#issues) (I don’t know yet why only the last-written item is replicating and not the whole hypercore. I might have configured it incorrectly but I haven’t had a chance to look into it yet.)
+
+{{<figure src="multiwriter-8.jpeg" alt="Screenshot of the spike running on Firefox (left) and Chromium (right). Details are described in the body of the text." caption="Step 8">}}
+
+We add a few more items to the right browser and note, as expected, that they now replicate to the origin node from the newly-authorised second writer.
+
+{{<figure src="multiwriter-9.jpeg" alt="Screenshot of the spike running on Firefox (left) and Chromium (right). Details are described in the body of the text." caption="Backend">}}
+
+We also note that _some_ of the entries have replicated to the always-on node over WebSocket. But not all (see [issues](#issues)).
+
+
+### Issues
+
+__To-do:__ investigate:
+
+  * Only the last item added before and any items added after replication begins are replicated via WebRTC (the latter requires `{live: true}` in the `options`.) This does not manifest in replication over WebSocket (although, see below).
+  * Above also appears to manifest over TCP. Why?
+  * Also, recently noticed that only some items are replicating over WebSocket. Why?
 
 ## Notes
 
   * Signalhub is now integrated into the server. You do not have to run it separately for WebRTC.
   * Although we are not creating a persistent database in this iteration (we’re using random-access-ram instead of, say, random-access-i(ndexed)db), we must validate as if we were. The actual app will persist the database so it would never present the option to authorise a node from the same platform/app combination (e.g., Browser X on Platform Y). What this means practically is that you must test with two different browsers when testing on the same machine.
 
-### Issues
-
-  * Only the last added item is being replicated over TCP and WebRTC. All items are being replicated correcly over WebSocket. Why?
-
 ### Iteration plan
 
 1. ✔ ([tag](https://source.ind.ie/hypha/spikes/multiwriter-1/tags/initial)) Implement multi-writer via [hyperdb](https://github.com/mafintosh/hyperdb)
 2. ✔ ([tag](https://source.ind.ie/hypha/spikes/multiwriter-1/tags/signalhub)) Integrate Signal Hub*
 
-3. Get multiwriter working with hyperdb automatically generating the local key material and with manual local key copy/paste between web clients
+3. ✔ ([tag](https://source.ind.ie/hypha/spikes/multiwriter-1/tags/multiwriter-working)) Get multiwriter working with hyperdb automatically generating the local key material and with manual local key copy/paste between web clients
 
 This is about as far as we can come with the current state of hyperdb.
 
@@ -54,15 +92,13 @@ __General:__ document what’s necessary to implement proper multiwriter (i.e., 
 
 ## Upcoming spikes
 
+  * Extend hyperdb to accept a hypercore factory in its constructor
   * hyperdrive
 
 ## Limitations
 
-  * It’s currently not possible to specify your own key material for the root hypercore in hyperdb. This means we cannot use hyperdb out of the box with the keys generated from our diceware passphrase. (TODO: Link to issue)
+  * It’s currently not possible to specify your own key material for the root hypercore in hyperdb. This means we cannot use hyperdb out of the box with the keys generated from our diceware passphrase ([Issue #158](https://github.com/mafintosh/hyperdb/issues/158)). I will be resolving this issue as the next spike.
 
-## Bugs
-
-  * Only the last item added before and any items added after replication begins are replicated via WebRTC (the latter requires `{live: true}` in the `options`.) This does not manifest in replication over WebSocket.
 
 ## Further thoughts on device authorisation
 
@@ -78,7 +114,7 @@ If a device is lost/stolen, lack of the passphrase will disallow further writing
 
 ## Postmortem
 
-  * Spike is in progress.
+  * See [flow](#flow), [issues](#issues), [iteration plan](#iteration-plan), and [upcoming spikes](#upcoming-spikes) for a good summary of how the spike went, what issues I ran into, and how I plan to resolve them.
 
 ## Reference
 
