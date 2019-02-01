@@ -29,12 +29,12 @@ None yet.
 
 ## Notes
 
-None yet.
+* After implementing it, realised that reproducible local writer keys is not necessary for implementing a seamless node authorisation flow. Also, the node name/description should be a memory aid, nothing more. I’m basically replacing a unique identifier (the local writer’s read key) with an identifier that could easily have clashes for no good reason (the node name/description). So I’m going to go back to how I was doing it before and implement the rest of this spike.
 
 ### Iteration plan
 
-1. ✔ Refactor to create [reproducible local writers](https://github.com/mafintosh/hyperdb/issues/158)
-2. ✔ ([tag](https://source.ind.ie/hypha/spikes/multiwriter-2/tags/manual-authentication-with-reproducible-local-writers)) Authenticate (manually) using the node name and reproducing the remote node’s local keys
+1. ~~✔ Refactor to create [reproducible local writers](https://github.com/mafintosh/hyperdb/issues/158)~~
+2. ~~✔ ([tag](https://source.ind.ie/hypha/spikes/multiwriter-2/tags/manual-authentication-with-reproducible-local-writers)) Authenticate (manually) using the node name and reproducing the remote node’s local keys~~
 3. Implement an ephemeral messaging channel between swarms over hyperswarm
 4. Use the ephemeral messaging channel with encrypted JSON request/response to authorise new nodes
 5. Release this as a stand-alone module that can be used across projects – e.g., @hypha/auth
