@@ -4,6 +4,11 @@ date: 2019-01-22T13:00:03Z
 draft: false
 ---
 
+## Source
+
+  * [source.ind.ie/hypha/spikes/multiwriter-1](https://source.ind.ie/hypha/spikes/multiwriter-1) (canonical location)
+  * [Github mirror](https://github.com/indie-mirror/hypha-spike-multiwriter-1) (pull requests, issues, etc. welcome)
+
 ## Design
 
 Following on from [Hypha Spike: WebRTC 1](../../15/hypha-spike-webrtc-1) and [Hypha Spike: DAT 1](/../../14/hypha-spike-dat-1/), this spike aims to explore:
@@ -71,6 +76,8 @@ __To-do:__ investigate:
 
 3. ✔ ([tag](https://source.ind.ie/hypha/spikes/multiwriter-1/tags/multiwriter-working)) Get multiwriter working with hyperdb automatically generating the local key material and with manual local key copy/paste between web clients
 
+4. ✔ Mirror the spike to GitHub
+
 This is about as far as we can come with the current state of hyperdb.
 
 Once this is working, I have to extend hyperdb so that you can specify your own keys for the local writer so that we can have reproducible keys for writers.
@@ -83,7 +90,6 @@ __Pushed to later iteration:__
 
 * For ‘sign-in’ feature, generate a hypercore based on the reproducible node id
 * Integrate WebRTC client*
-* Mirror the spike to GitHub*
 * Implement multi-writer via [multifeed](https://github.com/noffle/multifeed)
 
 \* These are to make it simple for others to clone and run the spike with minimal effort.
