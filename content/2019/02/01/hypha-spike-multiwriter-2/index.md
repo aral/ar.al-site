@@ -33,10 +33,11 @@ None yet.
 
 ### Iteration plan
 
-1. Refactor to create [reproducible local writers](https://github.com/mafintosh/hyperdb/issues/158)
-2. Implement an ephemeral messaging channel between swarms over hyperswarm
-3. Use the ephemeral messaging channel to implement public-key authorisation for authorising new nodes
-4. Release this as a stand-alone module that can be used across projects – e.g., @hypha/auth
+1. ✔ Refactor to create [reproducible local writers](https://github.com/mafintosh/hyperdb/issues/158)
+2. ✔ ([tag](https://source.ind.ie/hypha/spikes/multiwriter-2/tags/manual-authentication-with-reproducible-local-writers)) Authenticate (manually) using the node name and reproducing the remote node’s local keys
+3. Implement an ephemeral messaging channel between swarms over hyperswarm
+4. Use the ephemeral messaging channel with encrypted JSON request/response to authorise new nodes
+5. Release this as a stand-alone module that can be used across projects – e.g., @hypha/auth
 
 ## Upcoming spikes
 
