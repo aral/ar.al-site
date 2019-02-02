@@ -35,7 +35,7 @@ None yet.
 
 1. ~~✔ Refactor to create [reproducible local writers](https://github.com/mafintosh/hyperdb/issues/158)~~
 2. ~~✔ ([tag](https://source.ind.ie/hypha/spikes/multiwriter-2/tags/manual-authentication-with-reproducible-local-writers)) Authenticate (manually) using the node name and reproducing the remote node’s local keys~~
-3. Implement an ephemeral messaging channel between swarms over hyperswarm
+3. Implement an [ephemeral messaging channel](https://github.com/beakerbrowser/dat-ephemeral-ext-msg) between swarms over hyperswarm
 4. Use the ephemeral messaging channel with encrypted JSON request/response to authorise new nodes
 5. Release this as a stand-alone module that can be used across projects – e.g., @hypha/auth
 
@@ -61,6 +61,7 @@ Spike is ongoing.
 
 ## Reference
 
+  * [Dat Ephemeral Message Extension](https://github.com/beakerbrowser/dat-ephemeral-ext-msg)
   * [Hyperdb architecture](https://github.com/mafintosh/hyperdb/blob/master/ARCHITECTURE.md)
   * [Hyperdb authorisation guide](https://github.com/lachenmayer/hyperdb-authorization-guide)
   * [The definitive replication and authorization guide (github issue)](https://github.com/mafintosh/hyperdb/issues/153)
