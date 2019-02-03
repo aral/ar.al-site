@@ -27,13 +27,15 @@ Following on from [Hypha Spike: Multiwriter 1](/2019/01/22/hypha-spike-multiwrit
 
 ## Design
 
-{{<figure src="authorisation-via-ephemeral-message.jpeg" alt="Description is in the caption" caption="Whiteboard sketch showing sign up (origin node) and sign in (read-only node) and the means available for peer-to-peer authorisation request of nodes via an encrypted ephemeral messaging channel.">}}
+{{<figure src="authorisation-request.jpeg" alt="Screenshot of an authorisation request. Message: Authorise node Firefox on Ubuntu 64-bit? Button with label: Authorise" caption="Peer-to-peer node authorisation: early proof of concept.">}}
 
 This is the onboarding and new node authorisation (sign up/sign in) flow:
 
 1. Person signs up either via a native app or the web. The app or the browser becomes the origin node. The database is only writable on this node at this point.
 
 2. Person signs in using their password on a second node (either native or web). A database is created on this node and replicates with the origin database but it is read only at creation. The person is asked to sign into an existing node and approve the new node.
+
+    {{<figure src="authorisation-via-ephemeral-message.jpeg" alt="Description is in the caption" caption="Whiteboard sketch showing sign up (origin node) and sign in (read-only node) and the means available for peer-to-peer authorisation request of nodes via an encrypted ephemeral messaging channel.">}}
 
 3. The second node uses an encrypted ephemeral messaging channel extension to the Dat protocol to ask for authorisation. This request is sent browser-to-browser via WebRTC, native-to-native via TCP, and browser-to-native and native-to-browser via WebSocket (the always-on node proxies the requests via WebSocket but it cannot see the contents of the messages as it is an unprivileged node and doesn’t have the secret key).
 
