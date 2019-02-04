@@ -60,8 +60,8 @@ None yet.
 4. ✔ ([tag](https://source.ind.ie/hypha/spikes/multiwriter-2/tags/ephemeral-messaging-1)) Implement an [ephemeral messaging channel](https://github.com/beakerbrowser/dat-ephemeral-ext-msg) between nodes and use a JSON request to ask for authorisation of new nodes (WebRTC)
 5. ✔ Also add the ephemeral messaging channel to replication over WebSocket
 6. ✔ ([tag](https://source.ind.ie/hypha/spikes/multiwriter-2/tags/relay-1)) Also add the ephemeral messaging channel to replication over TCP
-7. Fix issue with messages being received twice due to always-on-relay
-8. Add options to interface to selectively enable replication over WebSocket or WebRTC or both.
+7. ✔ ([tag](https://source.ind.ie/hypha/spikes/multiwriter-2/tags/deduplication)) Add ephemeral message deduplication to the browser and native clients as messages may be received more than once due to the always-on node relay.
+8. Add options to interface to selectively enable replication over WebSocket or WebRTC or both for testing.
 9. Encrypt the messages over the ephemeral messaging channel
 10. Clean up the interface and carry out some general housekeeping on the code
 
