@@ -42,16 +42,6 @@ This is the onboarding and new node authorisation (sign up/sign in) flow:
 4. On the origin node (or, later, on any other authorised node), the person is prompted to authorise the new node. When they do, the new node becomes able to both read and write to the common database.
 
 
-### Issues
-
-None yet.
-
-
-## Notes
-
-* After implementing it, realised that reproducible local writer keys is not necessary for implementing a seamless node authorisation flow. Also, the node name/description should be a memory aid, nothing more. I’m basically replacing a unique identifier (the local writer’s read key) with an identifier that could easily have clashes for no good reason (the node name/description). So I’m going to go back to how I was doing it before and implement the rest of this spike.
-
-
 ### Iteration plan
 
 1. ~~✔ Refactor to create [reproducible local writers](https://github.com/mafintosh/hyperdb/issues/158)~~
@@ -61,9 +51,18 @@ None yet.
 5. ✔ Also add the ephemeral messaging channel to replication over WebSocket
 6. ✔ ([tag](https://source.ind.ie/hypha/spikes/multiwriter-2/tags/relay-1)) Also add the ephemeral messaging channel to replication over TCP
 7. ✔ ([tag](https://source.ind.ie/hypha/spikes/multiwriter-2/tags/deduplication)) Add ephemeral message deduplication to the browser and native clients as messages may be received more than once due to the always-on node relay.
-8. Encrypt the messages over the ephemeral messaging channel.
-9. Add options to interface to selectively enable replication over WebSocket or WebRTC or both for testing.
-10. Clean up the interface and carry out some general housekeeping on the code.
+8. ✔ ([source](https://source.ind.ie/hypha/secure-ephemeral-messaging-channel)) Implement a secure ephemeral messaging channel as a Dat extension based on [DEP-0000: Ephemeral Message (Extension Message)](https://github.com/beakerbrowser/dat-ephemeral-ext-msg).
+9. ✔ ([tag](https://source.ind.ie/hypha/spikes/multiwriter-2/tags/secure-messages-1)) Implement the secure ephemeral messaging channel in the spike. (Currently only on WebRTC replication.)
+10. Extend the secure ephemeral messaging channel to support unprivileged relay nodes (the always-on nodes).
+11. Implement secure ephemeral messaging channel on WebSocket connection
+12. Update the native app (mock) to accept a secret key and set up the secure ephemeral messaging channel over a TCP connection.
+13. Create a higher level Hypha authentication library with a simpler API that abstracts away the messaging aspect (@hypha/auth)
+
+
+### Lower priority; might be pushed to later spike or iteration:
+
+1. Add options to interface to selectively enable replication over WebSocket or WebRTC or both for testing.
+2. Clean up the interface and carry out some general housekeeping on the code.
 
 
 ## Future plans
