@@ -54,7 +54,7 @@ This is the onboarding and new node authorisation (sign up/sign in) flow:
 8. ✔ ([source](https://source.ind.ie/hypha/secure-ephemeral-messaging-channel)) Implement a secure ephemeral messaging channel as a Dat extension based on [DEP-0000: Ephemeral Message (Extension Message)](https://github.com/beakerbrowser/dat-ephemeral-ext-msg).
 9. ✔ ([tag](https://source.ind.ie/hypha/spikes/multiwriter-2/tags/secure-messages-1)) Implement the secure ephemeral messaging channel in the spike. (Currently only on WebRTC replication.)
 10. ✔ ([tag](https://source.ind.ie/hypha/secure-ephemeral-messaging-channel/tags/unprivileged-relay-nodes)) Extend the secure ephemeral messaging channel to support unprivileged relay nodes (the always-on nodes).
-11. Implement secure ephemeral messaging channel on WebSocket connection
+11. ✔ ([tag](https://source.ind.ie/hypha/spikes/multiwriter-2/tags/secure-messages-2)) Implement secure ephemeral messaging channel on WebSocket connection. (Encrypted messages are now relayed by the always-on node.)
 12. Update the native app (mock) to accept a secret key and set up the secure ephemeral messaging channel over a TCP connection.
 13. Create a higher level Hypha authentication library with a simpler API that abstracts away the messaging aspect (@hypha/auth)
 
