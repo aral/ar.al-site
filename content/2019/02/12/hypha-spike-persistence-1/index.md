@@ -37,7 +37,7 @@ Following on from [Hypha Spike: Multiwriter 2](/2019/01/01/hypha-spike-multiwrit
 
 4. The person sees themselves as signed in and can post entries. (For the purposes of this spike, simple text-only public posts – just so we have some data and can see things replicate.)
 
-5. On some other node (browser or native), person accesses the domain. They can see the public posts as we set up a read-only local database and replicate them. We know which database to replicate based on a Dat-DNS lookup via the __.well-known/dat__ location on the domain of the always-on node. __See security note 1.__
+5. On some other node (browser or native), person accesses the domain. They can see the public posts as we set up a read-only local database and replicate them. We know which database to replicate based on a [Dat-DNS](https://www.datprotocol.com/deps/0005-dns/) lookup via the __.well-known/dat__ location on the domain of the always-on node. __See security note 1.__
 
     They do not see the positing interface. Instead, they see a passphrase field (not shown in above whiteboard sketch) and a sign in button. Entering a passphrase creates the deterministic keys and proceeds to request authorisation via the [secure ephemeral messaging channel](https://source.ind.ie/hypha/secure-ephemeral-messaging-channel). The person is asked to authorise the request from an existing node (e.g., the browser(/native app*) they set up from). _* out of scope for this spike._
 
