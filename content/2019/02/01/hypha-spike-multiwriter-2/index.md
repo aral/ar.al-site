@@ -4,14 +4,6 @@ date: 2019-02-01T15:04:03Z
 draft: false
 ---
 
----
-
-__2019/02/01: This is a Work In Progress (WIP).__ I will be live-updating this post as I work on the spike. If you want to get streaming updates without having to refresh your browser, [open the DAT version](dat://ar.al/2019/02/01/hypha-spike-multiwriter-2/) in [Beaker Browser](https://beakerbrowser.com/) and toggle the _live reloading_ feature. Please feel free to [talk to me about this](https://mastodon.ar.al/@aral) on the fediverse as I work on it, perhaps via [Mastodon](https://joinmastodon.org).
-
-{{< lastmodified >}}
-
----
-
 ## Source
 
   * [source.ind.ie/hypha/spikes/multiwriter-2](https://source.ind.ie/hypha/spikes/multiwriter-2) (canonical location)
@@ -57,14 +49,12 @@ This is the onboarding and new node authorisation (sign up/sign in) flow:
 11. ✔ ([tag](https://source.ind.ie/hypha/spikes/multiwriter-2/tags/secure-messages-2)) Implement secure ephemeral messaging channel on WebSocket connection. (Encrypted messages are now relayed by the always-on node.)
 12. ✔ Update the native app (mock) to accept a secret key and set up the secure ephemeral messaging channel over a TCP connection.
 13. ✔ ([tag](https://source.ind.ie/hypha/spikes/multiwriter-2/tags/secure-messages-3)) Fix: allow any authorised node to authorise any other node.
-14. Create a higher level Hypha authentication library with a simpler API that abstracts away the messaging aspect (@hypha/auth)
 
+### Pushed to later spikes:
 
-### Lower priority; might be pushed to later spike or iteration:
-
-1. Add options to interface to selectively enable replication over WebSocket or WebRTC or both for testing.
-2. Clean up the interface and carry out some general housekeeping on the code.
-
+1. Create a higher level Hypha authentication library with a simpler API that abstracts away the messaging aspect (@hypha/auth)
+2. Add options to interface to selectively enable replication over WebSocket or WebRTC or both for testing.
+3. Clean up the interface and carry out some general housekeeping on the code.
 
 ## Future plans
 
@@ -73,6 +63,7 @@ Release the authentication functionality as a stand-alone module that can be use
 
 ## Upcoming spikes
 
+  * persistence
   * multiwriter hyperdrive
 
 
@@ -92,7 +83,11 @@ Release the authentication functionality as a stand-alone module that can be use
 
 ## Postmortem
 
-Spike is ongoing.
+In this spike, I added hyperdb support to Paul Frazee’s dat-ephemeral-ext-msg module and created an end-to-end encrypted secure messaging channel for use between nodes owned by the name person: [secure-ephemeral-messaging-channel](https://source.ind.ie/hypha/secure-ephemeral-messaging-channel).
+
+Any authenticated node can now securely authorise any other node as a writer.
+
+Up to this point, the spikes have been using random-access-memory as the storage layer. In the next spike, I will expore persistence. My plan is to then look at the auth module refactor once the sign up/sign in process more closely implements real-world behaviour.
 
 ## Reference
 
