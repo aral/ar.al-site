@@ -27,7 +27,7 @@ Following on from [Hypha Spike: Multiwriter 2](/2019/01/01/hypha-spike-multiwrit
 
 ## Design
 
-{{<figure src="hypha-spike-persistence-1-flow.jpeg" alt="Screenshot of the flow to be implemented in this spike. The details are explained in the text below." caption="Implementing persistance and getting closer to the actual flow.">}}
+{{<figure src="flow.jpeg" alt="Screenshot of the flow to be implemented in this spike. The details are explained in the text below." caption="Implementing persistance and getting closer to the actual flow.">}}
 
 1. Domain registration + hosting setup (out of scope, although see [Hypha Spike: Deployment 1](/2019/01/05/hypha-spike-deployment-1/))
 
