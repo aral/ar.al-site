@@ -51,17 +51,22 @@ Following on from [Hypha Spike: Multiwriter 2](/2019/01/01/hypha-spike-multiwrit
 2. Implement [random-access-file](https://github.com/random-access-storage/random-access-file) in the always-on node.
 3. Update interface and flow according to the design notes above.
 
-## Future plans
+### Future plans
 
   * Create a higher level Hypha authentication library with a simpler API that abstracts away the messaging aspect (@hypha/auth)
   * Tie in with [Hypha Spike: Deployment 1](/2019/01/05/hypha-spike-deployment-1/)
   * Add options to interface to selectively enable replication over WebSocket or WebRTC or both for testing.
   * Clean up the interface and carry out some general housekeeping on the code.
 
-## Upcoming spikes
+### Upcoming spikes
 
   * multiwriter hyperdrive (carried over from multiwriter-2)
 
+### Development notes
+
+  * Although the random-access-storage project states that the interfaces of the various random-access-* projects are the same, this is not true for random-access-memory and random-access-idb (IndexedDB). This tripped me up while migrating from one to the other. [I noted the discrepancy and suggested that we document it.](https://github.com/substack/random-access-idb/issues/6)
+
+  * If you’re testing IndexedDB persistence on Firefox, make sure you are not browsing in private mode as it will fail silently.
 
 ### Security considerations
 
