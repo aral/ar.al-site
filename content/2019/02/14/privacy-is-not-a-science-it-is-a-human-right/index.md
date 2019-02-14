@@ -60,7 +60,7 @@ What Mr. van der Sloot is suggesting here is dangerous. It is a brazen attempt t
 
 Mr. van der Sloot wants people working in privacy to be neutral. In the words of Desmond Tutu, “If you are neutral in situations of injustice, you have chosen the side of the oppressor. If an elephant has its foot on the tail of a mouse and you say that you are neutral, the mouse will not appreciate your neutrality.”
 
-By this point, you might be wondering, “who is this Mr. van der Sloot you are talking about?” Who is this man who wants us to think privacy is a science (it’s not) and punish those privacy scientists (not a thing) who aren’t ‘neutral?’ What does he do? Well, he is the co-organiser of the Amsterdam Privacy Conference sponsored by Google and Palantir.
+By this point, you might be wondering, “who is this Mr. van der Sloot you are talking about?” Who is this man who wants us to think privacy is a science (it’s not) and punish those privacy scientists (not a thing) who aren’t ‘neutral?’ What does he do? Well, he is the [chief organiser](https://bartvandersloot.com/About/index.html) of Amsterdam Privacy Conference [sponsored by Google and Palantir](https://apc2018.com/sponsors/index.html). Oh, and he is also [a docent at the Tilburg University on “Privacy and Big Data.”](https://www.tilburguniversity.edu/webwijs/show/b.vdrsloot/)
 
 ### Enough bullshit
 
