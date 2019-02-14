@@ -1,7 +1,7 @@
 ---
 title: "Privacy is not a science, it is a human right"
-date: 2019-02-14T09:45:55Z
-draft: true
+date: 2019-02-14T12:17:00Z
+draft: false
 ---
 
 {{<figure src="wolf-in-sheeps-clothing.jpeg" alt="A doctored image of a wolf in sheep’s clothing amid a group of sheep.">}}
@@ -36,7 +36,7 @@ Heck, even Mr. Sloot’s core postulate on science being neutral doesn’t stand
 
 ## But wait a minute, why are organisations that purport to defend your privacy silent on this topic?
 
-Having dismissed the kindergarten philosophy underpinning Mr. Sloot’s argument, let’s turn to a more pratical matter because there is one question that Mr. Sloot raises that I would also like an answer to:
+Having dismissed the kindergarten philosophy underpinning Mr. Sloot’s argument, let’s turn to a more practical matter because there is one question that Mr. Sloot raises that I would also like an answer to:
 
 Why are, in Mr. Sloot’s words, so “few words wasted on sponsorship by activist civil rights organizations such as the Electronic Privacy Information Center (EPiC) [sic], Privacy First and Bits of Freedom, which are outspoken pro-privacy?”
 
@@ -66,7 +66,7 @@ By this point, you might be wondering, “who is this Mr. Sloot you are talking 
 
 In many ways, and without such intention, Mr. Sloot’s article shines an impossible-to-ignore spotlight onto the outstanding level of rot and corruption in academia and non-governmental organisations today. It also lays bare a new and dangerous effort to further cement such corruption institutionally by those that benefit financially from it.
 
-Perhaps such a spectacular display of desdain of ethics, privacy, and human rights will be enough to overcome even the herculean efforts of suspension of disbelief practiced by some in our field to deny that we have a gigantic problem on our hands.
+Perhaps such a spectacular display of disdain of ethics, privacy, and human rights will be enough to overcome even the herculean efforts of suspension of disbelief practiced by some in our field to deny that we have a gigantic problem on our hands.
 
 Or, to put it more simply, perhaps Mr. Sloot has produced a turd of such magnificence that even those who usually remain silent might see it fit to stand and comment.
 
