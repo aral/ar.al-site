@@ -48,7 +48,7 @@ Following on from [Hypha Spike: Multiwriter 2](/2019/01/01/hypha-spike-multiwrit
 ### Iteration plan
 
 1. ✔ ([tag](https://source.ind.ie/hypha/spikes/persistence-1/tags/idb)) Implement [random-access-idb](https://github.com/random-access-storage/random-access-idb) in the browser node.
-2. Implement [random-access-file](https://github.com/random-access-storage/random-access-file) in the always-on node.
+2. ✔ ([tag](https://source.ind.ie/hypha/spikes/persistence-1/tags/file))Implement [random-access-file](https://github.com/random-access-storage/random-access-file) in the always-on node.
 3. Update interface and flow according to the design notes above.
 
 ### Future plans
