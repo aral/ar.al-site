@@ -1,7 +1,7 @@
 ---
 title: "On the General Architecture of the Peer Web (and the placement of the PC 2.0 era within the timeline of general computing and the greater socioeconomic context)"
-date: 2019-02-13T11:30:10Z
-draft: true
+date: 2019-02-13T14:30:00Z
+draft: false
 ---
 
 {{<figure src="eras-of-computing.jpeg" alt="An image with four equal-spaced columns, zebra-striped with light and dark grey. In the first is a photo of a mainframe computer. A woman sits at the input device and a man examines a panel. The second is a photo of the first Apple computer. It has a hand-made wooden case with Apple Computer carved out of it in uneven lettering. The third column has the image of a data center with a grid of servers; the room is lit in blue. The last column is empty." caption="There have been three eras of general computing… the fourth remains to be written.">}}
