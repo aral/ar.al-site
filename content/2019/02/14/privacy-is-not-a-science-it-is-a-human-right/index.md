@@ -66,7 +66,7 @@ By this point, you might be wondering, “who is this Mr. van der Sloot you are 
 
 In many ways, and without such intention, Mr. van der Sloot’s article shines an impossible-to-ignore spotlight onto the outstanding level of rot and corruption in academia and non-governmental organisations today. It also lays bare a new and dangerous effort to further cement such corruption institutionally by those that benefit financially from it.
 
-Perhaps such a spectacular display of dis dain of ethics, privacy, and human rights will be enough to overcome even the herculean efforts of suspension of disbelief practiced by some in our field to deny that we have a gigantic problem on our hands.
+Perhaps such a spectacular display of disdain of ethics, privacy, and human rights will be enough to overcome even the herculean efforts of suspension of disbelief practiced by some in our field to deny that we have a gigantic problem on our hands.
 
 Or, to put it more simply, perhaps Mr. van der Sloot has produced a turd of such magnificence that even those who usually remain silent might see it fit to stand and comment.
 
