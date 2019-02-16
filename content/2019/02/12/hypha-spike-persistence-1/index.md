@@ -74,6 +74,10 @@ Following on from [Hypha Spike: Multiwriter 2](/2019/01/01/hypha-spike-multiwrit
 
     {{<figure src="hypha-browser-node-initial-load-flow.jpg" alt="Flow chart showing the initial load flow." caption="Initial load flow for browser nodes.">}}
 
+  * Regarding sign-ins: if a database is lost for any reason, we will need to recreate it. So [I’ve reopened the reproducible writers pull request I was preparing for hyperdb](https://github.com/mafintosh/hyperdb/pull/163).
+
+  * I’m also thinking that [the origin database shouldn’t be used for anything else but to create and authorise a secondary writer](https://gitter.im/datproject/discussions?at=5c6855d65095f6660c05d807).
+
 ### Security considerations
 
 1. __Regarding design step 5:__ Remember that the always-on node is untrusted and unprivileged. We could easily set it up so that it returns the Dat URL in the rendered source but we won’t be doing that. The unprivileged node will return unaltered source that we will verify using [subresource integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) (out of scope for this spike). We will also implement trusted third-party audits of the source (this could, for example, be handled by a browser extension that compares the hashes received as well as the hash of the source code with the trusted hashes from the source code repository).
