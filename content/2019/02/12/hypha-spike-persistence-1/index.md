@@ -90,5 +90,7 @@ Spike is in progress.
 
   * [random-access-idb](https://github.com/random-access-storage/random-access-idb): Random-access-compatible indexedDB storage layer.
   * [random-access-file](https://github.com/random-access-storage/random-access-file):  Continuous reading or writing to a file using random offsets and lengths.
+  * [DEP-0004: Hyperdb](https://github.com/datprotocol/DEPs/blob/master/proposals/0004-hyperdb.md)
+  * [DEP-0008: Multiwriter](https://github.com/datprotocol/DEPs/blob/master/proposals/0008-multiwriter.md)
 
-Also see [Hypha Spike: Multiwriter 2 Reference](/2019/01/01/hypha-spike-multiwriter-2#reference)
+Also see [Hypha Spike: Multiwriter 2 Reference](/2019/02/01/hypha-spike-multiwriter-2#reference)
