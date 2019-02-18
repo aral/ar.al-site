@@ -64,7 +64,7 @@ Following on from [Hypha Spike: Multiwriter 2](/2019/01/01/hypha-spike-multiwrit
 
 ### Development notes
 
-  * Although the random-access-storage project states that the interfaces of the various random-access-* projects are the same, this is not true for random-access-memory and random-access-idb (IndexedDB). This tripped me up while migrating from one to the other. [I noted the discrepancy and suggested that we document it.](https://github.com/substack/random-access-idb/issues/6)
+  * Although the random-access-storage project states that the interfaces of the various random-access-* projects are the same, this is not entirely true for random-access-memory and random-access-idb (IndexedDB). This tripped me up while migrating from one to the other. [I noted the discrepancy and suggested that we document it.](https://github.com/substack/random-access-idb/issues/6)
 
   * If you’re testing IndexedDB persistence on Firefox, make sure you are not browsing in private mode as it will fail silently.
 
@@ -74,7 +74,7 @@ Following on from [Hypha Spike: Multiwriter 2](/2019/01/01/hypha-spike-multiwrit
 
     {{<figure src="hypha-browser-node-initial-load-flow.jpg" alt="Flow chart showing the initial load flow." caption="Initial load flow for browser nodes.">}}
 
-  * Regarding sign-ins: if a database is lost for any reason, we will need to recreate it. So [I’ve reopened the reproducible writers pull request I was preparing for hyperdb](https://github.com/mafintosh/hyperdb/pull/163).
+  * Regarding sign-ins: if a database is lost for any reason, we will need to recreate it. So [I’ve reopened the reproducible writers pull request I was preparing for hyperdb](https://github.com/mafintosh/hyperdb/pull/163). __Update:__ On further thought, having a reproducible unique ID for browser nodes is a hard problem and this feels like a premature optimisation right now. Instead, I realised I can separate the sign in process (the provision of the passphrase) from the database creation (something that also becomes clear once the flow accounts for unauthorised, read-only nodes – i.e., people who are just browsing your public content). Also, we can encrypt the local secret key and persist the encrypted key in the browser. The combination of these should mean that we can get away with sacrificing a writer if the database is lost and create a new one instead. We’ll need to keep an eye on real-world usage down the road but it doesn’t feel like this should be a showstopper. The [Multiwriter DEP](https://github.com/datprotocol/DEPs/blob/master/proposals/0008-multiwriter.md), for example, states that “The design should easily accommodate dozens of writers, and should scale to 1,000 writers without too much additional overhead.” I will write a separate post to document the sign up/sign in and database creation flow.
 
   * I’m also thinking that [the origin database shouldn’t be used for anything else but to create and authorise a secondary writer](https://gitter.im/datproject/discussions?at=5c6855d65095f6660c05d807).
 
