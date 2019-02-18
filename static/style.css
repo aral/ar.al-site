@@ -252,6 +252,15 @@ tbody::before
   height: 0.5rem;
 }
 
+td {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+tr > td:first-child {
+  font-weight: bold;
+}
+
 /* Stripes */
 tr:nth-child(2n) {
   background-color: #eee;
@@ -267,9 +276,9 @@ tr:nth-child(2n) {
 
   background-color: darkred;
   color: white;
-  
+
   border-radius: 1rem;
-  
+
   /* Keep text flush left and bleed the background. */
   padding: 1rem;
   margin-left: -3.5rem;
