@@ -82,6 +82,8 @@ Following on from [Hypha Spike: Multiwriter 2](/2019/01/01/hypha-spike-multiwrit
 
     {{<figure src="hypha-initial-setup.jpeg" alt="Hypha initial node setup (showing the origin database being removed locally after creating and authorising the first node)" caption="Setup flow where the origin database is used just to authorise the first writer.">}}
 
+  * Did some testing on hyperdb/hypercore (writer) recreation in a separate [recreate-hypercore spike](https://source.ind.ie/hypha/spikes/recreate-hypercore).
+
 ### Security considerations
 
 1. __Regarding design step 5:__ Remember that the always-on node is untrusted and unprivileged. We could easily set it up so that it returns the Dat URL in the rendered source but we won’t be doing that. The unprivileged node will return unaltered source that we will verify using [subresource integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) (out of scope for this spike). We will also implement trusted third-party audits of the source (this could, for example, be handled by a browser extension that compares the hashes received as well as the hash of the source code with the trusted hashes from the source code repository).
