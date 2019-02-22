@@ -4,12 +4,7 @@ date: 2019-02-12T14:18:04Z
 draft: false
 ---
 
----
-__2019/02/12: This is a Work In Progress (WIP).__ I will be live-updating this post as I work on the spike. If you want to get streaming updates without having to refresh your browser, [open the DAT version](dat://ar.al/2019/02/12/hypha-spike-persistence-1/) in [Beaker Browser](https://beakerbrowser.com/) and toggle the _live reloading_ feature. Please feel free to [talk to me about this](https://mastodon.ar.al/@aral) on the fediverse as I work on it, perhaps via [Mastodon](https://joinmastodon.org).
-
-{{< lastmodified >}}
-
----
+__Note:__ Unlike previous spikes, I’m leaving this spike in a non-functional state and instead starting from scratch on the main project. See [post-mortem](#post-mortem)
 
 ## Source
 
@@ -84,17 +79,23 @@ Following on from [Hypha Spike: Multiwriter 2](/2019/01/01/hypha-spike-multiwrit
 
   * Did some testing on hyperdb/hypercore (writer) recreation in a separate [recreate-hypercore spike](https://source.ind.ie/hypha/spikes/recreate-hypercore).
 
+### Post-mortem
+
+Working on this spike has made a couple of things clear:
+
+  * If I don’t want to introduce new concepts into the web experience (I don’t) and keep the flow to the traditional (sign up/sign in), I have to use two hyperdbs per instance: one signed out and one signed in:
+
+    A person is signed out if they haven’t entered their passphrase and/or their write key was not saved (unencrypted) localStorage. The latter will be an option (“keep me signed in”). When an authorised node is signed out, the write key is stored encrypted in local storage and decrypted once the person has entered their passphrase.
+
+    Since we must have the read and write key for a local writer in order to recreate a hyperdb, we cannot recreate a hyperdb when the write key is encrypted and the person has not entered their passphrase yet. In this case, we need a separate hyperdb, with a separate read and write key. This will allow us to implement the familiar (signed in/signed out) experience from the centralised web.
+
+  * The spikes have morphed (especially during the last few ones) into iterations and have now grown to an unmanageable state. I’ve hit diminishing returns in this spike while trying to alter the core interactions. It’s time to start the project proper from scratch and using more maintainable practices. As such, I am going to leave this spike in its non-functional state and start the main project. I will still be using spikes in the future to explore specific issues but from here on, I will be iterating on the main project and on modules used by it.
+
 ### Security considerations
 
 1. __Regarding design step 5:__ Remember that the always-on node is untrusted and unprivileged. We could easily set it up so that it returns the Dat URL in the rendered source but we won’t be doing that. The unprivileged node will return unaltered source that we will verify using [subresource integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) (out of scope for this spike). We will also implement trusted third-party audits of the source (this could, for example, be handled by a browser extension that compares the hashes received as well as the hash of the source code with the trusted hashes from the source code repository).
 
 __Other:__ See [Hypha Spike: Multiwriter 2](/2019/01/01/hypha-spike-multiwriter-2)
-
-
-## Postmortem
-
-Spike is in progress.
-
 
 ## Reference
 
