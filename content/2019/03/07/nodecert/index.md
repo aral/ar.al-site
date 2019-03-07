@@ -18,7 +18,7 @@ Nodecert ([source](https://source.ind.ie/hypha/tools/nodecert), [GitHub mirror](
 
 ### JavaScript (Node.js):
 
-{{<highlight sh>}}require('nodecert'){{</highlight>}}
+{{<highlight js>}}require('nodecert'){{</highlight>}}
 
 (Synchronous.)
 
