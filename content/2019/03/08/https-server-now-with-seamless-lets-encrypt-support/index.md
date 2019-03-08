@@ -6,7 +6,7 @@ draft: false
 
 {{<figure src="https-server-lets-encrypt.png" alt="Screenshot of my terminal showing ~/ar.al: https-server live --global aral@ind.ie 📜 [nodecert] Local development TLS certificate exists. 🌍 [https-server] Using globally-trusted certificates. 👉 [https-server] (Globally-trusted TLS) HTTP → HTTPS redirection active. 🎉 Serving live on https://aral.hypha.dev" caption="You can now also use globally-trusted Let’s Encrypt TLS certificates.">}}
 
-[Yesterday](/2019/03/07/https-server/), I introduced [HTTPS Server](https://source.ind.ie/hypha/tools/https-server) as a development server. What a difference a day makes! Today, with seamless [Let’s Encrypt](https://letsencrypt.org/) support via the excellent [Greenlock.js](https://git.coolaj86.com/coolaj86/greenlock.js.git) module[^1], HTTPS Server is ready for use as a secure [Small Tech](https://ar.al/2019/03/04/small-technology/) personal web server. It is a human-scale tool for creating and hosting single-tenant/personal web applications using Node.js.
+[Yesterday](/2019/03/07/https-server/), I introduced [HTTPS Server](https://source.ind.ie/hypha/tools/https-server) as a development server. What a difference a day makes! Today, with seamless [Let’s Encrypt](https://letsencrypt.org/) support via the excellent [Greenlock.js](https://git.coolaj86.com/coolaj86/greenlock.js.git) module[^1], HTTPS Server is ready for use as a secure [Small Tech](https://ar.al/2019/03/04/small-technology/) personal web server for development and deployment. It is a human-scale tool for creating and hosting single-tenant/personal web applications using Node.js.
 
 __With HTTPS Server you can:__
 
