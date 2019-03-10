@@ -4,6 +4,8 @@ date: 2019-03-07T14:16:15Z
 draft: false
 ---
 
+<div style='background-color: yellow; margin-top: 1em; padding: 1em;'><strong style='border-bottom: 3px double;'>Note:</strong> HTTP Server is now <a href='/2019/03/10/indie-web-server'>Indie Web Server</a>.</div>
+
 HTTPS Server ([source](https://source.ind.ie/hypha/tools/https-server), [GitHub mirror](https://github.com/indie-mirror/https-server), [npm](https://www.npmjs.com/package/@ind.ie/https-server)) is a development server that uses nodecert to automatically provision and use locally-trusted TLS certificates.
 
 ## Install
