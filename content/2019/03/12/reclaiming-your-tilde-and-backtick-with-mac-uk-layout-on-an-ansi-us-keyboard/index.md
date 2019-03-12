@@ -1,5 +1,5 @@
 ---
-title: "Reclaiming your backtick-shift-tilde key with a UK Macintosh key layout on an ANSI US Keyboard in GNOME"
+title: "Reclaiming your backtick/tilde key with a UK Macintosh key layout on an ANSI US Keyboard in GNOME"
 date: 2019-03-12T01:36:46Z
 draft: false
 ---
@@ -8,7 +8,7 @@ draft: false
 
 Let me begin by acknowledging that this is most likely a niche use case. I am documenting this for my own future reference as much as anything else. That said, the technique can be used to remap or swap or alter your keyboard layout to your heart’s content.
 
-As a recent owner of a Topre Realforce 87UW 55g keyboard[^1] who uses UK Macintosh layout on his Linux box (🎶sosumi🎶), my one pain point is missing my beloved backtick[^2]-shift-tilde key (<kbd>\`~</kbd>).
+As a recent owner of a Topre Realforce 87UW 55g keyboard[^1] who uses UK Macintosh layout on his Linux box (🎶sosumi🎶), my one pain point is missing my beloved backtick[^2]/tilde key: <kbd>\`~</kbd>.
 
 Now, of course, I hear you mutter, “but, Aral, you could just hold down your handy <kbd>AltGR</kbd>[^3] key and tap the <kbd>\]</kbd> key _twice_ to create a tilde by abusing the diacritic[^4]” Goes without saying really – but that’s no fun when you’re running a Unix-based system[^5] and you’re a programmer who loves [template strings in JavaScript](http://tc39wiki.calculist.org/es6/template-strings/).
 
