@@ -6,7 +6,7 @@ draft: false
 
 {{<figure src="topre-realforce-87uw55g.jpeg" alt="A Topre Realforce 87UW 55g ANSI US layout keyboard with white and grey keys and a Filco wooden wrist rest." caption="Thonk, thonk, thonk!">}}
 
-Let me begin by acknowledging that this is most likely a niche use case. I am documenting this for my own future reference as much as anything else. That said, the technique can be used to remap or swap or alter your keyboard layout to your heart’s content.
+Let me begin by acknowledging that this is most likely a niche use case. I am documenting this for my own future reference as much as anything else. That said, the technique can be used to remap or swap or alter your keyboard’s layout to your heart’s content.
 
 As a recent owner of a Topre Realforce 87UW 55g keyboard[^1] who uses UK Macintosh layout on his Linux box (🎶sosumi🎶), my one pain point is missing my beloved backtick[^2]/tilde key: <kbd>\`~</kbd>.
 
