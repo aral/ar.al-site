@@ -12,7 +12,7 @@ draft: false
     <figcaption>Watch as I set up a secure development and production web server with a single command using Indie Web Server.</figcaption>
 </figure>
 
-I just recorded a short video demonstrating just how simple and seamless [Indie Web Server]() really is.
+I just recorded a short video demonstrating just how simple and seamless [Indie Web Server](https://ar.al/2019/03/10/indie-web-server/) really is.
 
 To install and run a secure local development web server and serve the current directory without certificate warnings:
 
@@ -48,4 +48,6 @@ npm i -g @ind.ie/web-server
 pm2 start web-server -- --global
 {{</highlight>}}
 
-That’s it! Now you have a production web server that will be restarted if it crashes and will be revived on server restarts.
+That’s it! You now have a production web server that restarts should it crash and is automatically launched on server restarts. It has never been this easy to run your own secure personal web server. Enjoy and please do let me know you get on with it.
+
+For full details of the command-line syntax (and the API), please [see the documentation](https://source.ind.ie/hypha/tools/web-server/blob/master/README.md).
