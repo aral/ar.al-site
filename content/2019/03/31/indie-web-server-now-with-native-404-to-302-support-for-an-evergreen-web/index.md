@@ -1,5 +1,5 @@
 ---
-title: "Indie Web Server: Now with native 404 to 302 support for an evergreen web"
+title: "Indie Web Server: now with native 404 to 302 support for an evergreen web"
 date: 2019-03-31T12:31:06+01:00
 draft: false
 ---
