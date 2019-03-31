@@ -8,6 +8,6 @@ draft: false
 
 What if links never died? What if [we never broke the Web?](https://www.w3.org/Provider/Style/URI) What if it didn’t involve any extra work? It’s possible. And easy. Just make your 404s into 302s.
 
-[Indie Web Server](https://source.ind.ie/hypha/tools/web-server) version 6.4.0 adds native support for 404 to 302.
+[Indie Web Server](https://source.ind.ie/hypha/tools/web-server) now has native support for 404 to 302.
 
 Learn more at [4042302.org](https://4042302.org).
