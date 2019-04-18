@@ -12,20 +12,28 @@ In local mode (for development use), if you run the server with an HTTP URL inst
 
 It proxies:
 
-  * HTTP ←→ HTTPS
-  * WS ←→ WSS
+  * HTTP ↔ HTTPS
+  * WS ↔ WSS
 
-I added this feature as we use Hugo quite a bit at Ind.ie for generating our static sites (e.g., this blog and the Ind.ie web site) and, by default, Hugo runs its server over HTTP on 1313. This is fine for development but once you run anything on `localhost` over HTTPS, most browsers have trouble letting you run it over HTTP again.
+I added this feature as we use Hugo quite a bit at Ind.ie for generating our static sites (e.g., this blog and the Ind.ie web site) and, by default, Hugo runs its server over HTTP on 1313. This is fine for development but if you run anything on `localhost` over HTTPS, most browsers have trouble letting you run anything else over HTTP again.
 
-So if you want to test Hugo over HTTPS on localhost, just run Hugo’s built-in web server as usual. e.g.,
+So if you’re going to test anything over HTTPS on localhost, it’s worth testing everything over HTTPS. Heck, with how easy Indie Web Server makes it, you really have no reason not to. Especially now with its reverse proxy feature.
+
+### Hugo cooking on https://localhost
+
+So, for example, if you want to test Hugo over HTTPS on localhost, just run Hugo’s built-in web server as usual. e.g.,
 
 {{<highlight shell>}}
 hugo server --buildDrafts --renderToDisk --baseURL=https://ar.al --appendPort=false
 {{</highlight>}}
 
-And then start Indie Web Server as a reverse proxy using:
+And then install Indie Web Server 8.1.1 and start it as a reverse proxy using:
 
 {{<highlight shell>}}
+# Install it
+wget -qO- https://ind.ie/web-server/install.sh | bash
+
+# Run it
 web-server http://localhost:1313
 {{</highlight>}}
 
