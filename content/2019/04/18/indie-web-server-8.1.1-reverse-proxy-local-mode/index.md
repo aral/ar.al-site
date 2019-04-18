@@ -8,6 +8,10 @@ draft: false
 
 I just released [Indie Web Server](https://ind.ie/web-server) version 8.1.1 which introduces a reverse proxy feature.
 
+__What’s Indie Web Server? [Watch this quick 2-minute demo video](/2019/04/16/set-up-a-live-static-personal-web-site-in-seconds-with-indie-web-server-8.0.0/) to find out.__
+
+### Reverse proxy
+
 In local mode (for development use), if you run the server with an HTTP URL instead of a path to serve, Indie Web Server will start as a reverse proxy.
 
 It proxies:
