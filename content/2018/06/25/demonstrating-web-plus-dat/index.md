@@ -7,7 +7,7 @@ date: 2018-06-25T21:29:27+01:00
 
 This is a short demonstration to show live reload and the peer-to-peer features of my new blog using Web + DAT.
 
-*** 
+***
 
 ### 21:41:16
 
