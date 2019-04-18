@@ -187,8 +187,9 @@ pre {
   overflow: scroll;
 }
 
-code {
-  font-size: 1rem;
+:not(pre) > code {
+  color: darkcyan;
+  font-weight: 600;
 }
 
 .chroma {
