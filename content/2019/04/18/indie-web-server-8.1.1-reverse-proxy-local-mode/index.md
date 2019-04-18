@@ -25,13 +25,13 @@ So if you’re going to test anything over HTTPS on localhost, it’s worth test
 
 ### Hugo cooking on https://localhost
 
-So, for example, if you want to test Hugo over HTTPS on localhost, just run Hugo’s built-in web server as usual. e.g.,
+So, for example, if you want to test Hugo over HTTPS on localhost, just run Hugo’s built-in web server as usual. e.g., for this blog:
 
 {{<highlight shell>}}
 hugo server --buildDrafts --renderToDisk --baseURL=https://ar.al --appendPort=false
 {{</highlight>}}
 
-And then install Indie Web Server 8.1.1 and start it as a reverse proxy using:
+Then install Indie Web Server 8.1.1 and start it as a reverse proxy using:
 
 {{<highlight shell>}}
 # Install it
