@@ -21,7 +21,7 @@ sudo make install
 sudo make post-install
 {{</highlight>}}
 
-__Note:__ the post-install step failed for me but the icons are back and my eyes are happier.
+__Note:__ the post-install step failed for me but the consistent icons are back and my eyes are happier.
 
 ### Consistency is the #1 problem with desktop Linux
 
