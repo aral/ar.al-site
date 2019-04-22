@@ -6,7 +6,9 @@ draft: false
 
 {{<figure src="evergreen-web.jpeg" alt="Terminal screenshot showing Indie Web Server serving an archive using the new cascading archives feature." caption="Cascading archives for an evergreen web.">}}
 
-I just released version 8.2.0 of [Indie Web Server](https://ind.ie/web-server). This version brings with it the cascading archives features that will make it easier than ever for you to support an evergreen web and not break existing links as you evolve your sites.
+I just released version 8.2.0 of [Indie Web Server](https://ind.ie/web-server). This version brings with it a cascading archives feature to make it easier than ever for you to support an evergreen web and not break existing links as you evolve your sites.
+
+### Easier than the 404 to 302 technique for static archives
 
 Indie Web Server already had native support for [the 404 → 302 technique](https://4042302.org) where you convert 404s into 302 redirects to earlier versions of your site, thereby preserving those links. However, that does require that you keep the older version of your site online separately. If the older version of your site is a dynamic one, that makes sense. But what if it is a static site or what if you can take a static backup of it? It would be so much simpler if Indie Web Server could serve that static archive for you automatically as a fallback if a path cannot be found on the latest version of your site.
 
@@ -14,7 +16,7 @@ This is exactly what the new cascading archives feature does.
 
 And, just like everything else with Indie Web Server, it requires zero configuration, relying instead on a naming convention.
 
-## How it works
+### How it works
 
 Let’s say you are serving your site from the `my-site` folder.
 
