@@ -10,7 +10,15 @@ After installing Pop!_OS 19.04 yesterday, my desktop experience became an eyesor
 
 If you want to get your pre-19.04 consistent icon set back, do this:
 
-### Method 1
+### Method 1 (update)
+
+[Pop!_Planet has released a “Pop Classic” icon theme](https://pop-planet.info/forums/projects/pop-classic.3/) that you can download and install.
+
+You should use this method.
+
+### Method 2
+
+Update: This was how I originally got the icons back. The Pop Classic method, above, is better as you can switch back and forth more easily. I’m now using that.
 
 {{<highlight shell>}}
 # Backup the current icons and get them out of the way.
@@ -25,9 +33,6 @@ sudo make post-install
 
 __Note:__ the post-install step failed for me but the consistent icons are back and my eyes are happier.
 
-### Method 2 (update)
-
-[Pop!_Planet has released a “Pop Classic” icon theme](https://pop-planet.info/forums/projects/pop-classic.3/) that you can download and install.
 
 ### Consistency is the #1 problem with desktop Linux
 
