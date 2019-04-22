@@ -15,7 +15,7 @@ If you want to get your pre-19.04 consistent icon set back, do this:
 sudo mv /usr/share/icons/Pop /usr/share/icons/Pop-19.04
 
 # Clone the older branch and install it.
-git clone --single-branch master_cosmic https://github.com/pop-os/icon-theme.git
+git clone --single-branch --branch=master_cosmic --depth=1 https://github.com/pop-os/icon-theme.git
 cd icon-theme
 sudo make install
 sudo make post-install
