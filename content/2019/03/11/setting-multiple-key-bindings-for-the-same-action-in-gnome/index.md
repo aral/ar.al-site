@@ -19,6 +19,6 @@ sudo apt install dconf-editor
 To change key bindings via the command-line (e.g. for switching the windows of an application):
 
 {{<highlight sh>}}
-gsettings set org.gnome.desktop.wm.keybindings switch-group "['<Alt>section', '<Super>section']"
-gsettings set org.gnome.desktop.wm.keybindings switch-group-backward "['<Shift><Alt>section', '<Shift><Super>section']"
+gsettings set org.gnome.desktop.wm.keybindings switch-group "['<Alt>Above_Tab', '<Super>Above_Tab']"
+gsettings set org.gnome.desktop.wm.keybindings switch-group-backward "['<Shift><Alt>Above_Tab', '<Shift><Super>Above_Tab']"
 {{</highlight>}}
