@@ -4,7 +4,7 @@ date: 2019-05-02T15:09:33+01:00
 draft: false
 ---
 
-{{<figure src="magazine-cover.jpeg" alt="Magazine on wooden table" caption="The cover of Issue 32 of the Kulturstiftung des Bundes magazine.">}}
+{{<figure src="magazine-cover.jpeg" alt="Magazine on wooden table; cover." caption="The cover of Issue 32 of the Kulturstiftung des Bundes magazine.">}}
 
 <strong><em><small>This is the original English version of an article that I wrote for [Issue 32](https://www.kulturstiftung-des-bundes.de/de/magazin/magazin_32.html) of the [Kulturstiftung des Bundes](https://www.kulturstiftung-des-bundes.de/) (The German Federal Cultural Foundation) [magazine](https://www.kulturstiftung-des-bundes.de/de/magazin/). You can also read [the German version](https://www.kulturstiftung-des-bundes.de/de/magazin/magazin_32/sklaverei_20_und_wie_man_sie_vermeiden_kann_eine_praktische_anleitung_fuer_cyborgs.html).</small></em></strong>
 
@@ -46,7 +46,7 @@ All day long, the corporation subjects your simulation to tests. What do you lik
 
 The corporation is political. It must continue to survive, grow, and thrive. It cannot be hindered by regulations. So it must influence political discourse. Thankfully, everyone who is a politician today was also assigned the same device you were at birth. So the corporation owns their digital proxies too. This makes it much easier for the corporation to get its way.
 
-All this said, the corporation is not omniscient. It can still make mistakes. It might infer incorrectly – based on your thoughts, words, and actions – that you are terrorist when you are not. When the corporation gets it right, your digital proxy is an invaluable tool for manipulating your behaviour. When it gets it wrong, it might get you sent to prison. Either way, you lose.
+All this said, the corporation is not omniscient. It can still make mistakes. It might infer incorrectly – based on your thoughts, words, and actions – that you are a terrorist when you are not. When the corporation gets it right, your digital proxy is an invaluable tool for manipulating your behaviour. When it gets it wrong, it might get you sent to prison. Either way, you lose.
 
 Sounds like a cyberpunk science-fiction dystopia, doesn’t it?
 
@@ -78,13 +78,13 @@ You get the idea.
 
 Unless we (as individuals) own and control our technology, ‘smart’ is a euphemism for ‘surveillance.’ A smart phone is a tracking device, a smart home is an interrogation cell, and a smart city is a panopticon.
 
-Google, Facebook, and other surveillance capitalist are factory farms for human beings. They make their billions by farming you for you data and exploiting that intimate insight into your life to manipulate your behaviour.
+Google, Facebook, and other surveillance capitalist are factory farms for human beings. They make their billions by farming you for your data and exploiting that intimate insight into your life to manipulate your behaviour.
 
 They are scanners for human beings. They exist to digitise you, to own that digital copy, and to use it as a proxy to grow even larger and more powerful.
 
 We must understand that these corporations are not anomalies. They are the norm. They are the mainstream. The mainstream of technology today is a toxic spill of American crony capitalism that threatens to engulf the entire planet. We are hardly immune to its fumes here in Europe.
 
-Our politicians are quickly entranced by the millions these corporations spend in the lobbies of Brussels. They are beguiled by the wisdom of Singularity University (not a university). Meanwhile, our schools stock Chromebooks for our children. Our taxes are lowered, so that surveillance capitalists are not unduly burdened should they want to order another Guinness. And our institutionally-corrupt policymakers are too busy organising data protection conferences keynoted by Google and Facebook to protect our interests. I know because I spoke at one last year. The speaker from Facebook was fresh out of his job at the French data protection office, renowned for the beauty and efficiency of its revolving doors. 
+Our politicians are quickly entranced by the millions these corporations spend in the lobbies of Brussels. They are beguiled by the wisdom of Singularity University (not a university). Meanwhile, our schools stock Chromebooks for our children. Our taxes are lowered, so that surveillance capitalists are not unduly burdened should they want to order another Guinness. And our institutionally-corrupt policymakers are too busy organising data protection conferences keynoted by Google and Facebook to protect our interests. I know, because I spoke at one last year. The speaker from Facebook was fresh out of his job at the French data protection office, renowned for the beauty and efficiency of its revolving doors.
 
 Something has to change.
 
@@ -166,7 +166,7 @@ Finally, we must stipulate that the technologies built by stayups are peer to pe
 
 Even without any statistically-relevant investment in ethical technology, there are already tiny groups working on alternatives. Mastodon[^7], a federated ethical alternative to Twitter was created by one person in their early twenties. A couple of people got together to create a project called Dat[^8] that could be the basis of a decentralised web. For over ten years, volunteers have been running an alternative non-commercial domain name system called OpenNIC[^9] that could empower everyone with their own place on the Web…
 
-If even without any support these seeds are beginning to sprout, imagine what we can achieve if we actually started watering them and planting new ones. By investing in stayups, we can start a fundamental shift towards ethical technology in Europe. We can start to build a bridge from where we are to where we want to be. From a world in which corporations own us by proxy to a world in which we own ourselves. From a world in which we are again becoming property to a world in which we remain as people. From surveillance capitalism to a _peerocracy_.
+If even without any support these seeds are beginning to sprout, imagine what we could achieve if we actually started watering them and planting new ones. By investing in stayups, we can start a fundamental shift towards ethical technology in Europe. We can start to build a bridge from where we are to where we want to be. From a world in which corporations own us by proxy to a world in which we own ourselves. From a world in which we are again becoming property to a world in which we remain as people. From surveillance capitalism to a _peerocracy_.
 
 [^1]: [Facebook has 60 people working on how to read your mind](https://www.theguardian.com/technology/2017/apr/19/facebook-mind-reading-technology-f8) (The Guardian)
 
