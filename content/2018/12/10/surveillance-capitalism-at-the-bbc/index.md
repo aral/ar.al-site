@@ -8,7 +8,7 @@ draft: false
 
 Recently, I recorded a video on surveillance capitalism with [BBC Ideas](https://www.bbc.com/ideas).
 
-You can [watch the video on the BBC Ideas web site]((https://www.bbc.com/ideas/videos/surveillance-capitalism-has-led-us-into-a-dystopia/p06p0tdy)) and you can also embed it on your own site, as shown above. All you need is a tiny bit of code that looks something like this:
+You can [watch the video on the BBC Ideas web site](https://www.bbc.com/ideas/videos/surveillance-capitalism-has-led-us-into-a-dystopia/p06p0tdy) and you can also embed it on your own site, as shown above. All you need is a tiny bit of code that looks something like this:
 
 {{<highlight html>}}<iframe
   src="https://www.bbc.com/ideas/videos/surveillance-capitalism-has-led-us-into-a-dystopia/p06p0tdy/player"
