@@ -1,7 +1,7 @@
 ---
 title: "The Do’s and Don’ts of Tech Regulation"
 date: 2019-05-11T09:19:36+01:00
-draft: true
+draft: false
 ---
 
 <figure>
@@ -18,9 +18,13 @@ This is not what I mean when I talk about the need to regulate surveillance capi
 
 ## Co-regulation is bullshit
 
-Co-regulation is basically saying “hey, Big Corp, come, sit at the table and let’s decide together how to regulate you”. Alongside lobbying, revolving doors, and public-private partnerships, it is part and parcel of institutional corruption. It is not the job of democratically-elected governments to elevate unelected corporate bodies to their own level to help write the rules of their own regulation. It is the job of such governments, in line with their democratic mandate, to regulate corporations in the public interest to reduce their harms.
+Co-regulation is basically saying “hey, Big Corp, come, sit at the table and let’s decide together how to regulate you”. Alongside lobbying, revolving doors, and public-private partnerships, it is part and parcel of institutional corruption.
 
-But what else do we expect of Macron exactly? He is a neoliberal who is on the record for wanting to make France “a start-up nation.” Furthermore, we exist within a climate where our democratic governments are so clueless, corrupt, or powerless (or all of the above) that instead of protecting the interests of their citizens, they are [sending ambassadors to Silicon Valley corporations](https://www.politico.eu/article/denmark-silicon-valley-tech-ambassador-casper-klynge/).
+It is not the job of democratically-elected governments to elevate unelected corporate bodies to their own level to help write the rules of their own regulation. It is the job of such governments, in line with their democratic mandate, to regulate corporations in the public interest to reduce their harms.
+
+But what else do we expect of Macron exactly? He is a neoliberal who is on the record for wanting to make France “a start-up nation.”
+
+Furthermore, we exist within a climate where our democratic governments are so clueless, corrupt, or powerless (or all of the above) that instead of protecting the interests of their citizens, they are [sending ambassadors to Silicon Valley corporations](https://www.politico.eu/article/denmark-silicon-valley-tech-ambassador-casper-klynge/).
 
 
 ## Piece Of The Pie Regulation
@@ -32,7 +36,7 @@ When governments do manage to find the will to regulate it is usually for one of
 
 In other words, for almost entirely[^2] the wrong reasons.
 
-From now on, I’m going to call this type of regulation _Piece of The Pie Regulation_ because it essentially boils down to either governments or the greater business community wanting a piece of the pie while ignoring human rights concerns at the heart of surveillance capitalism and [the business model of people farming](https://ar.al/2019/05/02/slavery-2.0-and-how-to-avoid-it-a-practical-guide-for-cyborgs/).
+From now on, I’m going to call this type of regulation _Piece of The Pie Regulation_ because it essentially boils down to either governments or the greater business community wanting a piece of the pie while ignoring the human rights concerns at the heart of surveillance capitalism and [the business model of people farming](https://ar.al/2019/05/02/slavery-2.0-and-how-to-avoid-it-a-practical-guide-for-cyborgs/).
 
 ### Government surveillance and censorship
 
@@ -42,15 +46,15 @@ From now on, I’m going to call this type of regulation _Piece of The Pie Regul
 
 The first form of Piece of the Pie Regulation is where governments regulate tech companies because they want access to their data, algorithms, and platforms for their own surveillance, policing, and censorship desires.
 
-We can see this aspect feature in yesterday’s Macron-Zuckerberg deal that sees the government of France gain unspecified insider access to Facebook’s data and censorship mechanisms.
+We can see this aspect feature in yesterday’s Macron-Zuckerberg deal that sees the government of France gain unspecified insider access to Facebook’s data and platform.
 
 While ideally Big Tech would love to have zero government interference in its affairs (this is a power struggle, after all), it is not fundamentally opposed to this sort of regulation. As Mark Zuckerberg said after yesterday’s meeting: “I’m encouraged and optimistic about the regulatory framework that will be put in place.” If a tech CEO is enthusiastic about a piece of government regulation, the one thing you can be sure of is that that regulation is not in _your_ interests as an individual.
 
 > “I wake up every morning and I fight regulation, it’s what I do, it’s my job.” — [Eric Schmidt, then-CEO of Google](https://www.newyorker.com/tech/annals-of-technology/mark-zuckerberg-elizabeth-warren-and-the-case-for-regulating-big-tech)
 
-The last thing we want are regulations that make corporations like Facebook better censors, better filters of our reality, and the authority on what is and isn’t acceptable and who is and isn’t a terrorist. And the only thing worse than a corporation with that sort of power is a government with access to that machinery when it has a police force and and army attached to it.
+The last thing we want are regulations that make corporations like Facebook better censors, better filters of our reality, and the authority on what is and isn’t acceptable and who is and isn’t a terrorist. And the only thing worse than a corporation with that sort of power is a government with access to it when it has a police force and and army attached.
 
-We live in a world where autocrats like Turkish president Erdoğan label anyone who criticises them terrorists and where that is grounds for imprisoning them. How long do you think it will take for the Turkish government to knock on Facebook’s door demanding the same sort of access that the government of France now has?
+We live in a world where [autocrats like Turkish president Erdoğan](https://2018.ar.al/notes/my-speech-at-general-assembly-in-berlin-november-2017/) maintain a stranglehold on the media and imprison people who criticise them as terrorists. How long do you think it will take for the Turkish government to knock on Facebook’s door demanding the same sort of access that the government of France now has?
 
 ### Antitrust and competition
 
@@ -70,11 +74,11 @@ The pie is toxic.
 
 We need to bin the pie and bake a different, non-toxic pie.
 
-Giving more people the ability to sell toxic pies does not solve the problem. If anything, it perpetuates the myth that there is no alternative to surveillance capitalism. Such a failure of imagination is what is currently starving ethical alternatives from the attention and investment they need to exist.
+Giving more people the ability to sell toxic pies does not solve the problem of toxic pies. If anything, it perpetuates the myth that there is no alternative to surveillance capitalism. Such a failure of imagination is what is currently starving ethical alternatives from the attention and investment they need to exist.
 
 ## Regulation Do’s
 
-So proper regulation is one half of tackling the problem of surveillance capitalism (the other half being investing in ethical alternatives). But what would proper regulation look like?
+So proper regulation is one half of tackling the problem of surveillance capitalism (the other half being investment in ethical alternatives). But what would proper regulation look like?
 
 In order of effectiveness:
 
@@ -96,9 +100,9 @@ Surveillance capitalism cannot be reformed. No amount of regulation will magical
 
 So regulation is one half of the solution. The other half is incentivising the ethical alternatives.
 
-## Beyond regulation – beyond surveillance capitalism
+## Beyond regulation; beyond surveillance capitalism
 
-An ethical alternative system to surveillance capitalism in which we own and control our own data will not arise magically out of business as usual. It will not be funded by the same institutions that fund surveillance capitalism. It will not have the same success criteria. It will require investment from the commons in creating [a peer web](https://ar.al/2019/02/13/on-the-general-architecture-of-the-peer-web/) and [Small Technology](https://ar.al/2019/03/04/small-technology/).
+An ethical alternative to surveillance capitalism in which we own and control our own data will not arise magically out of business as usual. It will not be funded by the same institutions that fund surveillance capitalism. It will not have the same success criteria. It will require investment from the commons in creating [a peer web](https://ar.al/2019/02/13/on-the-general-architecture-of-the-peer-web/) and [Small Technology](https://ar.al/2019/03/04/small-technology/).
 
 If you want to understand just what’s at stake (personhood and democracy), how things are at the moment (not good), what alternatives and stopgaps exist today (a few, even with zero funding), and the shape of the alternative ethical technological infrastructure we must invest in and build, [watch this bootleg recording of my recent Bucerius Lab Lecture on Small Technology in Hamburg](https://vimeo.com/333198966).
 
