@@ -4,6 +4,9 @@
 # (changes will not be deployed or live streamed over the
 # peer-to-peer web. For that, use the ./live script.)
 
+# Start Indie Web Server to proxy the Hugo server to https://localhost
+web-server proxy localhost:1313 &
+
 # Start Hugo server.
 #
 # The baseURL and appendPort flags are set to overwrite the default behaviour
