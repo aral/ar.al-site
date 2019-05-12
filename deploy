@@ -1,0 +1,15 @@
+#!/bin/bash
+
+################################################################################
+#
+# ar.al single-shot deployment script.
+#
+# Uses Hugo (gohugo.io) and Indie Web Server (ind.ie/web-server).
+#
+################################################################################
+
+# Build the site
+hugo --baseURL=https://ar.al --destination=../build
+
+# Deploy it
+web-server sync ../build/ ar.al --account=ubuntu --folder=site --exit-on-sync
