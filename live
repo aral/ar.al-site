@@ -29,7 +29,7 @@ web-server sync ../live/ ar.al --account=ubuntu --folder=site --proxy=localhost:
 # Note: if you do not want a post live-synced, mark it as draft: true in the
 # ===== front matter.
 #
-hugo server --renderToDisk --baseURL=https://ar.al --appendPort=false
+hugo server --renderToDisk --baseURL=https://ar.al --appendPort=false --disableLiveReload
 
 # Don’t exit. Shutting off this process should also kill
 # the two other background processes we started
