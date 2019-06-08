@@ -1,7 +1,7 @@
 ---
 title: "Export/import issues with GitLab CE"
 date: 2019-06-08T16:04:16+01:00
-draft: true
+draft: false
 ---
 
 GitLab CE (the free/open source version of GitLab) has an import issues feature but doesn’t have an export issues feature (because, not enterprise, apparently).
@@ -32,7 +32,9 @@ Now, if you [update the script](https://gitlab.com/emobix/get-all-gitlab-issues-
 
 ## Finally
 
-Here’s the updated script that should work. It creates exports a CSV file from your GitLab CE instance called _issues.csv_ in the current directory that you can import back into GitLab CE to get the titles and bodies of issues transferred to your fork.
+<strike>Here’s the updated script that should work. It creates exports a CSV file from your GitLab CE instance called _issues.csv_ in the current directory that you can import back into GitLab CE to get the titles and bodies of issues transferred to your fork.</strike>
+
+__Update:__ FFS, I just realised that it imports all issues as open. Seriously, GitLab, can you please put both the fucking import and export feature into CE and stop making people jump through hoops for such basic functionality? Thankfully, I only have a handful of closed issues so I’m going to close them manually. I don’t have more time to waste on this right now but I hope this helps you tweak it further if you need to.
 
 {{<highlight perl>}}
 #!/usr/bin/perl -w
