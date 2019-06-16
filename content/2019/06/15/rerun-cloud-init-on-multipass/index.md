@@ -4,7 +4,7 @@ date: 2019-06-15T22:17:58+01:00
 draft: false
 ---
 
-Today, I had the need to experiment with rerunning [cloud-init]() on a virtual machine created with [multipass](). You can [use cloud-init with multipass](https://blog.ubuntu.com/2018/04/02/using-cloud-init-with-multipass) by specifying a cloud-init.yaml file when creating your instance. e.g,
+Today, I had the need to experiment with rerunning [cloud-init](https://cloud-init.io/) on a virtual machine created with [multipass](https://multipass.run/). You can [use cloud-init with multipass](https://blog.ubuntu.com/2018/04/02/using-cloud-init-with-multipass) by specifying a cloud-init.yaml file when creating your instance. e.g,
 
 {{<highlight sh>}}
 multipass launch --name my-instance --cloud-init ./cloud-init.yaml
