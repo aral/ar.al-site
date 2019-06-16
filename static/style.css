@@ -189,13 +189,6 @@ pre {
   font-weight: 500;
 }
 
-.chroma {
-}
-
-blockquote pre.chroma {
-  margin-left: 0;
-}
-
 /* Links */
 
 a {
@@ -217,6 +210,11 @@ ol, ul {
 li::marker {
   font-size: 1.5rem;
   color: darkgray;
+}
+
+.posttitle {
+  max-width: 100%;
+  overflow: scroll;
 }
 
 /* Tables */

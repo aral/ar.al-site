@@ -37,7 +37,7 @@
                 <span class='postdate day item-{{ $index }}'>{{ $post.Date.Format "Mon" }}</span>
               </time>
               <span class='postdate'>{{ $post.Date.Format "15:04" }}</span>
-              <a href="{{ .RelPermalink }}">{{ $post.Title }}</a>
+              <a class='posttitle' href="{{ .RelPermalink }}">{{ $post.Title }}</a>
             </li>
           {{ end }}
         </ul>
