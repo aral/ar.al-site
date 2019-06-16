@@ -109,3 +109,29 @@ datasource_list: [ NoCloud, None ]
 Then, after running `sudo cloud-init clean` and `sudo cloud-init init` again, I had multipass successfully using my cloud-config from _/var/lib/cloud/nocloud-net/user-data_.
 
 Information about cloud-init seems hard to come by so while I’m mostly documenting this for my own sake, I hope it also ends up helping someone else out in the future.
+
+## Useful resources
+
+### From Cloud-init docs
+
+[Cloud-init docs](https://cloudinit.readthedocs.io/en/latest/)
+
+  - [Capabilities](https://cloudinit.readthedocs.io/en/latest/topics/capabilities.html)
+  - [Datasources](https://cloudinit.readthedocs.io/en/latest/topics/datasources.html#no-cloud)
+  - [Instance Metadata](https://cloudinit.readthedocs.io/en/latest/topics/instancedata.html#instance-metadata)
+  - [User-Data Formats](https://cloudinit.readthedocs.io/en/latest/topics/format.html)
+  - [Vendor Data](https://cloudinit.readthedocs.io/en/latest/topics/vendordata.html)
+  - [NoCloud](https://cloudinit.readthedocs.io/en/latest/topics/datasources/nocloud.html)
+  - [Directory layout](https://cloudinit.readthedocs.io/en/latest/topics/dir_layout.html)
+  - [Merging User-Data Sections](https://cloudinit.readthedocs.io/en/latest/topics/merging.html)
+
+### Other
+
+  - [Install cloud-init on Ubuntu and use locally… NoCloud](http://www.whiteboardcoder.com/2016/04/install-cloud-init-on-ubuntu-and-use.html)
+  - [Cloud-init page ArchLinux wiki](https://wiki.archlinux.org/index.php/Cloud-init#Systemd_integration)
+  - [Cloud-init v.18.2: CLI subcommands](https://blackboxsw.github.io/category/cloud-init.html)
+  - [Using cloud-init with Multipass](https://powersj.io/post/cloud-init-multipass/)
+  - How to re-run cloud-init without reboot: [answer with new cloud-init syntax](https://stackoverflow.com/a/50911376)
+  - [How do I boot Ubuntu Cloud images in vmware](https://askubuntu.com/questions/153486/how-do-i-boot-ubuntu-cloud-images-in-vmware)
+  - [How to use cloud-config for your intial server setup](https://www.digitalocean.com/community/tutorials/how-to-use-cloud-config-for-your-initial-server-setup)
+  - [An introduction to cloud-config scripting](https://www.digitalocean.com/community/tutorials/an-introduction-to-cloud-config-scripting)
