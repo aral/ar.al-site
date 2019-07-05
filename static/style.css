@@ -247,6 +247,10 @@ li::marker {
   overflow: scroll;
 }
 
+.pre-june {
+  grid-column: 1 / 3;
+}
+
 /* Tables */
 
 /* Make tables display with striped row borders overflowing the flush left alignment of the text just like we do with lists and code blocks for consistency. */
