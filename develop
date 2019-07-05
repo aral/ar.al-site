@@ -7,7 +7,7 @@
 # as localhost:<port> regardless of the setting of baseURL in the config.toml
 # file. Since we do not have a separate build/deploy phase to the live server,
 # we want the site as it would exist on the server to exist on the client.
-hugo server --buildDrafts --renderToDisk --baseURL=https://ar.al --appendPort=false &
+hugo server --buildDrafts --renderToDisk --baseURL=https://ar.al --appendPort=false --liveReloadPort=443 &
 
 # Runs just Hugo server for local authoring
 # (changes will not be deployed or live streamed over the
