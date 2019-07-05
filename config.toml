@@ -1,7 +1,7 @@
 baseURL = "https://ar.al/"
 languageCode = "en-us"
 title = "Aral Balkan"
-publishDir = "../live"
+publishDir = "./dist/site"
 PygmentsCodeFences = true
 PygmentsStyle = "friendly"
 enableGitInfo = true

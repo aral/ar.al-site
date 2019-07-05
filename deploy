@@ -4,12 +4,14 @@
 #
 # ar.al single-shot deployment script.
 #
-# Uses Hugo (gohugo.io) and Indie Web Server (ind.ie/web-server).
+# Uses Hugo (gohugo.io) and Site.js (https://sitejs.org).
 #
 ################################################################################
 
 # Build the site
-hugo --baseURL=https://ar.al --destination=../build
+# (The destination is a subdirectory of the dist folder because we also have
+# a site archive that we want to deploy and the easie)
+hugo --baseURL=https://ar.al
 
 # Deploy it
-web-server sync ../build/ ar.al --account=ubuntu --folder=site --exit-on-sync
+site dist --sync-to=ar.al --exit-on-sync

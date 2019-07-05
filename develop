@@ -1,12 +1,5 @@
 #!/bin/bash
 
-# Runs just Hugo server for local authoring
-# (changes will not be deployed or live streamed over the
-# peer-to-peer web. For that, use the ./live script.)
-
-# Start Indie Web Server to proxy the Hugo server to https://localhost
-web-server proxy localhost:1313 &
-
 # Start Hugo server.
 #
 # The baseURL and appendPort flags are set to overwrite the default behaviour
@@ -14,4 +7,11 @@ web-server proxy localhost:1313 &
 # as localhost:<port> regardless of the setting of baseURL in the config.toml
 # file. Since we do not have a separate build/deploy phase to the live server,
 # we want the site as it would exist on the server to exist on the client.
-hugo server --buildDrafts --renderToDisk --baseURL=https://ar.al --appendPort=false
+hugo server --buildDrafts --renderToDisk --baseURL=https://ar.al --appendPort=false &
+
+# Runs just Hugo server for local authoring
+# (changes will not be deployed or live streamed over the
+# peer-to-peer web. For that, use the ./live script.)
+
+# Start Indie Web Server to proxy the Hugo server to https://localhost
+site :1313

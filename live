@@ -14,9 +14,9 @@
 trap "exit" INT TERM ERR
 trap "kill 0" EXIT
 
-# Start Indie Web Server in the backgroun to sync the live folder to my site
+# Start Site.js in the backgroun to sync the live folder to my site
 # and also proxy hugo server to https://localhost for local development with live reload.
-web-server sync ../live/ ar.al --account=ubuntu --folder=site --proxy=localhost:1313 &
+site :1313 --sync-to=ar.al &
 
 # Start Hugo server.
 #
