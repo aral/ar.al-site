@@ -1,5 +1,13 @@
 {
-  "url": "dat://d16e486d507a43ff5dfe4d3acae5f9ee01282c4750ee4f41d255abc3ff2c59ad",
   "title": "Aral Balkan",
-  "description": "Aral Balkan"
+  "description": "Aral Balkan’s personal web site.",
+  "author": "Aral Balkan <mail@.ar.al> (https://ar.al)",
+  "links": {
+    "license": [
+      {
+        "href": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "title": "CC BY-SA 4.0"
+      }
+    ]
+  }
 }
