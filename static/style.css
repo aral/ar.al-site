@@ -339,7 +339,7 @@ tr:nth-child(2n) {
 
 header {
   display: grid;
-  grid-template-columns: 1fr 2.25rem 2.4rem 2.25rem 2.25rem;
+  grid-template-columns: 1fr 2.25rem 2.4rem 2.25rem /*2.25rem*/;
   grid-gap: 0.25rem;
   margin-bottom: 2.7rem;
   align-items: end;
