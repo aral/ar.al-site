@@ -13,5 +13,5 @@ hugo server --buildDrafts --renderToDisk --baseURL=https://ar.al --appendPort=fa
 # (changes will not be deployed or live streamed over the
 # peer-to-peer web. For that, use the ./live script.)
 
-# Start Indie Web Server to proxy the Hugo server to https://localhost
+# Start Site.js to proxy the Hugo server to https://localhost
 site :1313
