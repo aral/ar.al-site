@@ -8,6 +8,9 @@
 #
 ################################################################################
 
+# Remove any previously-generated content (Hugo does not remove content)
+rm -rf dist/site
+
 # Build the site
 # (The destination is a subdirectory of the dist folder because we also have
 # a site archive that we want to deploy and the easie)
