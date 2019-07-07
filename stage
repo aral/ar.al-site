@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Start Hugo server
+#
+# The baseURL and appendPort flags are set to overwrite the default behaviour
+# of Hugo when run with the server option which is to write absolute URLs
+# as localhost:<port> regardless of the setting of baseURL in the config.toml
+# file. Since we do not have a separate build/deploy phase to the live server,
+# we want the site as it would exist on the server to exist on the client.
+hugo server --buildDrafts --renderToDisk --baseURL=https://ar.al --appendPort=false --liveReloadPort=443 &
+
+# Start Site.js to proxy the Hugo server to https://<hostname>
+site :1313 @hostname
