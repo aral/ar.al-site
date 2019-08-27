@@ -103,7 +103,7 @@ We are also looking for [VPS hosts and domain name registrars to partner with](h
 
 ## There’s a Turkish saying that goes “from drops, are lakes formed…”
 
-After five years of working on this problem, I am more excited that ever with where we are and the progress we are making. I hope you will join us, as allies, on this journey and enable us to realise our dream of creating technology that works for people, not startups or enterprises; technology that protects human rights and democracy instead of eroding them.
+After five years of working on this problem, I am more excited than ever with where we are and the progress we are making. I hope you will join us, as allies, on this journey and enable us to realise our dream of creating technology that works for people, not startups or enterprises; technology that protects human rights and democracy instead of eroding them.
 
 Visit [Small Technology Foundation](https://small-tech.org) today and [let us know](https://small-tech.org/contact-us) how you can help.
 
