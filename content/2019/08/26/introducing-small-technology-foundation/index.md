@@ -92,7 +92,7 @@ To see more, [run the demo on SiteJS.org](https://sitejs.org), [try some other e
 
 {{<figure src="tincan-architecture-single-person.svg" alt="The architecture of Tincan, showing the always on web node as an untrusted node in a peer-to-peer network" caption="Tincan: bridges a peer-to-peer network with the centralised web." >}}
 
-The next step is to continue developing Site.js and to build on top of it a peer-to-peer network that bridges to the centralised web. We call this [Tincan](https://small-tech.org/research-and-development) (the latest evolution of [Hypha](/2019/02/01/hypha-spike-multiwriter-2/), [Indienet](/2019/02/01/hypha-spike-multiwriter-2/), and [Heartbeat](https://2017.ind.ie/heartbeat/)).
+The next step is to continue developing Site.js and to build on top of it a peer-to-peer network that bridges to the centralised web. We call this [Tincan](https://small-tech.org/research-and-development) (the latest evolution of [Hypha](/2019/02/01/hypha-spike-multiwriter-2/), [Indienet](https://indienet.info/), and [Heartbeat](https://2017.ind.ie/heartbeat/)).
 
 {{<figure src="tincan-architecture-two-people.svg" alt="The architecture of Tincan, showing the devices and untrusted web node of two people interacting" caption="Tincan: two people communicating." >}}
 
