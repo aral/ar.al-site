@@ -31,7 +31,7 @@ We’ve also refined how we articulate both the problem and the solution we are 
 
 ## What is Small Technology?
 
-{{<figure src="small-technology-tenets.jpeg" alt="The tenets of Small Technology: easy to use, personal, private by default, copyleft / share-alike, peer-to-peer, interoperable, zero-knowledge, non-commercial, non-colonial, accessible" caption="The tenets of Small Technology." >}}
+{{<figure src="small-technology-tenets.jpeg" alt="The tenets of Small Technology: easy to use, personal, private by default, share alike, peer to peer, interoperable, zero knowledge, non-commercial, non-colonial, inclusive" caption="The tenets of Small Technology." >}}
 
 [Small Technology](https://small-tech.org/about#small-technology) are everyday tools for everyday people designed to increase human welfare, not corporate profits.
 
