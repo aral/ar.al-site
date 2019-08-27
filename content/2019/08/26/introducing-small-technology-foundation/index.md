@@ -27,19 +27,19 @@ Our work led us to [leave the UK](https://ar.al/notes/so-long-and-thanks-for-all
 
 As part of our relocating to Ireland, we are in the process of shutting down our not-for-profit in the UK, Ind.ie (Article 12), and we’ve set up a new not-for-profit in Ireland.
 
-We’ve also refined our articulation of the problem the solution we are exploring. The result is Small Technology Foundation and the concept of [Small Tech](https://small-tech.org/about/#small-tech) as the polar opposite of – and [the antidote to](https://localhost/2019/03/04/small-technology/) – Big Tech and Silicon Valley’s church of startups and exponential growth.
+We’ve also refined how we articulate both the problem and the solution we are exploring. The result is Small Technology Foundation and the concept of [Small Tech](https://small-tech.org/about/#small-tech) as the polar opposite of – and [the antidote to](/2019/03/04/small-technology/) – Big Tech and Silicon Valley’s church of startups and exponential growth.
 
 ## What is Small Technology?
 
 {{<figure src="small-technology-tenets.jpeg" alt="The tenets of Small Technology: easy to use, personal, private by default, copyleft / share-alike, peer-to-peer, interoperable, zero-knowledge, non-commercial, non-colonial, accessible" caption="The tenets of Small Technology." >}}
 
-[Small Technology](https://small-tech.org/about#small-technology) are everyday tools for every people designed to increase human welfare, not corporate profits.
+[Small Technology](https://small-tech.org/about#small-technology) are everyday tools for everyday people designed to increase human welfare, not corporate profits.
 
 ## What are you working on?
 
 {{< figure src="site-js-screenshot.jpeg" alt="Screenshot of SiteJS.org" caption="Site.js: what would a web development tool look like if it was designed for individuals, not startups or enterprises?" >}}
 
-I’ve personally spent the last six months creating [Site.js](https://site.js) – which I’m excited to announce here alongside the setup of our foundation. Site.js is the first step in [our plan](https://small-tech.org/research-and-development#the-plan) to evolve a [Peer Web](https://ar.al/2019/02/13/on-the-general-architecture-of-the-peer-web/) using based on the [DAT ecosystem](https://datproject.org).
+I’ve personally spent the last six months creating [Site.js](https://site.js) – which I’m excited to announce here alongside the setup of our foundation. Site.js is the first step in [our plan](https://small-tech.org/research-and-development#the-plan) to evolve a [peer web](https://ar.al/2019/02/13/on-the-general-architecture-of-the-peer-web/) based on the [DAT ecosystem](https://datproject.org).
 
 Site.js makes it simple to set up your own single-tenant, secure personal web site (static and dynamic). How simple? Here’s how you’d deploy a “Hello, world!” site on your production server:
 
@@ -62,7 +62,7 @@ OK, create a file called `counter` in `.dynamic/counter.js`:
 let counter = 0
 
 module.exports = (request, response) => {
-  response.type('html').end(`You‘ve visited this page ${counter++} time${counter === 1 ? '' : 's'}`)
+  response.type('html').end(`You’ve visited this page ${++counter} time${counter === 1 ? '' : 's'}`)
 }
 {{< /highlight >}}
 
@@ -78,9 +78,13 @@ Refresh to see the counter update.
 
 I call this [DotJS](https://source.ind.ie/site.js/app#file-system-routing) (think PHP for JavaScript) and it enables you to create secure, dynamic JavaScript servers with the full power of [Node.js](https://nodejs.org) and [Express](https://expressjs.com/) without having to build any of the plumbing.
 
-Oh, and it’s as easy to use [WebSockets](https://source.ind.ie/site.js/app/tree/master/examples/wss-basic-chat) with it too.
+And it’s as easy to use [WebSockets](https://source.ind.ie/site.js/app/tree/master/examples/wss-basic-chat) with it too.
 
-To see more, run the demo on [SiteJS.org](https://sitejs.org), [try some other examples](https://source.ind.ie/site.js/app/tree/master/examples), and [read through the documentation](https://source.ind.ie/site.js/app/blob/master/README.md).
+Oh, and Site.js already powers this site, [the Small Technology Foundation site](https://small-tech.org) and [Laura’s site](https://laurakalbag.com). So we’re eating our own hamster food.
+
+The Small Technology Foundation web site is also an example of how to extend a static site (in this case, one that uses Hugo), with dynamic functionality. Check out the [Fund Us](https://small-tech.org/fund-us) page for [an example of the WebSocket functionality](https://source.ind.ie/small-tech.org/site/tree/master/themes/small-tech/static/.dynamic) powering the patronage pages (hint, hint) ;)
+
+To see more, [run the demo on SiteJS.org](https://sitejs.org), [try some other examples](https://source.ind.ie/site.js/app/tree/master/examples), and [read through the documentation](https://source.ind.ie/site.js/app/blob/master/README.md).
 
 <img id='site-js-logo' src='site-js-logo.svg' alt='Site.js logo'>
 
@@ -102,7 +106,7 @@ In the past five years, [my family has invested three homes to enable our work](
 
 If you’re happy we exist, [please become a patron and support us](https://small-tech.org/fund-us) to ensure that you can still be happy we exist in the next five years.
 
-We are going to be moving more things  over from Ind.ie to Small Technology Foundation in the coming days (like our source code repository, etc.) and we’ll let you know when we do. And we’re going to be polishing things up on the web site and continue to improve Site.js. Just like everything else we do, this is yet another iteration.
+We are going to be moving more things  over from Ind.ie to Small Technology Foundation in the coming days (like our source code repository, etc.) and we’ll let you know when we do. And we’re going to continue to polish things up on the web site and improve Site.js. Just like everything else we do, this is yet another iteration.
 
 We will also be cancelling all patronages on Ind.ie so if you want to continue supporting us, please [become a patron of Small Technology Foundation](https://small-tech.org/fund-us).
 
@@ -112,6 +116,6 @@ We are also looking for [VPS hosts and domain name registrars to partner with](h
 
 ## There’s a Turkish saying that goes “from drops, are lakes formed…”
 
-After five years of working on this problem, I am more excited that ever with where we are and the progress that we are making. I hope you will join us, as allies, on this journey and enable us to realise our dream of creating technology that works for people, not startups or enterprises and that protects human rights and democracy instead of eroding them.
+After five years of working on this problem, I am more excited that ever with where we are and the progress we are making. I hope you will join us, as allies, on this journey and enable us to realise our dream of creating technology that works for people, not startups or enterprises; technology that protects human rights and democracy instead of eroding them.
 
 Visit [Small Technology Foundation](https://small-tech.org) today and [let us know](https://small-tech.org/contact-us) how you can help.
