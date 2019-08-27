@@ -4,19 +4,6 @@ date: 2019-08-27T12:05:00+10:00
 draft: false
 ---
 
-<style>
-h2#what-s-next + figure > img, #tincan-logo, #site-js-logo {
-  display: block;
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#site-js-logo {
-  width: 15%;
-}
-</style>
-
 {{<figure src="small-technology-foundation-header.jpeg" alt="Laura and me with tin-can telephones in the Small Technology Foundation web site header." caption="Say “hello” to Small Technology Foundation." >}}
 
 Today, [Laura](https://laurakalbag.com) and I want to introduce you to [Small Technology Foundation](https://small-tech.org), where we will be continuing the work we started at [Ind.ie](https://ind.ie) five years ago.
@@ -119,3 +106,16 @@ We are also looking for [VPS hosts and domain name registrars to partner with](h
 After five years of working on this problem, I am more excited that ever with where we are and the progress we are making. I hope you will join us, as allies, on this journey and enable us to realise our dream of creating technology that works for people, not startups or enterprises; technology that protects human rights and democracy instead of eroding them.
 
 Visit [Small Technology Foundation](https://small-tech.org) today and [let us know](https://small-tech.org/contact-us) how you can help.
+
+<style>
+h2#what-s-next + figure > img, #tincan-logo, #site-js-logo {
+  display: block;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#site-js-logo {
+  width: 15%;
+}
+</style>
