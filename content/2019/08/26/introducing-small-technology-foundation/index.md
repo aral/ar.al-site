@@ -89,7 +89,7 @@ There are no big reveals here, we are not Silicon Valley (we’re the opposite o
 
 ## Happy we exist? Enable us to continue to exist.
 
-In the past five years, [my family has invested three homes to enable our work](#revenue-to-date). We don’t have any more homes to invest.
+In the past five years, [my family has invested three homes to enable our work](https://small-tech.org/fund-us/#revenue-to-datehttps://small-tech.org/fund-us/#bank-of-mom-dad). We don’t have any more homes to invest.
 
 If you’re happy we exist, [please become a patron and support us](https://small-tech.org/fund-us) to ensure that you can still be happy we exist in the next five years.
 
