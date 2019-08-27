@@ -1,6 +1,6 @@
 ---
-title: "Introducing Small Technology Foundation"
-date: 2019-08-26T09:51:39+02:00
+title: "Introducing Small Technology Foundation, Site.js, and Tincan"
+date: 2019-08-27T12:05:00+10:00
 draft: false
 ---
 
@@ -72,7 +72,7 @@ Then run:
 site
 {{< /highlight>}}
 
-And hit `https://localhost`.
+And hit `https://localhost/counter`.
 
 Refresh to see the counter update.
 
