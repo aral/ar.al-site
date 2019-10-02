@@ -6,7 +6,7 @@ PygmentsCodeFences = true
 PygmentsStyle = "friendly"
 enableGitInfo = true
 
-copyright = "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License"
+copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License"
 "rssLimit" = 20
 
 [author]
