@@ -1,6 +1,6 @@
 ---
 title: "Site.js, now also on Windows 10"
-date: 2019-10-03T10:00:00+01:00
+date: 2019-10-03T11:30:00+01:00
 draft: false
 ---
 
@@ -75,7 +75,7 @@ We’re going to use [DotJS](https://sitejs.org/#dynamic) to create a dynamic ro
 mkdir .dynamic
 
 # Create a dynamic route that displays the current time/date.
-Set-Content ./.dynamic/date.js 'module.exports = (_, res)=>{res.end(`<pre>${new Date().toString())}</pre>`)}'
+Set-Content ./.dynamic/date.js 'module.exports = (_, res)=>{res.end(`<pre>${new Date().toString()}</pre>`)}'
 
 # Start Site.js.
 site
@@ -132,7 +132,7 @@ To learn more about Site.js, read through the [Site.js web site](https://sitejs.
 
 [^4]: Note that Windows Subsystem for Linux (WSL) is not supported. Site.js uses [mkcert](https://github.com/FiloSottile/mkcert) to seamlessly provision development-time TLS certificates. The way mkcert does this is to unceremoniously create a certificate authority on your local machine. The problem is that under WSL, the certificate authority gets created under Linux, not Windows. And then you go and run your browser of choice under Windows and, oops, you get a certificate error. This is not a trivial issue to fix. If the mkcert folks add support for WSL in the future, Site.js should also benefit. Until then, Site.js won’t be supporting WSL.
 
-[^5]: Now, you might be asking yourself: “Aral, if you hate Windows so much, why did you spend time supporting it?” And my answer to that is when you’re building a bridge to a better place, you can’t have both its feet on the shore you want to get to. You have to plant one of them on the shore you want to get away from.
+[^5]: Now, you might be asking yourself: “Aral, if you hate Windows so much, why did you spend time supporting it?” And my answer to that is when you’re building a bridge to a better place, you can’t have both its abutments on the shore you want to get to. You have to plant one of them on the shore you want to get away from.
 
     Case in point: I wouldn’t have been able [to switch to Mac in 2006](https://ar.al/681/) if it hadn’t been for cross-platform free and open source tools making the transition easier and Parallels enabling me to run Windows alongside OS X until I was ready to cut the cord entirely.
 
