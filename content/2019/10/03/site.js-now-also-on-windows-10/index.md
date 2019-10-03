@@ -1,28 +1,49 @@
 ---
 title: "Site.js, now also on Windows 10"
-date: 2019-10-02T16:34:43+01:00
+date: 2019-10-03T10:00:00+01:00
 draft: false
 ---
 
-![Screenshot of the Site.js web site](site.js-web-site.jpeg)
+<style>
+  /* Windows can’t even take screenshots properly. Fix the borders. 🤦 */
+  h2 + p > img {
+    outline: 1px solid black;
+    outline-offset: -1px;
+  }
 
-Last week, I bought myself a refurbished 7-year-old ThinkPad 440p[^1] to test [Site.js](https://sitejs.org) under Windows.
+  #fund-us {
+    display: block;
+    background-color: #AFE1E8;
+    color: #154652;
+    width: 100%;
+    margin-top: 2rem;
+    margin-left: -2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.1rem;
+    padding-bottom: 1rem;
+}
+</style>
 
-Long story short, Windows is still shit[^2], plus it’s now also a cesspit of surveillance[^3], and over the weekend, I ended up adding native Windows 10 support[^4] to Site.js[^5].
+![Photo of ThinkPad 440p. On screen: (left half) PowerShell session under Windows Terminal showing the installation of Site.js, the creation of the basic static site as explained in this post, and running Site.js. (right half) https://localhost in Microsoft Edge browser showing the words “Hello, world!”](site.js-thinkpad.jpeg)
 
-So if you’re on Windows 10 – out of necessity or preference – follow along for a quick look at how you can create your own static and dynamic web site using Site.js in a minute or two.[^6]
+Last week, I bought a refurbished 7-year-old ThinkPad 440p[^1] so I could test [Site.js](https://sitejs.org) under Windows.
 
-### 1. Install Site.js (~15 seconds)
+Long story short, Windows is still shit[^2]. Plus, it’s now also a cesspit of surveillance[^3]. And, over the weekend, I ended up adding native Windows 10 support[^4] to Site.js[^5].
+
+So if you’re on Windows 10 – out of necessity or preference – follow along for a quick look at how you can create your own static and dynamic web site using Site.js in a minute or two.
+
+## 1. Install Site.js (~15 seconds)
 
 ![Screenshot of the installation instructions on the Site.js web site](installation.png)
 
-[Skim the source code for the installer](https://sitejs.org/install.txt) and, when you’re happy it’s not doing anything nefarious, copy and paste the following command into a PowerShell session running under [Windows Terminal](https://github.com/microsoft/terminal)[^7]:
+[Skim the source code for the installer](https://sitejs.org/install.txt) and, when you’re happy it’s not doing anything nefarious, copy and paste the following command[^6] into a PowerShell session running under [Windows Terminal](https://github.com/microsoft/terminal):
 
 {{<highlight PowerShell>}}
 iex(iwr -UseBasicParsing https://sitejs.org/install.txt).Content
 {{</highlight>}}
 
-### 2. Create and test your first static site (~ 30 seconds)
+## 2. Create and test your first static site (~ 30 seconds)
 
 ![Screenshot of the static site displaying its “Hello, world!” message in a web browser](hello-world.png)
 
@@ -43,7 +64,7 @@ Visit your new static site at `https://localhost`.
 
 When you’re ready to move on, press `Ctrl+C` to stop Site.js.
 
-### 3. Create and test your first dynamic site (~1 minute)
+## 3. Create and test your first dynamic site (~1 minute)
 
 ![Screenshot of the dynamic route displaying the current date and time in a web browser](date.png)
 
@@ -64,7 +85,7 @@ Visit your new dynamic route at `https://localhost/date`.
 
 Refresh to see that the date changes.
 
-I wrote that route in a rather obfuscated way for brevity. Here it is re-written for clarity and better compatibility:
+In the example above, I wrote the route in a rather obfuscated manner for brevity. Here is the same route, re-written for clarity and better compatibility:
 
 {{<highlight js>}}
 module.exports = (request, response) => {
@@ -75,9 +96,9 @@ module.exports = (request, response) => {
 }
 {{</highlight>}}
 
-### There’s no magic…
+## There’s no magic…
 
-DotJS routes map simple `.js` files (see what I did there) to [Express](https://expressjs.com/) routes. All you have to do is to write the logic for the route itself. Site.js takes care of all the plumbing.
+DotJS simply maps regular `.js` files (see what I did there) to [Express](https://expressjs.com/) routes. All you have to do is write the logic for your routes. Site.js takes care of all the plumbing.
 
 Using DotJS, you can specify [HTTPS GET and POST routes](https://source.ind.ie/site.js/app/blob/master/README.md#get-and-post-routes) as well as [secure WebSocket routes](https://source.ind.ie/site.js/app/blob/master/README.md#websocket-wss-routes).
 
@@ -97,11 +118,11 @@ This blog, [Laura’s site](https://laurakalbag.com), and the [Small Technology 
 
 To learn more about Site.js, read through the [Site.js web site](https://sitejs.org) (and try out the interactive demo in the header), [read the Site.js documentation](https://source.ind.ie/site.js/app/blob/master/README.md), and feel free to [hit me up on my Mastodon](https://mastodon.ar.al/@aral) if you have any questions.
 
-## Like this? Fund us!
-
-Small Technology Foundation is a tiny, independent not-for-profit.
-
-We exist in part thanks to patronage by people like you. If you share our vision and want to support our work, please [become a patron or donate to us](https://small-tech.org/fund-us) today and help us continue to exist.
+<div id='fund-us'>
+  <h2>Like this? Fund us!</h2>
+  <p>Small Technology Foundation is a tiny, independent not-for-profit.</p>
+  <p>We exist in part thanks to patronage by people like you. If you share <a href='https://small-tech.org/about#small-technology'>our vision</a> and want to support our work, please <a href='https://small-tech.org/fund-us'>become a patron or donate to us</a> today and help us continue to exist.</p>
+</div>
 
 [^1]: It was the cheapest way I could test under Windows, given that a license of Windows 10 Pro costs basically what I paid for it. And, I have to say, it runs like a champ.
 
@@ -119,4 +140,6 @@ We exist in part thanks to patronage by people like you. If you share our vision
 
     It’s no use building islands of utopia if the only people who can reach them are master swimmers. Our biggest challenge is building bridges. And that sometimes means spending time in places we would rather not.
 
-[^6]: On Linux and macOS, you can install Site.js with a single-line installation command that you copy from the web site. I wanted the Windows version to be as easy. This does mean the installer does a couple of “clever” things out of necessity like re-downloading itself and then launching the saved script in an elevated process to carry out the installation with administrator privileges. As far as the experience is concerned, it should be seamless. Please do let me know if it isn’t for you.
+[^6]: On Linux and macOS, you can install Site.js with a single-line installation command that you copy from the web site. I wanted the Windows version to be as easy.
+
+    This does mean the installer does a couple of “clever” things out of necessity like re-downloading itself and then launching the saved script in an elevated process to carry out the installation with administrator privileges. As far as the experience is concerned, it should be seamless. Please do let me know if it isn’t for you.
