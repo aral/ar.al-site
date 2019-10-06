@@ -4,7 +4,7 @@ date: 2019-10-04T14:50:49+01:00
 draft: false
 ---
 
-Yesterday, I released [Site.js](https://sitejs.org) version 12.7.0 with improvements to its WebSocket interface and [documentation](https://source.ind.ie/site.js/app/blob/master/README.md#websocket-wss-routes). Today, I want to take you step-by-step into building and running a basic chat app using Site.js.
+This weekend, I released [Site.js](https://sitejs.org) version 12.7.0 with improvements to its WebSocket interface and [documentation](https://source.ind.ie/site.js/app/blob/master/README.md#websocket-wss-routes). Today, I want to take you step-by-step into building and running a basic chat app using Site.js.
 
 It’s much easier than you think, so fire up a terminal window, grab your code editor, and let’s get started!
 
@@ -58,23 +58,23 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     I mentioned earlier that Site.js is zero-configuration. This means that it has certain conventions that it expects you to adhere to. For example, if you want to create dynamic routes in your web app, you must place them in a folder called `.dynamic`.
 
-    Before we move onto creating the chat functionality, let’s create an equivalent of our static “hello, world!” example but with some very basic dynamic functionality.
+    Before we move onto creating the chat functionality, let’s create the equivalent of our static “hello, world!” example but with some very basic dynamic functionality that displays the current date and time.
 
     ### A timely example
 
-    From the same terminal window and folder you were in before, enter the following commands:
+    First, create a folder called `.dynamic` within your `demo` folder:
 
     ```shell
     mkdir .dynamic
     ```
 
-    Now, open your code editor of choice at the current directory and, using it, create a file called `date.js` in the `.dynamic` folder. Once you’re done, your project folder hierarchy should look like this:
+    Next, open your code editor of choice and create a file called `date.js` in the `.dynamic` folder. Once you’re done, your project folder hierarchy should look like this:
 
     ```shell
     demo/
-      ├ .index.html
+      ├ .index.html    # static route
       └ .dynamic
-            └ date.js
+            └ date.js  # dynamic route
     ```
 
     In the `date.js` file, enter the following code:
@@ -104,31 +104,31 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     I call it [DotJS](https://source.ind.ie/site.js/app/blob/master/README.md#dotjs).
 
-    DotJS maps JavaScript modules defined in `.js` files (see what I did there?) in a file system hierarchy to web routes on your web site in a manner that will be familiar to anyone who has ever used PHP.
+    DotJS maps JavaScript modules defined in `.js` files (see what I did there?) to web routes on your web site in a manner that will be familiar to anyone who has ever used PHP.
 
     So, in the example above, `.dynamic/date.js` becomes the web route `https://localhost/date`.
 
     Using DotJS, all you have to do is write the logic for your web app. Everything else, including creating a secure HTTPS and WebSocket server for you and registering your routes, etc., is handled for you by Site.js.
 
-    All that said, there is no magic here. Under the hood, these are simply plain old tried-and-tested [Express](https://expressjs.com/) routes.[^3]
+    Furthermore, there is no magic here. Under the hood, these are simply plain old tried-and-tested [Express](https://expressjs.com/) routes.[^3]
 
     When you’re ready to move on, press <kbd>Ctrl</kbd> <kbd>C</kbd> to stop the Site.js server.
 
   4. ## Did someone mention a chat app?
 
-    OK, OK, I know I’m taking the scenic route but I wanted to introduce you to the basic concepts of Site.js before getting to WebSockets and the chat app so you have a solid foundation to build on.
+    OK, OK, I know I’m taking the scenic route but I wanted to introduce you to the basic concepts of Site.js before getting to the chat app so you have a solid foundation to build on.
 
-    Site.js, as you might have guessed, is not limited to HTTPS routes, you can also create secure WebSocket routes. And you can use DotJS to do it.
+    Site.js, as you might have guessed, is not limited to HTTPS routes. You can also create secure WebSocket routes. And you can use DotJS with WebSockets also.
 
-    So let’s start by creating and testing the back-end and then we can cobble together a basic interface for it.
+    Let’s start by creating and testing the back-end of the chat app and when we’re happy with it, we can cobble together a basic web interface for it.
 
     ### The chat server
 
-    In your `demo/.dynamic` folder, create a new folder called `.wss`. This is the folder Site.js expects WebSocket routes to be placed in.
+    In your `demo/.dynamic` folder, create a new folder called `.wss`. This is the folder Site.js expects you to place WebSocket routes in.
 
     Then, in your `.wss` folder, create a file called `chat.js`.
 
-    Next, enter the following code in that file:
+    Now type the following code into that file:
 
     ```js
     module.exports = function (client, request) {
@@ -137,7 +137,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     }
     ```
 
-    We just wrote a function that will be called any time a new client connects to our chat server at the `/chat` path (which will be available locally at `wss://localhost/chat`)[^4]. In chat app parlance, what we’ve created is a “room.” So let’s try and join it and see what happens.
+    The function you just wrote will be called any time a new client connects to our chat server at the `/chat` path (which will be available locally at `wss://localhost/chat`)[^4]. In chat app parlance, what we’ve created is a “room.” So let’s try and join it and see what happens.
 
     ### Room for improvement
 
@@ -232,6 +232,8 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     <div style="display: grid; align-items: center; justify-content: center; vertical-align: top; margin-top: 0;"><div><h1 style="font-size: 16vw; color: black; text-align:center; line-height: 0.25">4🤭4</h1><p style="font-size: 4vw; text-align: center; padding-left: 2vw; padding-right: 2vw; margin-bottom: 3vw;"><span>Could not find</span> <span style="color: grey;">/date</span></p></div></div>
     {{</ browser >}}
 
+    Oops, you get the default Site.js 404 page[^6].
+
     Site.js can’t file the file? Why?
 
     Turns out, ever since we created the `.wss` folder, Site.js has been ignoring our `.dynamic/date.js` route due to [routing precedence](https://source.ind.ie/site.js/app/blob/master/README.md#routing-precedence) rules.
@@ -272,3 +274,5 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 [^4]: Note that the URL scheme is no longer `https` but `wss` since we’re talking about secure WebSocket routes now. If I had a penny for every time I wrote `https://` when I meant to write `wss://`…
 
 [^5]: You might have noticed that we use an anonymous function expression in the `module.exports` line whereas we used an arrow function expression in the previous (HTTPS) examples and even though we use an arrow function expression to define the event handler. This is not by accident; it has to do with scope. If you want to have access to the `this` reference in your DotJS routes and access methods like `broadcast()`, you cannot use an arrow function expression to define your module, you must use the `function` keyword. Inside of your module, you are free to use arrow function expressions to your heart’s desire.
+
+[^6]: You can easily [replace the default error pages with your own custom ones](https://source.ind.ie/site.js/app/blob/master/README.md#custom-error-pages). And as far as 404 errors go, you can reduce the number of them on the web in general and contribute towards [an evergreen web](https://source.ind.ie/site.js/app/blob/master/README.md#native-support-for-an-evergreen-web) by making use of the native [cascading archives](https://source.ind.ie/site.js/app/blob/master/README.md#native-cascading-archives-support) and [404-to-302](https://source.ind.ie/site.js/app/blob/master/README.md#native-404-302-support) support in Site.js.
