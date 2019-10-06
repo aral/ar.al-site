@@ -1,7 +1,7 @@
 {{ if .IsNamedParams }}
-<div class="browser facade-minimal" aria-hidden="true" data-url="{{ .Get "location" }}">
+<div class="browser facade-minimal" data-url="{{ .Get "location" }}">
 {{ else }}
-<div class="browser facade-minimal" aria-hidden="true" data-url="https://localhost"></div>
+<div class="browser facade-minimal" data-url="https://localhost"></div>
 {{ end }}
   <div class="refresh-button"></div>
   <div class="lock"></div>

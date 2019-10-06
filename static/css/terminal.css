@@ -1,0 +1,38 @@
+.terminal-content {
+  position: relative;
+  background-color: slategray;
+  padding: 1em;
+  padding-top: 0;
+  overflow-y: scroll;
+  border: 1px solid #e8e8e8;
+}
+
+.terminal-content > pre {
+  background-color: slategray;
+  color: #ccc;
+}
+
+/* Add Terminal chrome. */
+.terminal:before {
+  content: attr(data-window-title) ' ';
+  width: 100%;
+  border-radius: 3px 3px 0 0;
+  background: url('data:image/svg+xml;charset=utf-8,<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="minimal-browser-button" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve"><g id="Ellipse_1"><g><circle fill-rule="evenodd" clip-rule="evenodd" fill="%23B3B3B3" cx="8" cy="8" r="5"/></g></g></svg>') 16px 8px no-repeat,
+    url('data:image/svg+xml;charset=utf-8,<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="minimal-browser-button" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve"><g id="Ellipse_1"><g><circle fill-rule="evenodd" clip-rule="evenodd" fill="%23B3B3B3" cx="8" cy="8" r="5"/></g></g></svg>') 32px 8px no-repeat,
+    url('data:image/svg+xml;charset=utf-8,<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="minimal-browser-button" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve"><g id="Ellipse_1"><g><circle fill-rule="evenodd" clip-rule="evenodd" fill="%23B3B3B3" cx="8" cy="8" r="5"/></g></g></svg>') 48px 8px no-repeat,
+    url('data:image/svg+xml;charset=utf-8,<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="minimal-browser-settings" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve"><g id="Menu_icon"><g><path fill-rule="evenodd" clip-rule="evenodd" fill="%23B3B3B3" d="M1,1v3h14V1H1z M1,10h14V7H1V10z M1,16h14v-3H1V16z"/></g></g></svg>')  right 16px top 8px no-repeat, #e8e8e8;
+  color: #454545;
+  float: left;
+  line-height: 2;
+  text-align: center;
+}
+
+.terminal-content > pre {
+  /* margin-top: 0.5em; */
+  margin-bottom: 0;
+}
+
+.terminal-content code {
+.highlighted:after {
+  background-color: #C6C7BC !important;
+}

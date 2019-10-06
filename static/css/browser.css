@@ -1,7 +1,7 @@
 /*
   Used with the Browser Hugo shortcode.
 
-  *** 
+  ***
 
   Minimal design
   based on the sleek design of Jacob SÃ¤wensten ( http://www.jacobsawensten.com/ )
@@ -101,9 +101,30 @@
 }
 
 .browser-content {
-  height: 3em;
+  /* height: 3em; */
   display: flex;
   flex-direction: column;
   align-content:center;
   justify-content: center;
+}
+
+/* Site-specific */
+
+.browser-content p {
+  margin-bottom: 1em;
+  margin-top: 0;
+}
+
+.browser-content p:last-of-type {
+  margin-bottom: 0;
+}
+
+.browser-content h2:first-of-type {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+}
+
+.browser-content h2 {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
