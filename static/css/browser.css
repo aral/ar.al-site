@@ -95,7 +95,7 @@
 
 .browser {
   background-color: white;
-  box-shadow: 0 20px 70px gray;
+  box-shadow: 0 20px 70px #666;
   margin-top: 2.5em;
   margin-bottom: 2.5em;
 }
