@@ -130,11 +130,6 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     Next, enter the following code in that file:
 
-    <!--
-          // A new client connection has been made.
-          // Persist client’s “room” based on request path.
-    -->
-
     ```js
     module.exports = function (client, request) {
       client.room = this.setRoom(request)
@@ -160,6 +155,104 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
       </div>
     </div>
 
+    So we’ve just made a successful connection to the `/chat` room. Now we need the server to listen for messages sent from connected clients and broadcast them to every other client in the same room.
+
+    ### Broadly speaking
+
+    Modify the code in `chat.js` so that it matches the listing below:
+
+    ```js
+    module.exports = function (client, request) {
+      client.room = this.setRoom(request)
+      console.log(`New client connected to ${client.room}`)
+
+      client.on('message', message => {
+        this.broadcast(client, message)
+      })
+    }
+    ```
+
+    What we’re doing here is creating an event handler that listens for `message` events and then uses the `broadcast` method that all DotJS WebSocket routes have to fan the message out to the other clients connected to the same room.
+
+    An important thing to note is that you should always use an `function` expression instead of an arrow function expression when creating your WebSocket routes to ensure that you can access methods like `broadcast()` using the `this` reference[^5].
+
+    ## Can you hear me now?
+
+    Our chat server is complete but does it work? Let’s return to our JavaScript console and test it. This time, open two browser windows and let’s try and hold a conversation.
+
+    In the JavaScript console of the first browser window, enter:
+
+    ```js
+    socket = new WebSocket('wss://localhost/chat')
+    socket.onmessage = message => console.log(message.data)
+    ```
+
+    In the JavaScript console of the second browser window, enter:
+
+    ```js
+    socket = new WebSocket('wss://localhost/chat')
+    socket.onmessage = message => console.log(message.data)
+    socket.send('Can you hear me now?')
+    ```
+
+    Glance at the JavaScript console of the first browser window and you should see the message you just sent appear. You can reply from the first window using the same `socket.send()` method as before.
+
+    Functionally, our chat server is complete but let’s modify the code one last time just to add some logging and to document our work to make it easier to remember what we’re doing.
+
+    Before we move on, replace the code in `chat.js` with the following listing:
+
+    ```js
+    module.exports = function (client, request) {
+      // New client connection: persist client’s “room”
+      // based on request path.
+      client.room = this.setRoom(request)
+
+      // Log the connection.
+      console.log(`New client connected to ${client.room}`)
+
+      client.on('message', message => {
+        // New message received: broadcast it to all
+        // other clients in the same room.
+        const numberOfRecipients = this.broadcast(client, message)
+
+        // Log the number of recipients message was sent to
+        // and make sure we pluralise the log message properly.
+        console.log(`${client.room} message broadcast to `
+          + `${numberOfRecipients} recipient`
+          + `${numberOfRecipients === 1 ? '' : 's'}`)
+      })
+    }
+    ```
+
+    ## Some housekeeping
+
+    If you remember, towards the start of this tutorial we created a dynamic HTTPS route that shows the current date and time. With Site.js serving the `demo` folder, try to access the `/date` route now.
+
+    {{< browser location="https://localhost/date" >}}
+    <div style="display: grid; align-items: center; justify-content: center; vertical-align: top; margin-top: 3vw;"><div><h1 style="font-size: 16vw; color: black; text-align:center; line-height: 0.25">4🤭4</h1><p style="font-size: 4vw; text-align: center; padding-left: 2vw; padding-right: 2vw; margin-bottom: 3vw;"><span>Could not find</span> <span style="color: grey;">/date</span></p></div></div>
+    {{</ browser >}}
+
+    Site.js can’t file the file? Why?
+
+    Turns out, ever since we created the `.wss` folder, Site.js has been ignoring our `.dynamic/date.js` route due to [Site.js routing precedence](https://source.ind.ie/site.js/app/blob/master/README.md#routing-precedence). That’s a fancy way of saying that if we want to use HTTPS and WebSocket DotJS routes together in the same web app, we must put our HTTPS routes in a folder called `.https` just like we put the WebSocket routes in a folder called `.wss`.
+
+    So create a folder called `.https` inside the `.dynamic` folder and move the `date.js` file into it. Then, restart your Site.js server and hit `https://localhost/date`. You should now see the route load successfully.
+
+    And if you look at your terminal output, you will see that Site.js tells you exactly which routes it has loaded:
+
+    ```shell
+    🐁 Found .https/.wss folders. Will load dynamic routes from there.
+    🐁 Adding HTTPS GET route: /date
+    🐁 Adding WebSocket (WSS) route: /chat
+    ```
+
+    ## Room with a view
+
+    So our chat server works but it doesn’t have a web interface yet.
+
+    Let’s fix that!
+
+
 
 [^1]: If you don’t want to use the terminal, you can open up your graphical file browser and create the `demo` folder using that and then use your graphical code editor to create an `index.html` file in that folder. You will, however, need to run the `site` command from a terminal session with its current working directory set to the `demo` folder… there’s no getting away from that.
 
@@ -175,3 +268,5 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 [^3]: If you want full control over your routing, including the ability to use regular expressions in your route names and accessing global state, etc., you can do everything you can in Express using the [advanced routing](https://source.ind.ie/site.js/app/blob/master/README.md#advanced-routing-routesjs-file) feature by declaring a `routes.js` file in your `.dynamic` fodler.
 
 [^4]: Note that the URL scheme is no longer `https` but `wss` since we’re talking about secure WebSocket routes now. If I had a penny for every time I wrote `https://` when I meant to write `wss://`…
+
+[^5]: You might have noticed that we use an anonymous function expression in the `module.exports` line whereas we used an arrow function expression in the previous (HTTPS) examples and even though we use an arrow function expression to define the event handler. This is not by accident; it has to do with scope. If you want to have access to the `this` reference in your DotJS routes and access methods like `broadcast()`, you cannot use an arrow function expression to define your module, you must use the `function` keyword. Inside of your module, you are free to use arrow function expressions to your heart’s desire.
