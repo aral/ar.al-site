@@ -52,9 +52,9 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     Once you’re done testing your shiny new site, press <kbd>Ctrl</kbd> <kbd>C</kbd> to stop the Site.js server.
 
-  3. ## Going dynamic
+  3. ## Cha-cha-cha changes!
 
-    Now, static sites are all good and well but you were promised a chat app and you can’t build that with a fully static site. So let’s take a quick look at how we can create dynamic apps with Site.js.
+    Static sites are all well and good but you were promised a chat app and you can’t build that with a fully static site. So let’s take a quick look at how we can create dynamic apps with Site.js.
 
     I mentioned earlier that Site.js is zero-configuration. This means that it has certain conventions that it expects you to adhere to. For example, if you want to create dynamic routes in your web app, you must place them in a folder called `.dynamic`.
 
@@ -229,16 +229,18 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     If you remember, towards the start of this tutorial we created a dynamic HTTPS route that shows the current date and time. With Site.js serving the `demo` folder, try to access the `/date` route now.
 
     {{< browser location="https://localhost/date" >}}
-    <div style="display: grid; align-items: center; justify-content: center; vertical-align: top; margin-top: 3vw;"><div><h1 style="font-size: 16vw; color: black; text-align:center; line-height: 0.25">4🤭4</h1><p style="font-size: 4vw; text-align: center; padding-left: 2vw; padding-right: 2vw; margin-bottom: 3vw;"><span>Could not find</span> <span style="color: grey;">/date</span></p></div></div>
+    <div style="display: grid; align-items: center; justify-content: center; vertical-align: top; margin-top: 0;"><div><h1 style="font-size: 16vw; color: black; text-align:center; line-height: 0.25">4🤭4</h1><p style="font-size: 4vw; text-align: center; padding-left: 2vw; padding-right: 2vw; margin-bottom: 3vw;"><span>Could not find</span> <span style="color: grey;">/date</span></p></div></div>
     {{</ browser >}}
 
     Site.js can’t file the file? Why?
 
-    Turns out, ever since we created the `.wss` folder, Site.js has been ignoring our `.dynamic/date.js` route due to [Site.js routing precedence](https://source.ind.ie/site.js/app/blob/master/README.md#routing-precedence). That’s a fancy way of saying that if we want to use HTTPS and WebSocket DotJS routes together in the same web app, we must put our HTTPS routes in a folder called `.https` just like we put the WebSocket routes in a folder called `.wss`.
+    Turns out, ever since we created the `.wss` folder, Site.js has been ignoring our `.dynamic/date.js` route due to [routing precedence](https://source.ind.ie/site.js/app/blob/master/README.md#routing-precedence) rules.
 
-    So create a folder called `.https` inside the `.dynamic` folder and move the `date.js` file into it. Then, restart your Site.js server and hit `https://localhost/date`. You should now see the route load successfully.
+    That’s a fancy way of saying that if we want to use HTTPS and WebSocket DotJS routes together in the same web app, we must put our HTTPS routes in a folder called `.https` just like we put the WebSocket routes in a folder called `.wss`.
 
-    And if you look at your terminal output, you will see that Site.js tells you exactly which routes it has loaded:
+    So create a folder called `.https` inside the `.dynamic` folder and move the `date.js` file into it. Then, restart your Site.js server and hit `https://localhost/date`. The route should now load correctly.
+
+    If you look at your terminal output, you will see that Site.js tells you exactly which routes it loads when it launches:
 
     ```shell
     🐁 Found .https/.wss folders. Will load dynamic routes from there.
