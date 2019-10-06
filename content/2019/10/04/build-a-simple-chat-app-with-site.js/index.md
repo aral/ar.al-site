@@ -36,35 +36,9 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     To test that it’s working, fire up your browser of choice and visit `https://localhost`
 
-    <link href='/css/facade.css' rel='stylesheet'>
-    <style>
-      .browser {
-        background-color: white;
-        box-shadow: 0 20px 70px gray;
-        margin-top: 2.5em;
-        margin-bottom: 2.5em;
-      }
-
-      .lock {
-        background: url('data:image/svg+xml;charset=utf-8,<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="minimal-browser-settings" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="1 0 14 16" width="14" height="16"><path d=" M 8 0 C 5.067 0 2.667 2.304 2.667 5.12 L 2.667 6.827 L 1 6.827 L 1 16 L 14.809 16 C 14.914 16 15 15.914 15 15.809 L 15 6.827 L 13.333 6.827 L 13.333 5.12 C 13.333 2.304 10.933 0 8 0 Z  M 8 1.707 C 9.972 1.707 11.556 3.226 11.556 5.12 L 11.556 6.827 L 4.444 6.827 L 4.444 5.12 C 4.444 3.226 6.028 1.707 8 1.707 Z " fill="%23B3B3B3"/></svg>') 1px 0px no-repeat;
-      }
-
-      .browser-content {
-        height: 3em;
-        display: flex;
-        flex-direction: column;
-        align-content:center;
-        justify-content: center;
-      }
-    </style>
-
-    <div class="browser facade-minimal" aria-hidden="true" data-url="https://localhost">
-      <div class="refresh-button"></div>
-      <div class="lock"></div>
-      <div class="browser-content">
-        <p>Hello, world!</p>
-      </div>
-    </div>
+    {{< browser location="https://localhost">}}
+    <p>Hello, world!</p>
+    {{< /browser >}}
 
     A couple of things to note:
 
