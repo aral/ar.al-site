@@ -1,4 +1,8 @@
 /*
+  Used with the Browser Hugo shortcode.
+
+  *** 
+
   Minimal design
   based on the sleek design of Jacob SÃ¤wensten ( http://www.jacobsawensten.com/ )
   PDF: https://dribbble.com/shots/1460141-Free-minimal-browser-window/attachments/216671
@@ -85,4 +89,21 @@
   top: 21px;
   z-index: 999;
   display: block;
+}
+
+/* Browser specialisations */
+
+.browser {
+  background-color: white;
+  box-shadow: 0 20px 70px gray;
+  margin-top: 2.5em;
+  margin-bottom: 2.5em;
+}
+
+.browser-content {
+  height: 3em;
+  display: flex;
+  flex-direction: column;
+  align-content:center;
+  justify-content: center;
 }

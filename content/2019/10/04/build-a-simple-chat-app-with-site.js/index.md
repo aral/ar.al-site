@@ -90,6 +90,10 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     Finally, run the `site` command in the `demo` folder and visit `https://localhost/date`
 
+    {{< browser location="https://localhost/date">}}
+    <p><script>document.write(new Date().toString())</script></p>
+    {{< /browser >}}
+
     You should see the current date.
 
     Refresh and you should see the date update. Congratulations, you just created your first dynamic web site using Site.js.
@@ -98,7 +102,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     ### What magic is this?
 
-    In
+    
 
 [^1]: If you don’t want to use the terminal, you can open up your graphical file browser and create the `demo` folder using that and then use your graphical code editor to create an `index.html` file in that folder. You will, however, need to run the `site` command from a terminal session with its current working directory set to the `demo` folder… there’s no getting away from that.
 
