@@ -149,11 +149,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     Now look in your terminal, you should see:
 
-    <div class="terminal shadow" style="display: block; position: relative;" data-window-title="~/demo">
-      <div class="terminal-content">
-        <pre><code>New client connected to /chat</code></pre>
-      </div>
-    </div>
+    {{< terminal title="~/demo">}}New client connected to /chat{{</ terminal >}}
 
     So we’ve just made a successful connection to the `/chat` room. Now we need the server to listen for messages sent from connected clients and broadcast them to every other client in the same room.
 
@@ -229,7 +225,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     If you remember, towards the start of this tutorial we created a dynamic HTTPS route that shows the current date and time. With Site.js serving the `demo` folder, try to access the `/date` route now.
 
     {{< browser location="https://localhost/date" >}}
-    <div style="display: grid; align-items: center; justify-content: center; vertical-align: top; margin-top: 0;"><div><h1 style="font-size: 16vw; color: black; text-align:center; line-height: 0.25">4🤭4</h1><p style="font-size: 4vw; text-align: center; padding-left: 2vw; padding-right: 2vw; margin-bottom: 3vw;"><span>Could not find</span> <span style="color: grey;">/date</span></p></div></div>
+    <div style="display: grid; align-items: center; justify-content: center; vertical-align: top; margin-top: 0;"><div><h1 style="font-size: 500%; color: black; text-align:center; line-height: 0">4🤭4</h1><p style="font-size: 100%; text-align: center; padding-left: 2vw; padding-right: 2vw; margin-bottom: 5%;"><span>Could not find</span> <span style="color: grey;">/date</span></p></div></div>
     {{</ browser >}}
 
     Oops, you get the default Site.js 404 page[^6].
@@ -244,11 +240,9 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     If you look at your terminal output, you will see that Site.js tells you exactly which routes it loads when it launches:
 
-    ```shell
-    🐁 Found .https/.wss folders. Will load dynamic routes from there.
-    🐁 Adding HTTPS GET route: /date
-    🐁 Adding WebSocket (WSS) route: /chat
-    ```
+    {{< terminal title="~/demo" >}}🐁 Found .https/.wss folders. Will load dynamic routes from there.
+🐁 Adding HTTPS GET route: /date
+🐁 Adding WebSocket (WSS) route: /chat{{</ terminal >}}
 
     ## Room with a view
 

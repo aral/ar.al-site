@@ -1,8 +1,7 @@
 .terminal {
-  box-shadow: 0 20px 70px #666;
+  box-shadow: 0 20px 60px #666;
   margin-top: 2.5em;
   margin-bottom: 2.5em;
-
 }
 
 .terminal-content {
@@ -22,6 +21,7 @@
 
 .terminal-content code {
   font-weight: normal;
+  font-size: 0.9em;
 }
 
 /* Add Terminal chrome. */
@@ -42,9 +42,4 @@
 .terminal-content > pre {
   /* margin-top: 0.5em; */
   margin-bottom: 0;
-}
-
-.terminal-content code {
-.highlighted:after {
-  background-color: #C6C7BC !important;
 }

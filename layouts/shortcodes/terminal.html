@@ -1,0 +1,9 @@
+{{ if .IsNamedParams }}
+<div class="terminal" style="display: block; position: relative;" data-window-title="Terminal: {{ .Get "title" }}">
+{{ else }}
+<div class="terminal" style="display: block; position: relative;" data-window-title="Terminal">
+{{ end }}
+<div class="terminal-content">
+  <pre><code>{{ .Inner }}</code></pre>
+</div>
+</div>
