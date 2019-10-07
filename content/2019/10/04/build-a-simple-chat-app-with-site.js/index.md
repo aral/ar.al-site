@@ -315,7 +315,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     </div>
     {{< /browser >}}
 
-    ### Add front-end logic
+    ### Make the connection
 
     OK, so let’s add some life to our room, shall we?
 
@@ -339,6 +339,9 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
       socket.onclose = _ => {
         element('#status').innerHTML = 'Offline'
       }
+
+      // Code from the next step goes here.
+
     </script>
     ```
 
@@ -394,6 +397,48 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     This ensures that the app will work regardless of which domain it is served from.
 
     During development, `windows.location.hostname` will resolve to `localhost`, as before. When running in production – as it is here on my blog – it will resolve to the domain name of the site[^8].
+
+    ### Sending messages
+
+    Now that our app can connect to the chat server and display its connection status, let’s implement the ability to send messages.
+
+    Add the following code after the previous lot of JavaScript you just wrote:
+
+    ```js
+    // Handle message sending.
+    element('#messageForm').addEventListener('submit', event => {
+      // Prevent the form from being submitted.
+      event.preventDefault()
+
+      // Get the nickname and text.
+      const nickname = element('#nickname').value
+      const text = element('#message').value
+
+      // Create, serialise, and send a message object.
+      const message = { nickname, text }
+      socket.send(JSON.stringify(message))
+    })
+    ```
+
+    Restart your Site.js server and reload the page and you should now we able to send messages. To test that it is working, take a look at the Site.js console output in your terminal window and you should see the following message:
+
+
+    {{< terminal title="~/demo" caption="A message to no one." >}}/chat message broadcast to 0 recipients{{</ terminal >}}
+
+    So our message is being sent but no one is receiving it. This makes sense since the `broadcast()` method in our chat server does not send a copy of the message to the client it received it from and we don’t have any other clients connected.
+
+    Now open up a second browser window and load a copy of `https://localhost` in it and try sending another message.
+
+    This time, you should see the following console output in your terminal:
+
+    {{< terminal title="~/demo" caption="A message to one." >}}/chat message broadcast to 1 recipient{{</ terminal >}}
+
+    Well that’s progress. So our messages are being broadcast successfully but we’re not doing anything to process them on the web interface yet. Let’s implement that next.
+
+    ### Handling incoming messages
+
+
+<!-- Footnotes -->
 
 [^1]: If you don’t want to use the terminal, you can open up your graphical file browser and create the `demo` folder using that and then use your graphical code editor to create an `index.html` file in that folder. You will, however, need to run the `site` command from a terminal session with its current working directory set to the `demo` folder… there’s no getting away from that.
 
