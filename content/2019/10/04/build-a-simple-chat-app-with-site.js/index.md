@@ -110,7 +110,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     Using DotJS, all you have to do is write the logic for your web app. Everything else, including creating a secure HTTPS and WebSocket server for you and registering your routes, etc., is handled for you by Site.js.
 
-    Furthermore, there is no magic here. Under the hood, these are simply plain old tried-and-tested [Express](https://expressjs.com/) routes.[^3]
+    Furthermore, there is no magic here. Under the hood, these are simply plain old tried-and-tested [Express](https://expressjs.com/) routes.[^3] Site.js contains [Node.js](https://nodejs.org) so you can do anything in your dynamic routes that you can do with Node.js – including [using node modules](https://source.ind.ie/site.js/app/blob/master/README.md#using-node-modules) – without installing Node.js.
 
     When you’re ready to move on, press <kbd>Ctrl</kbd> <kbd>C</kbd> to stop the Site.js server.
 
@@ -137,7 +137,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     }
     ```
 
-    The function you just wrote will be called any time a new client connects to our chat server at the `/chat` path (which will be available locally at `wss://localhost/chat`)[^4]. In chat app parlance, what we’ve created is a “room.” So let’s try and join it and see what happens.
+    The function you just wrote will be called any time a new client connects to our chat server at the `/chat` path (which will be available locally at `wss://localhost/chat`)[^4]. In chat app parlance, what we’ve created is known as a “room.” So let’s try and join it and see what happens.
 
     ### Room for improvement
 
@@ -250,7 +250,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     Let’s fix that!
 
-    Open up the static `index.html` we created in the very first exercise that has the “Hello, world!” message in it and replace the contents of that file with the following:
+    Open up the static `index.html` we created in the very first exercise with the “Hello, world!” message in it and replace the contents of that file with the following:
 
     ```html
     <!doctype html>
@@ -269,7 +269,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     With Site.js serving the `demo` folder, hit `https://localhost` in your browser and confirm that you see it say “Chat room”.
 
-    ## Create the interface
+    ### Create the interface
 
     Our simple web interface is going to contain three main components: a connection status widget to show you whether you are connected to the server or not, a message form where you can identify yourself, compose messages, and send them, and, finally, a message display area where we can display both your sent messages and any incoming messages received from others.
 
@@ -290,7 +290,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     ```
 
-    How when you visit `https://localhost` in your browser, you should see our (currently non-functional) chat interface:
+    Now, when you visit `https://localhost` in your browser, you should see our (currently non-functional) chat interface:
 
     {{< browser location="https://localhost" caption="The web interface (non-functional)." >}}
     <style>
@@ -315,6 +315,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     </div>
     {{< /browser >}}
 
+    ### Add front-end logic
 
     OK, so let’s add some life to our room, shall we?
 
@@ -384,7 +385,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     </script>
     {{< /browser >}}
 
-    Note that when making the WebSocket connection, we didn’t hardcode the URL like before. Instead we used:
+    Note that when making the WebSocket connection, we didn’t hardcode the URL like before. Instead, we used:
 
     ```js
     new WebSocket(`wss://${window.location.hostname}/chat`)
@@ -392,7 +393,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     This ensures that the app will work regardless of which domain it is served from.
 
-    For development, `windows.location.hostname` will resolve to `localhost`, as before. When running in production – as it is here on my blog – it will resolve to the domain name of the site[^8].
+    During development, `windows.location.hostname` will resolve to `localhost`, as before. When running in production – as it is here on my blog – it will resolve to the domain name of the site[^8].
 
 [^1]: If you don’t want to use the terminal, you can open up your graphical file browser and create the `demo` folder using that and then use your graphical code editor to create an `index.html` file in that folder. You will, however, need to run the `site` command from a terminal session with its current working directory set to the `demo` folder… there’s no getting away from that.
 
