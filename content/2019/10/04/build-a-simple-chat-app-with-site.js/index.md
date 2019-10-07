@@ -276,17 +276,18 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     Add the interface components to your web page by pasting the code below under the heading in the body of your page.
 
     ```html
-  <p>Status: <span id='status' style="color: red;">Offline</span></p>
-  <form id='messageForm'>
-    <label for='message'>Nickname:</label>
-    <input id='nickname' type='text' name='nickname' value='Anonymous'>
-    <label for='message'>Message:</label>
-    <input id='message' type='text' name='message' value=''>
-    <button id='submitButton' type='submit'>Send</button>
-  </form>
-  <h2>Messages</h2>
-  <ul id='messages'></ul>
-  <!-- Code from the next step goes here. -->
+    <p>Status: <span id='status' style="color: red;">Offline</span></p>
+    <form id='message-form'>
+      <label for='message'>Nickname:</label>
+      <input id='nickname' name='nickname' value='Anonymous'>
+      <label for='message'>Message:</label>
+      <input id='message' name='message' value=''>
+      <button id='submit-button' type='submit'>Send</button>
+    </form>
+    <h2>Messages</h2>
+    <ul id='messages'></ul>
+
+    <!-- Code from the next step goes here. -->
 
     ```
 
@@ -303,12 +304,12 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
       <h1>Chat room</h1>
       <p>Status: <span id='status' style="color: red;">Offline</span></p>
       <!-- Note: added code to prevent send button from reloading the tutorial -->
-      <form id='messageForm' onsubmit='return false'>
+      <form id='message-form' onsubmit='return false'>
         <label for='message'>Nickname:</label>
         <input id='nickname' type='text' name='nickname' value='Anonymous'>
         <label for='message'>Message:</label>
         <input id='message' type='text' name='message' value=''>
-        <button id='submitButton' type='submit'>Send</button>
+        <button id='submit-button' type='submit'>Send</button>
       </form>
       <h2>Messages</h2>
       <ul id='messages'></ul>
@@ -347,13 +348,18 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     Restart the Site.js server[^7] and you should now see the status indicator read <span style="color: green">Online</span> when you reload the page:
 
-    {{< browser location="https://localhost" caption="Live example, connected to wss://ar.al/chat.">}}
     <style>
     .chat-interface { padding-bottom: 1.5em; }
     .chat-interface form { margin-bottom: 1.5em; }
-    .chat-interface label, .chat-interface p {font-size: 0.9em}
+    .chat-interface label, .chat-interface p {font-size: 0.75em}
     .chat-interface input {width:6em; height:}
+    .chat-interface h1 { font-size: 1.5em; line-height: 1 }
+    .chat-interface h2 { font-size: 1em; }
+    .chat-interface ul { margin-top: 0.5em; }
+    .chat-interface li { font-size: 0.75em; line-height: 1.5 }
     </style>
+
+    {{< browser location="https://localhost" caption="Live example, connected to wss://ar.al/chat.">}}
     <div class='chat-interface'>
       <h1>Chat room</h1>
       <p>Status: <span id='live-example-1-status' style="color: red;">Offline</span></p>
@@ -398,15 +404,20 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     During development, `windows.location.hostname` will resolve to `localhost`, as before. When running in production – as it is here on my blog – it will resolve to the domain name of the site[^8].
 
-    ### Sending messages
+    ### Handle message sending
 
     Now that our app can connect to the chat server and display its connection status, let’s implement the ability to send messages.
 
     Add the following code after the previous lot of JavaScript you just wrote:
 
     ```js
+    // Helper: display a message object.
+    function displayMessage (message) {
+      element('#messages').innerHTML += `<li><strong>${message.nickname}: </strong>${message.text}</li>`
+    }
+
     // Handle message sending.
-    element('#messageForm').addEventListener('submit', event => {
+    element('#message-form').addEventListener('submit', event => {
       // Prevent the form from being submitted.
       event.preventDefault()
 
@@ -414,14 +425,22 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
       const nickname = element('#nickname').value
       const text = element('#message').value
 
-      // Create, serialise, and send a message object.
+      // Clear the message
+      element('#message').value = ''
+
+      // Create a message object, serialise it as JSON, and send it.
       const message = { nickname, text }
       socket.send(JSON.stringify(message))
+
+      // Update the local display
+      displayMessage(message)
     })
+
+    // Code from the next step goes here.
+
     ```
 
     Restart your Site.js server and reload the page and you should now we able to send messages. To test that it is working, take a look at the Site.js console output in your terminal window and you should see the following message:
-
 
     {{< terminal title="~/demo" caption="A message to no one." >}}/chat message broadcast to 0 recipients{{</ terminal >}}
 
@@ -431,12 +450,175 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     This time, you should see the following console output in your terminal:
 
-    {{< terminal title="~/demo" caption="A message to one." >}}/chat message broadcast to 1 recipient{{</ terminal >}}
+    {{< terminal title="~/demo" caption="A message to someone." >}}/chat message broadcast to 1 recipient{{</ terminal >}}
 
     Well that’s progress. So our messages are being broadcast successfully but we’re not doing anything to process them on the web interface yet. Let’s implement that next.
 
-    ### Handling incoming messages
+    ### Handle incoming messages
 
+    When a message is received on the socket, the `onmessage` event handler is invoked. Add the following code to the end of your `script` tag to define a message handler that parses the received JSON string (remember, we serialise message objects in JSON format before sending them) and add it to the unordered list in our interface:
+
+    ```js
+    // Handle incoming messages.
+    socket.onmessage = message => {
+      // Deserialise the message string.
+      message = JSON.parse(message.data)
+
+      // Display the message in the messages list.
+      element('#messages').innerHTML += `<li><strong>${message.nickname}: </strong>${message.text}</li>`
+    }
+    ```
+
+    Now when you test your app using two browser windows, you should be able to both send and receive messages. You can try it out below:
+
+    <style>
+      #first-chat-window .browser-content, #second-chat-window .browser-content {
+        overflow-y: scroll;
+        height: 15em;
+      }
+
+      #first-chat-window .chat-interface, #second-chat-window .chat-interface {
+        height: 15em;
+      }
+    </style>
+
+    <!-- First chat window -->
+
+    <div id='first-chat-window' style='width: 47.5%; float: left;'>
+    {{< browser location="https://localhost" caption="First chat window">}}
+    <div class='chat-interface'>
+      <h1>Chat room</h1>
+      <p>Status: <span id='first-chat-window-status' style="color: red;">Offline</span></p>
+      <!-- Note: added code to prevent send button from reloading the tutorial -->
+      <form id='first-chat-window-message-form' onsubmit='return false'>
+        <label for='first-chat-window-message'>Nickname:</label>
+        <input id='first-chat-window-nickname' type='text' name='nickname' value='Anonymous'>
+        <label for='first-chat-window-message'>Message:</label>
+        <input id='first-chat-window-message' type='text' name='message' value=''>
+        <button id='first-chat-window-submit-button' type='submit'>Send</button>
+      </form>
+      <h2>Messages</h2>
+      <ul id='first-chat-window-messages'></ul>
+    </div>
+    <script>
+      // Initialise web socket.
+      const firstChatWindowSocket = new WebSocket(
+        `wss://${window.location.hostname}/chat`
+      )
+
+      // Display the state of the connection.
+      firstChatWindowSocket.onopen = _ => {
+        element('#first-chat-window-status').innerHTML = '<span style="color: green">Online</span>'
+      }
+
+      firstChatWindowSocket.onclose = _ => {
+        element('#first-chat-window-status').innerHTML = 'Offline'
+      }
+
+      function firstChatWindowDisplayMessage (message) {
+        element('#first-chat-window-messages').innerHTML += `<li><strong>${message.nickname}: </strong>${message.text}</li>`
+      }
+
+      // Handle message sending.
+      element('#first-chat-window-message-form').addEventListener('submit', event => {
+        // Prevent the form from being submitted.
+        event.preventDefault()
+
+        // Get the nickname and text.
+        const nickname = element('#first-chat-window-nickname').value
+        const text = element('#first-chat-window-message').value
+
+        // Clear the message
+        element('#first-chat-window-message').value = ''
+
+        // Create a message object, serialise it as JSON, and send it.
+        const message = { nickname, text }
+        firstChatWindowSocket.send(JSON.stringify(message))
+
+        // Update the local display
+        firstChatWindowDisplayMessage(message)
+      })
+
+      // Handle incoming messages.
+      firstChatWindowSocket.onmessage = message => {
+        // Deserialise the message string.
+        message = JSON.parse(message.data)
+
+        // Display the message in the messages list.
+        firstChatWindowDisplayMessage(message)
+      }
+    </script>
+    {{< /browser >}}
+    </div>
+
+    <!-- Second chat window -->
+
+    <div id='second-chat-window' style='width: 47.5%; float: right;'>
+    {{< browser location="https://localhost" caption="Second chat window">}}
+    <div class='chat-interface'>
+      <h1>Chat room</h1>
+      <p>Status: <span id='second-chat-window-status' style="color: red;">Offline</span></p>
+      <!-- Note: added code to prevent send button from reloading the tutorial -->
+      <form id='second-chat-window-message-form' onsubmit='return false'>
+        <label for='second-chat-window-message'>Nickname:</label>
+        <input id='second-chat-window-nickname' type='text' name='nickname' value='Anonymous'>
+        <label for='second-chat-window-message'>Message:</label>
+        <input id='second-chat-window-message' type='text' name='message' value=''>
+        <button id='second-chat-window-submit-button' type='submit'>Send</button>
+      </form>
+      <h2>Messages</h2>
+      <ul id='second-chat-window-messages'></ul>
+    </div>
+    <script>
+      // Initialise web socket.
+      const secondChatWindowSocket = new WebSocket(
+        `wss://${window.location.hostname}/chat`
+      )
+
+      // Display the state of the connection.
+      secondChatWindowSocket.onopen = _ => {
+        element('#second-chat-window-status').innerHTML = '<span style="color: green">Online</span>'
+      }
+
+      secondChatWindowSocket.onclose = _ => {
+        element('#second-chat-window-status').innerHTML = 'Offline'
+      }
+
+      function secondChatWindowDisplayMessage (message) {
+        element('#second-chat-window-messages').innerHTML += `<li><strong>${message.nickname}: </strong>${message.text}</li>`
+      }
+
+      // Handle message sending.
+      element('#second-chat-window-message-form').addEventListener('submit', event => {
+        // Prevent the form from being submitted.
+        event.preventDefault()
+
+        // Get the nickname and text.
+        const nickname = element('#second-chat-window-nickname').value
+        const text = element('#second-chat-window-message').value
+
+        // Clear the message
+        element('#second-chat-window-message').value = ''
+
+        // Create a message object, serialise it as JSON, and send it.
+        const message = { nickname, text }
+        secondChatWindowSocket.send(JSON.stringify(message))
+
+        // Update the local display
+        secondChatWindowDisplayMessage(message)
+      })
+
+      // Handle incoming messages.
+      secondChatWindowSocket.onmessage = message => {
+        // Deserialise the message string.
+        message = JSON.parse(message.data)
+
+        // Display the message in the messages list.
+        secondChatWindowDisplayMessage(message)
+      }
+    </script>
+    {{< /browser >}}
+    </div>
 
 <!-- Footnotes -->
 
