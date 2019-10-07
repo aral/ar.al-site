@@ -250,7 +250,123 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     Let’s fix that!
 
+    Open up the static `index.html` we created in the very first exercise that has the “Hello, world!” message in it and replace the contents of that file with the following:
 
+    ```html
+    <!doctype html>
+    <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Basic chat app with Site.js</title>
+    </head>
+    <body>
+      <h1>Chat room</h1>
+      <!-- Code from the next step goes here. -->
+    </body>
+    </html>
+    ```
+
+    With Site.js serving the `demo` folder, hit `https://localhost` in your browser and confirm that you see it say “Chat room”.
+
+    ## Create the interface
+
+    Our simple web interface is going to contain three main components: a connection status widget to show you whether you are connected to the server or not, a message form where you can identify yourself, compose messages, and send them, and, finally, a message display area where we can display both your sent messages and any incoming messages received from others.
+
+    Add the interface components to your web page by pasting the code below under the heading in the body of your page.
+
+    ```html
+  <p>Status: <span id='status' style="color: red;">Offline</span></p>
+  <form id='messageForm'>
+    <label for='message'>Nickname:</label>
+    <input id='nickname' type='text' name='nickname' value='Anonymous'>
+    <label for='message'>Message:</label>
+    <input id='message' type='text' name='message' value=''>
+    <button id='submitButton' type='submit'>Send</button>
+  </form>
+  <h2>Messages</h2>
+  <ul id='messages'></ul>
+  <!-- Code from the next step goes here. -->
+
+    ```
+
+    How when you visit `https://localhost` in your browser, you should see our (currently non-functional) chat interface:
+
+    {{< browser location="https://localhost">}}
+    <style>
+    .chat-interface { padding-bottom: 1.5em; }
+    .chat-interface form { margin-bottom: 1.5em; }
+    .chat-interface label, .chat-interface p {font-size: 0.9em}
+    .chat-interface input {width:6em; height:}
+    </style>
+    <div class='chat-interface'>
+      <h1>Chat room</h1>
+      <p>Status: <span id='status' style="color: red;">Offline</span></p>
+      <!-- Note: added code to prevent send button from reloading the tutorial -->
+      <form id='messageForm' onsubmit='return false'>
+        <label for='message'>Nickname:</label>
+        <input id='nickname' type='text' name='nickname' value='Anonymous'>
+        <label for='message'>Message:</label>
+        <input id='message' type='text' name='message' value=''>
+        <button id='submitButton' type='submit'>Send</button>
+      </form>
+      <h2>Messages</h2>
+      <ul id='messages'></ul>
+    </div>
+    {{< /browser >}}
+
+
+    OK, so let’s add some life it, shall we?
+
+    Under your interface code, add a `script` tag and let’s get our status indicator working by making a WebSocket connection to our server, listening for the relevant events, and updating the interface accordingly:
+
+    ```js
+    <script>
+      // Shorthand for basic DOM lookup via CSS selectors.
+      const element = document.querySelector.bind(document)
+
+      // Initialise web socket.
+      const socket = new WebSocket(
+        `wss://${window.location.hostname}/chat`
+      )
+
+      // Display the state of the connection.
+      socket.onopen = _ => {
+        element('#status').innerHTML = '<span style="color: green">Online</span>'
+      }
+
+      socket.onclose = _ => {
+        element('#status').innerHTML = 'Offline'
+      }
+    </script>
+    ```
+
+    Restart the Site.js server[^7] and you should now see the status indicator read <span style="color: green">Online</span> when you reload the page:
+
+    {{< browser location="https://localhost">}}
+    <style>
+    .chat-interface { padding-bottom: 1.5em; }
+    .chat-interface form { margin-bottom: 1.5em; }
+    .chat-interface label, .chat-interface p {font-size: 0.9em}
+    .chat-interface input {width:6em; height:}
+    </style>
+    <div class='chat-interface'>
+      <h1>Chat room</h1>
+      <p>Status: <span id='status' style="color: red;">Offline</span></p>
+      <!-- Note: added code to prevent send button from reloading the tutorial -->
+      <form id='messageForm' onsubmit='return false'>
+        <label for='message'>Nickname:</label>
+        <input id='nickname' type='text' name='nickname' value='Anonymous'>
+        <label for='message'>Message:</label>
+        <input id='message' type='text' name='message' value=''>
+        <button id='submitButton' type='submit'>Send</button>
+      </form>
+      <h2>Messages</h2>
+      <ul id='messages'></ul>
+    </div>
+    {{< /browser >}}
+
+    Note 
 
 [^1]: If you don’t want to use the terminal, you can open up your graphical file browser and create the `demo` folder using that and then use your graphical code editor to create an `index.html` file in that folder. You will, however, need to run the `site` command from a terminal session with its current working directory set to the `demo` folder… there’s no getting away from that.
 
@@ -270,3 +386,5 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 [^5]: You might have noticed that we use an anonymous function expression in the `module.exports` line whereas we used an arrow function expression in the previous (HTTPS) examples and even though we use an arrow function expression to define the event handler. This is not by accident; it has to do with scope. If you want to have access to the `this` reference in your DotJS routes and access methods like `broadcast()`, you cannot use an arrow function expression to define your module, you must use the `function` keyword. Inside of your module, you are free to use arrow function expressions to your heart’s desire.
 
 [^6]: You can easily [replace the default error pages with your own custom ones](https://source.ind.ie/site.js/app/blob/master/README.md#custom-error-pages). And as far as 404 errors go, you can reduce the number of them on the web in general and contribute towards [an evergreen web](https://source.ind.ie/site.js/app/blob/master/README.md#native-support-for-an-evergreen-web) by making use of the native [cascading archives](https://source.ind.ie/site.js/app/blob/master/README.md#native-cascading-archives-support) and [404-to-302](https://source.ind.ie/site.js/app/blob/master/README.md#native-404-302-support) support in Site.js.
+
+[^7]: Site.js does not have LiveReload and does not automatically restart the server when dynamic routes change at the moment. When working with static content, this means that you have to manually refresh the browser and when working with dynamic content you have to manually restart the server whenever you make code changes. I realise this is less than ideal and both of these are high on [my list of issues](https://source.ind.ie/site.js/app/issues) to address.
