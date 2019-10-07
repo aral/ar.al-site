@@ -36,7 +36,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     To test that it’s working, fire up your browser of choice and visit `https://localhost`
 
-    {{< browser location="https://localhost/laura">}}
+    {{< browser location="https://localhost/" caption="A very simple static page.">}}
     <p>Hello, world!</p>
     {{< /browser >}}
 
@@ -90,7 +90,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     Finally, run the `site` command in the `demo` folder and visit `https://localhost/date`
 
-    {{< browser location="https://localhost/date">}}
+    {{< browser location="https://localhost/date" caption="A dynamic DotJS route. Refresh the page to see it update." >}}
     <p><script>document.write(new Date().toString())</script></p>
     {{< /browser >}}
 
@@ -149,7 +149,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     Now look in your terminal, you should see:
 
-    {{< terminal title="~/demo">}}New client connected to /chat{{</ terminal >}}
+    {{< terminal title="~/demo" caption="We’ve connected… now what?">}}New client connected to /chat{{</ terminal >}}
 
     So we’ve just made a successful connection to the `/chat` room. Now we need the server to listen for messages sent from connected clients and broadcast them to every other client in the same room.
 
@@ -224,15 +224,15 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     If you remember, towards the start of this tutorial we created a dynamic HTTPS route that shows the current date and time. With Site.js serving the `demo` folder, try to access the `/date` route now.
 
-    {{< browser location="https://localhost/date" >}}
+    {{< browser location="https://localhost/date" caption="We don’t talk about my emoji problem…" >}}
     <div style="display: grid; align-items: center; justify-content: center; vertical-align: top; margin-top: 0;"><div><h1 style="font-size: 500%; color: black; text-align:center; line-height: 0">4🤭4</h1><p style="font-size: 100%; text-align: center; padding-left: 2vw; padding-right: 2vw; margin-bottom: 5%;"><span>Could not find</span> <span style="color: grey;">/date</span></p></div></div>
     {{</ browser >}}
 
     Oops, you get the default Site.js 404 page[^6].
 
-    Site.js can’t file the file? Why?
+    Site.js can’t file the file. Why?
 
-    Turns out, ever since we created the `.wss` folder, Site.js has been ignoring our `.dynamic/date.js` route due to [routing precedence](https://source.ind.ie/site.js/app/blob/master/README.md#routing-precedence) rules.
+    Turns out ever since we created the `.wss` folder, Site.js has been ignoring our `.dynamic/date.js` route due to [routing precedence](https://source.ind.ie/site.js/app/blob/master/README.md#routing-precedence) rules.
 
     That’s a fancy way of saying that if we want to use HTTPS and WebSocket DotJS routes together in the same web app, we must put our HTTPS routes in a folder called `.https` just like we put the WebSocket routes in a folder called `.wss`.
 
@@ -240,7 +240,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     If you look at your terminal output, you will see that Site.js tells you exactly which routes it loads when it launches:
 
-    {{< terminal title="~/demo" >}}🐁 Found .https/.wss folders. Will load dynamic routes from there.
+    {{< terminal title="~/demo" caption="The console output from Site.js contains important details." >}}🐁 Found .https/.wss folders. Will load dynamic routes from there.
 🐁 Adding HTTPS GET route: /date
 🐁 Adding WebSocket (WSS) route: /chat{{</ terminal >}}
 
@@ -292,7 +292,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     How when you visit `https://localhost` in your browser, you should see our (currently non-functional) chat interface:
 
-    {{< browser location="https://localhost">}}
+    {{< browser location="https://localhost" caption="The web interface (non-functional)." >}}
     <style>
     .chat-interface { padding-bottom: 1.5em; }
     .chat-interface form { margin-bottom: 1.5em; }
@@ -316,7 +316,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     {{< /browser >}}
 
 
-    OK, so let’s add some life it, shall we?
+    OK, so let’s add some life to our room, shall we?
 
     Under your interface code, add a `script` tag and let’s get our status indicator working by making a WebSocket connection to our server, listening for the relevant events, and updating the interface accordingly:
 
@@ -343,7 +343,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     Restart the Site.js server[^7] and you should now see the status indicator read <span style="color: green">Online</span> when you reload the page:
 
-    {{< browser location="https://localhost">}}
+    {{< browser location="https://localhost" caption="Live example, connected to wss://ar.al/chat.">}}
     <style>
     .chat-interface { padding-bottom: 1.5em; }
     .chat-interface form { margin-bottom: 1.5em; }
@@ -352,7 +352,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     </style>
     <div class='chat-interface'>
       <h1>Chat room</h1>
-      <p>Status: <span id='status' style="color: red;">Offline</span></p>
+      <p>Status: <span id='live-example-1-status' style="color: red;">Offline</span></p>
       <!-- Note: added code to prevent send button from reloading the tutorial -->
       <form id='messageForm' onsubmit='return false'>
         <label for='message'>Nickname:</label>
@@ -364,9 +364,35 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
       <h2>Messages</h2>
       <ul id='messages'></ul>
     </div>
+    <script>
+      // Shorthand for basic DOM lookup via CSS selectors.
+      const element = document.querySelector.bind(document)
+
+      // Initialise web socket.
+      const socket = new WebSocket(
+        `wss://${window.location.hostname}/chat`
+      )
+
+      // Display the state of the connection.
+      socket.onopen = _ => {
+        element('#live-example-1-status').innerHTML = '<span style="color: green">Online</span>'
+      }
+
+      socket.onclose = _ => {
+        element('#live-example-1-status').innerHTML = 'Offline'
+      }
+    </script>
     {{< /browser >}}
 
-    Note 
+    Note that when making the WebSocket connection, we didn’t hardcode the URL like before. Instead we used:
+
+    ```js
+    new WebSocket(`wss://${window.location.hostname}/chat`)
+    ```
+
+    This ensures that the app will work regardless of which domain it is served from.
+
+    For development, `windows.location.hostname` will resolve to `localhost`, as before. When running in production – as it is here on my blog – it will resolve to the domain name of the site[^8].
 
 [^1]: If you don’t want to use the terminal, you can open up your graphical file browser and create the `demo` folder using that and then use your graphical code editor to create an `index.html` file in that folder. You will, however, need to run the `site` command from a terminal session with its current working directory set to the `demo` folder… there’s no getting away from that.
 
@@ -388,3 +414,5 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 [^6]: You can easily [replace the default error pages with your own custom ones](https://source.ind.ie/site.js/app/blob/master/README.md#custom-error-pages). And as far as 404 errors go, you can reduce the number of them on the web in general and contribute towards [an evergreen web](https://source.ind.ie/site.js/app/blob/master/README.md#native-support-for-an-evergreen-web) by making use of the native [cascading archives](https://source.ind.ie/site.js/app/blob/master/README.md#native-cascading-archives-support) and [404-to-302](https://source.ind.ie/site.js/app/blob/master/README.md#native-404-302-support) support in Site.js.
 
 [^7]: Site.js does not have LiveReload and does not automatically restart the server when dynamic routes change at the moment. When working with static content, this means that you have to manually refresh the browser and when working with dynamic content you have to manually restart the server whenever you make code changes. I realise this is less than ideal and both of these are high on [my list of issues](https://source.ind.ie/site.js/app/issues) to address.
+
+[^8]: The examples on this page are live and connect to the instance of the finished app I have running at https://ar.al/chat. Needless to say, this site is served by Site.js.
