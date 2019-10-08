@@ -286,12 +286,35 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     </form>
     <h2>Messages</h2>
     <ul id='messages'></ul>
-
-    <!-- Code from the next step goes here. -->
-
     ```
 
-    Now, when you visit `https://localhost` in your browser, you should see our (currently non-functional) chat interface:
+    Let’s also add some very basic styling so that our form displays neatly. Just before the end of the `<head>` tag (right before `</head>`), enter the following style tag and CSS:
+
+    ```html
+    <style>
+      form {
+        background: #eee;
+        display: grid;
+        grid-template-columns: [labels] auto [controls] 1fr;
+        grid-gap: 0.5em;
+        min-width: 100px;
+        max-width: 400px;
+        padding: 0.75em;
+      }
+
+      form > label { grid-column: labels; }
+
+      form > input, form > button {
+        grid-column: controls;
+        min-width: 6em;
+        padding: 0.5em;
+      }
+    </style>
+    ```
+
+    This will display the form in a basic responsive, two-column layout that won’t hurt our eyes.
+
+    Now, when you visit `https://localhost` in your browser, you should see our (currently non-functional) chat interface.
 
     {{< browser location="https://localhost" caption="The web interface (non-functional)." >}}
     <style>
@@ -475,24 +498,47 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     }
     ```
 
-    Now when you test your app using two browser windows, you should be able to both send and receive messages. You can try it out below:
+    Now when you test your app using two browser windows, you should be able to both send and receive messages.
+
+    You can test out what we have so far using the two browser windows below. They’re both running the code above:
 
     <style>
+      #first-chat-window, #second-chat-window {
+        width: 47.5%;
+      }
+
+      #first-chat-window {
+        float: left;
+      }
+
+      #second-chat-window {
+        float: right;
+      }
+
       #first-chat-window .browser-content, #second-chat-window .browser-content {
         overflow-y: scroll;
-        height: 15em;
+        height: 19em;
       }
 
       #first-chat-window .chat-interface, #second-chat-window .chat-interface {
-        height: 15em;
+        height: 19em;
+      }
+
+      /* On narrow viewports, stack the browser windows
+         vertically instead of horizontally. */
+      @media screen and (max-width: 353px) {
+        #first-chat-window, #second-chat-window {
+          float: none;
+          width: 100%;
+        }
       }
 
       form {
         display: grid;
         grid-template-columns: [labels] auto [controls] 1fr;
-        grid-gap: 0.4em;
+        grid-gap: 0.5em;
         background: #eee;
-        padding: 1em;
+        padding: 0.75em;
         min-width: 100px;
         max-width: 400px;
 
@@ -505,16 +551,11 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
         grid-column: controls;
         padding: 0.5em;
       }
-
-      form > button {
-        /* margin-top: 0.4em; */
-      }
-
     </style>
 
     <!-- First chat window -->
 
-    <div id='first-chat-window' style='width: 47.5%; float: left;'>
+    <div id='first-chat-window'>
     {{< browser location="https://localhost" caption="First chat window">}}
     <div class='chat-interface'>
       <h1>Chat room</h1>
@@ -583,7 +624,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     <!-- Second chat window -->
 
-    <div id='second-chat-window' style='width: 47.5%; float: right;'>
+    <div id='second-chat-window'>
     {{< browser location="https://localhost" caption="Second chat window">}}
     <div class='chat-interface'>
       <h1>Chat room</h1>
