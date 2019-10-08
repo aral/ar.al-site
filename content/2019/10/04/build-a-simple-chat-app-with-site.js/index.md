@@ -4,6 +4,88 @@ date: 2019-10-04T14:50:49+01:00
 draft: false
 ---
 
+<!-- The final version of the chat app. -->
+
+<style>
+  #final-version .browser-content {
+    overflow-y: scroll;
+    height: 19em;
+  }
+
+  #final-version .chat-interface {
+    height: 19em;
+  }
+</style>
+
+<div id='final-version'>
+{{< browser location="https://localhost" caption="The chat app we’ll be building together (it’s live, you can play with it!)">}}
+<div class='chat-interface'>
+  <h1>Chat room</h1>
+  <p>Status: <span id='final-version-status' style="color: red;">Offline</span></p>
+  <!-- Note: added code to prevent send button from reloading the tutorial -->
+  <form id='final-version-message-form' onsubmit='return false'>
+    <label for='final-version-message'>Nickname:</label>
+    <input id='final-version-nickname' type='text' name='nickname' value='Anonymous'>
+    <label for='final-version-message'>Message:</label>
+    <input id='final-version-message' type='text' name='message' value=''>
+    <button id='final-version-submit-button' type='submit'>Send</button>
+  </form>
+  <h2>Messages</h2>
+  <ul id='final-version-messages'></ul>
+</div>
+<script>
+  // Initialise web socket.
+  const finalVersionWindowSocket = new WebSocket(
+    `wss://${window.location.hostname}/chat`
+  )
+
+  // Display the state of the connection.
+  finalVersionWindowSocket.onopen = _ => {
+    element('#final-version-status').innerHTML = '<span style="color: green">Online</span>'
+  }
+
+  finalVersionWindowSocket.onclose = _ => {
+    element('#final-version-status').innerHTML = 'Offline'
+  }
+
+  function finalVersionWindowDisplayMessage (message) {
+    element('#final-version-messages').innerHTML += `<li><strong>${message.nickname}: </strong>${message.text}</li>`
+  }
+
+  // Handle message sending.
+  element('#final-version-message-form').addEventListener('submit', event => {
+    // Prevent the form from being submitted.
+    event.preventDefault()
+
+    // Get the nickname and text.
+    const nickname = element('#final-version-nickname').value
+    const text = element('#final-version-message').value
+
+    // Clear the message
+    element('#final-version-message').value = ''
+
+    // Create a message object, serialise it as JSON, and send it.
+    const message = { nickname, text }
+    finalVersionWindowSocket.send(JSON.stringify(message))
+
+    // Update the local display
+    finalVersionWindowDisplayMessage(message)
+  })
+
+  // Handle incoming messages.
+  finalVersionWindowSocket.onmessage = message => {
+    // Deserialise the message string.
+    message = JSON.parse(message.data)
+
+    // Display the message in the messages list.
+    finalVersionWindowDisplayMessage(message)
+  }
+</script>
+{{< /browser >}}
+</div>
+
+## We need to talk about Site.js
+
 This weekend, I released [Site.js](https://sitejs.org) version 12.7.0 with improvements to its WebSocket interface and [documentation](https://source.ind.ie/site.js/app/blob/master/README.md#websocket-wss-routes). Today, I want to take you step-by-step into building and running a basic chat app using Site.js.
 
 It’s much easier than you think, so fire up a terminal window, grab your code editor, and let’s get started!
@@ -59,6 +141,25 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     I mentioned earlier that Site.js is zero-configuration. This means that it has certain conventions that it expects you to adhere to. For example, if you want to create dynamic routes in your web app, you must place them in a folder called `.dynamic`.
 
     Before we move onto creating the chat functionality, let’s create the equivalent of our static “hello, world!” example but with some very basic dynamic functionality that displays the current date and time.
+
+    <style>
+      #note-for-non-coders {
+        display: block;
+        background-color: #AFE1E8;
+        color: #154652;
+        width: 100%;
+        font-size: 0.9em;
+        margin-top: 2rem;
+        margin-left: -2rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+    </style>
+    <div id='note-for-non-coders'>
+    __A note for non-programmers:__ The code listings on my blog use a font that applies ligatures to certain operators to render them in a more typographically pleasing manner. However, this may confuse beginners who are not familiar with how to type these operators. To enter the strict equality operator (`===`), use three equals signs (===). Similarly, to enter the strict inequality operator (`!==`) – which, contrary to how it sounds, isn’t the logo for your local conservative party – type an exclamation mark followed by two equals signs (!==). Finally, to create an arrow function expression (`=>`), type an equals sign followed by a greater-than sign (=>).
+    </div>
 
     ### A timely example
 
@@ -390,7 +491,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
         <input id='nickname' type='text' name='nickname' value='Anonymous'>
         <label for='message'>Message:</label>
         <input id='message' type='text' name='message' value=''>
-        <button id='submitButton' type='submit'>Send</button>
+        <button id='submit-button' type='submit'>Send</button>
       </form>
       <h2>Messages</h2>
       <ul id='messages'></ul>
@@ -554,7 +655,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     <!-- First chat window -->
 
     <div id='first-chat-window'>
-    {{< browser location="https://localhost" caption="First chat window">}}
+    {{< browser location="https://localhost" caption="First chat window.">}}
     <div class='chat-interface'>
       <h1>Chat room</h1>
       <p>Status: <span id='first-chat-window-status' style="color: red;">Offline</span></p>
@@ -623,7 +724,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     <!-- Second chat window -->
 
     <div id='second-chat-window'>
-    {{< browser location="https://localhost" caption="Second chat window">}}
+    {{< browser location="https://localhost" caption="Second chat window.">}}
     <div class='chat-interface'>
       <h1>Chat room</h1>
       <p>Status: <span id='second-chat-window-status' style="color: red;">Offline</span></p>
@@ -728,7 +829,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
         const formIsValid = nicknameIsValid && messageIsValid
 
-        $('#submitButton').disabled = !formIsValid
+        $('#submit-button').disabled = !formIsValid
       }
     ```
 
@@ -815,7 +916,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
         const formIsValid = nicknameIsValid && messageIsValid
 
-        $('#submitButton').disabled = !formIsValid
+        $('#submit-button').disabled = !formIsValid
       }
 {{</ highlight >}}</div>{{< highlight js >}}
       // Initialise web socket.
@@ -890,7 +991,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     In a perfect world, everyone will use our lovely web page front-end and our front-end validation will catch all the issues, and no one will ever hit our back-end directly.
 
-    In the real world, watch aghast as I fire up a browser and send you an empty message from within the JavaScript console of my browser and your chat server dutifully delivers it to everyone in the room:
+    In the real world, behold aghast as I fire up a browser and send you an empty message from within the JavaScript console of my browser and your chat server dutifully delivers it to everyone in the room:
 
     ```js
     // All your front-end validation are belong to us.
@@ -898,11 +999,11 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     socket.send(JSON.stringify({nickname: '', message: ''}))
     ```
 
-    Front-end validation is a usability feature. Back-end validation is a security feature.
+    Front-end validation is a usability feature; back-end validation is a security feature.
 
-    While there’s much we would have to implement in a read-world chat app (like rate limiting, blacklists, etc.), let’s at least add server-side validation to our basic example to prevent messages with missing nicknames and message text from being broadscast to everyone in the room.
+    While there’s much we would have to implement in a real-world chat app (like rate limiting, blacklists, etc.), let’s at least add server-side validation to our basic example to prevent messages with missing nicknames and message text from being broadscast to everyone in the room.
 
-    The final listing of the chat server, with this final change highlighted, is below:
+    Here’s the final listing of the chat server, with this new feature highlighted:
 
     <div class='final-code-listing'>
     {{< highlight js >}}
@@ -938,7 +1039,7 @@ module.exports = function (client, request) {
 
   9. ## Going further
 
-    Well, you were promised a basic chat app in Site.js and that’s exactly what we’ve just built. Along the way, you also learned the basics of Site.js and how to use it to develop and serve not WebSocket but regular HTTPS routes using DotJS.
+    Well, you were promised a basic chat app in Site.js and that’s exactly what we’ve just built. Along the way, you also learned the basics of Site.js and how to use it to develop and serve not just [WebSocket routes](https://source.ind.ie/site.js/app/blob/master/README.md#websocket-wss-routes) but [regular HTTPS routes](https://source.ind.ie/site.js/app/blob/master/README.md#get-only-simplest-approach) also using [DotJS](https://source.ind.ie/site.js/app/blob/master/README.md#dotjs).
 
     But that’s just the tip of the iceberg when it comes to what you can do with Site.js. As I mentioned during the tutorial, anything you can do with Node.js, you can do with Site.js. What you get in addition is a zero-configuration secure static and dynamic web server.
 
@@ -946,9 +1047,7 @@ module.exports = function (client, request) {
 
     ### Test your app from any device
 
-    So far, you’ve only run servers at `https://localhost` and,  behind the scenes, Site.js ensured that you didn’t get certificate warnings when you did. But what if you want to test your chat app from your phone or to have others test it with you? You could, of course, deploy it to a public Virtual Private Server, which is the topic of the next section, but you can also provide access to your development machine using a tool like [ngrok](https://ngrok.com/).
-
-    To do so, you would get [a Pro account](https://ngrok.com/pricing) from ngrok (at least this is what Laura and I use at [Small Technology Foundation](https://small-tech.org)) and set up a domain name per their instructions (e.g., https://dev.my-domain.org) and then do:
+    So far, you’ve only run servers at `https://localhost` and, behind the scenes, Site.js ensured that you didn’t get certificate warnings when you did. But what if you want to test your chat app from your phone or to have others test it with you? You could, of course, deploy it to a public Virtual Private Server, which is the topic of [the next section](#deploy-to-production), but you can also run your server at your hostname using [the @hostname option](https://source.ind.ie/site.js/app/blob/master/README.md#testing-servers-hostname)[^9] and provide outside access to your development machine using a tool like [ngrok](https://ngrok.com/):
 
     ```shell
     # Start Site.js at your hostname instead of at localhost.
@@ -958,7 +1057,7 @@ module.exports = function (client, request) {
     ngrok start --all
     ```
 
-    Having done this, you can then hit `https://dev.my-domain.org` from any device anywhere and access your site. And, again, Site.js will work to seamless provision Let’s Encrypt certificates for you so you will not get any certificate errors.
+    Having done this, you can then hit `https://dev.my-domain.org` from any device anywhere and access your site from your development machine[^10]. And, again, Site.js will work to seamless provision Let’s Encrypt certificates for you so you will not get any certificate errors.
 
     ### Deploy to production
 
@@ -980,7 +1079,7 @@ module.exports = function (client, request) {
 
     Simple!
 
-    On Linux and macOS[^10], you can use Site.js’s `sync-to` command to deploy your site like so:
+    On Linux and macOS[^11], you can use Site.js’s `sync-to` command to deploy your site like so:
 
     ```shell
     site --sync-to=my-domain.org
@@ -1054,4 +1153,7 @@ If you have any questions about this tutorial or Site.js in general, please feel
 
 [^9]: On Windows (because Windows), you have to add quotes around the `@hostname` option, so the command becomes `site "@hostname"`. Blame Bill Gates.
 
-[^10]: On Windows (because Windows), the sync function is not available as there’s currently no free and open rsync implementation that we can use like we can on Linux and macOS.
+[^10]: To use ngrok with your own domain name, you will to subscribe for [a Pro account](https://ngrok.com/pricing) from ngrok (at least this is what Laura and I use at [Small Technology Foundation](https://small-tech.org)) and [set up a subdomain on your own domain name per their instructions](https://ngrok.com/docs#http-custom-domains).
+
+[^11]: On Windows (because Windows), the sync function is not available as there’s currently no free and open rsync implementation that we can use like we can on Linux and macOS.
+
