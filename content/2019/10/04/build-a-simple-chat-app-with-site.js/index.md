@@ -172,7 +172,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     An important thing to note is that you should always use an `function` expression instead of an arrow function expression when creating your WebSocket routes to ensure that you can access methods like `broadcast()` using the `this` reference[^5].
 
-    ## Can you hear me now?
+  5.  ## Can you hear me now?
 
     Our chat server is complete but does it work? Let’s return to our JavaScript console and test it. This time, open two browser windows and let’s try and hold a conversation.
 
@@ -220,7 +220,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     }
     ```
 
-    ## Some housekeeping
+  6. ## Some housekeeping
 
     If you remember, towards the start of this tutorial we created a dynamic HTTPS route that shows the current date and time. With Site.js serving the `demo` folder, try to access the `/date` route now.
 
@@ -244,7 +244,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 🐁 Adding HTTPS GET route: /date
 🐁 Adding WebSocket (WSS) route: /chat{{</ terminal >}}
 
-    ## Room with a view
+  7. ## Room with a view
 
     So our chat server works but it doesn’t have a web interface yet.
 
@@ -290,7 +290,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     Let’s also add some very basic styling so that our form displays neatly. Just before the end of the `<head>` tag (right before `</head>`), enter the following style tag and CSS:
 
-    ```html
+    ```css
     <style>
       form {
         background: #eee;
@@ -689,6 +689,259 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     {{< /browser >}}
     </div>
 
+  8. ## Spit and shine
+
+    So our chat room works but it’s not as elegant as it could be. Without going overboard (this is a basic tutorial, after all), there are a couple of little touches we can add that would improve its usability considerably.
+
+    ### Set initial focus (“don’t make me click”)
+
+    To start, when the app first loads, the first thing the person will most likely want to do is replace _Anonymous_ with their own nickname. So let’s make it easier for them by focusing that field and selecting the text in it so all they have to do to get started is to start typing their nickname.
+
+    Right after the definition of the `displayMessage()` function, add the following code:
+
+    ```js
+      element('#nickname').focus()
+      element('#nickname').select()
+    ```
+
+    ### Manage focus
+
+    While on the topic of focus, if the person types a message and presses <keyb>Return</keyb> to send it, the message text field maintains its focus. This is good as it means that they can send another message without doing any more work. However, if they use the _Send_ button to send the message, the message text field loses focus. So it’s up to us to set its focus manually.
+
+    Under the `element('#message').value = ''` line in the form `submit` event handler, let’s set the focus after we’ve cleared the field:
+
+    ```js
+    element('#message').focus()
+    ```
+
+    ### Validation (you’re beautiful)
+
+    Things are feeling a bit nicer now but the elephant in the room (hi, George!) is that we’re not performing any validation whatsoever yet. Someone could easily submit a message with no nickname and no message text and we would dutifully fan it out to the other people in the room who would most likely be quite confused.
+
+    Let’s fix that by adding a `validateForm()` function we can call to ensure that the form is valid. If it’s not valid, we will disable the _Send_ button:
+
+    ```js
+      // Disables the submit button if the form isn’t valid.
+      function validateForm () {
+        const nicknameIsValid = element('#nickname').value !== ''
+        const messageIsValid = element('#message').value !== ''
+
+        const formIsValid = nicknameIsValid && messageIsValid
+
+        $('#submitButton').disabled = !formIsValid
+      }
+    ```
+
+    Now, we need to call our `validateForm()` function at certain times. First, we must call it when the page first loads so that the form is initially validated. Since there is no text in the message field, our interface will thus start out with the _Send_ button disabled. This is what we want.
+
+    Next, we should validate the form after a message is sent. Why? Because we clear the old message field and so we want the _Send_ button to be disabled again.
+
+    Finally, we must validate the form every time the text in the `nickname` and `message` text fields changes so that we can enable the _Send_ button when there’s text in both of them:
+
+    ```js
+    element('#nickname').addEventListener('input', validateForm)
+    element('#message').addEventListener('input', validateForm)
+    ```
+
+    This is the bare minimum of validation that we can get away with. Here’s the final listing of the front-end code with the above improvements highlighted:
+
+    <style>
+      .final-code-listing code {
+        font-size: 0.85em;
+      }
+
+      div.highlight > pre {
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+
+      div.emphasised > div.highlight > pre {
+        border: 2px solid slategray;
+        background-color: lightblue !important;
+      }
+    </style>
+
+    <div class='final-code-listing'>
+    {{< highlight html>}}<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic chat app with Site.js</title>
+  <style>
+    form {
+      background: #eee;
+      display: grid;
+      grid-template-columns: [labels] auto [controls] 1fr;
+      grid-gap: 0.5em;
+      min-width: 100px;
+      max-width: 400px;
+      padding: 0.75em;
+    }
+    form > label { grid-column: labels; }
+    form > input, form > button {
+      grid-column: controls;
+      min-width: 6em;
+      padding: 0.5em;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>Chat room</h1>
+    <p>Status: <span id='status' style="color: red;">Offline</span></p>
+    <form id='message-form'>
+      <label for='message'>Nickname:</label>
+      <input id='nickname' name='nickname' value='Anonymous'>
+      <label for='message'>Message:</label>
+      <input id='message' name='message' value=''>
+      <button id='submit-button' type='submit'>Send</button>
+    </form>
+    <h2>Messages</h2>
+    <ul id='messages'></ul>
+    <script>
+{{</ highlight >}}{{< highlight js >}}
+      // Shorthand for basic DOM lookup via CSS selectors.
+      const element = document.querySelector.bind(document)
+
+      // Helper: display a message object.
+      function displayMessage (message) {
+        element('#messages').innerHTML += `<li><strong>${message.nickname}: </strong>${message.text}</li>`
+      }
+{{</ highlight >}}<div class='emphasised'>{{< highlight js >}}
+      // Disables the submit button if the form isn’t valid.
+      function validateForm () {
+        const nicknameIsValid = element('#nickname').value !== ''
+        const messageIsValid = element('#message').value !== ''
+
+        const formIsValid = nicknameIsValid && messageIsValid
+
+        $('#submitButton').disabled = !formIsValid
+      }
+{{</ highlight >}}</div>{{< highlight js >}}
+      // Initialise web socket.
+      const socket = new WebSocket(
+        `wss://${window.location.hostname}/chat`
+      )
+
+      // Display the state of the connection.
+      socket.onopen = _ => {
+        element('#status').innerHTML = '<span style="color: green">Online</span>'
+      }
+
+      socket.onclose = _ => {
+        element('#status').innerHTML = 'Offline'
+      }
+{{</ highlight >}}<div class='emphasised'>{{< highlight js >}}
+      // Validate the form whenever the nickname or message changes.
+      $('#nickname').addEventListener('input', validateForm)
+      $('#message').addEventListener('input', validateForm)
+
+      // Set initial focus and selection.
+      element('#nickname').focus()
+      element('#nickname').select()
+
+      // Validate the form when the app first loads.
+      validateForm()
+{{</ highlight >}}</div>{{< highlight js >}}
+
+      // Handle message sending.
+      element('#message-form').addEventListener('submit', event => {
+        // Prevent the form from being submitted.
+        event.preventDefault()
+
+        // Get the nickname and text.
+        const nickname = element('#nickname').value
+        const text = element('#message').value
+
+        // Clear the message text field.
+        element('#message').value = ''
+
+{{</ highlight >}}<div class='emphasised'>{{< highlight js >}}
+        // Focus the message text field.
+        element('#message').focus()
+
+        // Validate the form.
+        validateForm()
+{{</ highlight >}}</div>{{< highlight js >}}
+
+        // Create a message object, serialise it as JSON & send it.
+        const message = { nickname, text }
+        socket.send(JSON.stringify(message))
+
+        // Update the local display
+        displayMessage(message)
+      })
+
+      // Handle incoming messages.
+      socket.onmessage = message => {
+        // Deserialise the message string and display it.
+        message = JSON.parse(message.data)
+        displayMessage(message)
+      }
+{{</ highlight >}}{{< highlight html >}}
+    </script>
+  </body>
+</html>{{</ highlight >}}
+</div>
+
+    ### Back-end validation
+
+    We just implemented front-end validation but that’s only half the story.
+
+    In a perfect world, everyone will use our lovely web page front-end and our front-end validation will catch all the issues, and no one will ever hit our back-end directly.
+
+    In the real world, watch aghast as I fire up a browser and send you an empty message from within the JavaScript console of my browser and your chat server dutifully delivers it to everyone in the room:
+
+    ```js
+    // All your front-end validation are belong to us.
+    socket = new WebSocket('wss://ar.al/chat')
+    socket.send(JSON.stringify({nickname: '', message: ''}))
+    ```
+
+    Front-end validation is a usability feature. Back-end validation is a security feature.
+
+    While there’s much we would have to implement in a read-world chat app (like rate limiting, blacklists, etc.), let’s at least add server-side validation to our basic example to prevent messages with missing nicknames and message text from being broadscast to everyone in the room.
+
+    The final listing of the chat server, with this final change highlighted, is below:
+
+    <div class='final-code-listing'>
+    {{< highlight js >}}
+module.exports = function (client, request) {
+  // New client connection: persist client’s “room”
+  // based on request path.
+  client.room = this.setRoom(request)
+
+  // Log the connection.
+  console.log(`New client connected to ${client.room}`)
+
+  client.on('message', message => {
+{{</ highlight >}}<div class='emphasised'>{{< highlight js >}}
+    // Perform some basic validation.
+    if (message.nickname === '' || message.text === '') {
+      console.log(`Missing nickname or message; not broadcasting.`)
+      return
+    }
+{{</ highlight >}}</div>{{< highlight js >}}
+
+    // New message received: broadcast it to all
+    // other clients in the same room.
+    const numberOfRecipients = this.broadcast(client, message)
+
+    // Log the number of recipients message was sent to
+    // and make sure we pluralise the log message properly.
+    console.log(`${client.room} message broadcast to `
+      + `${numberOfRecipients} recipient`
+      + `${numberOfRecipients === 1 ? '' : 's'}`)
+  })
+}{{</ highlight >}}
+    </div>
+
+  9. ## Going further
+
+    Well, you were promised a basic chat app in Site.js and that’s exactly what we’ve just built. Along the way, you also learned the basics of Site.js and how to use it to develop and serve
+
+    __LEFT OFF HERE__
+
 <!-- Footnotes -->
 
 [^1]: If you don’t want to use the terminal, you can open up your graphical file browser and create the `demo` folder using that and then use your graphical code editor to create an `index.html` file in that folder. You will, however, need to run the `site` command from a terminal session with its current working directory set to the `demo` folder… there’s no getting away from that.
@@ -696,7 +949,8 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 [^2]: Site.js can also function as a proxy server, so you can test _any_ server locally over a secure connection. For example, if you are running a [Hugo](https://hugo.io) server at its default port (1313), you can test it from `https://localhost` by running Site.js like this:
 
     ```shell
-    # Proxy the server at port 1313 to https://localhost (port 443)
+    # Proxy the server at port 1313 at
+    # https://localhost (port 443).
     site :1313
     ```
 
