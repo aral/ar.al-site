@@ -10,19 +10,6 @@ draft: false
     outline: 1px solid black;
     outline-offset: -1px;
   }
-
-  #fund-us {
-    display: block;
-    background-color: #AFE1E8;
-    color: #154652;
-    width: 100%;
-    margin-top: 2rem;
-    margin-left: -2rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 0.1rem;
-    padding-bottom: 1rem;
-}
 </style>
 
 ![Photo of ThinkPad 440p. On screen: (left half) PowerShell session under Windows Terminal showing the installation of Site.js, the creation of the basic static site as explained in this post, and running Site.js. (right half) https://localhost in Microsoft Edge browser showing the words “Hello, world!”](site.js-thinkpad.jpeg)
@@ -118,11 +105,7 @@ This blog, [Laura’s site](https://laurakalbag.com), and the [Small Technology 
 
 To learn more about Site.js, read through the [Site.js web site](https://sitejs.org) (and try out the interactive demo in the header), [read the Site.js documentation](https://source.ind.ie/site.js/app/blob/master/README.md), and feel free to [hit me up on my Mastodon](https://mastodon.ar.al/@aral) if you have any questions.
 
-<div id='fund-us'>
-  <h2>Like this? Fund us!</h2>
-  <p>Small Technology Foundation is a tiny, independent not-for-profit.</p>
-  <p>We exist in part thanks to patronage by people like you. If you share <a href='https://small-tech.org/about#small-technology'>our vision</a> and want to support our work, please <a href='https://small-tech.org/fund-us'>become a patron or donate to us</a> today and help us continue to exist.</p>
-</div>
+{{< like_this_fund_us >}}
 
 [^1]: It was the cheapest way I could test under Windows, given that a license of Windows 10 Pro costs basically what I paid for it. And, I have to say, it runs like a champ.
 

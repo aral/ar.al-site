@@ -938,9 +938,69 @@ module.exports = function (client, request) {
 
   9. ## Going further
 
-    Well, you were promised a basic chat app in Site.js and that’s exactly what we’ve just built. Along the way, you also learned the basics of Site.js and how to use it to develop and serve
+    Well, you were promised a basic chat app in Site.js and that’s exactly what we’ve just built. Along the way, you also learned the basics of Site.js and how to use it to develop and serve not WebSocket but regular HTTPS routes using DotJS.
 
-    __LEFT OFF HERE__
+    But that’s just the tip of the iceberg when it comes to what you can do with Site.js. As I mentioned during the tutorial, anything you can do with Node.js, you can do with Site.js. What you get in addition is a zero-configuration secure static and dynamic web server.
+
+    So exactly what else can you do? Here are some ideas to explore on your own:
+
+    ### Test your app from any device
+
+    So far, you’ve only run servers at `https://localhost` and,  behind the scenes, Site.js ensured that you didn’t get certificate warnings when you did. But what if you want to test your chat app from your phone or to have others test it with you? You could, of course, deploy it to a public Virtual Private Server, which is the topic of the next section, but you can also provide access to your development machine using a tool like [ngrok](https://ngrok.com/).
+
+    To do so, you would get [a Pro account](https://ngrok.com/pricing) from ngrok (at least this is what Laura and I use at [Small Technology Foundation](https://small-tech.org)) and set up a domain name per their instructions (e.g., https://dev.my-domain.org) and then do:
+
+    ```shell
+    # Start Site.js at your hostname instead of at localhost.
+    site @hostname
+
+    # (In a separate terminal tab/window, start ngrok)
+    ngrok start --all
+    ```
+
+    Having done this, you can then hit `https://dev.my-domain.org` from any device anywhere and access your site. And, again, Site.js will work to seamless provision Let’s Encrypt certificates for you so you will not get any certificate errors.
+
+    ### Deploy to production
+
+    All you need to deploy to production is a Virtual Private Server running a flavour of Linux that has systemd and has a domain name pointing to it.
+
+    Once that’s set, if you ssh to your production server, you can install Site.js just like you did at the start of this tutorial and then, provided you’re in the directory that you want to serve, deploy a production server with the following command:
+
+    ```shell
+    site enable
+    ```
+
+    That will set up your server as a service that automatically restarts should it crash or should you reboot the server.
+
+    And, just like before, Site.js will automatically provision your Let’s Encrypt certificates the first time you hit your site via your domain name. All you have to do ensure is that your `hostname` is set properly on your server.
+
+    ### Sync
+
+    So you have (A) your local copy of your site and you’ve deployed (b) a live production server. How do you get your site from A to B?
+
+    Simple!
+
+    On Linux and macOS[^10], you can use Site.js’s `sync-to` command to deploy your site like so:
+
+    ```shell
+    site --sync-to=my-domain.org
+    ```
+
+    The above command will work with no other information necessary if the account name on your development machine and on your production machine is the same and you’re in your site’s directory. Otherwise, check the docs for on how to specify any details you need to.
+
+    On your production server, to ensure that it supports sync, it’s a good idea to launch your server with the `--ensure-can-sync` option, which will install rsync on your production machine for you in case it doesn’t already exist.
+
+    ### And there’s more…
+
+    Check out the documentation for some of the other nifty things you can do with Site.js like not breaking links and contributing to an [evergreen web](https://source.ind.ie/site.js/app/blob/master/README.md#native-support-for-an-evergreen-web) by taking advantage of Site.js’s native support for [cascading archives](https://source.ind.ie/site.js/app/blob/master/README.md#native-cascading-archives-support) and the [404-to-302 method](https://source.ind.ie/site.js/app/blob/master/README.md#native-404-302-support) as well as little niceties like [custom error pages](https://source.ind.ie/site.js/app/blob/master/README.md#custom-error-pages).
+
+I hope this tutorial has whet your appetite for Site.js and given you some ideas of what you can do with it.
+
+Remember that Site.js is a web tool for human beings, not startups or enterprises. It’s for building single-tenant web sites and web apps. That’s quite a radical concept for the web. We’re used to sites where you sign up for accounts with huge corporations. Turns out, when we do that, they end up owning those accounts. If we want ownership and control of the digital aspects of our selves, we have to turn the web on its head. Ultimately, we need a web where every one of us has their own place. That’s exactly what we’re working towards at [Small Technology Foundation](https://small-tech.org) and Site.js is one of the foundations of our efforts.
+
+I hope you find Site.js useful and if you have any questions about this tutorial or Site.js in general, please feel free to contact me [via my mastodon](https://mastodon.ar.al/@aral) or by [email](mailto:mail@ar.al).
+
+{{< like_this_fund_us >}}
 
 <!-- Footnotes -->
 
@@ -967,3 +1027,7 @@ module.exports = function (client, request) {
 [^7]: Site.js does not have LiveReload and does not automatically restart the server when dynamic routes change at the moment. When working with static content, this means that you have to manually refresh the browser and when working with dynamic content you have to manually restart the server whenever you make code changes. I realise this is less than ideal and both of these are high on [my list of issues](https://source.ind.ie/site.js/app/issues) to address.
 
 [^8]: The examples on this page are live and connect to the instance of the finished app I have running at https://ar.al/chat. Needless to say, this site is served by Site.js.
+
+[^9]: On Windows (because Windows), you have to add quotes around the `@hostname` option, so the command becomes `site "@hostname"`. Blame Bill Gates.
+
+[^10]: On Windows (because Windows), the sync function is not available as there’s currently no free and open rsync implementation that we can use like we can on Linux and macOS.
