@@ -490,11 +490,9 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     ```js
     // Handle incoming messages.
     socket.onmessage = message => {
-      // Deserialise the message string.
+      // Deserialise the message string and display it.
       message = JSON.parse(message.data)
-
-      // Display the message in the messages list.
-      element('#messages').innerHTML += `<li><strong>${message.nickname}: </strong>${message.text}</li>`
+      displayMessage(message)
     }
     ```
 
