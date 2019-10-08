@@ -992,13 +992,37 @@ module.exports = function (client, request) {
 
     ### And there’s more…
 
-    Check out the documentation for some of the other nifty things you can do with Site.js like not breaking links and contributing to an [evergreen web](https://source.ind.ie/site.js/app/blob/master/README.md#native-support-for-an-evergreen-web) by taking advantage of Site.js’s native support for [cascading archives](https://source.ind.ie/site.js/app/blob/master/README.md#native-cascading-archives-support) and the [404-to-302 method](https://source.ind.ie/site.js/app/blob/master/README.md#native-404-302-support) as well as little niceties like [custom error pages](https://source.ind.ie/site.js/app/blob/master/README.md#custom-error-pages).
+    Check out [the Site.js documentation](https://source.ind.ie/site.js/app/blob/master/README.md) for some of the other nifty things you can do with Site.js like not breaking links and contributing to an [evergreen web](https://source.ind.ie/site.js/app/blob/master/README.md#native-support-for-an-evergreen-web) by taking advantage of Site.js’s native support for [cascading archives](https://source.ind.ie/site.js/app/blob/master/README.md#native-cascading-archives-support) and the [404-to-302 method](https://source.ind.ie/site.js/app/blob/master/README.md#native-404-302-support) as well as little niceties like [custom error pages](https://source.ind.ie/site.js/app/blob/master/README.md#custom-error-pages).
 
 I hope this tutorial has whet your appetite for Site.js and given you some ideas of what you can do with it.
 
-Remember that Site.js is a web tool for human beings, not startups or enterprises. It’s for building single-tenant web sites and web apps. That’s quite a radical concept for the web. We’re used to sites where you sign up for accounts with huge corporations. Turns out, when we do that, they end up owning those accounts. If we want ownership and control of the digital aspects of our selves, we have to turn the web on its head. Ultimately, we need a web where every one of us has their own place. That’s exactly what we’re working towards at [Small Technology Foundation](https://small-tech.org) and Site.js is one of the foundations of our efforts.
+## Site.js and the single-tenant web
 
-I hope you find Site.js useful and if you have any questions about this tutorial or Site.js in general, please feel free to contact me [via my mastodon](https://mastodon.ar.al/@aral) or by [email](mailto:mail@ar.al).
+Remember that Site.js is a web tool for human beings, not startups or enterprises.
+
+Site.js is for building single-tenant web sites and web apps.
+
+### What is a single-tenant web app (or site?)
+
+A single-tenant web app is a personal web app. It’s an app (or site) that you own and control. It’s a step towards building [a peer web](https://ar.al/2019/02/13/on-the-general-architecture-of-the-peer-web/).
+
+That’s quite a radical concept for the web, which has so far been centralised.
+
+We’re used to sites where you sign up for accounts with huge corporations. Turns out, when we do that, these corporations end up owning those accounts and they end up tracking and profiling us and attempting to influence our behaviour to make a quick buck (or billion).
+
+When we consider the social impacts of this toxic business model, we find that they erode our personhood and threaten our democracies. (Wow, that escalated quickly!)
+
+### Flipping the web upside down
+
+If we want ownership and control of the digital aspects of our selves which, today, constitute part of who we are as modern human beings, we have to turn the web on its head. We have to flip it upside down.
+
+Ultimately, we need to build a web where every one of us has their own place. That’s exactly [what we’re working towards](https://small-tech.org/research-and-development/) at [Small Technology Foundation](https://small-tech.org) and Site.js is the foundation of our efforts.
+
+I hope you find Site.js useful – even if you don’t care about its philosophical or ethical underpinnings – simply on the merits of what you, as a developer, can do with it and how easy it is to use.
+
+### Comments, questions? Yes, please!
+
+If you have any questions about this tutorial or Site.js in general, please feel free to contact me [via my mastodon](https://mastodon.ar.al/@aral) or by [email](mailto:mail@ar.al).
 
 {{< like_this_fund_us >}}
 
