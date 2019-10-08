@@ -522,7 +522,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
       <!-- Note: added code to prevent send button from reloading the tutorial -->
       <form id='first-chat-window-message-form' onsubmit='return false'>
         <label for='first-chat-window-message'>Nickname:</label>
-        <input id='first-chat-window-nickname' type='text' name='nickname' value='Anonymous'><br>
+        <input id='first-chat-window-nickname' type='text' name='nickname' value='Anonymous'>
         <label for='first-chat-window-message'>Message:</label>
         <input id='first-chat-window-message' type='text' name='message' value=''>
         <button id='first-chat-window-submit-button' type='submit'>Send</button>
