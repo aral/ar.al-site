@@ -298,7 +298,6 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     .chat-interface { padding-bottom: 1.5em; }
     .chat-interface form { margin-bottom: 1.5em; }
     .chat-interface label, .chat-interface p {font-size: 0.9em}
-    .chat-interface input {width:6em; height:}
     </style>
     <div class='chat-interface'>
       <h1>Chat room</h1>
@@ -352,7 +351,6 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     .chat-interface { padding-bottom: 1.5em; }
     .chat-interface form { margin-bottom: 1.5em; }
     .chat-interface label, .chat-interface p {font-size: 0.75em}
-    .chat-interface input {width:6em; height:}
     .chat-interface h1 { font-size: 1.5em; line-height: 1 }
     .chat-interface h2 { font-size: 1em; }
     .chat-interface ul { margin-top: 0.5em; }
@@ -408,14 +406,18 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     Now that our app can connect to the chat server and display its connection status, let’s implement the ability to send messages.
 
-    Add the following code after the previous lot of JavaScript you just wrote:
+    When we send a message, we won’t receive it back ourselves, so one of the things we must do is to add it to our local message list manually. Since we’ll also have to do this when we receive a message from someone else, let’s first create a function we can use for both these purposes:
 
     ```js
     // Helper: display a message object.
     function displayMessage (message) {
       element('#messages').innerHTML += `<li><strong>${message.nickname}: </strong>${message.text}</li>`
     }
+    ```
 
+    Next, let’s create the handler that will be called when your message form is submitted by pressing the Send button:
+
+    ```js
     // Handle message sending.
     element('#message-form').addEventListener('submit', event => {
       // Prevent the form from being submitted.
@@ -439,6 +441,10 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     // Code from the next step goes here.
 
     ```
+
+    In our handler, we construct a message object that contains your nickname and the text of the message you want to send, serialise it into a JSON-formatted string, and then send it to our chat server.
+
+    Additionally, we clear the message box to make it easier for you to type your next message and we use our new `displayMesssage()` function to display the message we’ve sent locally so you can have a full timeline of messages, including your own.
 
     Restart your Site.js server and reload the page and you should now we able to send messages. To test that it is working, take a look at the Site.js console output in your terminal window and you should see the following message:
 
@@ -480,6 +486,30 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
       #first-chat-window .chat-interface, #second-chat-window .chat-interface {
         height: 15em;
       }
+
+      form {
+        display: grid;
+        grid-template-columns: [labels] auto [controls] 1fr;
+        grid-gap: 0.4em;
+        background: #eee;
+        padding: 1em;
+        min-width: 100px;
+        max-width: 400px;
+
+      }
+
+      form > label { grid-column: labels; }
+
+      form > input, form > button {
+        min-width: 6em;
+        grid-column: controls;
+        padding: 0.5em;
+      }
+
+      form > button {
+        /* margin-top: 0.4em; */
+      }
+
     </style>
 
     <!-- First chat window -->
@@ -492,7 +522,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
       <!-- Note: added code to prevent send button from reloading the tutorial -->
       <form id='first-chat-window-message-form' onsubmit='return false'>
         <label for='first-chat-window-message'>Nickname:</label>
-        <input id='first-chat-window-nickname' type='text' name='nickname' value='Anonymous'>
+        <input id='first-chat-window-nickname' type='text' name='nickname' value='Anonymous'><br>
         <label for='first-chat-window-message'>Message:</label>
         <input id='first-chat-window-message' type='text' name='message' value=''>
         <button id='first-chat-window-submit-button' type='submit'>Send</button>
