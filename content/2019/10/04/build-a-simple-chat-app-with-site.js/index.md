@@ -181,14 +181,10 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
         display: block;
         background-color: #AFE1E8;
         color: #154652;
-        width: 100%;
         font-size: 0.9em;
-        margin-top: 2rem;
         margin-left: -2rem;
-        padding-left: 2rem;
-        padding-right: 2rem;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        margin-right: -2rem;
+        padding: 2rem;
       }
     </style>
     <div id='note-for-non-coders'>
