@@ -506,7 +506,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     .chat-interface label, .chat-interface p {font-size: 0.75em}
     .chat-interface h1 { font-size: 1.5em; line-height: 1 }
     .chat-interface h2 { font-size: 1em; }
-    .chat-interface ul { margin-top: 0.5em; margin-bottom: 0.75em; }
+    .chat-interface ul { margin-top: 0.5em; }
     .chat-interface li { font-size: 0.75em; line-height: 1.5 }
     </style>
 
