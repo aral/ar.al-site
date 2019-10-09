@@ -829,7 +829,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
         const formIsValid = nicknameIsValid && messageIsValid
 
-        $('#submit-button').disabled = !formIsValid
+        element('#submit-button').disabled = !formIsValid
       }
     ```
 
@@ -916,7 +916,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
         const formIsValid = nicknameIsValid && messageIsValid
 
-        $('#submit-button').disabled = !formIsValid
+        element('#submit-button').disabled = !formIsValid
       }
 {{</ highlight >}}</div>{{< highlight js >}}
       // Initialise web socket.
@@ -934,8 +934,8 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
       }
 {{</ highlight >}}<div class='emphasised'>{{< highlight js >}}
       // Validate the form whenever the nickname or message changes.
-      $('#nickname').addEventListener('input', validateForm)
-      $('#message').addEventListener('input', validateForm)
+      element('#nickname').addEventListener('input', validateForm)
+      element('#message').addEventListener('input', validateForm)
 
       // Set initial focus and selection.
       element('#nickname').focus()
