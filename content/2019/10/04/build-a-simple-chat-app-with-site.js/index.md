@@ -14,6 +14,10 @@ draft: false
     padding: 0.75em;
     list-style: none;
   }
+
+  .browser-content p {
+    font-size: 0.75em;
+  }
 </style>
 
 <div id='final-version'>
@@ -220,6 +224,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     ```
 
     Finally, run the `site` command in the `demo` folder and visit `https://localhost/date`
+
 
     {{< browser location="https://localhost/date" caption="A dynamic DotJS route. Refresh the page to see it update." >}}
     <p><script>document.write(new Date().toString())</script></p>
