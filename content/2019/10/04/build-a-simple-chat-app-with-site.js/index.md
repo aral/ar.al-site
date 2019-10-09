@@ -100,15 +100,6 @@ draft: false
     float: right;
   }
 
-  #first-chat-window .browser-content, #second-chat-window .browser-content {
-    overflow-y: scroll;
-    height: 19em;
-  }
-
-  #first-chat-window .chat-interface, #second-chat-window .chat-interface {
-    height: 19em;
-  }
-
   /* On narrow viewports, stack the browser windows
       vertically instead of horizontally. */
   @media screen and (max-width: 353px) {
@@ -642,7 +633,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
         <button id='submit-button' type='submit'>Send</button>
       </form>
       <h2>Messages</h2>
-      <ul id='messages'></ul>
+      <ul class='messages' id='messages'></ul>
     </div>
     <script>
       // Initialise web socket.
@@ -762,7 +753,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
         <button id='first-chat-window-submit-button' type='submit'>Send</button>
       </form>
       <h2>Messages</h2>
-      <ul id='first-chat-window-messages'></ul>
+      <ul class='messages' id='first-chat-window-messages'></ul>
     </div>
     <script>
       // Initialise web socket.
@@ -831,7 +822,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
         <button id='second-chat-window-submit-button' type='submit'>Send</button>
       </form>
       <h2>Messages</h2>
-      <ul id='second-chat-window-messages'></ul>
+      <ul class='messages' id='second-chat-window-messages'></ul>
     </div>
     <script>
       // Initialise web socket.
@@ -908,6 +899,10 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     ```js
     element('#message').focus()
     ```
+
+    ### Auto-scroll the messages list
+
+    __TODO__
 
     ### Validation (you’re beautiful)
 
