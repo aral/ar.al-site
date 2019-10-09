@@ -10,7 +10,7 @@ draft: false
   #final-version-messages {
     height: 7em;
     overflow-y: scroll;
-    background-color: lightblue;
+    background-color: #eee;
     padding: 0.75em;
     list-style: none;
   }
@@ -21,7 +21,7 @@ draft: false
 </style>
 
 <div id='final-version'>
-  {{< browser location="https://localhost" caption="The chat app we’ll be building together (it’s live… open up another instance of your browser window and play with it!)">}}
+  {{< browser location="https://localhost" caption="The chat app we’re going to build together. (It’s live… open another browser window or hit this page from a different device to play with it!)">}}
     <div class='chat-interface'>
       <h1>Chat room</h1>
       <p>Status: <span id='final-version-status' style="color: red;">Offline</span></p>
