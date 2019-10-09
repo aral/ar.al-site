@@ -358,6 +358,17 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     Then, in your `.wss` folder, create a file called `chat.js`.
 
+    When you’re done, your directory structure should look like this:
+
+    ```shell
+    demo/
+      ├ .index.html
+      └ .dynamic
+            ├ date.js      # Will no longer load. We’ll fix that later.
+            └ .wss         # WebSocket routes go here.
+                └ chat.js
+    ```
+
     Now type the following code into that file:
 
     ```js
@@ -469,7 +480,23 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     That’s a fancy way of saying that if we want to use HTTPS and WebSocket DotJS routes together in the same web app, we must put our HTTPS routes in a folder called `.https` just like we put the WebSocket routes in a folder called `.wss`.
 
-    So create a folder called `.https` inside the `.dynamic` folder and move the `date.js` file into it. Then, restart your Site.js server and hit `https://localhost/date`. The route should now load correctly.
+    So create a folder called `.https` inside the `.dynamic` folder and move the `date.js` file into it.
+
+    When you’re done, your directory structure should look like this:
+
+    ```shell
+    demo/
+      ├ .index.html
+      └ .dynamic
+            ├ .https        # HTTPS routes go here.
+            │   └ date.js
+            └ .wss          # WebSocket routes go here.
+                └ chat.js
+    ```
+
+    Restart your Site.js server and hit `https://localhost/date`.
+
+    The route should now load correctly.
 
     If you look at your terminal output, you will see that Site.js tells you exactly which routes it loads when it launches:
 
@@ -864,8 +891,8 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     Right after the definition of the `displayMessage()` function, add the following code:
 
     ```js
-      element('#nickname').focus()
-      element('#nickname').select()
+    element('#nickname').focus()
+    element('#nickname').select()
     ```
 
     ### Manage focus
@@ -885,15 +912,15 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     Let’s fix that by adding a `validateForm()` function we can call to ensure that the form is valid. If it’s not valid, we will disable the _Send_ button:
 
     ```js
-      // Disables the submit button if the form isn’t valid.
-      function validateForm () {
-        const nicknameIsValid = element('#nickname').value !== ''
-        const messageIsValid = element('#message').value !== ''
+    // Disables the submit button if the form isn’t valid.
+    function validateForm () {
+      const nicknameIsValid = element('#nickname').value !== ''
+      const messageIsValid = element('#message').value !== ''
 
-        const formIsValid = nicknameIsValid && messageIsValid
+      const formIsValid = nicknameIsValid && messageIsValid
 
-        element('#submit-button').disabled = !formIsValid
-      }
+      element('#submit-button').disabled = !formIsValid
+    }
     ```
 
     Now, we need to call our `validateForm()` function at certain times. First, we must call it when the page first loads so that the form is initially validated. Since there is no text in the message field, our interface will thus start out with the _Send_ button disabled. This is what we want.
@@ -1046,9 +1073,30 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     socket.send(JSON.stringify({nickname: '', message: ''}))
     ```
 
+    (If you actually run the above code, check out the message lists in the side-by-side browser windows in the [Handle incoming messages](#handle-incoming-messages)) section and you should see your empty message appear there.)
+
     Front-end validation is a usability feature; back-end validation is a security feature.
 
     While there’s much we would have to implement in a real-world chat app (like rate limiting, blacklists, etc.), let’s at least add server-side validation to our basic example to prevent messages with missing nicknames and message text from being broadscast to everyone in the room.
+
+    We can circumvent this nuisance with a simple check at the top of the `message` handler in the chat server:
+
+    ```js
+    // Perform some basic validation.
+    if (message.nickname === '' || message.text === '') {
+      console.log(`Missing nickname or message; not broadcasting.`)
+      return
+    }
+    ```
+
+    The final version of the chat server containing this piece of basic validation is what the live example at the top of the page connects to. You can test that the validation works by running the following code from a JavaScript console in your browser and verifying that your message does not show up there:
+
+    ```js
+    // And I would have gotten away with it too,
+    // if it weren't for you meddling kids…
+    socket = new WebSocket('wss://ar.al/chat-final-version')
+    socket.send(JSON.stringify({nickname: '', message: ''}))
+    ```
 
     Here’s the final listing of the chat server, with this new feature highlighted:
 
