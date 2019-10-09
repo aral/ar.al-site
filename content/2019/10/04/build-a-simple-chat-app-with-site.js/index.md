@@ -7,13 +7,124 @@ draft: false
 <!-- The final version of the chat app. -->
 
 <style>
-  #final-version-messages {
+  /* Code specialisations. */
+
+  .final-code-listing code {
+    font-size: 0.78rem;
+  }
+
+  div.highlight > pre {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  div.emphasised > div.highlight > pre {
+    border: 2px solid slategray;
+    background-color: lightblue !important;
+  }
+
+  /* BROWSER WIDGET CONTENT PAGES */
+
+  /* 404 error page */
+  #not-found-error {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    vertical-align: top;
+    margin-top: 0;
+  }
+
+  #not-found-error h1 {
+    font-size: 500%;
+    color: black;
+    text-align:center;
+    line-height: 0;
+  }
+
+  #not-found-error p {
+    font-size: 100%;
+    text-align: center;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    margin-bottom: 5%;
+  }
+
+  .not-found-path {
+    color: grey;
+  }
+
+  /* CHAT INTERFACES */
+
+  /* Chat interface: general styles shared by all
+    versions of the app on the page. */
+
+  form {
+    display: grid;
+    grid-template-columns: [labels] auto [controls] 1fr;
+    grid-gap: 0.5em;
+    background: #eee;
+    padding: 0.75em;
+  }
+
+  form > label { grid-column: labels; }
+
+  form > input, form > button {
+    min-width: 6em;
+    max-width: 300px;
+    grid-column: controls;
+    padding: 0.5em;
+  }
+
+  .chat-interface form { margin-bottom: 1.5em; }
+  .chat-interface h1 { font-size: 1.5em; line-height: 1 }
+  .chat-interface h2 { font-size: 1em; }
+  .chat-interface ul { margin-top: 0.5em; }
+  .chat-interface li { font-size: 0.75em; line-height: 1.5 }
+  .chat-interface label, .chat-interface p {font-size: 0.75em}
+
+  /* TWO CHAT APPS DISPLAYED TOGETHER */
+
+  #first-chat-window, #second-chat-window {
+    width: 47.5%;
+  }
+
+  #first-chat-window {
+    float: left;
+  }
+
+  #second-chat-window {
+    float: right;
+  }
+
+  #first-chat-window .browser-content, #second-chat-window .browser-content {
+    overflow-y: scroll;
+    height: 19em;
+  }
+
+  #first-chat-window .chat-interface, #second-chat-window .chat-interface {
+    height: 19em;
+  }
+
+  /* On narrow viewports, stack the browser windows
+      vertically instead of horizontally. */
+  @media screen and (max-width: 353px) {
+    #first-chat-window, #second-chat-window {
+      float: none;
+      width: 100%;
+    }
+  }
+
+  /* Chat app embed: final version */
+
+  .messages  {
     height: 7em;
     overflow-y: scroll;
     background-color: #eee;
     padding: 0.75em;
     list-style: none;
   }
+
+  /* Browser widgets. */
 
   .browser-content p {
     font-size: 0.75em;
@@ -33,7 +144,7 @@ draft: false
         <button id='final-version-submit-button' type='submit'>Send</button>
       </form>
       <h2>Messages</h2>
-      <ul id='final-version-messages'></ul>
+      <ul class='messages' id='final-version-messages'></ul>
     </div>
     <script>
       // Shorthand for basic DOM lookup via CSS selectors.
@@ -176,20 +287,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     Before we move onto creating the chat functionality, let’s create the equivalent of our static “hello, world!” example but with some very basic dynamic functionality that displays the current date and time.
 
-    <style>
-      #note-for-non-coders {
-        display: block;
-        background-color: #AFE1E8;
-        color: #154652;
-        font-size: 0.9em;
-        margin-left: -2rem;
-        margin-right: -2rem;
-        padding: 2rem;
-      }
-    </style>
-    <div id='note-for-non-coders'>
-    __A note for non-programmers:__ The code listings on my blog use a font that applies ligatures to certain operators to render them in a more typographically pleasing manner. However, this may confuse beginners who are not familiar with how to type these operators. To enter the strict equality operator (`===`), use three equals signs (===). Similarly, to enter the strict inequality operator (`!==`) – which, contrary to how it sounds, isn’t the logo for your local conservative party – type an exclamation mark followed by two equals signs (!==). Finally, to create an arrow function expression (`=>`), type an equals sign followed by a greater-than sign (=>).
-    </div>
+    {{< note_for_non_coders >}}
 
     ### A timely example
 
@@ -357,7 +455,10 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     If you remember, towards the start of this tutorial we created a dynamic HTTPS route that shows the current date and time. With Site.js serving the `demo` folder, try to access the `/date` route now.
 
     {{< browser location="https://localhost/date" caption="We don’t talk about my emoji problem…" >}}
-    <div style="display: grid; align-items: center; justify-content: center; vertical-align: top; margin-top: 0;"><div><h1 style="font-size: 500%; color: black; text-align:center; line-height: 0">4🤭4</h1><p style="font-size: 100%; text-align: center; padding-left: 2vw; padding-right: 2vw; margin-bottom: 5%;"><span>Could not find</span> <span style="color: grey;">/date</span></p></div></div>
+    <div id='not-found-error'>
+      <h1>4🤭4</h1>
+      <p>Could not find <span class='not-found-path'>/date</span></p>
+    </div>
     {{</ browser >}}
 
     Oops, you get the default Site.js 404 page[^6].
@@ -449,15 +550,11 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     Now, when you visit `https://localhost` in your browser, you should see our (currently non-functional) chat interface.
 
     {{< browser location="https://localhost" caption="The web interface (non-functional)." >}}
-    <style>
-    .chat-interface form { margin-bottom: 1.5em; }
-    .chat-interface label, .chat-interface p {font-size: 0.9em}
-    </style>
     <div class='chat-interface'>
       <h1>Chat room</h1>
-      <p>Status: <span id='status' style="color: red;">Offline</span></p>
+      <p>Status: <span id='non-functional-status' style="color: red;">Offline</span></p>
       <!-- Note: added code to prevent send button from reloading the tutorial -->
-      <form id='message-form' onsubmit='return false'>
+      <form id='non-functional-message-form' onsubmit='return false'>
         <label for='message'>Nickname:</label>
         <input id='nickname' type='text' name='nickname' value='Anonymous'>
         <label for='message'>Message:</label>
@@ -465,7 +562,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
         <button id='submit-button' type='submit'>Send</button>
       </form>
       <h2>Messages</h2>
-      <ul id='messages'></ul>
+      <ul class='messages' id='non-functional-messages'></ul>
     </div>
     {{< /browser >}}
 
@@ -500,15 +597,6 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     ```
 
     Restart the Site.js server[^7] and you should now see the status indicator read <span style="color: green">Online</span> when you reload the page:
-
-    <style>
-    .chat-interface form { margin-bottom: 1.5em; }
-    .chat-interface label, .chat-interface p {font-size: 0.75em}
-    .chat-interface h1 { font-size: 1.5em; line-height: 1 }
-    .chat-interface h2 { font-size: 1em; }
-    .chat-interface ul { margin-top: 0.5em; }
-    .chat-interface li { font-size: 0.75em; line-height: 1.5 }
-    </style>
 
     {{< browser location="https://localhost" caption="Live example, connected to wss://ar.al/chat.">}}
     <div class='chat-interface'>
@@ -626,55 +714,6 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     Now when you test your app using two browser windows, you should be able to both send and receive messages.
 
     You can test out what we have so far using the two browser windows below. They’re both running the code above:
-
-    <style>
-      #first-chat-window, #second-chat-window {
-        width: 47.5%;
-      }
-
-      #first-chat-window {
-        float: left;
-      }
-
-      #second-chat-window {
-        float: right;
-      }
-
-      #first-chat-window .browser-content, #second-chat-window .browser-content {
-        overflow-y: scroll;
-        height: 19em;
-      }
-
-      #first-chat-window .chat-interface, #second-chat-window .chat-interface {
-        height: 19em;
-      }
-
-      /* On narrow viewports, stack the browser windows
-         vertically instead of horizontally. */
-      @media screen and (max-width: 353px) {
-        #first-chat-window, #second-chat-window {
-          float: none;
-          width: 100%;
-        }
-      }
-
-      form {
-        display: grid;
-        grid-template-columns: [labels] auto [controls] 1fr;
-        grid-gap: 0.5em;
-        background: #eee;
-        padding: 0.75em;
-      }
-
-      form > label { grid-column: labels; }
-
-      form > input, form > button {
-        min-width: 6em;
-        max-width: 300px;
-        grid-column: controls;
-        padding: 0.5em;
-      }
-    </style>
 
     <!-- First chat window -->
 
@@ -869,22 +908,6 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     ```
 
     This is the bare minimum of validation that we can get away with. Here’s the final listing of the front-end code with the above improvements highlighted:
-
-    <style>
-      .final-code-listing code {
-        font-size: 0.85em;
-      }
-
-      div.highlight > pre {
-        margin-bottom: 0;
-        margin-top: 0;
-      }
-
-      div.emphasised > div.highlight > pre {
-        border: 2px solid slategray;
-        background-color: lightblue !important;
-      }
-    </style>
 
     <div class='final-code-listing'>
     {{< highlight html>}}<!doctype html>
