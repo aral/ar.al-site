@@ -23,6 +23,10 @@ draft: false
     background-color: lightblue !important;
   }
 
+  .directory-hierarchy pre, .directory-hierarchy code {
+    line-height: 1.25em;
+  }
+
   /* BROWSER WIDGET CONTENT PAGES */
 
   /* 404 error page */
@@ -299,12 +303,12 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     Next, open your code editor of choice and create a file called `date.js` in the `.dynamic` folder. Once you’re done, your project folder hierarchy should look like this:
 
-    ```shell
-    demo/
-      ├ .index.html    # static route
-      └ .dynamic
-            └ date.js  # dynamic route
-    ```
+    <div class='directory-hierarchy'>
+    {{< highlight shell >}}demo/
+  ├ .index.html    # static route
+  └ .dynamic
+        └ date.js  # dynamic route{{</ highlight >}}
+    </div>
 
     In the `date.js` file, enter the following code:
 
@@ -360,14 +364,14 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     When you’re done, your directory structure should look like this:
 
-    ```shell
-    demo/
-      ├ .index.html
-      └ .dynamic
-            ├ date.js      # Will no longer load. We’ll fix that later.
-            └ .wss         # WebSocket routes go here.
-                └ chat.js
-    ```
+    <div class='directory-hierarchy'>
+    {{< highlight shell >}}demo/
+  ├ .index.html
+  └ .dynamic
+        ├ date.js
+        └ .wss
+            └ chat.js{{</ highlight >}}
+    </div>
 
     Now type the following code into that file:
 
@@ -484,15 +488,15 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     When you’re done, your directory structure should look like this:
 
-    ```shell
-    demo/
-      ├ .index.html
-      └ .dynamic
-            ├ .https        # HTTPS routes go here.
-            │   └ date.js
-            └ .wss          # WebSocket routes go here.
-                └ chat.js
-    ```
+    <div class='directory-hierarchy'>
+    {{< highlight shell >}}demo/
+  ├ .index.html
+  └ .dynamic
+        ├ .https
+        │   └ date.js
+        └ .wss
+            └ chat.js{{< /highlight >}}
+    </div>
 
     Restart your Site.js server and hit `https://localhost/date`.
 
