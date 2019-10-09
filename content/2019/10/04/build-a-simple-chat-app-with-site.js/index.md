@@ -7,81 +7,111 @@ draft: false
 <!-- The final version of the chat app. -->
 
 <style>
-  #final-version .browser-content {
+  #final-version-messages {
+    height: 7em;
     overflow-y: scroll;
-    height: 19em;
-  }
-
-  #final-version .chat-interface {
-    height: 19em;
+    background-color: lightblue;
+    padding: 0.75em;
+    list-style: none;
   }
 </style>
 
 <div id='final-version'>
-{{< browser location="https://localhost" caption="The chat app we’ll be building together (it’s live, you can play with it!)">}}
-<div class='chat-interface'>
-  <h1>Chat room</h1>
-  <p>Status: <span id='final-version-status' style="color: red;">Offline</span></p>
-  <!-- Note: added code to prevent send button from reloading the tutorial -->
-  <form id='final-version-message-form' onsubmit='return false'>
-    <label for='final-version-message'>Nickname:</label>
-    <input id='final-version-nickname' type='text' name='nickname' value='Anonymous'>
-    <label for='final-version-message'>Message:</label>
-    <input id='final-version-message' type='text' name='message' value=''>
-    <button id='final-version-submit-button' type='submit'>Send</button>
-  </form>
-  <h2>Messages</h2>
-  <ul id='final-version-messages'></ul>
-</div>
-<script>
-  // Initialise web socket.
-  const finalVersionWindowSocket = new WebSocket(
-    `wss://${window.location.hostname}/chat`
-  )
+  {{< browser location="https://localhost" caption="The chat app we’ll be building together (it’s live… open up another instance of your browser window and play with it!)">}}
+    <div class='chat-interface'>
+      <h1>Chat room</h1>
+      <p>Status: <span id='final-version-status' style="color: red;">Offline</span></p>
+      <form id='final-version-message-form'>
+        <label for='final-version-message'>Nickname:</label>
+        <input id='final-version-nickname' name='nickname' value='Anonymous'>
+        <label for='final-version-message'>Message:</label>
+        <input id='final-version-message' name='message' value=''>
+        <button id='final-version-submit-button' type='submit'>Send</button>
+      </form>
+      <h2>Messages</h2>
+      <ul id='final-version-messages'></ul>
+    </div>
+    <script>
+      // Shorthand for basic DOM lookup via CSS selectors.
+      const element = document.querySelector.bind(document)
 
-  // Display the state of the connection.
-  finalVersionWindowSocket.onopen = _ => {
-    element('#final-version-status').innerHTML = '<span style="color: green">Online</span>'
-  }
+      // Display a message in the messages list and ensure
+      // that the list always shows the latest messages.
+      function finalVersionDisplayMessage (message) {
+        const messages = element('#final-version-messages')
+        messages.innerHTML += `<li><strong>${message.nickname}: </strong>${message.text}</li>`
+        messages.scrollTop = messages.scrollHeight
+      }
 
-  finalVersionWindowSocket.onclose = _ => {
-    element('#final-version-status').innerHTML = 'Offline'
-  }
+      // Disables the submit button if the form isn’t valid.
+      function finalVersionValidateForm () {
+        const nicknameIsValid = element('#final-version-nickname').value !== ''
+        const messageIsValid = element('#final-version-message').value !== ''
 
-  function finalVersionWindowDisplayMessage (message) {
-    element('#final-version-messages').innerHTML += `<li><strong>${message.nickname}: </strong>${message.text}</li>`
-  }
+        const formIsValid = nicknameIsValid && messageIsValid
 
-  // Handle message sending.
-  element('#final-version-message-form').addEventListener('submit', event => {
-    // Prevent the form from being submitted.
-    event.preventDefault()
+        element('#final-version-submit-button').disabled = !formIsValid
+      }
 
-    // Get the nickname and text.
-    const nickname = element('#final-version-nickname').value
-    const text = element('#final-version-message').value
+      // Initialise web socket.
+      const finalVersionSocket = new WebSocket(
+        `wss://${window.location.hostname}/chat-final-version`
+      )
 
-    // Clear the message
-    element('#final-version-message').value = ''
+      // Display the state of the connection.
+      finalVersionSocket.onopen = _ => {
+        element('#final-version-status').innerHTML = '<span style="color: green">Online</span>'
+      }
 
-    // Create a message object, serialise it as JSON, and send it.
-    const message = { nickname, text }
-    finalVersionWindowSocket.send(JSON.stringify(message))
+      finalVersionSocket.onclose = _ => {
+        element('#final-version-status').innerHTML = 'Offline'
+      }
 
-    // Update the local display
-    finalVersionWindowDisplayMessage(message)
-  })
+      // Validate the form whenever the nickname or message changes.
+      element('#final-version-nickname').addEventListener('input', finalVersionValidateForm)
+      element('#final-version-message').addEventListener('input', finalVersionValidateForm)
 
-  // Handle incoming messages.
-  finalVersionWindowSocket.onmessage = message => {
-    // Deserialise the message string.
-    message = JSON.parse(message.data)
+      // Set initial focus and selection.
+      element('#final-version-nickname').focus()
+      element('#final-version-nickname').select()
 
-    // Display the message in the messages list.
-    finalVersionWindowDisplayMessage(message)
-  }
-</script>
-{{< /browser >}}
+      // Validate the form when the app first loads.
+      finalVersionValidateForm()
+
+      // Handle message sending.
+      element('#final-version-message-form').addEventListener('submit', event => {
+        // Prevent the form from being submitted.
+        event.preventDefault()
+
+        // Get the nickname and text.
+        const nickname = element('#final-version-nickname').value
+        const text = element('#final-version-message').value
+
+        // Clear the message text field.
+        element('#final-version-message').value = ''
+
+        // Focus the message text field.
+        element('#final-version-message').focus()
+
+        // Validate the form.
+        finalVersionValidateForm()
+
+        // Create a message object, serialise it as JSON & send it.
+        const message = { nickname, text }
+        finalVersionSocket.send(JSON.stringify(message))
+
+        // Update the local display
+        finalVersionDisplayMessage(message)
+      })
+
+      // Handle incoming messages.
+      finalVersionSocket.onmessage = message => {
+        // Deserialise the message string and display it.
+        message = JSON.parse(message.data)
+        finalVersionDisplayMessage(message)
+      }
+    </script>
+  {{< /browser >}}
 </div>
 
 ## We need to talk about Site.js
@@ -419,7 +449,6 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     {{< browser location="https://localhost" caption="The web interface (non-functional)." >}}
     <style>
-    .chat-interface { padding-bottom: 1.5em; }
     .chat-interface form { margin-bottom: 1.5em; }
     .chat-interface label, .chat-interface p {font-size: 0.9em}
     </style>
@@ -472,12 +501,11 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     Restart the Site.js server[^7] and you should now see the status indicator read <span style="color: green">Online</span> when you reload the page:
 
     <style>
-    .chat-interface { padding-bottom: 1.5em; }
     .chat-interface form { margin-bottom: 1.5em; }
     .chat-interface label, .chat-interface p {font-size: 0.75em}
     .chat-interface h1 { font-size: 1.5em; line-height: 1 }
     .chat-interface h2 { font-size: 1em; }
-    .chat-interface ul { margin-top: 0.5em; }
+    .chat-interface ul { margin-top: 0.5em; margin-bottom: 0.75em; }
     .chat-interface li { font-size: 0.75em; line-height: 1.5 }
     </style>
 
@@ -497,9 +525,6 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
       <ul id='messages'></ul>
     </div>
     <script>
-      // Shorthand for basic DOM lookup via CSS selectors.
-      const element = document.querySelector.bind(document)
-
       // Initialise web socket.
       const socket = new WebSocket(
         `wss://${window.location.hostname}/chat`
@@ -638,15 +663,13 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
         grid-gap: 0.5em;
         background: #eee;
         padding: 0.75em;
-        min-width: 100px;
-        max-width: 400px;
-
       }
 
       form > label { grid-column: labels; }
 
       form > input, form > button {
         min-width: 6em;
+        max-width: 300px;
         grid-column: controls;
         padding: 0.5em;
       }
