@@ -682,11 +682,13 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     ```js
     // Helper: display a message object.
     function displayMessage (message) {
-      element('#messages').innerHTML += `<li><strong>${message.nickname}: </strong>${message.text}</li>`
+      const nickname = `<strong>${message.nickname}:</strong>`
+      const text = message.text
+      element('#messages').innerHTML += `<li>${nickname} ${text}</li>`
     }
     ```
 
-    Next, let’s create the handler that will be called when your message form is submitted by pressing the Send button:
+    Next, let’s create the handler that will be called when your message form is submitted by pressing the <button onclick='return false'>Send</button> button:
 
     ```js
     // Handle message sending.
@@ -903,7 +905,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     ### Manage focus
 
-    While on the topic of focus, if the person types a message and presses <keyb>Return</keyb> to send it, the message text field maintains its focus. This is good as it means that they can send another message without doing any more work. However, if they use the _Send_ button to send the message, the message text field loses focus. So it’s up to us to set its focus manually.
+    While on the topic of focus, if the person types a message and presses <keyb>Return</keyb> to send it, the message text field maintains its focus. This is good as it means that they can send another message without doing any more work. However, if they use the <button onclick='return false'>Send</button> button to send the message, the message text field loses focus. So it’s up to us to set its focus manually.
 
     Under the `element('#message').value = ''` line in the form `submit` event handler, let’s set the focus after we’ve cleared the field:
 
@@ -921,7 +923,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     
     Try it out for yourself using [the live example](#first-chat-window), above.
 
-    Let’s fix that by adding a `validateForm()` function we can call to ensure that the form is valid. If it’s not valid, we will disable the _Send_ button:
+    Let’s fix that by adding a `validateForm()` function we can call to ensure that the form is valid. If it’s not valid, we will disable the <button onclick='return false'>Send</button> button:
 
     ```js
     // Is the passed object a valid string?
@@ -941,11 +943,11 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     }
     ```
 
-    Now, we need to call our `validateForm()` function at certain times. First, we must call it when the page first loads so that the form is initially validated. Since there is no text in the message field, our interface will thus start out with the _Send_ button disabled. This is what we want.
+    Now, we need to call our `validateForm()` function at certain times. First, we must call it when the page first loads so that the form is initially validated. Since there is no text in the message field, our interface will thus start out with the <button onclick='return false'>Send</button> button disabled. This is what we want.
 
-    Next, we should validate the form after a message is sent. Why? Because we clear the old message field and so we want the _Send_ button to be disabled again.
+    Next, we should validate the form after a message is sent. Why? Because we clear the old message field and so we want the <button onclick='return false'>Send</button> button to be disabled again.
 
-    Finally, we must validate the form every time the text in the `nickname` and `message` text fields changes so that we can enable the _Send_ button when there’s text in both of them:
+    Finally, we must validate the form every time the text in the `nickname` and `message` text fields changes so that we can enable the <button onclick='return false'>Send</button> button when there’s text in both of them:
 
     ```js
     element('#nickname').addEventListener('input', validateForm)
@@ -995,10 +997,12 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 {{</ highlight >}}{{< highlight js >}}
       // Shorthand for basic DOM lookup via CSS selectors.
       const element = document.querySelector.bind(document)
-
+      
       // Helper: display a message object.
       function displayMessage (message) {
-        element('#messages').innerHTML += `<li><strong>${message.nickname}: </strong>${message.text}</li>`
+        const nickname = `<strong>${message.nickname}:</strong>`
+        const text = message.text
+        element('#messages').innerHTML += `<li>${nickname} ${text}</li>`
       }
 {{</ highlight >}}<div class='emphasised'>{{< highlight js >}}
       // Is the passed object a valid string?
