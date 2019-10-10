@@ -153,9 +153,14 @@ draft: false
       // Display a message in the messages list and ensure
       // that the list always shows the latest messages.
       function finalVersionDisplayMessage (message) {
-        const messages = element('#final-version-messages')
-        messages.innerHTML += `<li><strong>${message.nickname}: </strong>${message.text}</li>`
-        messages.scrollTop = messages.scrollHeight
+        const nickname = `<strong>${message.nickname}:</strong>`
+        const text = message.text
+        const messageHTML = `<li>${nickname} ${text}</li>`
+
+        // Update the message list.
+        const messageList = element('#final-version-messages')
+        messageList.innerHTML += messageHTML
+        messageList.scrollTop = messageList.scrollHeight
       }
 
       // Is the passed object a valid string?
@@ -683,9 +688,13 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     ```js
     // Helper: display a message object.
     function displayMessage (message) {
-      const nickname = `<strong>${message.nickname}:</strong>`
-      const text = message.text
-      element('#messages').innerHTML += `<li>${nickname} ${text}</li>`
+        // Prepare the message HTML.
+        const nickname = `<strong>${message.nickname}:</strong>`
+        const text = message.text
+        const messageHTML = `<li>${nickname} ${text}</li>`
+
+        // Update the message list.
+        element('#messages').innerHTML += messageHTML
     }
     ```
 
@@ -939,11 +948,20 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     Instead, we want the message list to automatically scroll to the end every time a new message arrives so that you can read it without additional effort.
     
-    That’s easy enough to achieve by adding the following line of code to the end of the `displayMessage()` function we wrote earlier:
+    That’s easy enough to achieve by replacing the `displayMessage()` function we wrote earlier with the following one. The line of code that does all the work is highlighted, below: 
 
-    ```js
-    messages.scrollTop = messages.scrollHeight
-    ```
+    {{< highlight js >}}
+    function displayMessage (message) {
+      // Prepare the message HTML.
+      const nickname = `<strong>${message.nickname}:</strong>`
+      const text = message.text
+      const messageHTML = `<li>${nickname} ${text}</li>`
+
+      // Update the message list.
+      const messageList = element('#messages')
+      messageList.innerHTML += messageHTML{{</ highlight >}}<div class='emphasised'>{{< highlight js >}}
+      messageList.scrollTop = messageList.scrollHeight{{</ highlight >}}</div>{{< highlight js >}}
+    }{{</ highlight >}}
 
     ### Client-side validation
 
@@ -1028,9 +1046,15 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
       
       // Helper: display a message object.
       function displayMessage (message) {
+        // Prepare the message HTML.
         const nickname = `<strong>${message.nickname}:</strong>`
         const text = message.text
-        element('#messages').innerHTML += `<li>${nickname} ${text}</li>`
+        const messageHTML = `<li>${nickname} ${text}</li>`
+
+        // Update the message list.
+        const messageList = element('#messages')
+        messageList.innerHTML += messageHTML
+        messageList.scrollTop = messageList.scrollHeight
       }
 {{</ highlight >}}<div class='emphasised'>{{< highlight js >}}
       // Is the passed object a valid string?
