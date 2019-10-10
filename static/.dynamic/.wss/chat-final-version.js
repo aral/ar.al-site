@@ -7,15 +7,13 @@ module.exports = function (client, request) {
   console.log(`New client connected to ${client.room}`)
 
   client.on('message', message => {
-
-    // Perform some basic validation.
-    if (message.nickname === '' || message.text === '') {
-      console.log(`Missing nickname or message; not broadcasting.`)
+    // New message received: broadcast it to all other clients
+    // in the same room after performing basic validation.
+    if (!isValidMessage(JSON.parse(message))) {
+      console.log(`Message is invalid; not broadcasting.`)
       return
     }
 
-    // New message received: broadcast it to all
-    // other clients in the same room.
     const numberOfRecipients = this.broadcast(client, message)
 
     // Log the number of recipients message was sent to
@@ -24,4 +22,16 @@ module.exports = function (client, request) {
       + `${numberOfRecipients} recipient`
       + `${numberOfRecipients === 1 ? '' : 's'}`)
   })
+}
+
+// Is the passed object a valid string?
+function isValidString(s) {
+  return Boolean(s)                // Isn’t null, undefined, '', or 0
+    && typeof s === 'string'       // and is the correct type
+    && s.replace(/\s/g, '') !== '' // and is not just whitespace.
+}
+
+// Is the passed message object valid?
+function isValidMessage(m) {
+  return isValidString(m.nickname) && isValidString(m.text)
 }

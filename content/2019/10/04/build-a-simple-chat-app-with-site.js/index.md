@@ -119,6 +119,11 @@ draft: false
     list-style: none;
   }
 
+  /* Server-side validation failure example */
+  #server-side-validation-failure .messages {
+    height: 3em;
+  }
+
   /* Browser widgets. */
 
   .browser-content p {
@@ -153,11 +158,17 @@ draft: false
         messages.scrollTop = messages.scrollHeight
       }
 
+      // Is the passed object a valid string?
+      function finalVersionIsValidString(s) {
+        return Boolean(s)                // Isn’t null, undefined, '', or 0
+          && typeof s === 'string'       // and is the correct type
+          && s.replace(/\s/g, '') !== '' // and is not just whitespace.
+      }
+
       // Disables the submit button if the form isn’t valid.
       function finalVersionValidateForm () {
-        const nicknameIsValid = element('#final-version-nickname').value !== ''
-        const messageIsValid = element('#final-version-message').value !== ''
-
+        const nicknameIsValid = finalVersionIsValidString(element('#final-version-nickname').value)
+        const messageIsValid = finalVersionIsValidString(element('#final-version-message').value)
         const formIsValid = nicknameIsValid && messageIsValid
 
         element('#final-version-submit-button').disabled = !formIsValid
@@ -623,31 +634,31 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     {{< browser location="https://localhost" caption="Live example, connected to wss://ar.al/chat.">}}
     <div class='chat-interface'>
       <h1>Chat room</h1>
-      <p>Status: <span id='live-example-1-status' style="color: red;">Offline</span></p>
+      <p>Status: <span id='connection-only-status' style="color: red;">Offline</span></p>
       <!-- Note: added code to prevent send button from reloading the tutorial -->
-      <form id='messageForm' onsubmit='return false'>
-        <label for='message'>Nickname:</label>
-        <input id='nickname' type='text' name='nickname' value='Anonymous'>
-        <label for='message'>Message:</label>
-        <input id='message' type='text' name='message' value=''>
-        <button id='submit-button' type='submit'>Send</button>
+      <form id='connection-only-message-form' onsubmit='return false'>
+        <label for='connection-only-message'>Nickname:</label>
+        <input id='connection-only-nickname' type='text' name='nickname' value='Anonymous'>
+        <label for='connection-only-message'>Message:</label>
+        <input id='connection-only-message' type='text' name='message' value=''>
+        <button id='connection-only-submit-button' type='submit'>Send</button>
       </form>
       <h2>Messages</h2>
       <ul class='messages' id='messages'></ul>
     </div>
     <script>
       // Initialise web socket.
-      const socket = new WebSocket(
+      const connectionOnlySocket = new WebSocket(
         `wss://${window.location.hostname}/chat`
       )
 
       // Display the state of the connection.
-      socket.onopen = _ => {
-        element('#live-example-1-status').innerHTML = '<span style="color: green">Online</span>'
+      connectionOnlySocket.onopen = _ => {
+        element('#connection-only-status').innerHTML = '<span style="color: green">Online</span>'
       }
 
-      socket.onclose = _ => {
-        element('#live-example-1-status').innerHTML = 'Offline'
+      connectionOnlySocket.onclose = _ => {
+        element('#connection-only-status').innerHTML = 'Offline'
       }
     </script>
     {{< /browser >}}
@@ -904,18 +915,26 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     __TODO__
 
-    ### Validation (you’re beautiful)
+    ### Client-side validation
 
-    Things are feeling a bit nicer now but the elephant in the room (hi, George!) is that we’re not performing any validation whatsoever yet. Someone could easily submit a message with no nickname and no message text and we would dutifully fan it out to the other people in the room who would most likely be quite confused.
+    Things are feeling a bit nicer now but the elephant in the room (hi, George!) is that we’re not performing any input validation. Someone could easily submit a message with no nickname and no message text and we would dutifully fan it out to the other people in the room who would most likely be quite confused.
+    
+    Try it out for yourself using [the live example](#first-chat-window), above.
 
     Let’s fix that by adding a `validateForm()` function we can call to ensure that the form is valid. If it’s not valid, we will disable the _Send_ button:
 
     ```js
+    // Is the passed object a valid string?
+    function isValidString(s) {
+      return Boolean(s)                // Isn’t null, undefined, '', or 0
+        && typeof s === 'string'       // and is the correct type
+        && s.replace(/\s/g, '') !== '' // and is not just whitespace.
+    }
+
     // Disables the submit button if the form isn’t valid.
     function validateForm () {
-      const nicknameIsValid = element('#nickname').value !== ''
-      const messageIsValid = element('#message').value !== ''
-
+      const nicknameIsValid = isValidString(element('#nickname').value)
+      const messageIsValid = isValidString(element('#message').value)
       const formIsValid = nicknameIsValid && messageIsValid
 
       element('#submit-button').disabled = !formIsValid
@@ -982,11 +1001,17 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
         element('#messages').innerHTML += `<li><strong>${message.nickname}: </strong>${message.text}</li>`
       }
 {{</ highlight >}}<div class='emphasised'>{{< highlight js >}}
+      // Is the passed object a valid string?
+      function isValidString(s) {
+        return Boolean(s)                // Isn’t null, undefined, '', or 0
+          && typeof s === 'string'       // and is the correct type
+          && s.replace(/\s/g, '') !== '' // and is not just whitespace.
+      }
+
       // Disables the submit button if the form isn’t valid.
       function validateForm () {
-        const nicknameIsValid = element('#nickname').value !== ''
-        const messageIsValid = element('#message').value !== ''
-
+        const nicknameIsValid = isValidString(element('#nickname').value)
+        const messageIsValid = isValidString(element('#message').value)
         const formIsValid = nicknameIsValid && messageIsValid
 
         element('#submit-button').disabled = !formIsValid
@@ -1058,43 +1083,74 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 </html>{{</ highlight >}}
 </div>
 
-    ### Back-end validation
+    ### Server-side validation
 
     We just implemented front-end validation but that’s only half the story.
 
     In a perfect world, everyone will use our lovely web page front-end and our front-end validation will catch all the issues, and no one will ever hit our back-end directly.
 
-    In the real world, behold aghast as I fire up a browser and send you an empty message from within the JavaScript console of my browser and your chat server dutifully delivers it to everyone in the room:
+    In the real world, watch as I fire up a browser and send you an empty message using the JavaScript console of my browser and your chat server dutifully delivers it to everyone in the room:
 
     ```js
     // All your front-end validation are belong to us.
     socket = new WebSocket('wss://ar.al/chat')
-    socket.send(JSON.stringify({nickname: '', message: ''}))
+    socket.send(JSON.stringify({nickname: '', text: ''}))
     ```
 
-    (If you actually run the above code, check out the message lists in the side-by-side browser windows in the [Handle incoming messages](#handle-incoming-messages)) section and you should see your empty message appear there.)
+    Run the above code and check out [the live examples](#first-chat-window) above and you should see your empty message display there:
+
+    <div id='server-side-validation-failure'>
+    {{< browser location="https://ar.al/2019/10/04/build-a-simple-chat-app-with-site.js/#first-chat-window" >}}
+    <div class='chat-interface'>
+    <h2>Messages</h2>
+    <ul class="messages" id="first-chat-window-messages">
+      <li><strong>:</strong></li>
+    </ul>
+    </div>
+    {{</ browser >}}
+    </div>
+
+    Oops! That’s not good.
 
     Front-end validation is a usability feature; back-end validation is a security feature.
 
-    While there’s much we would have to implement in a real-world chat app (like rate limiting, blacklists, etc.), let’s at least add server-side validation to our basic example to prevent messages with missing nicknames and message text from being broadscast to everyone in the room.
+    In a real-world chat app we would have to implement a host of features to prevent abuse (like rate limiting, blacklists, blocking, etc.). That’s outside the scope of this basic tutorial but let’s at least add some basic validation to our chat server.
 
-    We can circumvent this nuisance with a simple check at the top of the `message` handler in the chat server:
+    Add the following helper functions to the bottom of your chat server code:
+
+    ```js
+    // Is the passed object a valid string?
+    function isValidString(s) {
+      return Boolean(s)                // Isn’t null, undefined, '', or 0
+        && typeof s === 'string'       // and is the correct type
+        && s.replace(/\s/g, '') !== '' // and is not just whitespace.
+    }
+
+    // Is the passed message object valid?
+    function isValidMessage(m) {
+      return isValidString(m.nickname) && isValidString(m.text)
+    }
+    ```
+    
+    Then, at the top of the `message` handler, let’s call the `isValidMessage()` function with a parsed instance of the serialised message and abort broadcasting it if the message isn’t valid:
 
     ```js
     // Perform some basic validation.
-    if (message.nickname === '' || message.text === '') {
-      console.log(`Missing nickname or message; not broadcasting.`)
+    if (!isValidMessage(JSON.parse(message))) {
+      console.log(`Message is invalid; not broadcasting.`)
       return
     }
     ```
 
-    The final version of the chat server containing this piece of basic validation is what the live example at the top of the page connects to. You can test that the validation works by running the following code from a JavaScript console in your browser and verifying that your message does not show up there:
+    The live example at the very top of this tutorial connects to the final version of the chat server that contains our server-side validation.
+
+    You can test that it works by running the following code from a JavaScript console in your browser and verifying that your message does not show up there:
 
     ```js
     // And I would have gotten away with it too,
     // if it weren't for you meddling kids…
     socket = new WebSocket('wss://ar.al/chat-final-version')
-    socket.send(JSON.stringify({nickname: '', message: ''}))
+    socket.send(JSON.stringify({nickname: '', text: ''}))
     ```
 
     Here’s the final listing of the chat server, with this new feature highlighted:
@@ -1111,15 +1167,14 @@ module.exports = function (client, request) {
 
   client.on('message', message => {
 {{</ highlight >}}<div class='emphasised'>{{< highlight js >}}
-    // Perform some basic validation.
-    if (message.nickname === '' || message.text === '') {
-      console.log(`Missing nickname or message; not broadcasting.`)
+    // New message received: broadcast it to all other clients
+    // in the same room after performing basic validation.
+    if (!isValidMessage(JSON.parse(message))) {
+      console.log(`Message is invalid; not broadcasting.`)
       return
     }
-{{</ highlight >}}</div>{{< highlight js >}}
 
-    // New message received: broadcast it to all
-    // other clients in the same room.
+{{</ highlight >}}</div>{{< highlight js >}}
     const numberOfRecipients = this.broadcast(client, message)
 
     // Log the number of recipients message was sent to
