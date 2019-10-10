@@ -916,15 +916,42 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     ### Auto-scroll the messages list
 
-    __TODO__
+    If you send more messages than will fit in the message list, the latest messages scroll off the screen.
+
+    <div id='auto-scroll'>
+    {{< browser location="https://ar.al/2019/10/04/build-a-simple-chat-app-with-site.js/#first-chat-window" caption="Lack of auto scroll means we miss the punchline of the joke (and our species is going to be the punchline of the joke if we don’t get our act together)." >}}
+    <div class='chat-interface'>
+    <h2>Messages</h2>
+    <ul class="messages"">
+      <li><strong>Aral: </strong>Hey, so I have a joke for you…</li>
+      <li><strong>Laura: </strong>Oh, yeah?</li>
+      <li><strong>Aral: </strong>Knock, knock!</li>
+      <li><strong>Laura: </strong>Who’s there?</li>
+      <li><strong>Aral: </strong>Endangered species</li>
+      <li><strong>Laura: </strong>Endangered species, who?</li>
+      <li><strong>Aral: </strong><em>*silence due to extinction of species between delivery of lines*</em></li>
+    </ul>
+    </div>
+    {{</ browser >}}
+    </div>
+
+    This is less than ideal.
+
+    Instead, we want the message list to automatically scroll to the end every time a new message arrives so that you can read it without additional effort.
+    
+    That’s easy enough to achieve by adding the following line of code to the end of the `displayMessage()` function we wrote earlier:
+
+    ```js
+    messages.scrollTop = messages.scrollHeight
+    ```
 
     ### Client-side validation
 
-    Things are feeling a bit nicer now but the elephant in the room (hi, George!) is that we’re not performing any input validation. Someone could easily submit a message with no nickname and no message text and we would dutifully fan it out to the other people in the room who would most likely be quite confused.
+    Things are feeling a bit nicer now but the elephant in the room (his name is George!) is that we’re not performing any input validation. Someone could easily submit a message with no nickname and no message text and we would dutifully fan it out to the other people in the room leading to undue heartache and pain.
     
     Try it out for yourself using [the live example](#first-chat-window), above.
 
-    Let’s fix that by adding a `validateForm()` function we can call to ensure that the form is valid. If it’s not valid, we will disable the <button onclick='return false'>Send</button> button:
+    Let’s fix this by adding a `validateForm()` function we can call to ensure that the form is valid. When the form’s not valid, we’ll disable the <button onclick='return false'>Send</button> button:
 
     ```js
     // Is the passed object a valid string?
