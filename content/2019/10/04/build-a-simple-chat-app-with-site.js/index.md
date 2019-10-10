@@ -116,6 +116,7 @@ draft: false
     overflow-y: scroll;
     background-color: #eee;
     padding: 0.75em;
+    margin-bottom: 0.5em;
     list-style: none;
   }
 
@@ -560,17 +561,38 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     <ul id='messages'></ul>
     ```
 
-    Let’s also add some very basic styling so that our form displays neatly. Just before the end of the `<head>` tag (right before `</head>`), enter the following style tag and CSS:
+    Let’s also add some very basic styling to make our app a little easier on the eyes. Just before the end of the `head` tag, add a `style` tag: 
+
+    ```html
+    <style>
+      /* Code from the next step goes here. */
+    </style>
+    ```
+
+    First, let’s style the major elements. Add the following to your `style` tag:
 
     ```css
-    <style>
+      /* Make CSS behave (as much as that’s possible) ;) */
+      * { box-sizing: border-box; }
+
+      body {
+        font-family: sans-serif;
+        padding: 1em;
+      }
+
+      h1 { margin-top: 0; }
+    ```
+
+    Next, let’s style the form to make it display in a responsive two-column layout:
+
+    ```css
       form {
         background: #eee;
         display: grid;
         grid-template-columns: [labels] auto [controls] 1fr;
-        grid-gap: 0.5em;
-        min-width: 100px;
-        max-width: 400px;
+        align-items: center;
+        grid-row-gap: 0.5em;
+        grid-column-gap: 0.5em;
         padding: 0.75em;
       }
 
@@ -579,14 +601,54 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
       form > input, form > button {
         grid-column: controls;
         min-width: 6em;
+        max-width: 300px;
         padding: 0.5em;
+        font-size: 1em;
       }
-    </style>
     ```
 
-    This will display the form in a basic responsive, two-column layout that won’t hurt our eyes.
+    Let’s also style the button so that it’s green when enabled, gray when disabled, and transitions smoothly between those states:
 
-    Now, when you visit `https://localhost` in your browser, you should see our (currently non-functional) chat interface.
+    ```css
+      button {
+        text-align: center;
+        cursor: pointer;
+        font-size:16px;
+        color: white;
+        border-radius: 4px;
+        background-color:#466B6A;
+        border: none;
+        padding: 0.75em;
+        padding-top: 0.25em;
+        padding-bottom: 0.25em;
+        transition: color 0.5s;
+        transition: background-color 0.5s;
+      }
+
+      button:hover {
+        color: black;
+        background-color: #92AAA4;
+      }
+
+      button:disabled {
+        color: #999;
+        background-color: #ccc;
+      }
+    ```
+
+    Finally, let’s hide the bullet points and add a background to the message list. We also want to give it a definite height so that it scrolls instead of growing forever:
+
+    ```css
+    #messages {
+      height: 10em;
+      overflow-y: scroll;
+      background-color: #eee;
+      padding: 0.75em;
+      list-style: none;
+    }
+    ```
+
+    Now, when you visit `https://localhost` in your browser, you should see that your (currently non-functional) chat interface resembles the one below:
 
     {{< browser location="https://localhost" caption="The web interface (non-functional)." >}}
     <div class='chat-interface'>
