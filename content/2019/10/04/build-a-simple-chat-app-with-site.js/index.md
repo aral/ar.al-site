@@ -1264,13 +1264,22 @@ That’s quite a radical concept for the web, which has so far been centralised.
 
 We’re used to sites where you sign up for accounts with huge corporations. Turns out, when we do that, these corporations end up owning those accounts and they end up tracking and profiling us and attempting to influence our behaviour to make a quick buck (or billion).
 
-When we consider the social impacts of this toxic business model, we find that they erode our personhood and threaten our democracies. (Wow, that escalated quickly!)
+When we examine [the social impacts of this toxic business model](https://ar.al/2019/05/02/slavery-2.0-and-how-to-avoid-it-a-practical-guide-for-cyborgs/), we find that they erode our personhood and threaten our democracies. (Wow, that escalated quickly!)
 
 ### Flipping the web upside down
 
-If we want ownership and control of the digital aspects of our selves which, today, constitute part of who we are as modern human beings, we have to turn the web on its head. We have to flip it upside down.
+<figure>
+  <video controls poster='https://i.vimeocdn.com/video/808318439.jpg?mw=1100&mh=619&q=70'>
+    <source src='https://player.vimeo.com/external/355368347.hd.mp4?s=3e60da74579b368cd489b5493065f354db762d1a' type='video/mp4'>
+    <source src='https://player.vimeo.com/external/355368347.m3u8?s=8596a70d2996cb80ea16879c016e04af1d7841af' type='video/mp4'>
+    <p>Sorry, your browser doesn't support embedded videos. But that doesn’t mean you can’t watch it! You can <a href="//player.vimeo.com/external/355368347.hd.mp4?s=3e60da74579b368cd489b5493065f354db762d1a">download this video directly</a>, and watch it with your favourite video player.</p>
+  </video>
+  <figcaption>Watch Laura and me talk about moving beyond surveillance capitalism and flipping the web upside down with small technology.</figcaption>
+</figure>
 
-Ultimately, we need to build a web where every one of us has their own place. That’s exactly [what we’re working towards](https://small-tech.org/research-and-development/) at [Small Technology Foundation](https://small-tech.org) and Site.js is the foundation of our efforts.
+If we want to own and control the digital aspects of ourselves that form part of who we are as people, we must turn the web on its head. We must flip it upside down.
+
+Ultimately, we must build [a web where each one of us has their own place](](https://ar.al/2019/02/13/on-the-general-architecture-of-the-peer-web/)). That’s [what we’re working towards](https://small-tech.org/research-and-development/) at [Small Technology Foundation](https://small-tech.org) and Site.js is the foundations of our efforts.
 
 I hope you find Site.js useful – even if you don’t care about its philosophical or ethical underpinnings – simply on the merits of what you, as a developer, can do with it and how easy it is to use.
 
