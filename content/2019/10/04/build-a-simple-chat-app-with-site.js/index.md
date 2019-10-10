@@ -1,6 +1,6 @@
 ---
 title: "Build a simple chat app with Site.js"
-date: 2019-10-04T14:50:49+01:00
+date: 2019-10-10T13:00:42+01:00
 draft: false
 ---
 
@@ -132,7 +132,7 @@ draft: false
 </style>
 
 <div id='final-version'>
-  {{< browser location="https://localhost" caption="The chat app we’re going to build together. (It’s live… open another browser window or hit this page from a different device to play with it!)">}}
+  {{< browser location="https://localhost" caption="The chat app we’re going to build together. (It’s live… open another browser window or hit this page from a different device to see it in action!)">}}
     <div class='chat-interface'>
       <h1>Chat room</h1>
       <p>Status: <span id='final-version-status' style="color: red;">Offline</span></p>
@@ -141,7 +141,7 @@ draft: false
         <input id='final-version-nickname' name='nickname' value='Anonymous'>
         <label for='final-version-message'>Message:</label>
         <input id='final-version-message' name='message' value=''>
-        <button id='final-version-submit-button' type='submit'>Send</button>
+        <button id='final-version-send-button' type='submit'>Send</button>
       </form>
       <h2>Messages</h2>
       <ul class='messages' id='final-version-messages'></ul>
@@ -165,13 +165,13 @@ draft: false
           && s.replace(/\s/g, '') !== '' // and is not just whitespace.
       }
 
-      // Disables the submit button if the form isn’t valid.
+      // Disables the Send button if the form isn’t valid.
       function finalVersionValidateForm () {
         const nicknameIsValid = finalVersionIsValidString(element('#final-version-nickname').value)
         const messageIsValid = finalVersionIsValidString(element('#final-version-message').value)
         const formIsValid = nicknameIsValid && messageIsValid
 
-        element('#final-version-submit-button').disabled = !formIsValid
+        element('#final-version-send-button').disabled = !formIsValid
       }
 
       // Initialise web socket.
@@ -237,7 +237,7 @@ draft: false
 
 ## We need to talk about Site.js
 
-This weekend, I released [Site.js](https://sitejs.org) version 12.7.0 with improvements to its WebSocket interface and [documentation](https://source.ind.ie/site.js/app/blob/master/README.md#websocket-wss-routes). Today, I want to take you step-by-step into building and running a basic chat app using Site.js.
+This weekend, I released [Site.js](https://sitejs.org) version 12.7.0 with improvements to [its WebSocket interface](https://source.ind.ie/site.js/app/blob/master/README.md#websocket-wss-routes). Today, I want to take you step-by-step into building and running a basic chat app using Site.js.
 
 It’s much easier than you think, so fire up a terminal window, grab your code editor, and let’s get started!
 
@@ -291,7 +291,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     I mentioned earlier that Site.js is zero-configuration. This means that it has certain conventions that it expects you to adhere to. For example, if you want to create dynamic routes in your web app, you must place them in a folder called `.dynamic`.
 
-    Before we move onto creating the chat functionality, let’s create the equivalent of our static “hello, world!” example but with some very basic dynamic functionality that displays the current date and time.
+    Before we move onto creating the chat functionality, let’s create the equivalent of our static “hello, world!” example but with some very basic dynamic functionality to display the current date and time.
 
     {{< note_for_non_coders >}}
 
@@ -323,8 +323,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     }
     ```
 
-    Finally, run the `site` command in the `demo` folder and visit `https://localhost/date`
-
+    Finally, run the `site` command in the `demo` folder and visit `https://localhost/date`.
 
     {{< browser location="https://localhost/date" caption="A dynamic DotJS route. Refresh the page to see it update." >}}
     <p><script>document.write(new Date().toString())</script></p>
@@ -342,11 +341,13 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     DotJS maps JavaScript modules defined in `.js` files (see what I did there?) to web routes on your web site in a manner that will be familiar to anyone who has ever used PHP.
 
-    So, in the example above, `.dynamic/date.js` becomes the web route `https://localhost/date`.
+    In our example, DotJS knows that we want the file defined at `.dynamic/date.js` to be served at the address `https://localhost/date`.
+    
+    If we’d wanted our dynamic page to be available from `https://localhost/date-and-time` instead, we would have defined our route in `.dynamic/date-and-time.js`.[^3]
 
     Using DotJS, all you have to do is write the logic for your web app. Everything else, including creating a secure HTTPS and WebSocket server for you and registering your routes, etc., is handled for you by Site.js.
 
-    Furthermore, there is no magic here. Under the hood, these are simply plain old tried-and-tested [Express](https://expressjs.com/) routes.[^3] Site.js contains [Node.js](https://nodejs.org) so you can do anything in your dynamic routes that you can do with Node.js – including [using node modules](https://source.ind.ie/site.js/app/blob/master/README.md#using-node-modules) – without installing Node.js.
+    Furthermore, there is no magic here. Under the hood, these are simply plain old tried-and-tested [Express](https://expressjs.com/) routes.[^4] Site.js contains [Node.js](https://nodejs.org) so you can do anything in your dynamic routes that you can do with Node.js – including [using node modules](https://source.ind.ie/site.js/app/blob/master/README.md#using-node-modules) – without installing Node.js.
 
     When you’re ready to move on, press <kbd>Ctrl</kbd> <kbd>C</kbd> to stop the Site.js server.
 
@@ -384,7 +385,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     }
     ```
 
-    The function you just wrote will be called any time a new client connects to our chat server at the `/chat` path (which will be available locally at `wss://localhost/chat`)[^4]. In chat app parlance, what we’ve created is known as a “room.” So let’s try and join it and see what happens.
+    The function you just wrote will be called any time a new client connects to our chat server at the `/chat` path (which will be available locally at `wss://localhost/chat`)[^5]. In chat app parlance, what we’ve created is known as a “room.” So let’s try and join it and see what happens.
 
     ### Room for improvement
 
@@ -417,7 +418,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     What we’re doing here is creating an event handler that listens for `message` events and then uses the `broadcast` method that all DotJS WebSocket routes have to fan the message out to the other clients connected to the same room.
 
-    An important thing to note is that you should always use an `function` expression instead of an arrow function expression when creating your WebSocket routes to ensure that you can access methods like `broadcast()` using the `this` reference[^5].
+    An important thing to note is that you should always use an `function` expression instead of an arrow function expression when creating your WebSocket routes to ensure that you can access methods like `broadcast()` using the `this` reference[^6].
 
   5.  ## Can you hear me now?
 
@@ -478,7 +479,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     </div>
     {{</ browser >}}
 
-    Oops, you get the default Site.js 404 page[^6].
+    Oops, you get the default Site.js 404 page[^7].
 
     Site.js can’t file the file. Why?
 
@@ -548,7 +549,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
       <input id='nickname' name='nickname' value='Anonymous'>
       <label for='message'>Message:</label>
       <input id='message' name='message' value=''>
-      <button id='submit-button' type='submit'>Send</button>
+      <button id='send-button' type='submit'>Send</button>
     </form>
     <h2>Messages</h2>
     <ul id='messages'></ul>
@@ -592,7 +593,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
         <input id='nickname' type='text' name='nickname' value='Anonymous'>
         <label for='message'>Message:</label>
         <input id='message' type='text' name='message' value=''>
-        <button id='submit-button' type='submit'>Send</button>
+        <button id='send-button' type='submit'>Send</button>
       </form>
       <h2>Messages</h2>
       <ul class='messages' id='non-functional-messages'></ul>
@@ -629,7 +630,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     </script>
     ```
 
-    Restart the Site.js server[^7] and you should now see the status indicator read <span style="color: green">Online</span> when you reload the page:
+    Restart the Site.js server[^8] and you should now see the status indicator read <span style="color: green">Online</span> when you reload the page:
 
     {{< browser location="https://localhost" caption="Live example, connected to wss://ar.al/chat.">}}
     <div class='chat-interface'>
@@ -641,7 +642,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
         <input id='connection-only-nickname' type='text' name='nickname' value='Anonymous'>
         <label for='connection-only-message'>Message:</label>
         <input id='connection-only-message' type='text' name='message' value=''>
-        <button id='connection-only-submit-button' type='submit'>Send</button>
+        <button id='connection-only-send-button' type='submit'>Send</button>
       </form>
       <h2>Messages</h2>
       <ul class='messages' id='messages'></ul>
@@ -671,7 +672,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     This ensures that the app will work regardless of which domain it is served from.
 
-    During development, `windows.location.hostname` will resolve to `localhost`, as before. When running in production – as it is here on my blog – it will resolve to the domain name of the site[^8].
+    During development, `windows.location.hostname` will resolve to `localhost`, as before. When running in production – as it is here on my blog – it will resolve to the domain name of the site[^9].
 
     ### Handle message sending
 
@@ -763,7 +764,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
         <input id='first-chat-window-nickname' type='text' name='nickname' value='Anonymous'>
         <label for='first-chat-window-message'>Message:</label>
         <input id='first-chat-window-message' type='text' name='message' value=''>
-        <button id='first-chat-window-submit-button' type='submit'>Send</button>
+        <button id='first-chat-window-send-button' type='submit'>Send</button>
       </form>
       <h2>Messages</h2>
       <ul class='messages' id='first-chat-window-messages'></ul>
@@ -832,7 +833,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
         <input id='second-chat-window-nickname' type='text' name='nickname' value='Anonymous'>
         <label for='second-chat-window-message'>Message:</label>
         <input id='second-chat-window-message' type='text' name='message' value=''>
-        <button id='second-chat-window-submit-button' type='submit'>Send</button>
+        <button id='second-chat-window-send-button' type='submit'>Send</button>
       </form>
       <h2>Messages</h2>
       <ul class='messages' id='second-chat-window-messages'></ul>
@@ -933,13 +934,13 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
         && s.replace(/\s/g, '') !== '' // and is not just whitespace.
     }
 
-    // Disables the submit button if the form isn’t valid.
+    // Disables the Send button if the form isn’t valid.
     function validateForm () {
       const nicknameIsValid = isValidString(element('#nickname').value)
       const messageIsValid = isValidString(element('#message').value)
       const formIsValid = nicknameIsValid && messageIsValid
 
-      element('#submit-button').disabled = !formIsValid
+      element('#send-button').disabled = !formIsValid
     }
     ```
 
@@ -989,7 +990,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
       <input id='nickname' name='nickname' value='Anonymous'>
       <label for='message'>Message:</label>
       <input id='message' name='message' value=''>
-      <button id='submit-button' type='submit'>Send</button>
+      <button id='send-button' type='submit'>Send</button>
     </form>
     <h2>Messages</h2>
     <ul id='messages'></ul>
@@ -1012,13 +1013,13 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
           && s.replace(/\s/g, '') !== '' // and is not just whitespace.
       }
 
-      // Disables the submit button if the form isn’t valid.
+      // Disables the Send button if the form isn’t valid.
       function validateForm () {
         const nicknameIsValid = isValidString(element('#nickname').value)
         const messageIsValid = isValidString(element('#message').value)
         const formIsValid = nicknameIsValid && messageIsValid
 
-        element('#submit-button').disabled = !formIsValid
+        element('#send-button').disabled = !formIsValid
       }
 {{</ highlight >}}</div>{{< highlight js >}}
       // Initialise web socket.
@@ -1028,7 +1029,8 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
       // Display the state of the connection.
       socket.onopen = _ => {
-        element('#status').innerHTML = '<span style="color: green">Online</span>'
+        element('#status').innerHTML = 
+          '<span style="color: green">Online</span>'
       }
 
       socket.onclose = _ => {
@@ -1200,7 +1202,7 @@ module.exports = function (client, request) {
 
     ### Test your app from any device
 
-    So far, you’ve only run servers at `https://localhost` and, behind the scenes, Site.js ensured that you didn’t get certificate warnings when you did. But what if you want to test your chat app from your phone or to have others test it with you? You could, of course, deploy it to a public Virtual Private Server, which is the topic of [the next section](#deploy-to-production), but you can also run your server at your hostname using [the @hostname option](https://source.ind.ie/site.js/app/blob/master/README.md#testing-servers-hostname)[^9] and provide outside access to your development machine using a tool like [ngrok](https://ngrok.com/):
+    So far, you’ve only run servers at `https://localhost` and, behind the scenes, Site.js ensured that you didn’t get certificate warnings when you did. But what if you want to test your chat app from your phone or to have others test it with you? You could, of course, deploy it to a public Virtual Private Server, which is the topic of [the next section](#deploy-to-production), but you can also run your server at your hostname using [the @hostname option](https://source.ind.ie/site.js/app/blob/master/README.md#testing-servers-hostname)[^10] and provide outside access to your development machine using a tool like [ngrok](https://ngrok.com/):
 
     ```shell
     # Start Site.js at your hostname instead of at localhost.
@@ -1210,7 +1212,7 @@ module.exports = function (client, request) {
     ngrok start --all
     ```
 
-    Having done this, you can then hit `https://dev.my-domain.org` from any device anywhere and access your site from your development machine[^10]. And, again, Site.js will work to seamless provision Let’s Encrypt certificates for you so you will not get any certificate errors.
+    Having done this, you can then hit `https://dev.my-domain.org` from any device anywhere and access your site from your development machine[^11]. And, again, Site.js will work to seamless provision Let’s Encrypt certificates for you so you will not get any certificate errors.
 
     ### Deploy to production
 
@@ -1228,11 +1230,11 @@ module.exports = function (client, request) {
 
     ### Sync
 
-    So you have (A) your local copy of your site and you’ve deployed (b) a live production server. How do you get your site from A to B?
+    So you have (a) your local copy of your site and you’ve deployed (b) a live production server. How do you get your site from A to B?
 
     Simple!
 
-    On Linux and macOS[^11], you can use Site.js’s `sync-to` command to deploy your site like so:
+    On Linux and macOS[^12], you can use Site.js’s `sync-to` command to deploy your site like so:
 
     ```shell
     site --sync-to=my-domain.org
@@ -1240,7 +1242,7 @@ module.exports = function (client, request) {
 
     The above command will work with no other information necessary if the account name on your development machine and on your production machine is the same and you’re in your site’s directory. Otherwise, check the docs for on how to specify any details you need to.
 
-    On your production server, to ensure that it supports sync, it’s a good idea to launch your server with the `--ensure-can-sync` option, which will install rsync on your production machine for you in case it doesn’t already exist.
+    On your production server, to ensure that it supports sync, it’s a good idea to launch your server with the `--ensure-can-sync` option, which will install [rsync](https://en.wikipedia.org/wiki/Rsync) – the tool Site.js uses behind the scenes to sync your files – if it doesn’t already exist.
 
     ### And there’s more…
 
@@ -1292,21 +1294,23 @@ If you have any questions about this tutorial or Site.js in general, please feel
 
     Note that if you want live reload to work, you should add the `--liveReloadPort=443` option to your Hugo server command.
 
-[^3]: If you want full control over your routing, including the ability to use regular expressions in your route names and accessing global state, etc., you can do everything you can in Express using the [advanced routing](https://source.ind.ie/site.js/app/blob/master/README.md#advanced-routing-routesjs-file) feature by declaring a `routes.js` file in your `.dynamic` fodler.
+[^3]: DotJS’s auto routing does not limit you to a flat structure. In our example, we could also have placed our code in a file located at `.dynamic/date/time` which would have made it available at the address `https://localhost/date/time`.
 
-[^4]: Note that the URL scheme is no longer `https` but `wss` since we’re talking about secure WebSocket routes now. If I had a penny for every time I wrote `https://` when I meant to write `wss://`…
+[^4]: If you want full control over your routing, including the ability to use regular expressions in your route names and accessing global state, etc., you can do everything you can in Express using the [advanced routing](https://source.ind.ie/site.js/app/blob/master/README.md#advanced-routing-routesjs-file) feature by declaring a `routes.js` file in your `.dynamic` fodler.
 
-[^5]: You might have noticed that we use an anonymous function expression in the `module.exports` line whereas we used an arrow function expression in the previous (HTTPS) examples and even though we use an arrow function expression to define the event handler. This is not by accident; it has to do with scope. If you want to have access to the `this` reference in your DotJS routes and access methods like `broadcast()`, you cannot use an arrow function expression to define your module, you must use the `function` keyword. Inside of your module, you are free to use arrow function expressions to your heart’s desire.
+[^5]: Note that the URL scheme is no longer `https` but `wss` since we’re talking about secure WebSocket routes now. If I had a penny for every time I wrote `https://` when I meant to write `wss://`…
 
-[^6]: You can easily [replace the default error pages with your own custom ones](https://source.ind.ie/site.js/app/blob/master/README.md#custom-error-pages). And as far as 404 errors go, you can reduce the number of them on the web in general and contribute towards [an evergreen web](https://source.ind.ie/site.js/app/blob/master/README.md#native-support-for-an-evergreen-web) by making use of the native [cascading archives](https://source.ind.ie/site.js/app/blob/master/README.md#native-cascading-archives-support) and [404-to-302](https://source.ind.ie/site.js/app/blob/master/README.md#native-404-302-support) support in Site.js.
+[^6]: You might have noticed that we use an anonymous function expression in the `module.exports` line whereas we used an arrow function expression in the previous (HTTPS) examples and even though we use an arrow function expression to define the event handler. This is not by accident; it has to do with scope. If you want to have access to the `this` reference in your DotJS routes and access methods like `broadcast()`, you cannot use an arrow function expression to define your module, you must use the `function` keyword. Inside of your module, you are free to use arrow function expressions to your heart’s desire.
 
-[^7]: Site.js does not have LiveReload and does not automatically restart the server when dynamic routes change at the moment. When working with static content, this means that you have to manually refresh the browser and when working with dynamic content you have to manually restart the server whenever you make code changes. I realise this is less than ideal and both of these are high on [my list of issues](https://source.ind.ie/site.js/app/issues) to address.
+[^7]: You can easily [replace the default error pages with your own custom ones](https://source.ind.ie/site.js/app/blob/master/README.md#custom-error-pages). And as far as 404 errors go, you can reduce the number of them on the web in general and contribute towards [an evergreen web](https://source.ind.ie/site.js/app/blob/master/README.md#native-support-for-an-evergreen-web) by making use of the native [cascading archives](https://source.ind.ie/site.js/app/blob/master/README.md#native-cascading-archives-support) and [404-to-302](https://source.ind.ie/site.js/app/blob/master/README.md#native-404-302-support) support in Site.js.
 
-[^8]: The examples on this page are live and connect to the instance of the finished app I have running at https://ar.al/chat. Needless to say, this site is served by Site.js.
+[^8]: Site.js does not have LiveReload and does not automatically restart the server when dynamic routes change at the moment. When working with static content, this means that you have to manually refresh the browser and when working with dynamic content you have to manually restart the server whenever you make code changes. I realise this is less than ideal and both of these are high on [my list of issues](https://source.ind.ie/site.js/app/issues) to address.
 
-[^9]: On Windows (because Windows), you have to add quotes around the `@hostname` option, so the command becomes `site "@hostname"`. Blame Bill Gates.
+[^9]: The examples on this page are live and connect to the instances of the app I have running at https://ar.al/chat (corresponding to the initial example, without server-side validation) and https://ar.al/chat-final-version. Needless to say, this site is served by Site.js.
 
-[^10]: To use ngrok with your own domain name, you will to subscribe for [a Pro account](https://ngrok.com/pricing) from ngrok (at least this is what Laura and I use at [Small Technology Foundation](https://small-tech.org)) and [set up a subdomain on your own domain name per their instructions](https://ngrok.com/docs#http-custom-domains).
+[^10]: On Windows (because Windows), you have to add quotes around the `@hostname` option, so the command becomes `site "@hostname"`. Blame Bill Gates.
 
-[^11]: On Windows (because Windows), the sync function is not available as there’s currently no free and open rsync implementation that we can use like we can on Linux and macOS.
+[^11]: To use ngrok with your own domain name, you will to subscribe for [a Pro account](https://ngrok.com/pricing) from ngrok (at least this is what Laura and I use at [Small Technology Foundation](https://small-tech.org)) and [set up a subdomain on your own domain name per their instructions](https://ngrok.com/docs#http-custom-domains).
+
+[^12]: On Windows (because Windows), the sync function is not available as there’s currently no free and open rsync implementation that we can use like we can on Linux and macOS.
 
