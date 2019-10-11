@@ -5,15 +5,13 @@ draft: false
 css: "./index.css"
 ---
 
-<!-- The final version of the chat app. -->
-
 <div id='final-version'>
   {{< browser location="https://localhost" caption="The chat app we’re going to build together. (It’s live… open another browser window or hit this page from a different device to see it in action!)">}}
     <div class='chat-interface'>
       <h1>Chat room</h1>
       <p>Status: <span id='final-version-status' style="color: red;">Offline</span></p>
       <form id='final-version-message-form'>
-        <label for='final-version-message'>Nickname:</label>
+        <label for='final-version-nickname'>Nickname:</label>
         <input id='final-version-nickname' name='nickname' value='Anonymous'>
         <label for='final-version-message'>Message:</label>
         <input id='final-version-message' name='message' value=''>
@@ -434,7 +432,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     ```html
     <p>Status: <span id='status' style="color: red;">Offline</span></p>
     <form id='message-form'>
-      <label for='message'>Nickname:</label>
+      <label for='nickname'>Nickname:</label>
       <input id='nickname' name='nickname' value='Anonymous'>
       <label for='message'>Message:</label>
       <input id='message' name='message' value=''>
@@ -539,7 +537,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
       <p>Status: <span id='non-functional-status' style="color: red;">Offline</span></p>
       <!-- Note: added code to prevent send button from reloading the tutorial -->
       <form id='non-functional-message-form' onsubmit='return false'>
-        <label for='message'>Nickname:</label>
+        <label for='nickname'>Nickname:</label>
         <input id='nickname' type='text' name='nickname' value='Anonymous'>
         <label for='message'>Message:</label>
         <input id='message' type='text' name='message' value=''>
@@ -588,7 +586,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
       <p>Status: <span id='connection-only-status' style="color: red;">Offline</span></p>
       <!-- Note: added code to prevent send button from reloading the tutorial -->
       <form id='connection-only-message-form' onsubmit='return false'>
-        <label for='connection-only-message'>Nickname:</label>
+        <label for='connection-only-nickname'>Nickname:</label>
         <input id='connection-only-nickname' type='text' name='nickname' value='Anonymous'>
         <label for='connection-only-message'>Message:</label>
         <input id='connection-only-message' type='text' name='message' value=''>
@@ -714,7 +712,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
       <p>Status: <span id='first-chat-window-status' style="color: red;">Offline</span></p>
       <!-- Note: added code to prevent send button from reloading the tutorial -->
       <form id='first-chat-window-message-form' onsubmit='return false'>
-        <label for='first-chat-window-message'>Nickname:</label>
+        <label for='first-chat-window-nickname'>Nickname:</label>
         <input id='first-chat-window-nickname' type='text' name='nickname' value='Anonymous'>
         <label for='first-chat-window-message'>Message:</label>
         <input id='first-chat-window-message' type='text' name='message' value=''>
@@ -783,7 +781,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
       <p>Status: <span id='second-chat-window-status' style="color: red;">Offline</span></p>
       <!-- Note: added code to prevent send button from reloading the tutorial -->
       <form id='second-chat-window-message-form' onsubmit='return false'>
-        <label for='second-chat-window-message'>Nickname:</label>
+        <label for='second-chat-window-nickname'>Nickname:</label>
         <input id='second-chat-window-nickname' type='text' name='nickname' value='Anonymous'>
         <label for='second-chat-window-message'>Message:</label>
         <input id='second-chat-window-message' type='text' name='message' value=''>
@@ -978,7 +976,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     <h1>Chat room</h1>
     <p>Status: <span id='status' style="color: red;">Offline</span></p>
     <form id='message-form'>
-      <label for='message'>Nickname:</label>
+      <label for='nickname'>Nickname:</label>
       <input id='nickname' name='nickname' value='Anonymous'>
       <label for='message'>Message:</label>
       <input id='message' name='message' value=''>
