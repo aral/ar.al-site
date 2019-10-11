@@ -528,8 +528,8 @@ button:disabled {
 .installation-instructions pre {
   /* Ensure the copy button doesn’t overlap the code itself. */
   grid-column: 1/2;
-  padding-right: 4.75em;
-  margin-right: -4.75em;
+  padding-right: 5.5em;
+  margin-right: -5.5em;
   margin-top: 0;
   margin-bottom: 0;
 }
