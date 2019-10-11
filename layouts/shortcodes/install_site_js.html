@@ -60,7 +60,7 @@ button:disabled {
   <h3>Linux</h3>
   <div class='code-with-copy-button'>
     {{ highlight "wget -qO- https://sitejs.org/install | bash" "sh" ""}}
-    <button hidden class='copy-to-clipboard' onClick='copyInstallationInstructionsToClipboardFor("linux")'>Copy</button>
+    <button hidden class='copy-to-clipboard' onclick='copyInstallationInstructionsToClipboardFor("linux")'>Copy</button>
   </div>
 </section>
 
@@ -68,7 +68,7 @@ button:disabled {
   <h3>macOS</h3>
   <div class='code-with-copy-button'>
     {{ highlight "curl -s https://sitejs.org/install | bash" "sh" "" }}
-    <button hidden class='copy-to-clipboard' onClick='copyInstallationInstructionsToClipboardFor("mac")'>Copy</button>
+    <button hidden class='copy-to-clipboard' onclick='copyInstallationInstructionsToClipboardFor("mac")'>Copy</button>
   </div>
 </section>
 
@@ -76,15 +76,15 @@ button:disabled {
   <h3>Windows 10</h3>
   <div class='code-with-copy-button'>
     {{ highlight "iex(iwr -UseBasicParsing https://sitejs.org/install.txt).Content" "PowerShell" ""}}
-    <button hidden class='copy-to-clipboard' onClick='copyInstallationInstructionsToClipboardFor("windows")'>Copy</button>
+    <button hidden class='copy-to-clipboard' onclick='copyInstallationInstructionsToClipboardFor("windows")'>Copy</button></pre>
   </div>
 </section>
 
 <p id='links-to-instructions-for-other-platforms' hidden>
   <strong>Instructions for other platforms:</strong>
-  <span id='link-linux'><a onClick='displayInstallationInstructionsFor("linux")'>Linux</a> | </span>
-  <span id='link-mac'><a onClick='displayInstallationInstructionsFor("mac")'>macOS</a><span id='pipe-before-windows'> | </span></span>
-  <a id='link-windows' onClick='displayInstallationInstructionsFor("windows")'>Windows</a>
+  <span id='link-linux'><a onclick='displayInstallationInstructionsFor("linux")'>Linux</a> | </span>
+  <span id='link-mac'><a onclick='displayInstallationInstructionsFor("mac")'>macOS</a><span id='pipe-before-windows'> | </span></span>
+  <a id='link-windows' onclick='displayInstallationInstructionsFor("windows")'>Windows</a>
 </p>
 
 <!-- Progressively enhance the platform-specific installation command widget. -->
@@ -130,7 +130,11 @@ button:disabled {
   }
 
   function copyInstallationInstructionsToClipboardFor(platform) {
-    const installationCommand = document.querySelector(`section#install-${platform} div pre code`)
+    const installationCommand = document.querySelector(`section#install-${platform} code`)
+
+    // Since the chat apps select the nicknames by default, we need
+    // to clear ranges for the copy button to work.
+    window.getSelection().removeAllRanges()
 
     const selectedCode = document.createRange()
     selectedCode.selectNode(installationCommand)
