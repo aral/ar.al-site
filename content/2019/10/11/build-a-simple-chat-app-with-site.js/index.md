@@ -313,18 +313,26 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     Our chat server is complete but does it work? Start the chat server again by running Site.js and let’s return to our JavaScript console and test it. This time, open two browser windows and let’s try and hold a conversation.
 
-    In the JavaScript console of the first browser window, enter:
+    In the JavaScript console of the first browser window, enter the following, one line at a time:
 
     ```js
+    # Create the socket connection
     socket = new WebSocket('wss://localhost/chat')
+
+    # Create the message handler to display incoming messages.
     socket.onmessage = message => console.log(message.data)
     ```
 
-    In the JavaScript console of the second browser window, enter:
+    In the JavaScript console of the second browser window, enter the following, one line at a time:
 
     ```js
+    # Create the socket connection
     socket = new WebSocket('wss://localhost/chat')
+
+    # Create the message handler to display incoming messages.
     socket.onmessage = message => console.log(message.data)
+
+    # Send a message
     socket.send('Can you hear me now?')
     ```
 
