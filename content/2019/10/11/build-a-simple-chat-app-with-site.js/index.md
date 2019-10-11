@@ -637,7 +637,9 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     Now that our app can connect to the chat server and display its connection status, let’s implement the ability to send messages.
 
-    When we send a message, we won’t receive it back ourselves, so one of the things we must do is to add it to our local message list manually. Since we’ll also have to do this when we receive a message from someone else, let’s first create a function we can use for both these purposes. Add this and the following code to the end of your current script:
+    When we send a message, we won’t receive it back ourselves, so one of the things we must do is to add it to our local message list manually. Since we’ll also have to do this when we receive a message from someone else, let’s first create a function we can use for both these purposes.
+
+    Add the following code to the end of your current script:
 
     ```js
     // Helper: display a message object.
@@ -652,7 +654,9 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     }
     ```
 
-    Next, let’s create the handler that will be called when your message form is submitted by pressing the _Send_ button:
+    Next, let’s create the handler that will be called when your message form is submitted by pressing the _Send_ button.
+
+    Add the following code to the end of your script:
 
     ```js
     // Handle message sending.
