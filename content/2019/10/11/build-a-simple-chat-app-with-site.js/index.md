@@ -552,7 +552,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     OK, so let’s add some life to our room, shall we?
 
-    Under your interface code, add a `script` tag and let’s get our status indicator working by making a WebSocket connection to our server, listening for the relevant events, and updating the interface accordingly:
+    Under your interface code, right before the closing `</body>` tag, add a `script` tag and let’s get our status indicator working by making a WebSocket connection to our server, listening for the relevant events, and updating the interface accordingly:
 
     ```js
     <script>
@@ -626,7 +626,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     Now that our app can connect to the chat server and display its connection status, let’s implement the ability to send messages.
 
-    When we send a message, we won’t receive it back ourselves, so one of the things we must do is to add it to our local message list manually. Since we’ll also have to do this when we receive a message from someone else, let’s first create a function we can use for both these purposes:
+    When we send a message, we won’t receive it back ourselves, so one of the things we must do is to add it to our local message list manually. Since we’ll also have to do this when we receive a message from someone else, let’s first create a function we can use for both these purposes. Place the following code after the line that starts with `const element = …` in your script:
 
     ```js
     // Helper: display a message object.
@@ -688,7 +688,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     ### Handle incoming messages
 
-    When a message is received on the socket, the `onmessage` event handler is invoked. Add the following code to the end of your `script` tag to define a message handler that parses the received JSON string (remember, we serialise message objects in JSON format before sending them) and add it to the unordered list in our interface:
+    When a message is received on the socket, the `onmessage` event handler is invoked. Add the following code to the end of your script (just before the closing `</script>` tag) to define a message handler that parses the received JSON string (remember, we serialise message objects in JSON format before sending them) and add it to the unordered list in our interface:
 
     ```js
     // Handle incoming messages.

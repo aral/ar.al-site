@@ -18,6 +18,10 @@ div.emphasised > div.highlight > pre {
   line-height: 1.25em;
 }
 
+h2#spit-and-shine {
+  clear: both;
+}
+
 /* BROWSER WIDGET CONTENT PAGES */
 
 /* 404 error page */
