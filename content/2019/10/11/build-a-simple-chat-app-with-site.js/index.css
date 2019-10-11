@@ -15,7 +15,7 @@ div.emphasised > div.highlight > pre {
 }
 
 .directory-hierarchy pre, .directory-hierarchy code {
-  line-height: 1.25em;
+  line-height: 1em;
 }
 
 h2#spit-and-shine {
