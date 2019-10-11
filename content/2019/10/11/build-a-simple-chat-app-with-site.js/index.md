@@ -116,7 +116,7 @@ css: "./index.css"
 
 ## We need to talk about Site.js
 
-This weekend, I released [Site.js](https://sitejs.org) version 12.7.0 with improvements to [its WebSocket interface](https://source.ind.ie/site.js/app/blob/master/README.md#websocket-wss-routes). Today, I want to take you step-by-step into building and running a basic chat app using Site.js.
+This weekend, I released [Site.js](https://sitejs.org) version 12.7.0 with improvements to [its WebSocket interface](https://source.ind.ie/site.js/app/blob/master/README.md#websocket-wss-routes). Today, I want to take you step-by-step through building and running a basic chat app using Site.js.
 
 It’s much easier than you think, so fire up a terminal window, grab your code editor, and let’s get started!
 
