@@ -6,7 +6,7 @@ css: "./index.css"
 ---
 
 <div id='final-version'>
-  {{< browser location="https://localhost" caption="The chat app we’re going to build together. (It’s live… open another browser window or hit this page from a different device to see it in action!)">}}
+  {{< browser location="https://ar.al/2019/10/11/build-a-simple-chat-app-with-site.js" caption="The chat app we’re going to build together. (It’s live… open another browser window or hit this page from a different device to see it in action!)">}}
     <div class='chat-interface'>
       <h1>Chat room</h1>
       <p>Status: <span id='final-version-status' style="color: red;">Offline</span></p>
@@ -39,7 +39,7 @@ css: "./index.css"
 
       // Is the passed object a valid string?
       function finalVersionIsValidString(s) {
-        return Boolean(s)                // Isn’t null, undefined, '', or 0
+        return Boolean(s)                // Not null, undefined, '', or 0
           && typeof s === 'string'       // and is the correct type
           && s.replace(/\s/g, '') !== '' // and is not just whitespace.
       }
@@ -566,7 +566,8 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
       // Display the state of the connection.
       socket.onopen = _ => {
-        element('#status').innerHTML = '<span style="color: green">Online</span>'
+        element('#status').innerHTML =
+          '<span style="color: green">Online</span>'
       }
 
       socket.onclose = _ => {
@@ -641,7 +642,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     }
     ```
 
-    Next, let’s create the handler that will be called when your message form is submitted by pressing the <button onclick='return false'>Send</button> button:
+    Next, let’s create the handler that will be called when your message form is submitted by pressing the _Send_ button:
 
     ```js
     // Handle message sending.
@@ -858,7 +859,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     ### Manage focus
 
-    While on the topic of focus, if the person types a message and presses <kbd>Return</kbd> to send it, the message text field maintains its focus. This is good as it means that they can send another message without doing any more work. However, if they use the <button onclick='return false'>Send</button> button to send the message, the message text field loses focus. So it’s up to us to set its focus manually.
+    While on the topic of focus, if the person types a message and presses <kbd>Return</kbd> to send it, the message text field maintains its focus. This is good as it means that they can send another message without doing any more work. However, if they use the _Send_ button to send the message, the message text field loses focus. So it’s up to us to set its focus manually.
 
     Under the `element('#message').value = ''` line in the form `submit` event handler, let’s set the focus after we’ve cleared the field:
 
@@ -871,7 +872,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     If you send more messages than will fit in the message list, the latest messages scroll off the screen.
 
     <div id='auto-scroll'>
-    {{< browser location="https://ar.al/2019/10/04/build-a-simple-chat-app-with-site.js/#first-chat-window" caption="Lack of auto scroll means we miss the punchline of the joke (and our species is going to be the punchline of the joke if we don’t get our act together)." >}}
+    {{< browser location="https://ar.al/2019/10/11/build-a-simple-chat-app-with-site.js/#first-chat-window" caption="Lack of auto scroll means we miss the punchline of the joke (and our species is going to be the punchline of the joke if we don’t get our act together)." >}}
     <div class='chat-interface'>
     <h2>Messages</h2>
     <ul class="messages">
@@ -914,12 +915,12 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     Try it out for yourself using [the live example](#first-chat-window), above.
 
-    Let’s fix this by adding a `validateForm()` function we can call to ensure that the form is valid. When the form’s not valid, we’ll disable the <button onclick='return false'>Send</button> button:
+    Let’s fix this by adding a `validateForm()` function we can call to ensure that the form is valid. When the form’s not valid, we’ll disable the _Send_ button:
 
     ```js
     // Is the passed object a valid string?
     function isValidString(s) {
-      return Boolean(s)                // Isn’t null, undefined, '', or 0
+      return Boolean(s)                // Not null, undefined, '', or 0
         && typeof s === 'string'       // and is the correct type
         && s.replace(/\s/g, '') !== '' // and is not just whitespace.
     }
@@ -934,18 +935,18 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     }
     ```
 
-    Now, we need to call our `validateForm()` function at certain times. First, we must call it when the page first loads so that the form is initially validated. Since there is no text in the message field, our interface will thus start out with the <button onclick='return false'>Send</button> button disabled. This is what we want.
+    Now, we need to call our `validateForm()` function at certain times. First, we must call it when the page first loads so that the form is initially validated. Since there is no text in the message field, our interface will thus start out with the _Send_ button disabled. This is what we want.
 
-    Next, we should validate the form after a message is sent. Why? Because we clear the old message field and so we want the <button onclick='return false'>Send</button> button to be disabled again.
+    Next, we should validate the form after a message is sent. Why? Because we clear the old message field and so we want the _Send_ button to be disabled again.
 
-    Finally, we must validate the form every time the text in the `nickname` and `message` text fields changes so that we can enable the <button onclick='return false'>Send</button> button when there’s text in both of them:
+    Finally, we must validate the form every time the text in the `nickname` and `message` text fields changes so that we can enable the _Send_ button when there’s text in both of them:
 
     ```js
     element('#nickname').addEventListener('input', validateForm)
     element('#message').addEventListener('input', validateForm)
     ```
 
-    This is the bare minimum of validation that we can get away with. Here’s the final listing of the front-end code with the above improvements highlighted:
+    This is the bare minimum of validation that we can get away with. Here’s all the front-end code we wrote together with the above improvements highlighted:
 
     <div class='final-code-listing'>
     {{< highlight html>}}<!doctype html>
@@ -954,22 +955,68 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Basic chat app with Site.js</title>
-  <style>
-    form {
-      background: #eee;
-      display: grid;
-      grid-template-columns: [labels] auto [controls] 1fr;
-      grid-gap: 0.5em;
-      min-width: 100px;
-      max-width: 400px;
-      padding: 0.75em;
-    }
-    form > label { grid-column: labels; }
-    form > input, form > button {
-      grid-column: controls;
-      min-width: 6em;
-      padding: 0.5em;
-    }
+    <style>
+      * { box-sizing: border-box; }
+
+      body {
+        font-family: sans-serif;
+        padding: 1em;
+      }
+
+      h1 { margin-top: 0; }
+
+      form {
+        background: #eee;
+        display: grid;
+        grid-template-columns: [labels] auto [controls] 1fr;
+        align-items: center;
+        grid-row-gap: 0.5em;
+        grid-column-gap: 0.5em;
+        padding: 0.75em;
+      }
+
+      form > label { grid-column: labels; }
+
+      form > input, form > button {
+        grid-column: controls;
+        min-width: 6em;
+        max-width: 300px;
+        padding: 0.5em;
+        font-size: 1em;
+      }
+
+      button {
+        text-align: center;
+        cursor: pointer;
+        font-size:16px;
+        color: white;
+        border-radius: 4px;
+        background-color:#466B6A;
+        border: none;
+        padding: 0.75em;
+        padding-top: 0.25em;
+        padding-bottom: 0.25em;
+        transition: color 0.5s;
+        transition: background-color 0.5s;
+      }
+
+      button:hover {
+        color: black;
+        background-color: #92AAA4;
+      }
+
+      button:disabled {
+        color: #999;
+        background-color: #ccc;
+      }
+
+      #messages {
+        height: 10em;
+        overflow-y: scroll;
+        background-color: #eee;
+        padding: 0.75em;
+        list-style: none;
+      }
     </style>
   </head>
   <body>
@@ -1004,7 +1051,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 {{</ highlight >}}<div class='emphasised'>{{< highlight js >}}
       // Is the passed object a valid string?
       function isValidString(s) {
-        return Boolean(s)                // Isn’t null, undefined, '', or 0
+        return Boolean(s)                // Not null, undefined, '', or 0
           && typeof s === 'string'       // and is the correct type
           && s.replace(/\s/g, '') !== '' // and is not just whitespace.
       }
@@ -1102,7 +1149,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     Run the above code and check out [the live examples](#first-chat-window) above and you should see your empty message display there:
 
     <div id='server-side-validation-failure'>
-    {{< browser location="https://ar.al/2019/10/04/build-a-simple-chat-app-with-site.js/#first-chat-window" >}}
+    {{< browser location="https://ar.al/2019/10/11/build-a-simple-chat-app-with-site.js/#first-chat-window" >}}
     <div class='chat-interface'>
     <h2>Messages</h2>
     <ul class="messages">
@@ -1123,7 +1170,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     ```js
     // Is the passed object a valid string?
     function isValidString(s) {
-      return Boolean(s)                // Isn’t null, undefined, '', or 0
+      return Boolean(s)                // Not null, undefined, '', or 0
         && typeof s === 'string'       // and is the correct type
         && s.replace(/\s/g, '') !== '' // and is not just whitespace.
     }
