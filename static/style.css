@@ -481,3 +481,59 @@ footer {
     height: 10rem;
   }
 }
+
+/*
+  Install Site.js widget.
+*/
+
+button {
+  text-align: center;
+  cursor: pointer;
+  font-size:16px;
+  color: white;
+  border-radius: 4px;
+  background-color:#466B6A;
+  border: none;
+  padding: 0.75em;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  transition: color 0.5s;
+  transition: background-color 0.5s;
+}
+
+button:hover {
+  color: black;
+  background-color: #92AAA4;
+}
+
+button:disabled {
+  color: #999;
+  background-color: #ccc !important;
+}
+
+.code-with-copy-button {
+  display: grid;
+  grid-template-columns: 1fr [button] auto;
+  align-items: center;
+}
+
+.code-with-copy-button code {
+  padding-right: 1em;
+}
+
+.installation-instructions button {
+  grid-column: button;
+}
+
+.installation-instructions pre {
+  /* Ensure the copy button doesn’t overlap the code itself. */
+  grid-column: 1/2;
+  padding-right: 4.75em;
+  margin-right: -4.75em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#links-to-instructions-for-other-platforms a {
+  cursor: pointer;
+}
