@@ -293,7 +293,14 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     ### You have access to very basic, ephemeral statistics
 
-    If you look at the terminal window, you will see an address you can hit to see basic statistics about your site. This is a cryptographically secure address that others cannot guess if you want to keep your statistics private. If you want to share them with the world, just share the URL. Also, the statistics are not stored anywhere and will reset when you restart the server. They’re there for you to get a better idea of how your site is being used and to see if there are any errors like missing pages, not to spy on people. 
+    If you look at the terminal window, you will see an address you can hit in your browser to see basic statistics about your site.
+
+    {{< terminal title="~/demo" caption="Your statistics URL is cryptographically secure." >}}📊 For statistics, see https://localhost/909b721d634e89c44754cc036fb379e1{{</ terminal >}}
+
+    This is [a cryptographically secure address](https://source.ind.ie/site.js/app/blob/master/lib/Stats.js#L48) that others cannot guess. So your statistics are initially private. If you want to share them with the world, just share the URL.
+
+    Also, these statistics are not stored anywhere and will reset when you restart the server (but your statistics URL will stay the same). They are there for you to discover how your site is being used so you can improve it and to see if there are any errors like missing pages, not to let you spy on people.
+
 
   3. ## Cha-cha-cha changes!
 
