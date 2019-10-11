@@ -544,8 +544,8 @@ button:disabled {
   display: block;
   background-color: #AFE1E8;
   color: #154652;
-  margin-left: -2rem;
-  margin-right: -2rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
   padding: 2rem;
 }
 
