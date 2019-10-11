@@ -288,6 +288,8 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     So we’ve just made a successful connection to the `/chat` room. Now we need the server to listen for messages sent from connected clients and broadcast them to every other client in the same room.
 
+    When you’re ready to move on, press <kbd>Ctrl</kbd> <kbd>C</kbd> to stop the Site.js server.
+
     ### Broadly speaking
 
     Modify the code in `chat.js` so that it matches the listing, below. The changed section is highlighted:
@@ -309,7 +311,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
   5.  ## Can you hear me now?
 
-    Our chat server is complete but does it work? Let’s return to our JavaScript console and test it. This time, open two browser windows and let’s try and hold a conversation.
+    Our chat server is complete but does it work? Start the chat server again by running Site.js and let’s return to our JavaScript console and test it. This time, open two browser windows and let’s try and hold a conversation.
 
     In the JavaScript console of the first browser window, enter:
 
@@ -354,6 +356,8 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
       })
     }
     ```
+
+    When you’re ready to move on, press <kbd>Ctrl</kbd> <kbd>C</kbd> to stop the Site.js server.
 
   6. ## Some housekeeping
 
@@ -1235,11 +1239,17 @@ module.exports = function (client, request) {
 }{{</ highlight >}}
     </div>
 
+    Remember that you have to restart Site.js for server-side changes to dynamic routes to take effect.
+
+    ### Congratulations, you did it!
+
+    Well, you were promised a basic chat app in Site.js and that’s exactly what we’ve just built.
+
+    Along the way, you also learned the basics of Site.js and how to use it to develop and serve not just [WebSocket routes](https://source.ind.ie/site.js/app/blob/master/README.md#websocket-wss-routes) but [regular HTTPS routes](https://source.ind.ie/site.js/app/blob/master/README.md#get-only-simplest-approach) also using [DotJS](https://source.ind.ie/site.js/app/blob/master/README.md#dotjs).
+
   9. ## Going further
 
-    Well, you were promised a basic chat app in Site.js and that’s exactly what we’ve just built. Along the way, you also learned the basics of Site.js and how to use it to develop and serve not just [WebSocket routes](https://source.ind.ie/site.js/app/blob/master/README.md#websocket-wss-routes) but [regular HTTPS routes](https://source.ind.ie/site.js/app/blob/master/README.md#get-only-simplest-approach) also using [DotJS](https://source.ind.ie/site.js/app/blob/master/README.md#dotjs).
-
-    But that’s just the tip of the iceberg when it comes to what you can do with Site.js. As I mentioned during the tutorial, anything you can do with Node.js, you can do with Site.js. What you get in addition is a zero-configuration secure static and dynamic web server.
+    This tutorial just scratches the tip of the iceberg when it comes to what you can do with Site.js. As I mentioned earlier, anything you can do with Node.js, you can do with Site.js. What you get in addition is a zero-configuration secure static and dynamic web server.
 
     So exactly what else can you do? Here are some ideas to explore on your own:
 
