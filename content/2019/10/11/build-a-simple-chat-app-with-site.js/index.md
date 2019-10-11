@@ -291,7 +291,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     Once you’re done testing your shiny new site, press <kbd>Ctrl</kbd> <kbd>C</kbd> to stop the Site.js server.
 
-    ### You have access to very basic, ephemeral statistics
+    ### You have access to very basic, ephemeral statistics.
 
     If you look at the terminal window, you will see an address you can hit in your browser to see basic statistics about your site.
 
