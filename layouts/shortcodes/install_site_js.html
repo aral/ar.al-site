@@ -26,21 +26,16 @@ button:disabled {
 
 .code-with-copy-button {
   display: grid;
-  grid-template-columns: 1fr 3em;
-  /* grid-column-gap: 1em; */
+  grid-template-columns: 1fr [button] auto;
   align-items: center;
-  background-color: red;
 }
 
 .installation-instructions button {
-  /* float: right; */
-  /* margin-top: -3.1em; */
-  grid-column: 2/3;
+  grid-column: button;
 }
 
 .installation-instructions pre {
   /* Ensure the copy button doesn’t overlap the code itself. */
-  /* margin-right: 5em; */
   grid-column: 1/2;
   padding-right: 4.75em;
   margin-right: -4.75em;

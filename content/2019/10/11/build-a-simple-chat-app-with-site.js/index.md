@@ -301,7 +301,6 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     Also, these statistics are not stored anywhere and will reset when you restart the server (but your statistics URL will stay the same). They are there for you to discover how your site is being used so you can improve it and to see if there are any errors like missing pages, not to let you spy on people.
 
-
   3. ## Cha-cha-cha changes!
 
     Static sites are all well and good but you were promised a chat app and you can’t build that with a fully static site. So let’s take a quick look at how we can create dynamic apps with Site.js.
@@ -309,8 +308,6 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     I mentioned earlier that Site.js is zero-configuration. This means that it has certain conventions that it expects you to adhere to. For example, if you want to create dynamic routes in your web app, you must place them in a folder called `.dynamic`.
 
     Before we move onto creating the chat functionality, let’s create the equivalent of our static “hello, world!” example but with some very basic dynamic functionality to display the current date and time.
-
-    {{< note_for_non_coders >}}
 
     ### A timely example
 
