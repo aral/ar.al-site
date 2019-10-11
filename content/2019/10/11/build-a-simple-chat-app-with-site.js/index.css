@@ -97,7 +97,7 @@ form > input, form > button {
 
 /* On narrow viewports, stack the browser windows
     vertically instead of horizontally. */
-@media screen and (max-width: 353px) {
+@media screen and (max-width: 620px) {
   #first-chat-window, #second-chat-window {
     float: none;
     width: 100%;
