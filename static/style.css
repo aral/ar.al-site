@@ -537,3 +537,18 @@ button:disabled {
 #links-to-instructions-for-other-platforms a {
   cursor: pointer;
 }
+
+/* Like this? Fund us! shortcode */
+
+#fund-us {
+  display: block;
+  background-color: #AFE1E8;
+  color: #154652;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  padding: 2rem;
+}
+
+/* Control the gutter around the box with padding alone. */
+#fund-us > h2 { margin-top: 0; }
+#fund-us > p:last-of-type { margin-bottom: 0; }
