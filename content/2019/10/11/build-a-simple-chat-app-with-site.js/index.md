@@ -365,8 +365,6 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     }
     ```
 
-    When you’re ready to move on, press <kbd>Ctrl</kbd> <kbd>C</kbd> to stop the Site.js server.
-
   6. ## Some housekeeping
 
     If you remember, towards the start of this tutorial we created a dynamic HTTPS route that shows the current date and time. With Site.js serving the `demo` folder, try to access the `/date` route now.
