@@ -895,6 +895,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     That’s easy enough to achieve by replacing the `displayMessage()` function we wrote earlier with the following one. The line of code that does all the work is highlighted, below:
 
+    <div id='display-message-update'>
     {{< highlight js >}}
     function displayMessage (message) {
       // Prepare the message HTML.
@@ -907,6 +908,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
       messageList.innerHTML += messageHTML{{</ highlight >}}<div class='emphasised'>{{< highlight js >}}
       messageList.scrollTop = messageList.scrollHeight{{</ highlight >}}</div>{{< highlight js >}}
     }{{</ highlight >}}
+    </div>
 
     ### Client-side validation
 
