@@ -1,6 +1,6 @@
 ---
 title: "Build a simple chat app with Site.js"
-date: 2019-10-10T13:00:42+01:00
+date: 2019-10-11T12:00:42+01:00
 draft: false
 ---
 
@@ -977,7 +977,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     ### Manage focus
 
-    While on the topic of focus, if the person types a message and presses <keyb>Return</keyb> to send it, the message text field maintains its focus. This is good as it means that they can send another message without doing any more work. However, if they use the <button onclick='return false'>Send</button> button to send the message, the message text field loses focus. So it’s up to us to set its focus manually.
+    While on the topic of focus, if the person types a message and presses <kbd>Return</kbd> to send it, the message text field maintains its focus. This is good as it means that they can send another message without doing any more work. However, if they use the <button onclick='return false'>Send</button> button to send the message, the message text field loses focus. So it’s up to us to set its focus manually.
 
     Under the `element('#message').value = ''` line in the form `submit` event handler, let’s set the focus after we’ve cleared the field:
 
@@ -993,7 +993,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     {{< browser location="https://ar.al/2019/10/04/build-a-simple-chat-app-with-site.js/#first-chat-window" caption="Lack of auto scroll means we miss the punchline of the joke (and our species is going to be the punchline of the joke if we don’t get our act together)." >}}
     <div class='chat-interface'>
     <h2>Messages</h2>
-    <ul class="messages"">
+    <ul class="messages">
       <li><strong>Aral: </strong>Hey, so I have a joke for you…</li>
       <li><strong>Laura: </strong>Oh, yeah?</li>
       <li><strong>Aral: </strong>Knock, knock!</li>
@@ -1009,8 +1009,8 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     This is less than ideal.
 
     Instead, we want the message list to automatically scroll to the end every time a new message arrives so that you can read it without additional effort.
-    
-    That’s easy enough to achieve by replacing the `displayMessage()` function we wrote earlier with the following one. The line of code that does all the work is highlighted, below: 
+
+    That’s easy enough to achieve by replacing the `displayMessage()` function we wrote earlier with the following one. The line of code that does all the work is highlighted, below:
 
     {{< highlight js >}}
     function displayMessage (message) {
@@ -1028,7 +1028,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     ### Client-side validation
 
     Things are feeling a bit nicer now but the elephant in the room (his name is George!) is that we’re not performing any input validation. Someone could easily submit a message with no nickname and no message text and we would dutifully fan it out to the other people in the room leading to undue heartache and pain.
-    
+
     Try it out for yourself using [the live example](#first-chat-window), above.
 
     Let’s fix this by adding a `validateForm()` function we can call to ensure that the form is valid. When the form’s not valid, we’ll disable the <button onclick='return false'>Send</button> button:
@@ -1222,7 +1222,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     {{< browser location="https://ar.al/2019/10/04/build-a-simple-chat-app-with-site.js/#first-chat-window" >}}
     <div class='chat-interface'>
     <h2>Messages</h2>
-    <ul class="messages" id="first-chat-window-messages">
+    <ul class="messages">
       <li><strong>:</strong></li>
     </ul>
     </div>
@@ -1392,7 +1392,7 @@ When we examine [the social impacts of this toxic business model](https://ar.al/
 
 If we want to own and control the digital aspects of ourselves that form part of who we are as people, we must turn the web on its head. We must flip it upside down.
 
-Ultimately, we must build [a web where each one of us has their own place](](https://ar.al/2019/02/13/on-the-general-architecture-of-the-peer-web/)). That’s [what we’re working towards](https://small-tech.org/research-and-development/) at [Small Technology Foundation](https://small-tech.org) and Site.js is the foundations of our efforts.
+Ultimately, we must build [a web where each one of us has their own place](https://ar.al/2019/02/13/on-the-general-architecture-of-the-peer-web/)). That’s [what we’re working towards](https://small-tech.org/research-and-development/) at [Small Technology Foundation](https://small-tech.org) and Site.js is the foundations of our efforts.
 
 I hope you find Site.js useful – even if you don’t care about its philosophical or ethical underpinnings – simply on the merits of what you, as a developer, can do with it and how easy it is to use.
 
