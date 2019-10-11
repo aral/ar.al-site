@@ -289,8 +289,6 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     Site.js uses the excellent [mkcert](https://github.com/FiloSottile/mkcert) tool to seamlessly create a certificate authority on your local machine and issue you a valid TLS certificate the first time you run a server at localhost.[^2]
 
-    Once you’re done testing your shiny new site, press <kbd>Ctrl</kbd> <kbd>C</kbd> to stop the Site.js server.
-
     ### You have access to very basic, ephemeral statistics.
 
     If you look at the terminal window, you will see an address you can hit in your browser to see basic statistics about your site.
@@ -300,6 +298,8 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     This is [a cryptographically secure address](https://source.ind.ie/site.js/app/blob/master/lib/Stats.js#L48) that others cannot guess. So your statistics are initially private. If you want to share them with the world, just share the URL.
 
     Also, these statistics are not stored anywhere and will reset when you restart the server (but your statistics URL will stay the same). They are there for you to discover how your site is being used so you can improve it and to see if there are any errors like missing pages, not to let you spy on people.
+
+    Once you’re done testing your shiny new site, press <kbd>Ctrl</kbd> <kbd>C</kbd> to stop the Site.js server.
 
   3. ## Cha-cha-cha changes!
 
