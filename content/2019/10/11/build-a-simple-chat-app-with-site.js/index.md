@@ -687,7 +687,9 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     Additionally, we clear the message box to make it easier for you to type your next message and we use our new `displayMesssage()` function to display the message we’ve sent locally so you can have a full timeline of messages, including your own.
 
-    Restart your Site.js server and reload the page and you should now we able to send messages. To test that it is working, take a look at the Site.js console output in your terminal window and you should see the following message:
+    Reload the page and you should now we able to send messages. Note that updates to static routes like our _index.html_ do not require a server restart. Only changes to dynamic routes do.
+
+    To test that it is working, take a look at the Site.js console output in your terminal window and you should see the following message:
 
     {{< terminal title="~/demo" caption="A message to no one." >}}/chat message broadcast to 0 recipients{{</ terminal >}}
 
@@ -699,7 +701,9 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     {{< terminal title="~/demo" caption="A message to someone." >}}/chat message broadcast to 1 recipient{{</ terminal >}}
 
-    Well that’s progress. So our messages are being broadcast successfully but we’re not doing anything to process them on the web interface yet. Let’s implement that next.
+    Well that’s progress. So our messages are being broadcast successfully but we’re not doing anything to process them on the web interface yet.
+
+    Let’s implement that next.
 
     ### Handle incoming messages
 
