@@ -291,6 +291,10 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     Once you’re done testing your shiny new site, press <kbd>Ctrl</kbd> <kbd>C</kbd> to stop the Site.js server.
 
+    ### You have access to very basic, ephemeral statistics
+
+    If you look at the terminal window, you will see an address you can hit to see basic statistics about your site. This is a cryptographically secure address that others cannot guess if you want to keep your statistics private. If you want to share them with the world, just share the URL. Also, the statistics are not stored anywhere and will reset when you restart the server. They’re there for you to get a better idea of how your site is being used and to see if there are any errors like missing pages, not to spy on people. 
+
   3. ## Cha-cha-cha changes!
 
     Static sites are all well and good but you were promised a chat app and you can’t build that with a fully static site. So let’s take a quick look at how we can create dynamic apps with Site.js.
@@ -1250,7 +1254,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
       return isValidString(m.nickname) && isValidString(m.text)
     }
     ```
-    
+
     Then, at the top of the `message` handler, let’s call the `isValidMessage()` function with a parsed instance of the serialised message and abort broadcasting it if the message isn’t valid:
 
     ```js
