@@ -229,7 +229,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     DotJS maps JavaScript modules defined in `.js` files (see what I did there?) to web routes on your web site in a manner that will be familiar to anyone who has ever used PHP.
 
     In our example, DotJS knows that we want the file defined at `.dynamic/date.js` to be served at the address `https://localhost/date`.
-    
+
     If we’d wanted our dynamic page to be available from `https://localhost/date-and-time` instead, we would have defined our route in `.dynamic/date-and-time.js`.[^3]
 
     Using DotJS, all you have to do is write the logic for your web app. Everything else, including creating a secure HTTPS and WebSocket server for you and registering your routes, etc., is handled for you by Site.js.
@@ -364,6 +364,8 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
       })
     }
     ```
+
+    Restart Site.js so that it serves this latest version of your chat server.
 
   6. ## Some housekeeping
 
