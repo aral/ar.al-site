@@ -703,7 +703,9 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     ### Handle incoming messages
 
-    When a message is received on the socket, the `onmessage` event handler is invoked. Add the following code to the end of your script (just before the closing `</script>` tag) to define a message handler that parses the received JSON string (remember, we serialise message objects in JSON format before sending them) and add it to the unordered list in our interface:
+    When a message is received on the socket, the `onmessage` event handler is invoked. We need to define this handler to parse the received JSON string and add it to the unordered list in our interface (remember, we serialise message objects in JSON format before sending them so we need to deserialise them when we receive them).
+
+    Add the following code to the end of your script, just before the closing `</script>` tag:
 
     ```js
     // Handle incoming messages.
