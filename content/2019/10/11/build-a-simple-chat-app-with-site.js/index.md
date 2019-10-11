@@ -307,7 +307,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     What we’re doing here is creating an event handler that listens for `message` events and then uses the `broadcast` method that all DotJS WebSocket routes have to fan the message out to the other clients connected to the same room.
 
-    An important thing to note is that you should always use an `function` expression instead of an arrow function expression when creating your WebSocket routes to ensure that you can access methods like `broadcast()` using the `this` reference[^6].
+    An important thing to note is that you should always use an anonymous function expression instead of an arrow function expression when creating your WebSocket routes to ensure that you can access methods like `broadcast()` using the `this` reference[^6].
 
   5.  ## Can you hear me now?
 
