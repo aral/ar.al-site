@@ -931,7 +931,9 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     Try it out for yourself using [the live example](#first-chat-window), above.
 
-    Let’s fix this by adding a `validateForm()` function we can call to ensure that the form is valid. When the form’s not valid, we’ll disable the _Send_ button:
+    Let’s fix this by adding some client-side validation to our example. There is a listing of all of the code so far, including the instructions below, at the end of the section. Refer to that if you get lost in where to add the various code snippets below.
+
+    First, let’s create a `validateForm()` function we can call to ensure that the form is valid. That, in turn, will make use of a function called `isValidString()` that validates strings. If the form’s not valid, we’ll disable the _Send_ button:
 
     ```js
     // Is the passed object a valid string?
@@ -1181,7 +1183,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     In a real-world chat app we would have to implement a host of features to prevent abuse (like rate limiting, blacklists, blocking, etc.). That’s outside the scope of this basic tutorial but let’s at least add some basic validation to our chat server.
 
-    Add the following helper functions to the bottom of your chat server code:
+    Add the following helper functions[^10] to the bottom of your chat server code:
 
     ```js
     // Is the passed object a valid string?
@@ -1267,7 +1269,7 @@ module.exports = function (client, request) {
 
     ### Test your app from any device
 
-    So far, you’ve only run servers at `https://localhost` and, behind the scenes, Site.js ensured that you didn’t get certificate warnings when you did. But what if you want to test your chat app from your phone or to have others test it with you? You could, of course, deploy it to a public Virtual Private Server, which is the topic of [the next section](#deploy-to-production), but you can also run your server at your hostname using [the @hostname option](https://source.ind.ie/site.js/app/blob/master/README.md#testing-servers-hostname)[^10] and provide outside access to your development machine using a tool like [ngrok](https://ngrok.com/):
+    So far, you’ve only run servers at `https://localhost` and, behind the scenes, Site.js ensured that you didn’t get certificate warnings when you did. But what if you want to test your chat app from your phone or to have others test it with you? You could, of course, deploy it to a public Virtual Private Server, which is the topic of [the next section](#deploy-to-production), but you can also run your server at your hostname using [the @hostname option](https://source.ind.ie/site.js/app/blob/master/README.md#testing-servers-hostname)[^11] and provide outside access to your development machine using a tool like [ngrok](https://ngrok.com/):
 
     ```shell
     # Start Site.js at your hostname instead of at localhost.
@@ -1277,7 +1279,7 @@ module.exports = function (client, request) {
     ngrok start --all
     ```
 
-    Having done this, you can then hit `https://dev.my-domain.org` from any device anywhere and access your site from your development machine[^11]. And, again, Site.js will work to seamless provision Let’s Encrypt certificates for you so you will not get any certificate errors.
+    Having done this, you can then hit `https://dev.my-domain.org` from any device anywhere and access your site from your development machine[^12]. And, again, Site.js will work to seamless provision Let’s Encrypt certificates for you so you will not get any certificate errors.
 
     ### Deploy to production
 
@@ -1299,7 +1301,7 @@ module.exports = function (client, request) {
 
     Simple!
 
-    On Linux and macOS[^12], you can use Site.js’s `sync-to` command to deploy your site like so:
+    On Linux and macOS[^13], you can use Site.js’s `sync-to` command to deploy your site like so:
 
     ```shell
     site --sync-to=my-domain.org
@@ -1382,9 +1384,11 @@ If you have any questions about this tutorial or Site.js in general, please feel
 
 [^9]: The examples on this page are live and connect to the instances of the app I have running at https://ar.al/chat (corresponding to the initial example, without server-side validation) and https://ar.al/chat-final-version. Needless to say, this site is served by Site.js.
 
-[^10]: On Windows (because Windows), you have to add quotes around the `@hostname` option, so the command becomes `site "@hostname"`. Blame Bill Gates.
+[^10]: You might have noticed that the `isValidString()` function is the same as the one we used to implement the validation on our front-end. Since both our client-side and server-side code in Site.js is JavaScript (remember, it uses Node.js under the hood), we can pull that function into its own module and re-use it in both places.
 
-[^11]: To use ngrok with your own domain name, you will to subscribe for [a Pro account](https://ngrok.com/pricing) from ngrok (at least this is what Laura and I use at [Small Technology Foundation](https://small-tech.org)) and [set up a subdomain on your own domain name per their instructions](https://ngrok.com/docs#http-custom-domains).
+[^11]: On Windows (because Windows), you have to add quotes around the `@hostname` option, so the command becomes `site "@hostname"`. Blame Bill Gates.
 
-[^12]: On Windows (because Windows), the sync function is not available as there’s currently no free and open rsync implementation that we can use like we can on Linux and macOS.
+[^12]: To use ngrok with your own domain name, you will to subscribe for [a Pro account](https://ngrok.com/pricing) from ngrok (at least this is what Laura and I use at [Small Technology Foundation](https://small-tech.org)) and [set up a subdomain on your own domain name per their instructions](https://ngrok.com/docs#http-custom-domains).
+
+[^13]: On Windows (because Windows), the sync function is not available as there’s currently no free and open rsync implementation that we can use like we can on Linux and macOS.
 
