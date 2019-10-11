@@ -9,6 +9,9 @@
 <link rel='stylesheet' href='/css/terminal.css'>
 <link rel='stylesheet' href='/style.css'>
 
+<!-- Custom style sheets injected by posts (if any) -->
+{{ with .Params.css }}<link rel='stylesheet' href='{{ . }} '>{{ end }}
+
 <!-- RSS feed -->
 <link rel="alternate" type="application/rss+xml" href="https://ar.al/index.xml" />
 

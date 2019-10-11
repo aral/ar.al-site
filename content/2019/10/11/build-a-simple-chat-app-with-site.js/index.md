@@ -2,135 +2,10 @@
 title: "Build a simple chat app with Site.js"
 date: 2019-10-11T12:00:42+01:00
 draft: false
+css: "./index.css"
 ---
 
 <!-- The final version of the chat app. -->
-
-<style>
-  /* Code specialisations. */
-
-  .final-code-listing code {
-    font-size: 0.78rem;
-  }
-
-  div.highlight > pre {
-    margin-bottom: 0;
-    margin-top: 0;
-  }
-
-  div.emphasised > div.highlight > pre {
-    border: 2px solid slategray;
-    background-color: lightblue !important;
-  }
-
-  .directory-hierarchy pre, .directory-hierarchy code {
-    line-height: 1.25em;
-  }
-
-  /* BROWSER WIDGET CONTENT PAGES */
-
-  /* 404 error page */
-  #not-found-error {
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    vertical-align: top;
-    margin-top: 0;
-  }
-
-  #not-found-error h1 {
-    font-size: 500%;
-    color: black;
-    text-align:center;
-    line-height: 0;
-  }
-
-  #not-found-error p {
-    font-size: 100%;
-    text-align: center;
-    padding-left: 2vw;
-    padding-right: 2vw;
-    margin-bottom: 5%;
-  }
-
-  .not-found-path {
-    color: grey;
-  }
-
-  /* CHAT INTERFACES */
-
-  /* Chat interface: general styles shared by all
-    versions of the app on the page. */
-
-  form {
-    display: grid;
-    grid-template-columns: [labels] auto [controls] 1fr;
-    grid-gap: 0.5em;
-    background: #eee;
-    padding: 0.75em;
-  }
-
-  form > label { grid-column: labels; }
-
-  form > input, form > button {
-    min-width: 6em;
-    max-width: 300px;
-    grid-column: controls;
-    padding: 0.5em;
-  }
-
-  .chat-interface form { margin-bottom: 1.5em; }
-  .chat-interface h1 { font-size: 1.5em; line-height: 1 }
-  .chat-interface h2 { font-size: 1em; }
-  .chat-interface ul { margin-top: 0.5em; }
-  .chat-interface li { font-size: 0.75em; line-height: 1.5 }
-  .chat-interface label, .chat-interface p {font-size: 0.75em}
-
-  /* TWO CHAT APPS DISPLAYED TOGETHER */
-
-  #first-chat-window, #second-chat-window {
-    width: 47.5%;
-  }
-
-  #first-chat-window {
-    float: left;
-  }
-
-  #second-chat-window {
-    float: right;
-  }
-
-  /* On narrow viewports, stack the browser windows
-      vertically instead of horizontally. */
-  @media screen and (max-width: 353px) {
-    #first-chat-window, #second-chat-window {
-      float: none;
-      width: 100%;
-    }
-  }
-
-  /* Chat app embed: final version */
-
-  .messages  {
-    height: 7em;
-    overflow-y: scroll;
-    background-color: #eee;
-    padding: 0.75em;
-    margin-bottom: 0.5em;
-    list-style: none;
-  }
-
-  /* Server-side validation failure example */
-  #server-side-validation-failure .messages {
-    height: 3em;
-  }
-
-  /* Browser widgets. */
-
-  .browser-content p {
-    font-size: 0.75em;
-  }
-</style>
 
 <div id='final-version'>
   {{< browser location="https://localhost" caption="The chat app we’re going to build together. (It’s live… open another browser window or hit this page from a different device to see it in action!)">}}
@@ -1113,7 +988,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 {{</ highlight >}}{{< highlight js >}}
       // Shorthand for basic DOM lookup via CSS selectors.
       const element = document.querySelector.bind(document)
-      
+
       // Helper: display a message object.
       function displayMessage (message) {
         // Prepare the message HTML.
