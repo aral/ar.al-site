@@ -290,18 +290,18 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     ### Broadly speaking
 
-    Modify the code in `chat.js` so that it matches the listing below:
+    Modify the code in `chat.js` so that it matches the listing, below. The changed section is highlighted:
 
-    ```js
+    <div id='broadly-speaking-example'>
+    {{< highlight js >}}
     module.exports = function (client, request) {
       client.room = this.setRoom(request)
-      console.log(`New client connected to ${client.room}`)
-
+      console.log(`New client connected to ${client.room}`){{< /highlight>}}<div class='emphasised'>{{< highlight js>}}
       client.on('message', message => {
         this.broadcast(client, message)
-      })
-    }
-    ```
+      }){{</ highlight >}}</div>{{< highlight js >}}
+    }{{</ highlight >}}
+    </div>
 
     What we’re doing here is creating an event handler that listens for `message` events and then uses the `broadcast` method that all DotJS WebSocket routes have to fan the message out to the other clients connected to the same room.
 
@@ -892,7 +892,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     Instead, we want the message list to automatically scroll to the end every time a new message arrives so that you can read it without additional effort.
 
-    That’s easy enough to achieve by replacing the `displayMessage()` function we wrote earlier with the following one. The line of code that does all the work is highlighted, below:
+    That’s easy enough to achieve by updating the `displayMessage()` function we wrote earlier to the following one. The changed section is highlighted, below:
 
     <div id='display-message-update'>
     {{< highlight js >}}
@@ -900,11 +900,11 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
       // Prepare the message HTML.
       const nickname = `<strong>${message.nickname}:</strong>`
       const text = message.text
-      const messageHTML = `<li>${nickname} ${text}</li>`
+      const messageHTML = `<li>${nickname} ${text}</li>`{{</ highlight >}}<div class='emphasised'>{{< highlight js >}}
 
       // Update the message list.
       const messageList = element('#messages')
-      messageList.innerHTML += messageHTML{{</ highlight >}}<div class='emphasised'>{{< highlight js >}}
+      messageList.innerHTML += messageHTML
       messageList.scrollTop = messageList.scrollHeight{{</ highlight >}}</div>{{< highlight js >}}
     }{{</ highlight >}}
     </div>
@@ -1146,7 +1146,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     socket.send(JSON.stringify({nickname: '', text: ''}))
     ```
 
-    Run the above code and check out [the live examples](#first-chat-window) above and you should see your empty message display there:
+    Enter the above code into the JavaScript console of your browser, one line at a time, and check out [the side-by-side browsers](#first-chat-window) above. You should see your empty message display there:
 
     <div id='server-side-validation-failure'>
     {{< browser location="https://ar.al/2019/10/11/build-a-simple-chat-app-with-site.js/#first-chat-window" >}}
@@ -1191,9 +1191,9 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
     }
     ```
 
-    The live example at the very top of this tutorial connects to the final version of the chat server that contains our server-side validation.
+    [The live example at the very top of this tutorial](#final-version) connects to the final version of the chat server that contains our server-side validation.
 
-    You can test that it works by running the following code from a JavaScript console in your browser and verifying that your message does not show up there:
+    You can test that it works by entering the following code into the JavaScript console in your browser, one line at a time, and verifying that your message does not show up:
 
     ```js
     // And I would have gotten away with it too,
@@ -1269,11 +1269,11 @@ module.exports = function (client, request) {
 
     That will set up your server as a service that automatically restarts should it crash or should you reboot the server.
 
-    And, just like before, Site.js will automatically provision your Let’s Encrypt certificates the first time you hit your site via your domain name. All you have to do ensure is that your `hostname` is set properly on your server.
+    And, just like before, Site.js will automatically provision your Let’s Encrypt certificates the first time you hit your site via your domain name. All you have to do ensure is that your `hostname` is set properly on your server. To check and set your hostname, use the `hostnamectl` command.
 
     ### Sync
 
-    So you have (a) your local copy of your site and you’ve deployed (b) a live production server. How do you get your site from A to B?
+    So you have (a) your local copy of your site and (b) you’ve deployed a live production server. How do you get your site from A to B as you continue to work on it?
 
     Simple!
 
