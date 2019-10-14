@@ -1189,7 +1189,7 @@ It’s much easier than you think, so fire up a terminal window, grab your code 
 
     In a real-world chat app we would have to implement a host of features to prevent abuse (like rate limiting, blacklists, blocking, etc.). That’s outside the scope of this basic tutorial but let’s at least add some basic validation to our chat server.
 
-    Add the following helper functions[^10] to the bottom of your chat server code:
+    Add the following helper functions[^10] to your chat server at the bottom of your `chat.js` file:
 
     ```js
     // Is the passed object a valid string?
@@ -1256,8 +1256,18 @@ module.exports = function (client, request) {
       + `${numberOfRecipients} recipient`
       + `${numberOfRecipients === 1 ? '' : 's'}`)
   })
-}{{</ highlight >}}
-    </div>
+}{{</ highlight >}}<div class='emphasised'>{{< highlight js >}}
+// Is the passed object a valid string?
+function isValidString(s) {
+  return Boolean(s)                // Not null, undefined, '', or 0
+    && typeof s === 'string'       // and is the correct type
+    && s.replace(/\s/g, '') !== '' // and is not just whitespace.
+}
+
+// Is the passed message object valid?
+function isValidMessage(m) {
+  return isValidString(m.nickname) && isValidString(m.text)
+}{{</ highlight >}}</div>
 
     Remember that you have to restart Site.js for server-side changes to dynamic routes to take effect.
 
