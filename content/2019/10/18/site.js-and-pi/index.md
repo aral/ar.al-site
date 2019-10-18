@@ -14,7 +14,7 @@ What that means is that it’s now easier than ever to get a static or dynamic (
 
 ## Have a play!
 
-Do you have a Raspberry Pi 3B+ or 4B lying around?[^1] Well then, grab it and get your first static site up and running in the next 30 seconds:
+Do you have a Raspberry Pi 3B+ or 4B lying around?[^1] Well then, grab it, fire up a terminal window, and get your first static site up and running in the next 30 seconds:
 
 {{<highlight shell>}}
 # Install Site.js.
