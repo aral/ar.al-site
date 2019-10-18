@@ -27,7 +27,7 @@ echo 'Hello, world! > index.html
 site
 {{</highlight>}}
 
-Now fire up a browser on your Raspberry Pi[^2] and hit `https://localhost` in it.
+Now launch a browser[^2] on your Raspberry Pi and hit `https://localhost` in it.
 
 {{<figure src="pi-4b.jpeg" alt="Photo of the Raspberry Pi 4B running the chat example in the first screenshot." caption="My Raspberry Pi 4B, caught red-handed running the chat app in the first screenshot.">}}
 
