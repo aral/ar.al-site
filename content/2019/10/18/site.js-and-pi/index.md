@@ -4,13 +4,13 @@ date: 2019-10-18T11:47:08+01:00
 draft: false
 ---
 
-{{<figure src="site-js-chat-on-raspberry-pi-1.jpeg" alt="Screenshot of the Site.js basic chat example running on a Raspberry Pi 4B" caption="Chatting about Pi, on a Pi, with a chat server running on Site.js on the same Pi.">}}
+{{<figure src="site-js-chat-on-raspberry-pi-1.jpeg" alt="Screenshot of the Site.js basic chat example running on a Raspberry Pi 4B." caption="Chatting about Pi, on a Pi, with a chat server running on Site.js on the same Pi.">}}
 
 Yesterday, I released [Site.js](https://sitejs.org) 12.8.0 which brings initial ARM support for Linux.
 
 What that means is that it’s now easier than ever to get a static or dynamic (Node.js) web server up and running on a Raspberry Pi.
 
-{{<figure src="site-js-chat-on-raspberry-pi-2.jpeg" alt="Screenshot of Terminal on the same Raspberry Pi 4B as before, showing Site.js serving the basic chat app" caption="Site.js on my Raspberry Pi, serving the basic chat app in the first screenshot.">}}
+{{<figure src="site-js-chat-on-raspberry-pi-2.jpeg" alt="Screenshot of Terminal on the same Raspberry Pi 4B as before, showing Site.js serving the basic chat app." caption="Site.js on my Raspberry Pi, serving the basic chat app in the first screenshot.">}}
 
 ## Have a play!
 
