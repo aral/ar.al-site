@@ -31,7 +31,7 @@ Now launch a browser[^2] on your Raspberry Pi and hit `https://localhost` in it.
 
 {{<figure src="pi-4b.jpeg" alt="Photo of the Raspberry Pi 4B running the chat example in the first screenshot." caption="My Raspberry Pi 4B, caught red-handed running the chat app in the first screenshot.">}}
 
-## Please sir, may I have more Pi?
+## Please sir, may I have some more?
 
 But, of course!
 
