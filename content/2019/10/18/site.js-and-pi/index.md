@@ -35,7 +35,7 @@ Now launch a browser[^2] on your Raspberry Pi and hit `https://localhost` in it.
 
 But, of course!
 
-If this has whet your appetite, so to speak, head over to the [Build a simple chat app with Site.js](https://ar.al/2019/10/11/build-a-simple-chat-app-with-site.js/) tutorial where you will learn lots more about making dynamic web sites with Site.js using [DotJS](https://source.ind.ie/site.js/app/blob/master/README.md#dotjs) (Node.js made simple, ala PHP) as you create the WebSocket-based chat example you see in the screenshot above.
+If this has whet your appetite, so to speak, head over to the [Build a simple chat app with Site.js](https://ar.al/2019/10/11/build-a-simple-chat-app-with-site.js/) tutorial where you will learn lots more about making dynamic web sites with Site.js using [DotJS](https://source.ind.ie/site.js/app/blob/master/README.md#dotjs) (Node.js made simple, ala PHP) as you create the WebSocket-based chat example you see in the first screenshot.
 
 Have fun and [do let me know](https://mastodon.ar.al/@aral) how you get on.
 
