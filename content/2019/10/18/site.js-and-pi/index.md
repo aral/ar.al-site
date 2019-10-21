@@ -39,6 +39,8 @@ If this has whet your appetite, so to speak, head over to the [Build a simple ch
 
 Have fun and [do let me know](https://mastodon.ar.al/@aral) how you get on.
 
+{{< like_this_fund_us >}}
+
 [^1]: Those are the only ones I tested with so far. It might work on other ones too. Do [let me know](https://mastodon.ar.al/@aral) if you try it out.
 
 [^2]: For example, type `epiphany` in a terminal window to launch the Epiphany browser – aka GNOME Web – that comes with Raspbian but isn’t available from the raspberry menu under Internet for some inexplicable reason.
