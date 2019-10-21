@@ -1,6 +1,6 @@
 ---
 title: "Site.js: now easier than ever to update"
-date: 2019-10-21T10:57:41+01:00
+date: 2019-10-21T11:48:41+01:00
 draft: false
 ---
 
