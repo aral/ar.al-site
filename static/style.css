@@ -552,3 +552,11 @@ button:disabled {
 /* Control the gutter around the box with padding alone. */
 #fund-us > h2 { margin-top: 0; }
 #fund-us > p:last-of-type { margin-bottom: 0; }
+
+/* Mastodon embeds */
+
+.mastodon-embed {
+  width: 100%;
+  float: none;
+  margin-left: 0;
+}
