@@ -1,7 +1,7 @@
 ---
 title: "How to migrate from VSCode to VSCodium (the best code editor ever minus the corporate bullshit)"
-date: 2019-10-24T09:44:00+01:00
-draft: true
+date: 2019-10-24T09:45:00+01:00
+draft: false
 ---
 
 {{< figure src="writing-this-post-in-vscodium.jpeg" alt="Screenshot of this post as I write it in VSCodium." caption="Blogception: a post on VSCodium as it’s being written in VSCodium.">}}
