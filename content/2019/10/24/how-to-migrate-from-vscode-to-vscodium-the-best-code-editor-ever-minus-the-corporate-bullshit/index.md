@@ -47,7 +47,9 @@ It sounded great so I decided to check it out and I’m very glad I did (thanks,
 
 {{<figure src="vscodium.jpeg" alt="Screenshot of the VSCodium page on GitHub showing the VSCodium logo – looks like a blue coral or mycelium of some sort – and reads “VSCodium: Free/Libre Open Source Software Binaries of VSCode”" caption="The VSCodium project page on Microsoft GitHub.">}}
 
-So it turns out that some enterprising freedom-lovers created a project called VSCodium that takes the MIT-licensed source code, removes the telemetry (read: surveillance) from the codebase (along with the branding[^1]) and licenses the resulting binaries under the MIT license, just like the code itself[^2]. How yummy!
+So it turns out that some enterprising freedom-lovers created a project called VSCodium that takes the MIT-licensed source code, removes the telemetry (read: surveillance) from the codebase (along with the branding[^1]) and licenses the resulting binaries under the MIT license, just like the code itself[^2].
+
+How yummy!
 
 ## Bonus: auto updates!
 
