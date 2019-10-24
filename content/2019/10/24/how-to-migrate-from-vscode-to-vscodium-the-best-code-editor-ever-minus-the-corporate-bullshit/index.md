@@ -1,6 +1,6 @@
 ---
 title: "How to migrate from VSCode to VSCodium (the best code editor ever minus the corporate bullshit)"
-date: 2019-10-24T06:58:11+01:00
+date: 2019-10-24T09:44:00+01:00
 draft: true
 ---
 
