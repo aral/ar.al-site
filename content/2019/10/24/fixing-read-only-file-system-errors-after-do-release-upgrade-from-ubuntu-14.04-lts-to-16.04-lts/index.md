@@ -77,7 +77,9 @@ Unable to create directory /root/.nano: Read-only file system
 It is required for saving/loading search history or cursor positions.
 ```
 
-__Doh!__ Of course, the whole issue is that the file system is read-only so how am I going to update the configuration file.
+_Doh!_
+
+Of course, the whole issue is that the file system is read-only so how am I going to update the configuration file.
 
 ## Remount the drive
 
