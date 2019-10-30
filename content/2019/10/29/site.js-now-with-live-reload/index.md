@@ -46,16 +46,16 @@ Site.js is the easiest way to develop, test, and deploy a static web site but, u
 
 Well, take your hand off that refresh button because the latest version of Site.js comes with live reload out of the box.
 
-## Server-side events to the rescue
+## Server-sent events to the rescue
 
 <figure>
   <iframe src="https://mastodon.ar.al/@aral/103022202114228926/embed" class="mastodon-embed" style="max-width: 100%; border: 0" allowfullscreen="allowfullscreen"></iframe><script src="https://mastodon.ar.al/embed.js" async="async"></script>
 <figcaption>Me, in my naïve younger days, earlier this week.</figcaption>
 </figure>
 
-I implemented the live reload functionality using [my fork of](https://github.com/aral/instant) the excellent [`instant` module](https://github.com/fgnass/instant), which in turn uses [my fork of](https://github.com/aral/sendevent) the also excellent [`sendevent` module](https://github.com/fgnass/sendevnet), both of which are by [Felix Gnass](https://github.com/fgnass) and use server-side events (SSE; also known as `EventSource`).
+I implemented the live reload functionality using [my fork of](https://github.com/aral/instant) the excellent [`instant` module](https://github.com/fgnass/instant), which in turn uses [my fork of](https://github.com/aral/sendevent) the also excellent [`sendevent` module](https://github.com/fgnass/sendevnet), both of which are by [Felix Gnass](https://github.com/fgnass) and use server-sent events (SSE; also known as `EventSource`).
 
-## Rescuing server-side events from a fox
+## Rescuing server-sent events from a fox
 
 <figure>
   <iframe src="https://mastodon.ar.al/@aral/103023932351097430/embed" class="mastodon-embed" style="max-width: 100%; border: 0" width="400" allowfullscreen="allowfullscreen"></iframe><script src="https://mastodon.ar.al/embed.js" async="async"></script>
