@@ -62,7 +62,7 @@ I implemented the live reload functionality using [my fork of](https://github.co
   <figcaption>Theory, meet practice.</figcaption>
 </figure>
 
-While I initially thought that I’d be done implementing the feature in mere minutes thanks to the `instant` module, , it actually took me two days. And we have Mr. Firefox Browser to thank for that.
+While I initially thought that I’d be done implementing the feature in mere minutes thanks to the `instant` module, it actually took me two days. And we have Mr. Firefox Browser to thank for that.
 
 Turns out, Firefox has a peculiar quirk[^1] with `EventSource` when you’re testing a page and your `host` is `localhost`.[^2] Basically, if you refresh the page from Firefox’s memory cache without doing a force refresh, your `EventSource` connection disconnects after 30 seconds.
 
