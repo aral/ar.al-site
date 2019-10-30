@@ -54,6 +54,6 @@ If you’re wondering what Site.js is, check out [the Site.js web site](https//s
 
 There’s also a tutorial I released a few weeks ago that takes you through building static and dynamic sites with Site.js as you [build a simple chat app using WebSockets](https://ar.al/2019/10/11/build-a-simple-chat-app-with-site.js/).
 
-I these improvements make your experience of creating with Site.js more delightful.
+I hope these improvements make your experience of creating with Site.js more delightful.
 
 {{< like_this_fund_us >}}
