@@ -1,6 +1,17 @@
 ---
 title: "Site.js: now with live reload"
 date: 2019-10-29T18:28:29Z
+description: Site.js version 12.9.6 improves the developer experience with live reload support for static pages.
+images:
+  - https://s3-eu-central-1.amazonaws.com/mastodon-aral/media_attachments/files/001/571/843/small/c3133f4167225919.png
+videos: [https://s3-eu-central-1.amazonaws.com/mastodon-aral/media_attachments/files/001/571/843/original/c3133f4167225919.mp4]
+tags:
+  - site.js
+  - live reload
+  - static site
+  - javascript
+  - js
+  - node.js
 draft: false
 ---
 

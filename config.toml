@@ -9,6 +9,15 @@ enableGitInfo = true
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License"
 "rssLimit" = 20
 
+[params]
+  # Open Graph details for embedding.
+  description = "Aral Balkan’s personal web site. Covers small technology as an alternative to big tech and surveillance capitalism, human rights in the digital age (cyborg rights), personhood, and democracy."
+  images = ["/images/aral-432.jpg"]
+  title = "Aral Balkan"
+
+[taxonomies]
+  series = "series"
+
 [author]
   name = "Aral Balkan"
   email = "mail@ar.al"
