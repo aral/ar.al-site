@@ -53,7 +53,7 @@ Well, take your hand off that refresh button because the latest version of Site.
 <figcaption>Me, in my naïve younger days, earlier this week.</figcaption>
 </figure>
 
-I implemented the live reload functionality using [my fork of](https://github.com/aral/instant) the excellent [`instant` module](https://github.com/fgnass/instant), which in turn uses [my fork of](https://github.com/aral/sendevent) the also excellent [`sendevent` module](https://github.com/fgnass/sendevnet), both of which are by [Felix Gnass](https://github.com/fgnass) and use server-sent events (SSE; also known as `EventSource`).
+I implemented the live reload functionality using [my fork of](https://github.com/aral/instant) the excellent [`instant` module](https://github.com/fgnass/instant), which in turn uses [my fork of](https://github.com/aral/sendevent) the also excellent [`sendevent` module](https://github.com/fgnass/sendevnet), both of which are by [Felix Gnass](https://github.com/fgnass) and use [server-sent events](https://en.wikipedia.org/wiki/Server-sent_events) (SSE; also known as `EventSource`).
 
 ## Rescuing server-sent events from a fox
 
