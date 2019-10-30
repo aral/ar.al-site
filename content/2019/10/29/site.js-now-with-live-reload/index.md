@@ -11,7 +11,7 @@ draft: false
 
 I just released version 12.9.6 of [Site.js](https://sitejs.org) with live reload support for static pages.
 
-There’s also a fix for [the `update` command](https://source.ind.ie/site.js/app/blob/master/README.md#update-as-of-v1295-properly-functioning-as-of-v1296), so please update to this version so that you can keep updating using the update command when we move to 12.10.x and beyond.
+There’s also a fix for [the `update` command](https://source.ind.ie/site.js/app/blob/master/README.md#update-as-of-v1295-properly-functioning-as-of-v1296), so please update to this version so that you can keep updating using the `update` command when we move to 12.10.x and beyond.
 
 ## Get Site.js version 12.9.6
 
