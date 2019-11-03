@@ -1,7 +1,7 @@
 ---
 title: "Site.js: now with auto updates in production"
 date: 2019-11-03T11:12:31Z
-description:
+description: Auto updates of production servers is a crucial security feature.
 images:
   - https://i.vimeocdn.com/video/827927043.jpg?mw=2500&mh=1406&q=70
 videos: ['https://player.vimeo.com/external/370643404.hd.mp4?s=4072ee1788c981d32956733956ebb9fd24c4495a&profile_id=169']
