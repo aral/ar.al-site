@@ -39,7 +39,7 @@ With that in mind, it goes without saying that the sites and apps you build and 
 
 ## Because security
 
-One of the biggest security issues in tech is running outdated software. While I was running my servers on nginx, I couldn’t tell you when they were last upgraded as the process was so convoluted. With Site.js, deploying a server has to be deploy and forget. We cannot assume that folks are going to update their servers.
+One of the biggest security issues in tech is running outdated software. While I was running my servers on nginx, I couldn’t tell you when they were last upgraded as the process was so convoluted. With Site.js, running your own web server has to be deploy and forget. We cannot assume that folks are going to update their servers.
 
 So auto updates of production servers is a crucial security feature.
 
