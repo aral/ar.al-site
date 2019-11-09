@@ -62,7 +62,7 @@ Here’s a basic HTTPS server that responds to every `GET` request with a simple
     function html(message) {
       return `<!doctype html><html lang='en'><head><meta charset='utf-8'/><title>Hello, world!</title><style>body{background-color: white; font-family: sans-serif;}</style></head><body><h1>${message}</h1></body></html>`
     }
-    const contentTypeHTML = {'Content-Type': 'text/html'}
+    const headers = {'Content-Type': 'text/html'}
 
     let options = {}
 
@@ -74,16 +74,11 @@ Here’s a basic HTTPS server that responds to every `GET` request with a simple
     //   staging: true
     // }
 
-    // Create HTTPS server at https://localhost
+    // Default (no options): create HTTPS server at https://localhost
     // with locally-trusted certificates.
     const server = https.createServer(options, (request, response) => {
-      if (request.method !== 'GET') {
-        response.writeHead(404, contentTypeHTML)
-        response.end(html('Not found.'))
-        return
-      }
       // Respond to all routes with the same page.
-      response.writeHead(200, contentTypeHTML)
+      response.writeHead(200, headers)
       response.end(html('Hello, world!'))
     })
 
