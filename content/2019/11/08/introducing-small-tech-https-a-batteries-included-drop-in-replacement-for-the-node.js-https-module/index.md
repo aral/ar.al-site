@@ -23,9 +23,9 @@ Today’s my birthday so I thought I’d give you a little present: [`@small-tec
 
 This is essentially a drop-in, batteries-included version of [the Node.js `https` module](https://nodejs.org/api/all.html#https_https) that:
 
-  - Automatically provisions locally-trusted TLS for development (courtesy of [mkcert](https://github.com/FiloSottile/mkcert) seamlessly integrated via [Nodecert](https://source.ind.ie/hypha/tools/nodecert)).
+  - Automatically provisions locally-trusted TLS certificates for localhost (courtesy of [mkcert](https://github.com/FiloSottile/mkcert) seamlessly integrated via [Nodecert](https://source.ind.ie/hypha/tools/nodecert)).
 
-  - Automatically provisions globally-trusted TLS for courtesy of [Let’s Encrypt](https://letsencrypt.org/).
+  - Automatically provisions globally-trusted TLS certificates for your domain(s) courtesy of [Let’s Encrypt](https://letsencrypt.org/).
 
 ## Install
 
@@ -35,7 +35,7 @@ npm i @small-tech/https
 
 ## Example
 
-Here’s a basic Express “hello, world” app that shows you how this module can be used. Note that you don’t need express to use it.
+Here’s a basic HTTPS server that responds to every GET request with a simple “hello, world” page.
 
 1. ### Set up
 
@@ -47,7 +47,7 @@ Here’s a basic Express “hello, world” app that shows you how this module c
     npm init --yes
 
     # Install dependencies.
-    npm i @small-tech/https express
+    npm i @small-tech/https
 
     # Open up the main file in your default editor.
     $EDITOR index.js
@@ -56,7 +56,7 @@ Here’s a basic Express “hello, world” app that shows you how this module c
 2. ### Code (index.js)
 
     ```javascript
-    const https = require('..')
+    const https = require('@small-tech/https')
 
     // Helpers
     function html(message) {
@@ -98,7 +98,7 @@ Here’s a basic Express “hello, world” app that shows you how this module c
     node index
     ```
 
-Hit `https://localhost` and you should see your site with locally-trusted TLS certificates.
+Hit `https://localhost` and you should see your site served with locally-trusted TLS certificates.
 
 {{<figure src="global.jpeg" alt="Screenshot of @small-tech/https example app running in terminal with locally-trusted TLS certificates" caption="@small-tech/https with locally-trusted certificates courtesy of mkcert">}}
 
