@@ -23,9 +23,9 @@ Today’s my birthday so I thought I’d give you a little present: [`@small-tec
 
 This is essentially a drop-in, batteries-included version of [the Node.js `https` module](https://nodejs.org/api/all.html#https_https) that:
 
-  - Automatically provisions locally-trusted TLS certificates for localhost (courtesy of [mkcert](https://github.com/FiloSottile/mkcert) seamlessly integrated via [Nodecert](https://source.ind.ie/hypha/tools/nodecert)).
+  - __Automatically provisions locally-trusted TLS certificates for localhost__ for development use (courtesy of [mkcert](https://github.com/FiloSottile/mkcert) seamlessly integrated via [Nodecert](https://source.ind.ie/hypha/tools/nodecert)).
 
-  - Automatically provisions globally-trusted TLS certificates for your domain(s) courtesy of [Let’s Encrypt](https://letsencrypt.org/).
+  - __Automatically provisions globally-trusted TLS certificates for your domain(s)__ for cross-browser testing, staging, and production courtesy of [Let’s Encrypt](https://letsencrypt.org/).
 
 ## Install
 
