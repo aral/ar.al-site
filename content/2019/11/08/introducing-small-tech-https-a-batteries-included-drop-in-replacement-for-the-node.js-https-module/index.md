@@ -35,7 +35,7 @@ npm i @small-tech/https
 
 ## Example
 
-Here’s a basic HTTPS server that responds to every GET request with a simple “hello, world” page.
+Here’s a basic HTTPS server that responds to every `GET` request with a simple “hello, world” page.
 
 1. ### Set up
 
