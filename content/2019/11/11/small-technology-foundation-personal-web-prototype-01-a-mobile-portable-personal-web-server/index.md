@@ -84,6 +84,8 @@ To prepare your Pi to use as a headless web server, connect a keyboard, mouse, a
 
 7. Log out of your `ssh` session and reconnect without using your password to test that the public-key authentication you just set up works.
 
+{{<figure src="prototype-01-4g-modem.jpeg" alt="Close-up of the Huawei Mobile Broadband LTE USB Stick E3372 used in the prototype." caption="Small Technology Foundation Personal Web Prototype-01: close-up of the LTE USB Stick.">}}
+
 ### Set up ngrok
 
 You need to configure ngrok to create three secure tunnels to the Raspberry Pi:
