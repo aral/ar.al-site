@@ -197,7 +197,7 @@ To learn more about Site.js, read the [Site.js documentation](https://source.ind
 
 ## What next?
 
-This is just the first prototype to come out of our work on [Site.js](https://sitejs.org) as part of our [research and development](https://small-tech.org/research-and-development) work at [Small Technology Foundation](https://small-tech.org). It doesn’t represent a specific product we are thinking of building but rather more the direction in which we’re thinking (which might result in products later on).
+This is just the first prototype to come out of our work on [Site.js](https://sitejs.org) as part of our [research and development](https://small-tech.org/research-and-development) work at [Small Technology Foundation](https://small-tech.org). It doesn’t represent a specific product we are thinking of building but rather more the direction in which we’re thinking in general (which might result in products later on).
 
 I hope, though, that it does help demonstrate two important points:
 
