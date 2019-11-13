@@ -70,7 +70,7 @@ To prepare your Pi to use as a headless web server, connect a keyboard, mouse, a
 
 1. On the Raspberry Pi, select _Preferences → Raspberry Pi Configuration_ from the Raspberry menu.
 
-2. In the settings box that appears, set the `subdomain.doma.in` name you will serve your site from in the _Hostname_ field.
+2. In the settings box that appears, set the `subdomain.your.domain` name you will serve your site from in the _Hostname_ field.
 
 3. In the Interfaces tab, select the _Enable_ radio button next for the _SSH_ field.
 
@@ -112,12 +112,12 @@ tunnels:
   insecure-web:
     addr: 80
     proto: http
-    hostname: <your-reserved-subdomain.doma.in>
+    hostname: <your-reserved-subdomain.your.domain>
     bind-tls: false
   secure-web:
     addr: 443
     proto: tls
-    hostname: <your-reserved-subdomain.doma.in>
+    hostname: <your-reserved-subdomain.your.domain>
   ssh:
     addr: 22
     proto: tcp
@@ -173,7 +173,7 @@ site enable
 
 ## Testing it
 
-You should now be able to hit _https://subdomain.doma.in_ and see your “Hello, world!” page.
+You should now be able to hit `https://subdomain.your.domain` and see your “Hello, world!” page.
 
 ## Updating your site
 
@@ -186,10 +186,10 @@ Now that your site is live, how do you make it a bit more exciting?
 2. Make sure Site.js is also installed on your main computer and then issue the following command:
 
     ```sh
-    site --sync-to=subdomain.doma.in --exit-on-sync
+    site --sync-to=subdomain.your.domain --exit-on-sync
     ```
 
-3. Hit _https://subdomain.doma.in_ again and you should see your new site.
+3. Hit `https://subdomain.your.domain` again and you should see your new site.
 
 To learn more about Site.js, read the [Site.js documentation](https://source.ind.ie/site.js/app/blob/master/README.md).
 
