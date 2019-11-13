@@ -73,12 +73,85 @@ To prepare your Pi to use as a headless web server, connect a keyboard, mouse, a
 
     xxx
 
-3. ### Set up
+3. ### Set up ngrok
+
+You need to configure ngrok to create three secure tunnels to the Raspberry Pi:
+
+  - __HTTP tunnel for port 80__ so Site.js can handle Let’s Encrypt challenges using the [HTTP-01 challenge](https://letsencrypt.org/docs/challenge-types#http-01-challenge) method.
+
+  - __TLS tunnel for port 443__ that Site.js will use to serve your web site on.
+
+  - __TCP tunnel for port 22__ so you can access your Pi at your domain name over SSH.
+
+To do this, create a file called `ngrok.yml` in the `~/.ngrok2` directory (create the directory if it doesn’t already exist):
+
+```sh
+mkdir -p ~/.ngrok2
+touch ~/.ngrok2/ngrok.yml
+```
+
+Then add the following configuration, customising it for your needs:
+
+```yaml
+authtoken: <replace-with-your-auth-token>
+region: eu
+tunnels:
+  insecure-web:
+    addr: 80
+    proto: http
+    hostname: <your-reserved-subdomain.doma.in>
+    bind-tls: false
+  secure-web:
+    addr: 443
+    proto: tls
+    hostname: <your-reserved-subdomain.doma.in>
+  ssh:
+    addr: 22
+    proto: tcp
+    remote_addr: <your-reserved-tcp-address>
+```
+
+You can find your `authtoken` on your [ngrok Auth page](https://dashboard.ngrok.com/auth).
+
+To learn how to reserve a custom domain, see [the ngrok documentation](https://ngrok.com/docs/2) for [tunnels on custom domains](https://ngrok.com/docs/2#http-custom-domains).
+
+Once you’ve customised and saved your ngrok configuration file, you can create your tunnels at any time using:
+
+```sh
+ngrok start --all
+```
+
+However, while that’s good for testing, what we want is for ngrok to start automatically when the Raspberry Pi does. This will allow us to SSH into the Pi so we can use it headlessly from now on and it will mean that once it has power, our web site will be reachable from anywhere in the world.
+
+To do this, edit the `/etc/xdg/lxsession/LXDE-pi/autostart` file, add the following line to it, and save it:
+
+```sh
+@ngrok start --all
+```
+
+This will automatically run your ngrok tunnels in the background whenever the Pi boots up.
 
 3. ### Install [Site.js](https://sitejs.org) and set it up to run as a startup daemon.
 
-    xxx
+    1. Install Site.js
 
+    ```sh
+    wget -qO- https://sitejs.org/install | bash
+    ```
+
+    2. Create a folder to hold your site (and create a “Hello, world!” page in it.)
+
+    ```sh
+    mkdir -p ~/public
+    cd public
+    echo 'Hello, world!' > index.html
+    ```
+
+    3. Create a startup daemon using Site.js to serve your site (this will survive restarts and crashes, etc.):
+
+    ```sh
+    site enable
+    ```
 
 
 
